@@ -163,7 +163,7 @@ function init_gear_sets()
 		hands=gear.HerculeanGloves.Crit,
 --		body="Assim. Jubbah +3",
 --		hands="Assim. Bazu. +3",
-		ring1="Epona's Ring",
+		ring1="Ilabrat Ring",
 		ring2="Cacoethic Ring +1",
 		back=gear.jsecapes.amb.blu.ws,
 		waist=gear.waist.ws,
@@ -180,7 +180,7 @@ function init_gear_sets()
 		hands=gear.HerculeanGloves.Crit,
 --		body="Assim. Jubbah +3",
 --		hands="Assim. Bazu. +3",
-		ring1="Epona's Ring",
+		ring1="Ilabrat Ring",
 		ring2="Cacoethic Ring +1",
 		back=gear.jsecapes.amb.blu.ws,
 		waist=gear.waist.ws,
@@ -307,7 +307,7 @@ function init_gear_sets()
         body=gear.HerculeanBody.Crit,
 		hands=gear.AdhemarHands.A,
 		ring1=gear.ring.str1,
-		ring2=gear.ring.str2,
+		ring2="Ilabrat Ring",
         back=gear.jsecapes.amb.blu.ws,
 		waist="Grunfeld Rope", 
 		legs=gear.HerculeanTrousers.WS,
@@ -337,7 +337,7 @@ function init_gear_sets()
 		body=gear.jse.relic.blu.body,
 		hands=gear.ambuscade.jhakri.hands,
 		ring1="Apate Ring",
-		ring2="Rajas Ring",
+		ring2="Ilabrat Ring",
 		back=gear.jsecapes.blu,
 		waist="Grunfeld Rope",
 		legs=gear.jse.empyrean.blu.legs,
@@ -351,7 +351,7 @@ function init_gear_sets()
 --	    body="Assim. Jubbah +3",
 		hands=gear.ambuscade.jhakri.hands,
 		ring1=gear.ring.dex1,
-		ring2=gear.ring.dex2,
+		ring2="Ilabrat Ring",
 	    back=gear.jsecapes.blu,
 		waist="Grunfeld Rope",
 		legs=gear.ambuscade.jhakri.legs}
@@ -677,7 +677,7 @@ function init_gear_sets()
         body=gear.jse.artifact.blu.body,
 		hands=gear.jse.empyrean.blu.hands,
 		ring1=gear.ring.ms_left,
-		ring2=gear.ring.ms_right,
+		ring2=gear.ring.fc_left,
         back=gear.jsecapes.blu,
 		legs=gear.jse.empyrean.blu.legs,
 		feet=gear.jse.relic.blu.feet}
@@ -877,7 +877,7 @@ function init_gear_sets()
 
 	sets.engaged.SomeAcc.AM = {ammo="Ginsen",
 			    head="Dampening Tam",neck="Combatant's Torque",ear1="Cessance Earring",ear2="Telos Earring",
-			    body="Adhemar Jacket",hands="Adhemar Wristbands",ring1="Epona's Ring",ring2="Rajas Ring",
+			    body="Adhemar Jacket",hands="Adhemar Wristbands",ring1="Epona's Ring",ring2="Ilabrat Ring",
 			    back=gear.jsecapes.amb.blu.tp,waist="Windbuffet Belt +1",legs="Samnuha Tights",feet="Carmine Greaves +1"}
 				
 	sets.engaged.Acc = {ammo="Falcon Eye",

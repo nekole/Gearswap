@@ -10,8 +10,8 @@ function user_setup()
 
     state.ExtraMeleeMode = M{['description']='Extra Melee Mode', 'None', 'Knockback', 'Reraise'}
 
-	gear.da_jse_back = {name="Cichol's Mantle",augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10'}}
-	gear.crit_jse_back = {name="Cichol's Mantle",augments={'STR+20','Accuracy+20 Attack+20','Crit.hit rate+10'}}
+--	gear.da_jse_back = {name="Cichol's Mantle",augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10'}}
+--	gear.crit_jse_back = {name="Cichol's Mantle",augments={'STR+20','Accuracy+20 Attack+20','Crit.hit rate+10'}}
 	
 	-- Additional local binds
 	send_command('bind ^` input /ja "Hasso" <me>')

@@ -137,9 +137,9 @@ function init_gear_sets()
 		feet=gear.lustratio.feet.A,
 		neck="Fotia Gorget",
 		ear1="Moonshade Earring",
-		ear2="Ishvara Earring",
+		ear2="Sherida Earring",
 		ring1="Rajas Ring",
-        ring2="Epona's Ring",
+        ring2="Ilabrat Ring",
 		back=gear.jsecapes.amb.thf.ws,
 		waist="Fotia Belt",}
     sets.precast.WS.SomeAcc = set_combine(sets.precast.WS, {neck="Combatant's Torque",hands="Meg. Gloves +1"})
@@ -272,10 +272,10 @@ function init_gear_sets()
 --		feet="Jute Boots +1",
 		feet="Skd. Jambeaux +1",
 		neck="Sanctity Necklace",
-		ear1="Genmei Earring",
+		ear1="Sherida Earring",
 		ear2="Infused Earring",
 		ring1="Paguroidea Ring",
-		ring2="Sheltered Ring",
+		ring2="Ilabrat Ring",
 		back="Solemnity Cape",
 		waist="Flume Belt +1",}
 		
@@ -320,9 +320,9 @@ function init_gear_sets()
 		hands=gear.AdhemarHands.A,
 		legs=gear.SamnuhaTights.TP,
 		feet=gear.HerculeanBoots.TA, --9
-		neck="Erudit. Necklace",
+		neck="Anu Torque",
 		ear1="Eabani Earring", --4
-		ear2="Suppanomimi", --5
+		ear2="Sherida Earring", --5
 		ring1="Petrov Ring",
 		ring2="Epona's Ring",
 		back=gear.jsecapes.amb.thf.tp, --4
@@ -335,6 +335,7 @@ function init_gear_sets()
 		ring1="Chirich Ring"}
     
 	sets.engaged.Acc = {
+		ring1="Ilabrat Ring",
 		ring2=gear.ring.dex1,
 		back=gear.jsecapes.amb.thf.tp,
 		waist="Kentarch Belt +1",}

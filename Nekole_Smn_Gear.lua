@@ -1,9 +1,9 @@
 -- Setup vars that are user-dependent.  Can override this function in a sidecar file.
-
 function user_setup()
     state.OffenseMode:options('None', 'Normal', 'Acc')
     state.CastingMode:options('Normal', 'Resistant')
     state.IdleMode:options('Normal', 'PDT', 'TPEat', 'Regain')
+	state.Moving  = M(false, "moving")
 	
 	gear.perp_staff = {name=gear.weapons.smn.bpmagicstaff}
 
@@ -15,6 +15,7 @@ function user_setup()
 	send_command('bind !pause gs c toggle AutoSubMode') --Automatically uses sublimation.
 	
     select_default_macro_book()
+	set_lockstyle()
 end
 
 -- Define sets and vars used by this job file.
@@ -34,7 +35,7 @@ function init_gear_sets()
 		ammo="Esper Stone +1",
 		head=gear.TelchineCap.ES,
 		body=gear.TelchineChasuble.ES,
-		hands=gear.TelchineGloves.ES,
+		hands="Baayami Cuffs",
 		legs=gear.TelchineBraconi.ES,
 		feet=gear.jse.empyrean.smn.feet,
 		neck="Incanter's Torque",
@@ -54,9 +55,9 @@ function init_gear_sets()
 		ammo="Sancus Sachet +1",
 		head=gear.jse.empyrean.smn.head,-- 3 Favor
 		neck="Incanter's Torque",
-		body="Shomonjijoe +1", --8
-		hands=gear.jse.relic.smn.hands,--6
-		legs=gear.jse.relic.smn.legs,
+		body=gear.jse.artifact.smn.body, --8
+		hands="Baayami Cuffs",--6
+		legs="Baayami Slops",
 		ear1="Andoaa Earring",
 		ear2="Evans Earring",
 		ring1="Evoker's Ring",
@@ -102,7 +103,7 @@ function init_gear_sets()
 		sub="Vox Grip",
 		ammo="Sancus Sachet +1",
 		head=gear.ApogeeCrown.B,
-		body="Beck. Doublet +1",
+		body=gear.jse.artifact.smn.body,
 		hands="Lamassu mitts +1",
 		legs="Beck. Spats +1",
 		feet=gear.ApogeePumps.A,
@@ -345,7 +346,7 @@ function init_gear_sets()
 		head=gear.jse.empyrean.smn.head,
 		body=gear.jse.empyrean.smn.body,
 		hands="Lamassu Mitts +1",
-		legs=gear.jse.empyrean.smn.legs,
+		legs="Baayami Slops",
 		feet="Baayami Sabots",
 		neck="Incanter's Torque",
 --	waist="Kobo Obi",  Need
@@ -361,9 +362,9 @@ function init_gear_sets()
 		sub="Vox Grip",
 		ammo="Sancus Sachet +1",
 		head="Tali'ah Turban +1",
-		neck="Deino Collar",
+		neck="Adad Amulet",
 		ear1="Andoaa Earring",
---		ear2="Enmerkar Earring",
+		ear2="Enmerkar Earring",
         body="Tali'ah Manteel +1",
 		hands=gear.ApogeeMitts.Dplus,
 		ring1="Evoker's Ring",
@@ -380,38 +381,38 @@ function init_gear_sets()
 		sub="Elan Strap +1",
 		ammo="Sancus Sachet +1",
 		head=gear.ApogeeCrown.B,
-		body="Convoker's Doublet +1",
+		body=gear.jse.artifact.smn.body,
 		hands=gear.MerlinicDastanas.MAB,
 		legs=gear.ApogeeSlacks.D,
-		neck="Empath necklace",
+		neck="Shulmanu Collar",
 		waist="Incarnation Sash",
 		ear1="Gelos Earring",
-		ear2="Esper earring",
+		ear2="Lugalbanda Earring",
 		ring1={name="Varar Ring",priority=3},
 		ring2={name="Varar Ring",priority=3},
 		back=gear.jsecapes.amb.smn.att,
 		feet=gear.ApogeePumps.Bplus,}
 		
-    sets.midcast.Pet.PhysicalBloodPactRage.Acc = sets.midcast.Pet.PhysicalBloodPactRage
+    sets.midcast.Pet.PhysicalBloodPactRage.Acc = {feet=gear.jse.artifact.smn.feet}
 
     sets.midcast.Pet.MagicalBloodPactRage = {
 		main=gear.weapons.smn.smnskillstaff,
 		sub="Elan Strap +1",
 		ammo="Sancus Sachet +1",
         head=gear.ApogeeCrown.Aplus,
-		neck="Empath necklace",
+		neck="Adad Amulet",
 		ear1="Gelos Earring",
-		ear2="Esper Earring",
-        body="Convoker's Doublet +1",
+		ear2="Lugalbanda Earring",
+        body=gear.jse.artifact.smn.body,
 		hands=gear.MerlinicDastanas.MAB,
 		ring1="Varar Ring",
 		ring2="Varar Ring",
         back=gear.jsecapes.amb.smn.magic,
-		waist="Incarnation Sash",
+		waist="Regal Belt",
 		legs="Enticer's Pants",
 		feet="Con. Pigaches +1"}
 
-    sets.midcast.Pet.MagicalBloodPactRage.Acc = sets.midcast.Pet.MagicalBloodPactRage
+    sets.midcast.Pet.MagicalBloodPactRage.Acc = {feet=gear.jse.artifact.smn.feet}
 
     -- Spirits cast magic spells, which can be identified in standard ways.
     
@@ -426,17 +427,19 @@ function init_gear_sets()
 		sub="Elan Strap +1",
 		ammo="Sancus Sachet +1",
         head=gear.ApogeeCrown.Aplus,
-		neck="Empath necklace",
+		neck="Adad Amulet",
 		ear1="Gelos Earring",
-		ear2="Esper Earring",
-        body="Con. Doublet +1",
+		ear2="Lugalbanda Earring",
+        body=gear.jse.artifact.smn.body,
 		hands=gear.ApogeeDalmatica.B,
 		ring1="Varar Ring",
 		ring2="Varar Ring",
         back=gear.jsecapes.amb.smn.att,
-		waist="Incarnation Sash",
+		waist="Regal Belt",
 		legs=gear.ApogeeSlacks.D,
 		feet=gear.ApogeePumps.Bplus}
+		
+	sets.midcast.Pet['Flaming Crush'].Acc = {feet=gear.jse.artifact.smn.feet}
 
     --------------------------------------
     -- Idle/resting/defense/etc sets
@@ -465,13 +468,13 @@ function init_gear_sets()
         head=gear.ApogeeCrown.Aplus,
 		neck="Loricate Torque +1",
 		ear1="Etiolation Earring",
-		ear2="Ethereal Earring",
+		ear2="Lugalbanda Earring",
         body=gear.ApogeeDalmatica.Aplus,
 		hands=gear.ApogeeMitts.Dplus,
 		ring1="Defending Ring",
 		ring2="Gelatinous Ring +1",
         back=gear.jsecapes.amb.smn.pidle,
-		waist="Fucho-no-obi",
+		waist="Regal Belt",
 		legs=gear.ApogeeSlacks.Aplus,
 		feet="Baayami Sabots"}
 
@@ -488,6 +491,7 @@ function init_gear_sets()
 		hands="",
 		legs="",
 		feet="",
+		waist="Regal Belt",
 		back="Solemnity Cape"--4
 		}
 		
@@ -529,12 +533,12 @@ function init_gear_sets()
         back=gear.jsecapes.amb.smn.pidle,
 		waist="Fucho-no-Obi",
 		legs="Assid. Pants +1",
-		feet="Con. Pigaches +1"}
+		feet=gear.jse.artifact.smn.feet}
 		
     sets.idle.PDT.Avatar = {main="Terra's Staff",sub="Oneiros Grip",ammo="Sancus Sachet +1",
         head="Beckoner's Horn +1",neck="Loricate Torque +1",ear1="Etiolation Earring",ear2="Evans Earring",
         body="Shomonjijoe +1",hands="Asteria Mitts +1",ring1="Defending Ring",ring2="Gelatinous Ring +1",
-        back="Umbra Cape",waist="Lucidity Sash",legs="Assid. Pants +1",feet="Con. Pigaches +1"}
+        back="Umbra Cape",waist="Regal Belt",legs="Assid. Pants +1",feet=gear.jse.artifact.smn.feet}
 
     sets.idle.Spirit = {
 		main="Nirvana",
@@ -551,7 +555,7 @@ function init_gear_sets()
         back=gear.jsecapes.amb.smn.pidle,
 		waist="Fucho-no-Obi",
 		legs="Assid. Pants +1",
-		feet="Con. Pigaches +1"}
+		feet=gear.jse.artifact.smn.feet}
 		
     sets.idle.PDT.Spirit = {main="Terra's Staff",sub="Oneiros Grip",ammo="Sancus Sachet +1",
         head="Beckoner's Horn +1",neck="Loricate Torque +1",ear1="Etiolation Earring",ear2="Evans Earring",
@@ -586,22 +590,22 @@ function init_gear_sets()
     -- Defense sets
     sets.defense.PDT = {
 		main="Terra's Staff",sub="Umbra Strap",ammo="Sancus Sachet +1",
-        head="Hagondes Hat +1",neck="Loricate Torque +1",ear1="Handler's Earring +1", --ear2="Enmerkar Earring",
+        head="Hagondes Hat +1",neck="Loricate Torque +1",ear1="Handler's Earring +1",ear2="Enmerkar Earring",
         body="Vrikodara Jupon",hands="Hagondes Cuffs +1",ring1="Defending Ring",ring2="Gelatinous Ring +1",
-        back="Umbra Cape",waist="Slipor Sash",legs="Hagondes Pants +1",feet="Battlecast Gaiters"}
+        back="Umbra Cape",waist="Regal Belt",legs="Hagondes Pants +1",feet="Battlecast Gaiters"}
 
     sets.defense.MDT = {main="Terra's Staff",sub="Umbra Strap",ammo="Sancus Sachet +1",
-        head="Hagondes Hat +1",neck="Loricate Torque +1",ear1="Etiolation Earring",--ear2="Lugalbanda Earring",
+        head="Hagondes Hat +1",neck="Loricate Torque +1",ear1="Etiolation Earring",ear2="Lugalbanda Earring",
         body="Vrikodara Jupon",hands="Hagondes Cuffs +1",ring1="Defending Ring",ring2="Gelatinous Ring +1",
-        back="Umbra Cape",waist="Slipor Sash",legs="Hagondes Pants +1",feet="Battlecast Gaiters"}
+        back="Umbra Cape",waist="Regal Belt",legs="Hagondes Pants +1",feet="Battlecast Gaiters"}
 
     sets.defense.MEVA = {main="Terra's Staff",sub="Enki Strap",ammo="Sancus Sachet +1",
-        head="Amalric Coif",neck="Warder's Charm +1",ear1="Sanare Earring",--ear2="Lugalbanda Earring",
+        head="Amalric Coif",neck="Warder's Charm +1",ear1="Sanare Earring",ear2="Lugalbanda Earring",
 		body="Inyanga Jubbah +1",hands="Telchine Gloves",ring1="Vengeful Ring",Ring2="Purity Ring",
         back="Seshaw Cape",waist="Luminary Sash",legs="Telchine Braconi",feet="Telchine Pigaches"}
 		
-    sets.Kiting = {feet="Herald's Gaiters"}
-    sets.latent_refresh = {}
+    sets.Kiting = {}
+    sets.latent_refresh = {waist="Fucho-no-obi"}
 	sets.DayIdle = {}
 	sets.NightIdle = {}
 
@@ -612,6 +616,14 @@ function init_gear_sets()
 	sets.buff.Doom = set_combine(sets.buff.Doom, {})
 	sets.buff.Sleep = {neck="Sacrifice Torque"}
 	sets.Weapons = {main="Gridarvor", sub="Elan Strap +1"}
+	
+	sets.Adoulin = {
+        body="Councilor's Garb",
+    }
+
+    sets.MoveSpeed = {
+        feet ="Herald's Gaiters",
+    }
     --------------------------------------
     -- Engaged sets
     --------------------------------------
@@ -619,8 +631,8 @@ function init_gear_sets()
     -- Normal melee group
     sets.engaged = {main="Gridarvor",sub="Bloodrain Strap",ammo="Sancus Sachet +1",
         head="Beckoner's Horn +1",neck="Shulmanu Collar",ear1="Digni. Earring",ear2="Telos Earring",
-        body="Con. Doublet +1",hands=gear.merlinic_refresh_hands,ring1="Ramuh Ring +1",ring2="Ramuh Ring +1",
-        back=gear.phys_jse_back,waist="Olseni Belt",legs="Assid. Pants +1",feet="Con. Pigaches +1"}
+        body=gear.jse.artifact.smn.body,hands=gear.merlinic_refresh_hands,ring1="Ramuh Ring +1",ring2="Ramuh Ring +1",
+        back=gear.phys_jse_back,waist="Olseni Belt",legs="Assid. Pants +1",feet=gear.jse.artifact.smn.feet}
 end
 
 -- Select default macro book on initial load or subjob change.
@@ -632,3 +644,39 @@ function select_default_macro_book(reset)
     -- Default macro set/book
     set_macro_page(1, 15)
 end
+function set_lockstyle()
+	send_command('wait 2; input /lockstyleset 9')
+end
+moving = false
+windower.raw_register_event('prerender',function()
+    mov.counter = mov.counter + 1;
+	if buffactive['Mana Wall'] then
+		moving = false
+    elseif mov.counter>15 then
+        local pl = windower.ffxi.get_mob_by_index(player.index)
+        if pl and pl.x and mov.x then
+            dist = math.sqrt( (pl.x-mov.x)^2 + (pl.y-mov.y)^2 + (pl.z-mov.z)^2 )
+            if dist > 1 and not moving then
+                state.Moving.value = true
+                send_command('gs c update')
+                send_command('gs equip sets.MoveSpeed')
+                if world.area:contains("Adoulin") then
+                    send_command('gs equip sets.Adoulin')
+                end
+
+        moving = true
+
+            elseif dist < 1 and moving then
+                state.Moving.value = false
+                send_command('gs c update')
+                moving = false
+            end
+        end
+        if pl and pl.x then
+            mov.x = pl.x
+            mov.y = pl.y
+            mov.z = pl.z
+        end
+        mov.counter = 0
+    end
+end)

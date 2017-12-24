@@ -123,7 +123,7 @@ function init_gear_sets()
 
 	sets.midcast.RA = {
 		head=gear.jse.relic.rng.head,
-		neck="Erudition Necklace",
+		neck="Iskur Gorget",
 		hands=gear.carmine.hands.D,
 		--body= Caban +1,
 		body="Mummu Jacket +1",
@@ -137,7 +137,7 @@ function init_gear_sets()
 		back=gear.jsecapes.amb.rng.tp}
 	
 	sets.midcast.RA.Acc = set_combine(sets.midcast.RA,
-		{head="Mummu Bonnet +1",neck="Combatant's Torque",hands="Floral Gauntlets",waist="Flax Sash",legs="Orion Braccae +1"})
+		{head="Mummu Bonnet +1",neck="Iskur Gorget",hands="Floral Gauntlets",waist="Flax Sash",legs="Orion Braccae +1"})
 	
 	--------------------------------------
 	-- Idle/resting/defense/etc sets
@@ -155,7 +155,7 @@ function init_gear_sets()
 		range="Annihilator",
 		ammo="Eradicating Bullet",
 		head=gear.AdhemarBonnet.B,--5PDT
-		neck="Loricate Torque +1",--6
+		neck="Iskur Gorget",--6
 		body="Kyujutsugi",
 		hands=gear.carmine.hands.D,
 		ring1="Defending Ring",
@@ -203,7 +203,7 @@ function init_gear_sets()
 --		body="Adhemar Jacket", hands="Floral Gauntlets", ring1="Epona's Ring",ring2="Rajas Ring",
 --		back="Bleating Mantle",waist="Windbuffet Belt +1",legs="Meg. Chausses +1",feet=gear.herculean_acc_feet
 		head=gear.AdhemarBonnet.B,
-        neck="Asperity Necklace",
+        neck="Iskur Gorget",
         ear1=gear.ears.melee_dex,
         ear2="Suppanomimi",
         body=gear.AdhemarJacket.B,

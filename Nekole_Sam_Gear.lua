@@ -11,8 +11,8 @@ function user_setup()
 	
     update_combat_form()
 
-	gear.ws_jse_back = {name="Smertrios's Mantle",augments={'STR+20','Accuracy+20 Attack+20','Weapon skill damage +10%',}}
-	gear.stp_jse_back = {name="Smertrios's Mantle",augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Store TP"+10',}}
+--	gear.ws_jse_back = {name="Smertrios's Mantle",augments={'STR+20','Accuracy+20 Attack+20','Weapon skill damage +10%',}}
+--	gear.stp_jse_back = {name="Smertrios's Mantle",augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Store TP"+10',}}
 -- Additional local binds
     send_command('bind ^` input /ja "Hasso" <me>')
     send_command('bind !` input /ja "Seigan" <me>')
@@ -24,6 +24,7 @@ function user_setup()
 	send_command('bind ^q gs c weapons Bow;gs c update')
 
     select_default_macro_book()
+	set_lockstyle()
 end
 
 -- Define sets and vars used by this job file.
@@ -34,7 +35,7 @@ function init_gear_sets()
     
     -- Precast Sets
     -- Precast sets to enhance JAs
-    sets.precast.JA.Meditate = {head="Wakido Kabuto +1",hands="Sakonji Kote +1",back=gear.ws_jse_back}
+    sets.precast.JA.Meditate = {head="Wakido Kabuto +1",hands="Sakonji Kote +1",back=gear.jsecapes.amb.sam.ws}
     sets.precast.JA['Warding Circle'] = {head="Wakido Kabuto +1"}
     sets.precast.JA['Blade Bash'] = {hands="Sakonji Kote +1"}
 	sets.precast.JA['Sekkanoki'] = {hands="Kasuga Kote +1"}
@@ -66,10 +67,20 @@ function init_gear_sets()
 	   
     -- Weaponskill sets
     -- Default set for any weaponskill that isn't any more specifically defined
-    sets.precast.WS = {ammo="Knobkierrie",
-        head=gear.valorous_wsd_head,neck="Fotia Gorget",ear1="Ishvara Earring",ear2="Moonshade Earring",
-        body="Phorcys Korazin",hands=gear.valorous_wsd_hands,ring1="Niqmaddu Ring",ring2="Regal Ring",
-        back=gear.ws_jse_back,waist="Fotia Belt",legs="Hiza. Hizayoroi +2",feet=gear.valorous_wsd_feet}
+    sets.precast.WS = {
+		ammo="Knobkierrie",
+        head=gear.ValorousMask.WSD,
+		neck="Fotia Gorget",
+		ear1="Lugra Earring +1",
+		ear2="Moonshade Earring",
+        body="Phorcys Korazin",
+		hands=gear.ValorousMitts.WSD,
+		ring1="Niqmaddu Ring",
+		ring2="Regal Ring",
+        back=gear.jsecapes.amb.sam.ws,
+		waist="Fotia Belt",
+		legs=gear.ambuscade.hizamaru.feet,
+		feet=gear.ValorousGreaves.WSD}
     sets.precast.WS.SomeAcc = set_combine(sets.precast.WS, {ear1="Cessance Earring",body="Hiza. Haramaki +1"})
 	sets.precast.WS.Acc = set_combine(sets.precast.WS, {head="Ynglinga Sallet",ear1="Cessance Earring",body="Hiza. Haramaki +1"})
     sets.precast.WS.FullAcc = set_combine(sets.precast.WS, {head="Ynglinga Sallet",neck="Moonbeam Nodowa",ear1="Zennaroi Earring",ear2="Telos Earring",body="Hiza. Haramaki +1",ring1="Ramuh Ring +1",ring2="Ramuh Ring +1",})
@@ -140,12 +151,16 @@ function init_gear_sets()
     sets.precast.WS['Apex Arrow'].Fodder = set_combine(sets.precast.WS['Apex Arrow'], {})
 
 	-- Swap to these on Moonshade using WS if at 3000 TP
-	sets.precast.MaxTP = {ear1="Cessance Earring",ear2="Brutal Earring",}
+	sets.precast.MaxTP = {ear1="Cessance Earring",ear2="Lugra Earring +1",}
 	sets.precast.AccMaxTP = {ear1="Zennaroi Earring",ear2="Telos Earring"}
+	sets.AccDayMaxTPWSEars = {ear1="Zennaroi Earring",ear2="Telos Earring"}
+	sets.DayMaxTPWSEars = {ear1="Ishvara Earring",ear2="Brutal Earring",}
+	sets.AccDayWSEars = {ear1="Zennaroi Earring",ear2="Telos Earring"}
+	sets.DayWSEars = {ear1="Ishvara Earring",ear2="Moonshade Earring",}
 	
     -- Midcast Sets
     sets.midcast.FastRecast = {
-        head="Loess Barbuta +1",neck="Voltsurge Torque",ear1="Enchntr. Earring +1",ear2="Loquacious Earring",
+        head="Loess Barbuta +1",neck="Orunmila's Torque",ear1="Enchntr. Earring +1",ear2="Loquacious Earring",
         body="Tartarus Platemail",hands="Leyline Gloves",ring1="Defending Ring",ring2="Prolix Ring",
         back="Moonbeam Cape",waist="Tempus Fugit",legs="Hiza. Hizayoroi +2",feet="Amm Greaves"}
 		
@@ -180,16 +195,27 @@ function init_gear_sets()
 
     sets.Reraise = {head="Twilight Helm",body="Twilight Mail"}
 	
-	sets.Weapons = {main="Dojikiri Yasutsuna",sub="Utu Grip"}
+	sets.Weapons = {main="Amanomurakumo",sub="Utu Grip"}
 	sets.MultiWeapon = {main="Norifusa +1",sub="Bloodrain Strap"}
 	sets.Bow = {range="Cibitshavore"}
 	sets.TreasureHunter = set_combine(sets.TreasureHunter, {})
 	sets.Skillchain = {}
 	
-    sets.idle = {ammo="Staunch Tathlum",
-        head=gear.valorous_wsd_head,neck="Loricate Torque +1",ear1="Etiolation Earring",ear2="Sanare Earring",
-        body="Hiza. Haramaki +1",hands="Sakonji Kote +1",ring1="Defending Ring",ring2="Karieyh Ring",
-        back="Solemnity Cape",waist="Flume Belt",legs="Flamma Dirs +1",feet="Danzo Sune-ate"}
+    sets.idle = {
+		ammo="Staunch Tathlum",
+		sub="Utu Grip",
+        head=gear.ValorousMask.WSD,
+		neck="Loricate Torque +1",
+		ear1="Etiolation Earring",
+		ear2="Sanare Earring",
+        body="Hiza. Haramaki +1",
+		hands="Sakonji Kote +1",
+		ring1="Defending Ring",
+		ring2="Regal Ring",
+        back="Solemnity Cape",
+		waist="Flume Belt +1",
+		legs="Flamma Dirs +1",
+		feet="Danzo Sune-ate"}
 		
     sets.idle.Reraise = set_combine(sets.idle, sets.Reraise)
 
@@ -232,10 +258,20 @@ function init_gear_sets()
     
     -- Normal melee group
     -- Delay 450 GK, 25 Save TP => 65 Store TP for a 5-hit (25 Store TP in gear)
-    sets.engaged = {ammo="Ginsen",
-        head="Flam. Zucchetto +1",neck="Moonbeam Nodowa",ear1="Cessance Earring",ear2="Brutal Earring",
-        body="Kasuga Domaru +1",hands=gear.valorous_wsd_hands,ring1="Niqmaddu Ring",ring2="Petrov Ring",
-        back=gear.stp_jse_back,waist="Ioskeha Belt",legs="Acro Breeches",feet="Flam. Gambieras +1"}
+    sets.engaged = {
+		ammo="Ginsen",
+        head="Flam. Zucchetto +1",
+		neck="Moonbeam Nodowa",
+		ear1="Cessance Earring",
+		ear2="Brutal Earring",
+        body="Kasuga Domaru +1",
+		hands=gear.ValorousMitts.WSD,
+		ring1="Niqmaddu Ring",
+		ring2="Petrov Ring",
+        back=gear.jsecapes.amb.sam.tp,
+		waist="Ioskeha Belt",
+		legs="Acro Breeches",
+		feet="Flam. Gambieras +1"}
     sets.engaged.SomeAcc = {ammo="Ginsen",
         head="Flam. Zucchetto +1",neck="Moonbeam Nodowa",ear1="Cessance Earring",ear2="Brutal Earring",
         body="Kasuga Domaru +1",hands=gear.valorous_wsd_hands,ring1="Niqmaddu Ring",ring2="Ilabrat Ring",
@@ -378,6 +414,9 @@ function select_default_macro_book()
     else
         set_macro_page(1, 7)
     end
+function set_lockstyle()
+	send_command('wait 2; input /lockstyleset 12')
+end
 end
 
 --Job Specific Trust Overwrite

@@ -75,7 +75,7 @@ sets.TreasureHunter = {waist="Chaac Belt"}
 	gear.ring.dt_right = { name="Gelatinous Ring +1" }
     gear.ring.regen_left = { name="Sheltered Ring" }
     gear.ring.regen_right = { name="Paguroidea Ring" }
-    gear.ring.fc_left = { name="Prolix Ring" }
+    gear.ring.fc_left = { name="Kishar Ring" }
     gear.ring.fc_right = { name="Weather. Ring" }
     gear.ring.macc = { name="Sangoma Ring" }
     gear.ring.healing_left = { name="Sirona's Ring" }
@@ -217,6 +217,8 @@ sets.TreasureHunter = {waist="Chaac Belt"}
 	gear.jsecapes.amb.sam = { name="Smertrios's Mantle" }
     gear.jsecapes.amb.sam.tp = { name="Smertrios's Mantle" }
     gear.jsecapes.amb.sam.ws = { name="Smertrios's Mantle" }
+--	gear.ws_jse_back = {name="Smertrios's Mantle",augments={'STR+20','Accuracy+20 Attack+20','Weapon skill damage +10%',}}
+--	gear.stp_jse_back = {name="Smertrios's Mantle",augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Store TP"+10',}}
 	gear.jsecapes.amb.sch = { name="Lugh's Cape" }
 	gear.jsecapes.amb.sch.mab = { name="Lugh's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Mag.Atk.Bns."+10'}} 
     gear.jsecapes.amb.sch.fc = { name="Lugh's Cape", augments={'MND+20','Mag. Acc+20 /Mag. Dmg.+20','"Fast Cast"+10'}}
@@ -555,10 +557,12 @@ sets.TreasureHunter = {waist="Chaac Belt"}
     gear.valorous = {}
     gear.ValorousMask = {}
     gear.ValorousMask.Pet ={name="Valorous Mask", augments={'Pet: Attack+30 Pet: Rng.Atk.+30','Pet: DEX+5','Pet: Accuracy+13 Pet: Rng. Acc.+13'}}
+	gear.ValorousMask.WSD ={name="Valorous Mask", augments={'Accuracy+20 Attack+20','Weapon skill damage +3%','STR+10','Attack+1'}}
     
     gear.ValorousMitts = {}
     gear.ValorousMitts.Pet = {name="Valorous Mitts", augments={'Pet: Attack+26 Pet: Rng.Atk.+26','Pet: Phys. dmg. taken -4%','Pet: Accuracy+12 Pet: Rng. Acc.+12'}}
     gear.ValorousMitts.TP = {name="Valorous Mitts", augments={'Accuracy+20 Attack+20','"Store TP"+1'}}
+	gear.ValorousMitts.WSD = {name="Valorous Mitts", augments={'Attack+10','Weapon skill damage +5%','STR+7','Accuracy+15'}}
     
     gear.ValorousHose = {}
     gear.ValorousHose.Pet = {name="Valorous Hose", augments={'Pet: "Subtle Blow"+9','Pet: STR+14','Pet: Accuracy+15 Pet: Rng. Acc.+15','Pet: Attack+13 Pet: Rng.Atk.+13'}}
@@ -566,6 +570,7 @@ sets.TreasureHunter = {waist="Chaac Belt"}
     
     gear.ValorousGreaves = {}
     gear.ValorousGreaves.Pet = {name="Valorous Greaves", augments={'Pet: Accuracy+30 Pet: Rng. Acc.+30','Pet: "Dbl. Atk."+2','Pet: STR+9','Pet: Attack+1 Pet: Rng.Atk.+1'}}
+	gear.ValorousGreaves.WSD = {name="Valorous Greaves", augments={'Accuracy+23 Attack+23','Weapon skill damage +5%','AGI+2','Attack+5'}}
 	
 	gear.chironic = {}
     gear.ChironicHat = {}
@@ -827,10 +832,10 @@ sets.TreasureHunter = {waist="Chaac Belt"}
 			    -- SMN
     gear.jse.artifact.smn = {
         head="Convoker's Horn +1",
-        body="Convoker's Doublet +1",
+        body="Convoker's Doublet +3",
         hands="Convoker's Bracers +1",
         legs="Convoker's Spats +1",
-        feet="Convoker's Pigaches +1",
+        feet="Convoker's Pigaches +2",
     }
 	gear.jse.relic.smn = {
         head="Glyphic Horn +1",

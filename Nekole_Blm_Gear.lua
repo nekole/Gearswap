@@ -49,7 +49,7 @@ function init_gear_sets()
     -- equip to maximize HP (for Tarus) and minimize MP loss before using convert
     sets.precast.JA.Convert = {}
 	
-	 sets.Adoulin = {
+	sets.Adoulin = {
         body="Councilor's Garb",
     }
 
@@ -99,7 +99,7 @@ function init_gear_sets()
 	sets.precast.FC.Death = {
 		main={ name="Lathi", augments={'MP+80','INT+20','"Mag.Atk.Bns."+20',}},
 		sub="Strobilus",
-		ammo="Ghastly Tathlum +1",
+		ammo="Impatiens",
 		head="Pixie Hairpin +1",
 		body=gear.AmalricDoublet.A, --10
 		hands=gear.AmalricGages.A, --(5)
@@ -116,7 +116,7 @@ function init_gear_sets()
     -- Weaponskill sets
     -- Default set for any weaponskill that isn't any more specifically defined
     sets.precast.WS = {
-		ammo="Ghastly Tathlum +1",
+		ammo="Dosis Tathlum",
 		head="Pixie Hairpin +1",
 		body="Weather. Robe +1",
 		hands=gear.TelchineGloves.Enh,
@@ -165,7 +165,7 @@ function init_gear_sets()
 		body="Zendik Robe",
 		hands=gear.MerlinicDastanas.FST,
 		ring1="Weather. Ring",
-		ring2="Prolix Ring",
+		ring2="Kishar Ring",
 		back="Swith Cape +1",
 		waist="Witful Belt",
 		legs=gear.MerlinicShalwar.MB,
@@ -269,7 +269,7 @@ function init_gear_sets()
 		ear2="Enchntr. Earring +1",
         body=gear.MerlinicJubbah.MAB,
 		hands="Jhakri Cuffs +1",
-		ring1="Stikini Ring",
+		ring1="Kishar Ring",
 		ring2="Stikini Ring",
         back=gear.jsecapes.amb.blm.mab,
 		waist="Luminary Sash",
@@ -667,7 +667,8 @@ end
 function set_lockstyle()
 	send_command('wait 2; input /lockstyleset 8')
 end
-moving = false
+
+	moving = false
 windower.raw_register_event('prerender',function()
     mov.counter = mov.counter + 1;
 	if buffactive['Mana Wall'] then

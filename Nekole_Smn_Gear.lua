@@ -253,7 +253,7 @@ function init_gear_sets()
 		ear2="Loquacious Earring",
 		body="Inyanga Jubbah +1",
 		hands="Helios Gloves",
---		ring1="Kishar Ring",
+		ring1="Kishar Ring",
 		ring2="Stikini Ring",
 		back="Swith Cape +1",
 		waist="Witful Belt",
@@ -269,7 +269,7 @@ function init_gear_sets()
 		ear2="Loquacious Earring",
 		body="Inyanga Jubbah +1",
 		hands="Helios Gloves",
---		ring1="Kishar Ring",
+		ring1="Kishar Ring",
 		ring2="Stikini Ring",
 		back="Swith Cape +1",
 		waist="Witful Belt",
@@ -285,7 +285,7 @@ function init_gear_sets()
 		ear2="Gwati Earring",
 		body=gear.MerlinicJubbah.MAB,
 		hands="Lurid Mitts",
---		ring1="Kishar Ring",
+		ring1="Kishar Ring",
 		ring2="Stikini Ring",
 		back="Seshaw Cape",
 		waist="Luminary Sash",
@@ -448,7 +448,7 @@ function init_gear_sets()
     -- Resting sets
     sets.resting = {
 		main="Chatoyant Staff",
-        head="Beckoner's Horn +1",
+        head=gear.jse.empyrean.smn.head,
 		neck="Loricate Torque +1",
 		ear1="Etiolation Earring",
 		ear2="Ethereal Earring",
@@ -522,7 +522,7 @@ function init_gear_sets()
 		main="Nirvana",
 		sub="Oneiros Grip",
 		ammo="Sancus Sachet +1",
-        head="Beckoner's Horn +1",
+        head=gear.jse.empyrean.smn.head,
 		neck="Caller's Pendant",
 		ear1="Andoaa Earring",
 		ear2="Evans earring",
@@ -536,7 +536,7 @@ function init_gear_sets()
 		feet=gear.jse.artifact.smn.feet}
 		
     sets.idle.PDT.Avatar = {main="Terra's Staff",sub="Oneiros Grip",ammo="Sancus Sachet +1",
-        head="Beckoner's Horn +1",neck="Loricate Torque +1",ear1="Etiolation Earring",ear2="Evans Earring",
+        head=gear.jse.empyrean.smn.head,neck="Loricate Torque +1",ear1="Etiolation Earring",ear2="Evans Earring",
         body="Shomonjijoe +1",hands="Asteria Mitts +1",ring1="Defending Ring",ring2="Gelatinous Ring +1",
         back="Umbra Cape",waist="Regal Belt",legs="Assid. Pants +1",feet=gear.jse.artifact.smn.feet}
 
@@ -544,7 +544,7 @@ function init_gear_sets()
 		main="Nirvana",
 		sub="Oneiros Grip",
 		ammo="Sancus Sachet +1",
-        head="Beckoner's Horn +1",
+        head=gear.jse.empyrean.smn.head,
 		neck="Caller's Pendant",
 		ear1="Andoaa Earring",
 		ear2="Evans earring",
@@ -558,7 +558,7 @@ function init_gear_sets()
 		feet=gear.jse.artifact.smn.feet}
 		
     sets.idle.PDT.Spirit = {main="Terra's Staff",sub="Oneiros Grip",ammo="Sancus Sachet +1",
-        head="Beckoner's Horn +1",neck="Loricate Torque +1",ear1="Etiolation Earring",ear2="Evans Earring",
+        head=gear.jse.empyrean.smn.head,neck="Loricate Torque +1",ear1="Etiolation Earring",ear2="Evans Earring",
         body="Shomonjijoe +1",hands="Asteria Mitts +1",ring1="Defending Ring",ring2="Gelatinous Ring +1",
         back="Umbra Cape",waist="Lucidity Sash",legs="Assid. Pants +1",feet="Battlecast Gaiters"}
 		
@@ -630,7 +630,7 @@ function init_gear_sets()
     
     -- Normal melee group
     sets.engaged = {main="Gridarvor",sub="Bloodrain Strap",ammo="Sancus Sachet +1",
-        head="Beckoner's Horn +1",neck="Shulmanu Collar",ear1="Digni. Earring",ear2="Telos Earring",
+        head=gear.jse.empyrean.smn.head,neck="Shulmanu Collar",ear1="Digni. Earring",ear2="Telos Earring",
         body=gear.jse.artifact.smn.body,hands=gear.merlinic_refresh_hands,ring1="Ramuh Ring +1",ring2="Ramuh Ring +1",
         back=gear.phys_jse_back,waist="Olseni Belt",legs="Assid. Pants +1",feet=gear.jse.artifact.smn.feet}
 end

@@ -1,14 +1,14 @@
 function user_setup()
 	-- Options: Override default values
-    state.OffenseMode:options('Normal','SomeAcc','Acc','FullAcc', 'Fodder')
-    state.WeaponskillMode:options('Normal', 'SomeAcc', 'Acc','FullAcc', 'Fodder')
-    state.HybridMode:options('Normal', 'PDT','MDT')
-    state.PhysicalDefenseMode:options('PDT', 'PDTReraise','PDTHP')
-	state.MagicalDefenseMode:options('MDT', 'MDTReraise', 'BDT', 'MDTHP')
-	state.ResistDefenseMode:options('MEVA', 'Death','Charm')
-	state.IdleMode:options('Normal', 'PDT', 'MDT', 'Refresh', 'Regen', 'Reraise')
-
-    state.ExtraMeleeMode = M{['description']='Extra Melee Mode', 'None', 'MP', 'Knockback', 'MP_Knockback','Twilight'}
+    state.OffenseMode:options('Normal','SomeAcc','Acc','FullAcc','Fodder')
+    state.WeaponskillMode:options('Match','Normal','SomeAcc','Acc','FullAcc','Fodder')
+    state.HybridMode:options('Normal')
+    state.PhysicalDefenseMode:options('PDT', 'PDTReraise')
+    state.MagicalDefenseMode:options('MDT', 'MDTReraise')
+	state.ResistDefenseMode:options('MEVA')
+	state.IdleMode:options('Normal', 'PDT','Refresh','Reraise')
+    state.ExtraMeleeMode = M{['description']='Extra Melee Mode','None'}
+	state.Passive = M{['description'] = 'Passive Mode','None','MP','Twilight'}
 
 	-- Additional local binds
 	send_command('bind ^` input /ja "Hasso" <me>')
@@ -26,19 +26,17 @@ function init_gear_sets()
 	--------------------------------------
 	-- Precast Sets
 	-- Precast sets to enhance JAs
-	sets.precast.JA['Diabolic Eye'] = {hands="Fallen's Finger Gauntlets +1"}
-	sets.precast.JA['Arcane Circle'] = {feet="Ignominy Sollerets +1"}
-	sets.precast.JA['Souleater'] = {head="Ignominy Burgeonet +1"}
-	sets.precast.JA['Weapon Bash'] = {hands="Ignominy Gauntlets +1"}
-	sets.precast.JA['Nether Void'] = {legs="Bale Flanchard +2"}
-	sets.precast.JA['Blood Weapon'] = {body="Fallen's Cuirass +1"}     
-	sets.precast.JA['Dark Seal'] = {body="Fallen's Burgeonet +1"}     
+	sets.precast.JA['Diabolic Eye'] = {}
+	sets.precast.JA['Arcane Circle'] = {}
+	sets.precast.JA['Souleater'] = {}
+	sets.precast.JA['Weapon Bash'] = {}
+	sets.precast.JA['Nether Void'] = {}
+	sets.precast.JA['Blood Weapon'] = {}
+	sets.precast.JA['Dark Seal'] = {}
+	sets.precast.JA['Last Resort'] = {back="Ankou's Mantle"}
                    
 	-- Waltz set (chr and vit)
-	sets.precast.Waltz = {
-	head="Flam. Zucchetto +1",
-	body="Gorney Haubert +1",hands="Buremte Gloves",
-	legs="Acro Breeches",feet="Flam. Gambieras +1"}
+	sets.precast.Waltz = {}
                    
 	-- Don't need any special gear for Healing Waltz.
 	sets.precast.Waltz['Healing Waltz'] = {}
@@ -51,39 +49,38 @@ function init_gear_sets()
 
 	sets.precast.FC = {ammo="Impatiens",
 		head="Carmine Mask +1",neck="Voltsurge Torque",ear1="Enchntr. Earring +1",ear2="Loquacious Earring",
-		body="Nuevo Coselete",hands="Thaumas Gloves",ring1="Prolix Ring",ring2="Veneficium Ring",
-		legs="Blood Cuisses"}			
+		body="Odyss. Chestplate",hands="Leyline Gloves",ring1="Lebeche Ring",ring2="Kishar Ring",
+		back="Moonlight Cape",waist="Flume Belt",legs=gear.odyssean_fc_legs,feet="Odyssean Greaves"}
 
 	sets.precast.FC.Impact = set_combine(sets.precast.FC, {head=empty,body="Twilight Cloak"})
 		
 	-- Midcast Sets
-	sets.midcast.FastRecast = {ammo="Hasty Pinion +1",
+	sets.midcast.FastRecast = {ammo="Staunch Tathlum",
 		head="Carmine Mask +1",neck="Voltsurge Torque",ear1="Enchntr. Earring +1",ear2="Loquacious Earring",
-		body="Nuevo Coselete",hands="Buremte Gloves",ring1="Prolix Ring",ring2="Defending Ring",
-		back="Moonbeam Cape",waist="Zoran's Belt",legs="Blood Cuisses",feet="Ejekamal Boots"}
+		body="Odyss. Chestplate",hands="Leyline Gloves",ring1="Lebeche Ring",ring2="Kishar Ring",
+		back="Moonlight Cape",waist="Tempus Fugit",legs=gear.odyssean_fc_legs,feet="Odyssean Greaves"}
                    
 	-- Specific spells
  
-	sets.midcast['Dark Magic'] = {ammo="Hasty Pinion +1",
-		head="Carmine Mask +1",neck="Sanctity Necklace",ear1="Gwati Earring",ear2="Digni. Earring",
-		body="Gorney Haubert +1",hands="Buremte Gloves",ring1="Mephitas's Ring +1",ring2="Stikini Ring",
-		back="Niht Mantle",waist="Luminary Sash",legs="Bale Flanchard +2",feet="Flam. Gambieras +1"}
+	sets.midcast['Dark Magic'] = {ammo="Pemphredo Tathlum",
+		head="Carmine Mask +1",neck="Erra Pendant",ear1="Gwati Earring",ear2="Digni. Earring",
+		body="Flamma Korazin +1",hands="Flam. Manopolas +1",ring1="Stikini Ring",ring2="Stikini Ring",
+		back="Toro Cape",waist="Eschan Stone",legs="Eschite Cuisses",feet="Flam. Gambieras +2"}
            
-	sets.midcast['Enfeebling Magic'] = {ammo="Hasty Pinion +1",
-		head="Carmine Mask +1",neck="Sanctity Necklace",ear1="Gwati Earring",ear2="Digni. Earring",
-		body="Gorney Haubert +1",hands="Buremte Gloves",ring1="Mephitas's Ring +1",ring2="Stikini Ring",
-		back="Niht Mantle",waist="Luminary Sash",legs="Acro Breeches",feet="Flam. Gambieras +1"}
+	sets.midcast['Enfeebling Magic'] = {ammo="Pemphredo Tathlum",
+		head="Carmine Mask +1",neck="Erra Pendant",ear1="Gwati Earring",ear2="Digni. Earring",
+		body="Flamma Korazin +1",hands="Flam. Manopolas +1",ring1="Stikini Ring",ring2="Stikini Ring",
+		back="Toro Cape",waist="Eschan Stone",legs="Flamma Dirs +1",feet="Flam. Gambieras +2"}
 		   
-	sets.midcast['Dread Spikes'] = set_combine(sets.midcast['Dark Magic'], {body="Bale Cuirass +2"})
-	
-	sets.midcast['Absorb-TP'] = set_combine(sets.midcast['Dark Magic'], {body="Bale Gauntlets +2"})
+	sets.midcast['Dread Spikes'] = set_combine(sets.midcast['Dark Magic'], {})
+	sets.midcast.Absorb = set_combine(sets.midcast['Dark Magic'], {back="Ankou Mantle"})
            
-	sets.midcast.Stun = {ammo="Hasty Pinion +1",
-		head="Carmine Mask +1",neck="Voltsurge Torque",ear1="Gwati Earring",ear2="Digni. Earring",
-		body="Nuevo Coselete",hands="Buremte Gloves",ring1="Mephitas's Ring +1",ring2="Stikini Ring",
-		back="Niht Mantle",waist="Zoran's Belt",legs="Blood Cuisses",feet="Ejekamal Boots"}
+	sets.midcast.Stun = {ammo="Pemphredo Tathlum",
+		head="Carmine Mask +1",neck="Erra Pendant",ear1="Gwati Earring",ear2="Digni. Earring",
+		body="Flamma Korazin +1",hands="Flam. Manopolas +1",ring1="Stikini Ring",ring2="Stikini Ring",
+		back="Toro Cape",waist="Eschan Stone",legs="Eschite Cuisses",feet="Flam. Gambieras +2"}
                    
-	sets.midcast.Drain = set_combine(sets.midcast['Dark Magic'], {waist="Fucho-no-obi"})
+	sets.midcast.Drain = set_combine(sets.midcast['Dark Magic'], {ring1="Evanescence Ring",ring2="Archon Ring",back="Niht Mantle"})
                    
 	sets.midcast.Aspir = sets.midcast.Drain
 	
@@ -92,40 +89,39 @@ function init_gear_sets()
 	sets.midcast.Cure = {}
 	
 	sets.Self_Healing = {neck="Phalaina Locket",hands="Buremte Gloves",ring2="Kunaji Ring",waist="Gishdubar Sash"}
-	sets.Cure_Recieved = {neck="Phalaina Locket",hands="Buremte Gloves",ring2="Kunaji Ring",waist="Gishdubar Sash"}
+	sets.Cure_Received = {neck="Phalaina Locket",hands="Buremte Gloves",ring2="Kunaji Ring",waist="Gishdubar Sash"}
 	sets.Self_Refresh = {waist="Gishdubar Sash"}
 						                   
 	-- Weaponskill sets
 	-- Default set for any weaponskill that isn't any more specifically defined
-    sets.precast.WS = {ammo="Ginsen",
-        head="Flam. Zucchetto +1",neck="Asperity Necklace",ear1="Bladeborn Earring",ear2="Steelflash Earring",
-        body="Phorcys Korazin",hands="Acro Gauntlets",ring1="Rajas Ring",ring2="Spiral Ring",
-        back="Buquwik Cape",waist="Fotia Belt",legs="Acro Breeches",feet="Ejekamal Boots"}
-    sets.precast.WS.SomeAcc = set_combine(sets.precast.WS, {Head="Flam. Zucchetto +1", back="Letalis Mantle"})
-	sets.precast.WS.Acc = set_combine(sets.precast.WS, {Head="Flam. Zucchetto +1",back="Letalis Mantle",ring1="Ramuh Ring +1",ring2="Ramuh Ring +1",})
-    sets.precast.WS.FullAcc = set_combine(sets.precast.WS, {Head="Flam. Zucchetto +1",ear1="Zennaroi Earring",body="Gorney Haubert +1",back="Ground. Mantle +1",waist="Olseni Belt",feet="Flam. Gambieras +1"})
-    sets.precast.WS.Fodder = set_combine(sets.precast.WS, {ear1="Trux Earring", ear2="Brutal Earring"})
+    sets.precast.WS = {ammo="Knobkierrie",
+		head="Flam. Zucchetto +2",neck="Fotia Gorget",ear1="Lugra Earring +1",ear2="Moonshade Earring",
+		body=gear.valorous_wsd_body,hands="Sulev. Gauntlets +2",ring1="Regal Ring",ring2="Niqmaddu Ring",
+		back="Ankou's Mantle",waist="Fotia Belt",legs="Sulev. Cuisses +2",feet="Flam. Gambieras +2"}
+
+	sets.precast.WS.SomeAcc = set_combine(sets.precast.WS, {})
+	sets.precast.WS.Acc = set_combine(sets.precast.WS, {})
+	sets.precast.WS.FullAcc = set_combine(sets.precast.WS, {neck="Combatant's Torque"})
+	sets.precast.WS.Fodder = set_combine(sets.precast.WS, {})
 
     -- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.	
-    sets.precast.WS['Catastrophe'] = set_combine(sets.precast.WS, {neck="Snow Gorget"})
-    sets.precast.WS['Catastrophe'].SomeAcc = set_combine(sets.precast.WS.SomeAcc, {neck="Snow Gorget"})
-    sets.precast.WS['Catastrophe'].Acc = set_combine(sets.precast.WS.Acc, {neck="Snow Gorget"})
-    sets.precast.WS['Catastrophe'].FullAcc = set_combine(sets.precast.WS.FullAcc, {neck="Snow Gorget"})
-    sets.precast.WS['Catastrophe'].Fodder = set_combine(sets.precast.WS.Fodder, {neck="Snow Gorget"})
+    sets.precast.WS['Catastrophe'] = set_combine(sets.precast.WS, {})
+    sets.precast.WS['Catastrophe'].SomeAcc = set_combine(sets.precast.WS.SomeAcc, {})
+    sets.precast.WS['Catastrophe'].Acc = set_combine(sets.precast.WS.Acc, {})
+    sets.precast.WS['Catastrophe'].FullAcc = set_combine(sets.precast.WS.FullAcc, {})
+    sets.precast.WS['Catastrophe'].Fodder = set_combine(sets.precast.WS.Fodder, {})
 
-    sets.precast.WS['Entropy'] = set_combine(sets.precast.WS, {neck="Soil Gorget"})
-    sets.precast.WS['Entropy'].SomeAcc = set_combine(sets.precast.WS.SomeAcc, {neck="Soil Gorget"})
-    sets.precast.WS['Entropy'].Acc = set_combine(sets.precast.WS.Acc, {neck="Soil Gorget"})
-    sets.precast.WS['Entropy'].FullAcc = set_combine(sets.precast.WS.FullAcc, {neck="Soil Gorget"})
-    sets.precast.WS['Entropy'].Fodder = set_combine(sets.precast.WS.Fodder, {neck="Soil Gorget"})
+    sets.precast.WS['Entropy'] = set_combine(sets.precast.WS, {})
+    sets.precast.WS['Entropy'].SomeAcc = set_combine(sets.precast.WS.SomeAcc, {})
+    sets.precast.WS['Entropy'].Acc = set_combine(sets.precast.WS.Acc, {})
+    sets.precast.WS['Entropy'].FullAcc = set_combine(sets.precast.WS.FullAcc, {})
+    sets.precast.WS['Entropy'].Fodder = set_combine(sets.precast.WS.Fodder, {})
      
-    sets.precast.WS['Resolution'] = set_combine(sets.precast.WS, {neck="Soil Gorget"})
-    sets.precast.WS['Resolution'].SomeAcc = set_combine(sets.precast.WS.SomeAcc, {neck="Soil Gorget"})
-    sets.precast.WS['Resolution'].Acc = set_combine(sets.precast.WS.Acc, {neck="Soil Gorget"})
-    sets.precast.WS['Resolution'].FullAcc = set_combine(sets.precast.WS.FullAcc, {neck="Soil Gorget"})
-    sets.precast.WS['Resolution'].Fodder = set_combine(sets.precast.WS.Fodder, {neck="Soil Gorget"})
-     
-     
+    sets.precast.WS['Resolution'] = set_combine(sets.precast.WS, {})
+    sets.precast.WS['Resolution'].SomeAcc = set_combine(sets.precast.WS.SomeAcc, {})
+    sets.precast.WS['Resolution'].Acc = set_combine(sets.precast.WS.Acc, {})
+    sets.precast.WS['Resolution'].FullAcc = set_combine(sets.precast.WS.FullAcc, {})
+    sets.precast.WS['Resolution'].Fodder = set_combine(sets.precast.WS.Fodder, {})     
            
      -- Sets to return to when not performing an action.
            
@@ -133,80 +129,76 @@ function init_gear_sets()
      sets.resting = {}
            
 	-- Swap to these on Moonshade using WS if at 3000 TP
-	sets.precast.MaxTP = {ear1="Bladeborn Earring",ear2="Steelflash Earring"}
-	sets.precast.AccMaxTP = {ear1="Zennaroi Earring",ear2="Steelflash Earring"}
+	sets.MaxTP = {ear1="Lugra Earring +1",ear2="Lugra Earring",}
+	sets.AccMaxTP = {ear1="Zennaroi Earring",ear2="Telos Earring"}
+	sets.AccDayMaxTPWSEars = {ear1="Zennaroi Earring",ear2="Telos Earring"}
+	sets.DayMaxTPWSEars = {ear1="Ishvara Earring",ear2="Brutal Earring",}
+	sets.AccDayWSEars = {ear1="Zennaroi Earring",ear2="Telos Earring"}
+	sets.DayWSEars = {ear1="Brutal Earring",ear2="Moonshade Earring",}
      
             -- Idle sets
            
     sets.idle = {ammo="Staunch Tathlum",
-		head="Baghere Salade",neck="Loricate Torque +1",ear1="Sanare Earring",ear2="Ethereal Earring",
-        body="Acro Surcoat",hands="Buremte Gloves",ring1="Defending Ring",ring2="Sheltered Ring",
-        back="Shadow Mantle",waist="Flume Belt",legs="Blood Cuisses",feet="Flam. Gambieras +1"}
+		head="Jumalik Helm",neck="Loricate Torque +1",ear1="Genmei Earring",ear2="Ethereal Earring",
+		body="Jumalik Mail",hands="Sulev. Gauntlets +2",ring1="Defending Ring",ring2="Dark Ring",
+		back="Shadow Mantle",waist="Flume Belt",legs="Carmine Cuisses +1",feet="Amm Greaves"}
 		
     sets.idle.PDT = {ammo="Staunch Tathlum",
-		head="Baghere Salade",neck="Loricate Torque +1",ear1="Sanare Earring",ear2="Ethereal Earring",
-        body="Acro Surcoat",hands="Buremte Gloves",ring1="Defending Ring",ring2="Dark Ring",
-        back="Shadow Mantle",waist="Flume Belt",legs="Acro Breeches",feet="Flam. Gambieras +1"}
+		head="Jumalik Helm",neck="Loricate Torque +1",ear1="Genmei Earring",ear2="Ethereal Earring",
+		body="Jumalik Mail",hands="Sulev. Gauntlets +2",ring1="Defending Ring",ring2="Dark Ring",
+		back="Shadow Mantle",waist="Flume Belt",legs="Carmine Cuisses +1",feet="Amm Greaves"}
 
-	sets.idle.PDTHP = {}
-	
-    sets.idle.Refresh = {ammo="Staunch Tathlum",
-		head="Wivre Hairpin",neck="Coatl Gorget +1",ear1="Sanare Earring",ear2="Ethereal Earring",
-        body="Twilight Mail",hands="Buremte Gloves",ring1="Defending Ring",ring2="Sheltered Ring",
-        back="Shadow Mantle",waist="Flume Belt",legs="Blood Cuisses",feet="Flam. Gambieras +1"}
-
+	sets.idle.Weak = set_combine(sets.idle, {head="Twilight Helm",body="Twilight Mail"})
 		
-    sets.idle.Reraise = {ammo="Staunch Tathlum",
-		head="Twilight Helm",neck="Loricate Torque +1",ear1="Sanare Earring",ear2="Ethereal Earring",
-        body="Twilight Mail",hands="Buremte Gloves",ring1="Defending Ring",ring2="Dark Ring",
-        back="Shadow Mantle",waist="Flume Belt",legs="Acro Breeches",feet="Flam. Gambieras +1"}
-     
-    sets.idle.Weak = {ammo="Staunch Tathlum",
-		head="Twilight Helm",neck="Loricate Torque +1",ear1="Sanare Earring",ear2="Ethereal Earring",
-        body="Twilight Mail",hands="Buremte Gloves",ring1="Defending Ring",ring2="Dark Ring",
-        back="Shadow Mantle",waist="Flume Belt",legs="Blood Cuisses",feet="Flam. Gambieras +1"}
+	sets.idle.Reraise = set_combine(sets.idle, {head="Twilight Helm",body="Twilight Mail"})
            
     -- Defense sets
 	sets.defense.PDT = {ammo="Staunch Tathlum",
-		head="Flam. Zucchetto +1",neck="Loricate Torque +1",
-        body="Acro Surcoat",hands="Buremte Gloves",ring1="Defending Ring",ring2="Dark Ring",
-        back="Moonbeam Cape",waist="Flume Belt",legs="Acro Breeches",feet="Flam. Gambieras +1"}
+		head="Loess Barbuta +1",neck="Loricate Torque +1",ear1="Genmei Earring",ear2="Ethereal Earring",
+		body="Tartarus Platemail",hands="Sulev. Gauntlets +2",ring1="Moonbeam Ring",ring2="Moonbeam Ring",
+		back="Shadow Mantle",waist="Flume Belt",legs="Sulev. Cuisses +2",feet="Amm Greaves"}
 		
-	sets.defense.PDTReraise = set_combine(sets.defense.PDT, sets.Reraise)
-     
-    sets.defense.Reraise = {
-		head="Twilight Helm",neck="Loricate Torque +1",
-        body="Twilight Mail",hands="Buremte Gloves",ring1="Defending Ring",ring2="Dark Ring",
-        back="Moonbeam Cape",waist="Flume Belt",legs="Acro Breeches",feet="Flam. Gambieras +1"}
-     
+	sets.defense.PDTReraise = set_combine(sets.defense.PDT, {head="Twilight Helm",body="Twilight Mail"})
+
 	sets.defense.MDT = {ammo="Staunch Tathlum",
-		head="Baghere Salade",neck="Loricate Torque +1",ear1="Sanare Earring",ear2="Ethereal Earring",
-        body="Acro Surcoat",hands="Buremte Gloves",ring1="Defending Ring",ring2="Dark Ring",
-        back="Engulfer Cape +1",waist="Flume Belt",legs="Acro Breeches",feet="Flam. Gambieras +1"}
+		head="Loess Barbuta +1",neck="Warder's Charm +1",ear1="Genmei Earring",ear2="Ethereal Earring",
+		body="Tartarus Platemail",hands="Sulev. Gauntlets +2",ring1="Moonbeam Ring",ring2="Moonbeam Ring",
+		back="Moonlight Cape",waist="Flume Belt",legs="Sulev. Cuisses +2",feet="Amm Greaves"}
 		
-	sets.defense.MDTHP = {}
+	sets.defense.MDTReraise = set_combine(sets.defense.MDT, {head="Twilight Helm",body="Twilight Mail"})
 		
-	sets.defense.MDTReraise = set_combine(sets.defense.MDT, sets.Reraise)
-		
-	sets.defense.BDT = {}
-	
-	sets.defense.MEVA = {}
-	
-	sets.defense.Death = {}
-	
-	sets.defense.Charm = {}
+	sets.defense.MEVA = {ammo="Staunch Tathlum",
+		head="Loess Barbuta +1",neck="Warder's Charm +1",ear1="Genmei Earring",ear2="Ethereal Earring",
+		body="Tartarus Platemail",hands="Sulev. Gauntlets +2",ring1="Moonbeam Ring",ring2="Moonbeam Ring",
+		back="Moonlight Cape",waist="Flume Belt",legs="Sulev. Cuisses +2",feet="Amm Greaves"}
      
-	sets.Kiting = {legs="Blood Cuisses",back="Solemnity Cape"}
-     
-    sets.Reraise = {head="Twilight Helm",body="Twilight Mail"}
+	sets.Kiting = {legs="Carmine Cuisses +1"}
+	sets.passive.Reraise = {head="Twilight Helm",body="Twilight Mail"}
+	sets.buff.Doom = set_combine(sets.buff.Doom, {})
+	sets.buff.Sleep = {head="Frenzy Sallet"}
      
 	-- Engaged sets
-    sets.engaged = {}
-	sets.engaged.SomeAcc = {}
-	sets.engaged.Acc = {}
-	sets.engaged.FullAcc = {}
-	sets.engaged.Fodder = {}
-	
+	sets.engaged = {ammo="Ginsen",
+		head="Flam. Zucchetto +2",neck="Asperity Necklace",ear1="Brutal Earring",ear2="Cessance Earring",
+		body=gear.valorous_wsd_body,hands=gear.valorous_acc_hands,ring1="Petrov Ring",ring2="Niqmaddu Ring",
+		back="Ankou's Mantle",waist="Ioskeha Belt",legs="Sulev. Cuisses +2",feet="Flam. Gambieras +2"}
+    sets.engaged.SomeAcc = {ammo="Ginsen",
+		head="Flam. Zucchetto +2",neck="Combatant's Torque",ear1="Brutal Earring",ear2="Cessance Earring",
+		body=gear.valorous_wsd_body,hands=gear.valorous_acc_hands,ring1="Flamma Ring",ring2="Niqmaddu Ring",
+		back="Ankou's Mantle",waist="Ioskeha Belt",legs="Sulev. Cuisses +2",feet="Flam. Gambieras +2"}
+	sets.engaged.Acc = {ammo="Ginsen",
+		head="Flam. Zucchetto +2",neck="Combatant's Torque",ear1="Digni. Earring",ear2="Telos Earring",
+		body=gear.valorous_wsd_body,hands=gear.valorous_acc_hands,ring1="Flamma Ring",ring2="Niqmaddu Ring",
+		back="Ankou's Mantle",waist="Ioskeha Belt",legs="Sulev. Cuisses +2",feet="Flam. Gambieras +2"}
+    sets.engaged.FullAcc = {ammo="Ginsen",
+		head="Flam. Zucchetto +2",neck="Combatant's Torque",ear1="Zennaroi Earring",ear2="Telos Earring",
+		body=gear.valorous_wsd_body,hands=gear.valorous_acc_hands,ring1="Flamma Ring",ring2="Ramuh Ring +1",
+		back="Ankou's Mantle",waist="Ioskeha Belt",legs="Sulev. Cuisses +2",feet="Flam. Gambieras +2"}
+    sets.engaged.Fodder = {ammo="Ginsen",
+		head="Flam. Zucchetto +2",neck="Asperity Necklace",ear1="Brutal Earring",ear2="Sherida Earring",
+		body=gear.valorous_wsd_body,hands=gear.valorous_acc_hands,ring1="Petrov Ring",ring2="Niqmaddu Ring",
+		back="Ankou's Mantle",waist="Ioskeha Belt",legs="Sulev. Cuisses +2",feet="Flam. Gambieras +2"}
+--[[
     sets.engaged.Adoulin = {}
 	sets.engaged.SomeAcc.Adoulin = {}
 	sets.engaged.Acc.Adoulin = {}
@@ -508,11 +500,12 @@ function init_gear_sets()
 	sets.engaged.Ragnarok.Acc.MDT.Adoulin.AM = {}
 	sets.engaged.Ragnarok.FullAcc.MDT.Adoulin.AM = {}
 	sets.engaged.Ragnarok.Fodder.MDT.Adoulin.AM = {}
-	
+]]--
 	--Extra Special Sets
 	
 	sets.buff.Souleater = {}
-	sets.Weapons = {main="Mekosuchus Blade",sub="Bloodrain Strap"}
+	sets.Weapons = {main="Montante +1",sub="Utu Grip"}
+	sets.Scythe = {main="Misanthropy",sub="Utu Grip"}
 	sets.buff.Doom = set_combine(sets.buff.Doom, {})
 	sets.buff.Sleep = {head="Frenzy Sallet"}
 	sets.latent_refresh = {waist="Fucho-no-Obi"}

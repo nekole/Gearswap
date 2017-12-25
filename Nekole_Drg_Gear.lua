@@ -1,14 +1,15 @@
 -- Setup vars that are user-dependent.  Can override this function in a sidecar file.
 function user_setup()
 	-- Options: Override default values
-    state.OffenseMode:options('Normal', 'SomeAcc', 'Acc', 'FullAcc', 'Fodder')
-    state.WeaponskillMode:options('Normal', 'SomeAcc', 'Acc', 'FullAcc', 'Fodder')
-    state.HybridMode:options('Normal', 'PDT', 'Counter')
+    state.OffenseMode:options('Normal','SomeAcc','Acc','FullAcc','Fodder')
+    state.WeaponskillMode:options('Match','Normal','SomeAcc','Acc','FullAcc','Fodder')
+    state.HybridMode:options('Normal')
     state.PhysicalDefenseMode:options('PDT', 'PDTReraise')
     state.MagicalDefenseMode:options('MDT', 'MDTReraise')
 	state.ResistDefenseMode:options('MEVA')
-	state.IdleMode:options('Normal', 'PDT', 'Refresh', 'Regen', 'Reraise')
-    state.ExtraMeleeMode = M{['description']='Extra Melee Mode', 'None', 'MP', 'Twilight'}
+	state.IdleMode:options('Normal', 'PDT','Refresh','Reraise')
+    state.ExtraMeleeMode = M{['description']='Extra Melee Mode','None'}
+	state.Passive = M{['description'] = 'Passive Mode','None','MP','Twilight'}
 	
     update_combat_form()
 
@@ -19,6 +20,7 @@ function user_setup()
 	send_command('bind !` input /ja "Seigan" <me>')
 	send_command('bind ^f11 gs c cycle MagicalDefenseMode')
 	send_command('bind !f11 gs c cycle ExtraMeleeMode')
+	send_command('bind @f7 gs c toggle AutoJumpMode')
 	send_command('bind @` gs c cycle SkillchainMode')
 end
 
@@ -30,78 +32,75 @@ function init_gear_sets()
 	
 	-- Precast Sets
 	-- Precast sets to enhance JAs
-	sets.precast.JA.Angon = {ammo="Angon",hands="Ptero. Fin. G. +1"}
-	sets.precast.JA.Jump = {ammo="Hagneia Stone",
-		head="Flam. Zucchetto +1",neck="Ganesha's Mala",ear1="Brutal Earring",ear2="Tripuido Earring",
-		body="Vishap Mail",hands="Vish. Fin. Gaunt",ring1="Rajas Ring",ring2="Meridian Ring",
-		back="Atheling Mantle",waist="Olseni Belt",legs="Xaddi Cuisses",feet="Cizin Greaves"}
+	sets.precast.JA.Angon = {ammo="Angon"} --hands="Ptero. Fin. G. +1"
+	sets.precast.JA.Jump = {ammo="Ginsen",
+		head="Flam. Zucchetto +2",neck="Ganesha's Mala",ear1="Brutal Earring",ear2="Sherida Earring",
+		body=gear.valorous_wsd_body,hands=gear.valorous_acc_hands,ring1="Petrov Ring",ring2="Niqmaddu Ring",
+		back="Brigantia's Mantle",waist="Windbuffet Belt +1",legs="Sulev. Cuisses +2",feet="Flam. Gambieras +2"}
 	sets.precast.JA['Ancient Circle'] = {} --legs="Vishap Brais"
-	sets.precast.JA['High Jump'] = {ammo="Hagneia Stone",
-		head="Flam. Zucchetto +1",neck="Ganesha's Mala",ear1="Brutal Earring",ear2="Tripuido Earring",
-		body="Vishap Mail",hands="Vish. Fin. Gaunt",ring1="Rajas Ring",ring2="Meridian Ring",
-		back="Atheling Mantle",waist="Olseni Belt",legs="Xaddi Cuisses",feet="Cizin Greaves"}
-	sets.precast.JA['Soul Jump'] = {ammo="Hagneia Stone",
-		head="Flam. Zucchetto +1",neck="Ganesha's Mala",ear1="Brutal Earring",ear2="Tripuido Earring",
-		body="Lncr. Plackart +2",hands="Xaddi Gauntlets",ring1="Rajas Ring",ring2="Meridian Ring",
-		back="Atheling Mantle",waist="Olseni Belt",legs="Lncr. Cuissots +2",feet="Cizin Greaves"}
-	sets.precast.JA['Spirit Jump'] = {ammo="Hagneia Stone",
-		head="Flam. Zucchetto +1",neck="Ganesha's Mala",ear1="Brutal Earring",ear2="Tripuido Earring",
-		body="Lncr. Plackart +2",hands="Xaddi Gauntlets",ring1="Rajas Ring",ring2="Meridian Ring",
-		back="Atheling Mantle",waist="Olseni Belt",legs="Lncr. Cuissots +2",feet="Lncr. Schynbld. +2"}
+	sets.precast.JA['High Jump'] = {ammo="Ginsen",
+		head="Flam. Zucchetto +2",neck="Ganesha's Mala",ear1="Brutal Earring",ear2="Sherida Earring",
+		body=gear.valorous_wsd_body,hands=gear.valorous_acc_hands,ring1="Petrov Ring",ring2="Niqmaddu Ring",
+		back="Brigantia's Mantle",waist="Windbuffet Belt +1",legs="Sulev. Cuisses +2",feet="Flam. Gambieras +2"}
+	sets.precast.JA['Soul Jump'] = {ammo="Ginsen",
+		head="Flam. Zucchetto +2",neck="Ganesha's Mala",ear1="Brutal Earring",ear2="Sherida Earring",
+		body=gear.valorous_wsd_body,hands=gear.valorous_acc_hands,ring1="Petrov Ring",ring2="Niqmaddu Ring",
+		back="Brigantia's Mantle",waist="Windbuffet Belt +1",legs="Sulev. Cuisses +2",feet="Flam. Gambieras +2"}
+	sets.precast.JA['Spirit Jump'] = {ammo="Ginsen",
+		head="Flam. Zucchetto +2",neck="Ganesha's Mala",ear1="Brutal Earring",ear2="Sherida Earring",
+		body=gear.valorous_wsd_body,hands=gear.valorous_acc_hands,ring1="Petrov Ring",ring2="Niqmaddu Ring",
+		back="Brigantia's Mantle",waist="Windbuffet Belt +1",legs="Sulev. Cuisses +2",feet="Flam. Gambieras +2"}
 	sets.precast.JA['Super Jump'] = {}
-	sets.precast.JA['Spirit Link'] = {head="Vishap Armet",hands="Lnc. Vmbrc. +2"}
-	sets.precast.JA['Call Wyvern'] = {body="Ptero. Mail +1"}
-	sets.precast.JA['Deep Breathing'] = {hands="Ptero. Armet +1"}
-	sets.precast.JA['Spirit Surge'] = {body="Ptero. Mail +1"}
+	sets.precast.JA['Spirit Link'] = {head="Vishap Armet +1"} --head="Vishap Armet",hands="Lnc. Vmbrc. +2"
+	sets.precast.JA['Call Wyvern'] = {} --body="Ptero. Mail +1"
+	sets.precast.JA['Deep Breathing'] = {} --hands="Ptero. Armet +1"
+	sets.precast.JA['Spirit Surge'] = {} --body="Ptero. Mail +1"
 
+	-- Fast cast sets for spells
 	
-	-- Healing Breath sets
-	sets.HealingBreath = {ammo="Hagneia Stone",
-		head="Ptero. Armet +1",neck="Lancer's Torque",
-		back="Merciful Cape",waist="Glassblower's Belt",legs="Drachen Brais"}
-		
-	sets.SmitingBreath = {ammo="Hagneia Stone",
-		head="Ptero. Armet +1",neck="Lancer's Torque",
-		back="Bleating Mantle",waist="Glassblower's Belt",legs="Drachen Brais"}
-		
+	sets.precast.FC = {ammo="Impatiens",
+		head="Carmine Mask +1",neck="Voltsurge Torque",ear1="Enchntr. Earring +1",ear2="Loquacious Earring",
+		body="Taeon Tabard",hands="Leyline Gloves",ring1="Lebeche Ring",ring2="Prolix Ring",
+		back="Moonlight Cape",waist="Flume Belt",legs="Founder's Greaves",feet="Carmine Greaves +1"}
+	
 	-- Waltz set (chr and vit)
-	sets.precast.Waltz = {ammo="Sonia's Plectrum",
-		head="Flam. Zucchetto +1",
-		body="Ptero. Mail +1",hands="Ptero. Fin. G. +1",
-		legs="Cizin Breeches",feet="Gor. Sollerets +1"}
+	sets.precast.Waltz = {}
 		
 	-- Don't need any special gear for Healing Waltz.
 	sets.precast.Waltz['Healing Waltz'] = {}
 
-	sets.midcast.Breath = set_combine(sets.midcast.FastRecast, { head="Vishap Armet +1" })
-	
 	sets.midcast.Cure = {}
 	
 	sets.Self_Healing = {neck="Phalaina Locket",hands="Buremte Gloves",ring2="Kunaji Ring",waist="Gishdubar Sash"}
-	sets.Cure_Recieved = {neck="Phalaina Locket",hands="Buremte Gloves",ring2="Kunaji Ring",waist="Gishdubar Sash"}
+	sets.Cure_Received = {neck="Phalaina Locket",hands="Buremte Gloves",ring2="Kunaji Ring",waist="Gishdubar Sash"}
 	sets.Self_Refresh = {waist="Gishdubar Sash"}
 	
-	-- Fast cast sets for spells
-	
-	sets.precast.FC = {head="Vishap Armet +1", neck="Voltsurge Torque", ear2="Loquacious Earring"}
-    
 	-- Midcast Sets
-	sets.midcast.FastRecast = {
-		head="Vishap Armet",
-		body="Ptero. Mail +1",hands="Ptero. Fin. G. +1",
-		legs="Cizin Breeches",feet="Gor. Sollerets +1"}	
+	sets.midcast.FastRecast = {ammo="Staunch Tathlum",
+		head="Carmine Mask +1",neck="Voltsurge Torque",ear1="Enchntr. Earring +1",ear2="Loquacious Earring",
+		body="Taeon Tabard",hands="Leyline Gloves",ring1="Lebeche Ring",ring2="Prolix Ring",
+		back="Moonlight Cape",waist="Tempus Fugit",legs="Founder's Greaves",feet="Carmine Greaves +1"}
+		
+	-- Put HP+ gear and the AF head to make healing breath trigger more easily with this set.
+	sets.midcast.HB_Trigger = set_combine(sets.midcast.FastRecast, {head="Vishap Armet +1"})
+	
+	-- Breath sets
+	sets.HealingBreath = {back="Brigantia's Mantle"}
+		
+	sets.SmitingBreath = {back="Brigantia's Mantle"}
 		
 	-- Weaponskill sets
 
 	-- Default set for any weaponskill that isn't any more specifically defined
 	
-	sets.precast.WS = {ammo="Thew Bomblet",
-		head="Flam. Zucchetto +1",neck="Ganesha's Mala",ear1="Bladeborn Earring",ear2="Steelflash Earring",
-		body="Ptero. Mail +1",hands="Xaddi Gauntlets",ring1="Rajas Ring",ring2="Meridian Ring",
-		back="Atheling Mantle",waist="Fotia Belt",legs="Xaddi Cuisses",feet="Gor. Sollerets +1"}
+	sets.precast.WS = {ammo="Knobkierrie",
+		head="Flam. Zucchetto +2",neck="Fotia Gorget",ear1="Moonshade Earring",ear2="Sherida Earring",
+		body=gear.valorous_wsd_body,hands="Sulev. Gauntlets +2",ring1="Regal Ring",ring2="Niqmaddu Ring",
+		back="Brigantia's Mantle",waist="Fotia Belt",legs="Sulev. Cuisses +2",feet="Flam. Gambieras +2"}
 		
-	sets.precast.WS.SomeAcc = set_combine(sets.precast.WS, {ammo="Hasty Pinion +1",body="Acro Surcoat"})
-	sets.precast.WS.Acc = set_combine(sets.precast.WS, {ammo="Hasty Pinion +1",body="Acro Surcoat",hands="Xaddi Gauntlets"})
+	sets.precast.WS.SomeAcc = set_combine(sets.precast.WS, {})
+	sets.precast.WS.Acc = set_combine(sets.precast.WS, {neck="Shulmanu Collar"})
+	sets.precast.WS.FullAcc = set_combine(sets.precast.WS, {neck="Shulmanu Collar"})
 	sets.precast.WS.Fodder = set_combine(sets.precast.WS, {})
 	
 	-- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
@@ -110,10 +109,10 @@ function init_gear_sets()
 	sets.precast.WS['Stardiver'].Acc = set_combine(sets.precast.WS.Acc, {})
 	sets.precast.WS['Stardiver'].Fodder = set_combine(sets.precast.WS.Fodder, {})
 
-	sets.precast.WS['Drakesbane'] = set_combine(sets.precast.WS, {legs="Lncr. Cuissots +2"})
+	sets.precast.WS['Drakesbane'] = set_combine(sets.precast.WS, {})
 	sets.precast.WS['Drakesbane'].SomeAcc = set_combine(sets.precast.WS.Acc, {})
 	sets.precast.WS['Drakesbane'].Acc = set_combine(sets.precast.WS.Acc, {})
-	sets.precast.WS['Drakesbane'].Fodder = set_combine(sets.precast.WS.Fodder, {legs="Lncr. Cuissots +2"})
+	sets.precast.WS['Drakesbane'].Fodder = set_combine(sets.precast.WS.Fodder, {})
 
 
 	
@@ -121,65 +120,60 @@ function init_gear_sets()
 	
 	-- Resting sets
 	sets.resting = {}
-	
 
 	-- Idle sets
-	sets.idle = {}
-
-	-- Idle sets
-	
-	sets.idle = {
-		head="Flam. Zucchetto +1",neck="Wiglen Gorget",ear1="Bladeborn Earring",ear2="Steelflash Earring",
-		body="Ares' cuirass +1",hands="Cizin Mufflers",ring1="Sheltered Ring",ring2="Paguroidea Ring",
-		back="Letalis Mantle",waist="Goading Belt",legs="Blood Cuisses",feet="Ejekamal Boots"}
-
-	sets.idle.Weak = {
-		head="Twilight Helm",neck="Wiglen Gorget",ear1="Bladeborn Earring",ear2="Steelflash Earring",
-		body="Twilight Mail",hands="Buremte Gloves",ring1="Sheltered Ring",ring2="Paguroidea Ring",
-		back="Letalis Mantle",waist="Goading Belt",legs="Cizin Breeches",feet="Ejekamal Boots"}
+	sets.idle = {ammo="Staunch Tathlum",
+		head="Loess Barbuta +1",neck="Loricate Torque +1",ear1="Genmei Earring",ear2="Ethereal Earring",
+		body="Tartarus Platemail",hands="Sulev. Gauntlets +2",ring1="Defending Ring",ring2="Dark Ring",
+		back="Shadow Mantle",waist="Flume Belt",legs="Carmine Cuisses +1",feet="Amm Greaves"}
 		
-	sets.idle.Reraise = {
-		head="Twilight Helm",neck="Loricate Torque +1",ear1="Bladeborn Earring",ear2="Steelflash Earring",
-		body="Twilight Mail",hands="Buremte Gloves",ring1="Dark Ring",ring2="Paguroidea Ring",
-		back="Letalis Mantle",waist="Goading Belt",legs="Cizin Breeches",feet="Karieyh Sollerets +1"}
+	sets.idle.Refresh = {ammo="Staunch Tathlum",
+		head="Jumalik Helm",neck="Loricate Torque +1",ear1="Genmei Earring",ear2="Ethereal Earring",
+		body="Jumalik Mail",hands="Sulev. Gauntlets +2",ring1="Defending Ring",ring2="Dark Ring",
+		back="Shadow Mantle",waist="Flume Belt",legs="Carmine Cuisses +1",feet="Amm Greaves"}
+
+	sets.idle.Weak = set_combine(sets.idle, {head="Twilight Helm",body="Twilight Mail"})
+		
+	sets.idle.Reraise = set_combine(sets.idle, {head="Twilight Helm",body="Twilight Mail"})
 	
 	-- Defense sets
-	sets.defense.PDT = {ammo="Hagneia Stone",
-		head="Flam. Zucchetto +1",neck="Loricate Torque +1",ear1="Bladeborn Earring",ear2="Steelflash Earring",
-		body="Mikinaak Breastplate",hands="Cizin Mufflers",ring1="Dark Ring",ring2="Dark Ring",
-		back="Letalis Mantle",waist="Goading Belt",legs="Cizin Breeches",feet="Karieyh Sollerets +1"}
-
-	sets.defense.Reraise = {
-		head="Twilight Helm",neck="Loricate Torque +1",ear1="Bladeborn Earring",ear2="Steelflash Earring",
-		body="Twilight Mail",hands="Buremte Gloves",ring1="Dark Ring",ring2="Paguroidea Ring",
-		back="Letalis Mantle",waist="Goading Belt",legs="Cizin Breeches",feet="Karieyh Sollerets +1"}
-
-	sets.defense.MDT = {ammo="Demonry Stone",
-		head="Flam. Zucchetto +1",neck="Loricate Torque +1",ear1="Bladeborn Earring",ear2="Steelflash Earring",
-		body="Mikinaak Breastplate",hands="Cizin Mufflers",ring1="Sheltered Ring",ring2="Paguroidea Ring",
-		back="Engulfer Cape",waist="Goading Belt",legs="Cizin Breeches",feet="Karieyh Sollerets +1"}
+	sets.defense.PDT = {ammo="Staunch Tathlum",
+		head="Loess Barbuta +1",neck="Loricate Torque +1",ear1="Genmei Earring",ear2="Ethereal Earring",
+		body="Tartarus Platemail",hands="Sulev. Gauntlets +2",ring1="Moonbeam Ring",ring2="Moonbeam Ring",
+		back="Shadow Mantle",waist="Flume Belt",legs="Arke Cosciales",feet="Amm Greaves"}
 		
-	sets.defense.MEVA = {
-		head="Gavialis Helm",neck="Warder's Charm +1",ear1="Sanare Earring",ear2="Ethereal Earring",
-		body="Emet Harness +1",hands="Regimen Mittens",ring1="Vengeful Ring",ring2="Purity Ring",
-		back="Toro Cape",waist="Flume Belt",legs="Acro Breeches",feet="Ostro Greaves"}
+	sets.defense.PDTReraise = set_combine(sets.defense.PDT, {head="Twilight Helm",body="Twilight Mail"})
 
-	sets.Kiting = {legs="Blood Cuisses"}
+	sets.defense.MDT = {ammo="Staunch Tathlum",
+		head="Loess Barbuta +1",neck="Warder's Charm +1",ear1="Genmei Earring",ear2="Ethereal Earring",
+		body="Tartarus Platemail",hands="Sulev. Gauntlets +2",ring1="Moonbeam Ring",ring2="Moonbeam Ring",
+		back="Moonlight Cape",waist="Flume Belt",legs="Arke Cosciales",feet="Amm Greaves"}
+		
+	sets.defense.MDTReraise = set_combine(sets.defense.MDT, {head="Twilight Helm",body="Twilight Mail"})
+		
+	sets.defense.MEVA = {ammo="Staunch Tathlum",
+		head="Loess Barbuta +1",neck="Warder's Charm +1",ear1="Genmei Earring",ear2="Ethereal Earring",
+		body="Tartarus Platemail",hands="Sulev. Gauntlets +2",ring1="Moonbeam Ring",ring2="Moonbeam Ring",
+		back="Moonlight Cape",waist="Flume Belt",legs="Arke Cosciales",feet="Amm Greaves"}
+
+	sets.Kiting = {legs="Carmine Cuisses +1"}
 	sets.Reraise = {head="Twilight Helm",body="Twilight Mail"}
 	sets.buff.Doom = set_combine(sets.buff.Doom, {})
 	sets.buff.Sleep = {head="Frenzy Sallet"}
 	
     -- Extra defense sets.  Apply these on top of melee or defense sets.
-	sets.Weapons = {}
-    sets.Knockback = {}
-    sets.MP = {ear2="Ethereal Earring",waist="Flume Belt"}
-    sets.MP_Knockback = {}
-    sets.Twilight = {head="Twilight Helm", body="Twilight Mail"}
+	sets.Weapons = {main="Trishula",sub="Utu Grip"}
+    sets.passive.MP = {ear2="Ethereal Earring",waist="Flume Belt"}
+    sets.passive.Twilight = {head="Twilight Helm", body="Twilight Mail"}
 	sets.TreasureHunter = set_combine(sets.TreasureHunter, {})
 
-		-- Swap to these on Moonshade using WS if at 3000 TP
-	sets.precast.MaxTP = {ear1="Bladeborn Earring",ear2="Steelflash Earring"}
-	sets.precast.AccMaxTP = {ear1="Zennaroi Earring",ear2="Steelflash Earring"}
+	-- Swap to these on Moonshade using WS if at 3000 TP
+	sets.MaxTP = {ear1="Lugra Earring +1",ear2="Sherida Earring",}
+	sets.AccMaxTP = {ear1="Zennaroi Earring",ear2="Telos Earring"}
+	sets.AccDayMaxTPWSEars = {ear1="Zennaroi Earring",ear2="Telos Earring"}
+	sets.DayMaxTPWSEars = {ear1="Brutal Earring",ear2="Sherida Earring",}
+	sets.AccDayWSEars = {ear1="Zennaroi Earring",ear2="Telos Earring"}
+	sets.DayWSEars = {ear1="Moonshade Earring",ear2="Sherida Earring",}
 	
 	-- Engaged sets
 
@@ -190,11 +184,26 @@ function init_gear_sets()
 	
 	-- Normal melee group
 
-	sets.engaged = {}
-    sets.engaged.SomeAcc = {}
-	sets.engaged.Acc = {}
-    sets.engaged.FullAcc = {}
-    sets.engaged.Fodder = {}
+	sets.engaged = {ammo="Ginsen",
+		head="Flam. Zucchetto +2",neck="Shulmanu Collar",ear1="Brutal Earring",ear2="Sherida Earring",
+		body=gear.valorous_wsd_body,hands=gear.valorous_acc_hands,ring1="Petrov Ring",ring2="Niqmaddu Ring",
+		back="Brigantia's Mantle",waist="Ioskeha Belt",legs="Sulev. Cuisses +2",feet="Flam. Gambieras +2"}
+    sets.engaged.SomeAcc = {ammo="Ginsen",
+		head="Flam. Zucchetto +2",neck="Shulmanu Collar",ear1="Brutal Earring",ear2="Sherida Earring",
+		body=gear.valorous_wsd_body,hands=gear.valorous_acc_hands,ring1="Regal Ring",ring2="Niqmaddu Ring",
+		back="Brigantia's Mantle",waist="Ioskeha Belt",legs="Sulev. Cuisses +2",feet="Flam. Gambieras +2"}
+	sets.engaged.Acc = {ammo="Ginsen",
+		head="Flam. Zucchetto +2",neck="Shulmanu Collar",ear1="Digni. Earring",ear2="Telos Earring",
+		body=gear.valorous_wsd_body,hands=gear.valorous_acc_hands,ring1="Ramuh Ring +1",ring2="Niqmaddu Ring",
+		back="Brigantia's Mantle",waist="Ioskeha Belt",legs="Sulev. Cuisses +2",feet="Flam. Gambieras +2"}
+    sets.engaged.FullAcc = {ammo="Ginsen",
+		head="Flam. Zucchetto +2",neck="Shulmanu Collar",ear1="Zennaroi Earring",ear2="Telos Earring",
+		body=gear.valorous_wsd_body,hands=gear.valorous_acc_hands,ring1="Ramuh Ring +1",ring2="Ramuh Ring +1",
+		back="Brigantia's Mantle",waist="Ioskeha Belt",legs="Sulev. Cuisses +2",feet="Flam. Gambieras +2"}
+    sets.engaged.Fodder = {ammo="Ginsen",
+		head="Flam. Zucchetto +2",neck="Ganesha's Mala",ear1="Brutal Earring",ear2="Sherida Earring",
+		body=gear.valorous_wsd_body,hands=gear.valorous_acc_hands,ring1="Petrov Ring",ring2="Niqmaddu Ring",
+		back="Brigantia's Mantle",waist="Ioskeha Belt",legs="Sulev. Cuisses +2",feet="Flam. Gambieras +2"}
 
     sets.engaged.AM = {}
     sets.engaged.AM.SomeAcc = {}
@@ -214,7 +223,7 @@ function init_gear_sets()
     sets.engaged.AM.FullAcc.PDT = {}
     sets.engaged.AM.Fodder.PDT = {}
 		
-	-- Melee sets for in Adoulin, which has an extra 2% Haste from Ionis.
+	--[[ Melee sets for in Adoulin, which has an extra 2% Haste from Ionis.
 	
     sets.engaged.Adoulin = {}
     sets.engaged.Adoulin.SomeAcc = {}
@@ -239,6 +248,7 @@ function init_gear_sets()
 	sets.engaged.Adoulin.AM.Acc.PDT = {}
     sets.engaged.Adoulin.AM.FullAcc.PDT = {}
     sets.engaged.Adoulin.AM.Fodder.PDT = {}
+	]]
 
 end
 
@@ -246,12 +256,12 @@ end
 function select_default_macro_book()
     -- Default macro set/book
     if player.sub_job == 'WAR' then
-        set_macro_page(1, 12)
-    elseif player.sub_job == 'DNC' then
-        set_macro_page(7, 5)
-    elseif player.sub_job == 'RDM' then
-        set_macro_page(10, 5)
+        set_macro_page(5, 13)
+    elseif player.sub_job == 'SAM' then
+        set_macro_page(3, 13)
+    elseif player.sub_job == 'BLU' then
+        set_macro_page(2, 13)
     else
-        set_macro_page(10, 12)
+        set_macro_page(5, 13)
     end
 end

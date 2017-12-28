@@ -321,7 +321,7 @@ function init_gear_sets()
 		hands=gear.AmalricGages.D,
 		ring1="Stikini Ring",
 		ring2="Stikini Ring",
-        back="Seshaw Cape",
+        back=gear.jsecapes.amb.blm.fc,
 		waist="Yamabuki-no-Obi",
 		legs=gear.MerlinicShalwar.MB,
 		feet=gear.MerlinicCrackows.MB}
@@ -568,7 +568,7 @@ function init_gear_sets()
     sets.idle.PDT = {main="Terra's Staff",sub="Oneiros Grip",ammo="Staunch Tathlum",
         head="Hagondes Hat +1",neck="Loricate Torque +1",ear1="Hearty Earring",ear2="Etiolation Earring",
         body="Vrikodara Jupon",hands=gear.merlinic_refresh_hands,ring1="Defending Ring",ring2="Dark Ring",
-        back="Shadow Mantle",waist="Flax Sash",legs="Assid. Pants +1",feet="Mallquis Clogs +1"}
+        back="Repulse Mantle",waist="Flax Sash",legs="Assid. Pants +1",feet="Mallquis Clogs +1"}
 		
     sets.idle.TPEat = set_combine(sets.idle, {neck="Chrys. Torque"})
 	sets.idle.Regain = set_combine(sets.idle, {--ring2="Karieyh Ring"
@@ -590,7 +590,7 @@ function init_gear_sets()
     sets.defense.PDT = {main="Terra's Staff",sub="Umbra Strap",ammo="Staunch Tathlum",
         head="Hagondes Hat +1",neck="Loricate Torque +1",ear1="Hearty Earring",ear2="Etiolation Earring",
         body="Mallquis Saio +1",hands="Hagondes Cuffs +1",ring1="Defending Ring",ring2="Dark Ring",
-        back="Shadow Mantle",waist="Flax Sash",legs="Hagondes Pants +1",feet="Mallquis Clogs +1"}
+        back="Repulse Mantle",waist="Flax Sash",legs="Hagondes Pants +1",feet="Mallquis Clogs +1"}
 
     sets.defense.MDT = {main="Terra's Staff",sub="Umbra Strap",ammo="Staunch Tathlum",
         head="Hagondes Hat +1",neck="Loricate Torque +1",ear1="Hearty Earring",ear2="Etiolation Earring",

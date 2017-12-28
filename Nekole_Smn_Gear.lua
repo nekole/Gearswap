@@ -221,7 +221,7 @@ function init_gear_sets()
 		hands=gear.AmalricGages.D,
 		ring1="Stikini Ring",
 		ring2="Stikini Ring",
-        back="Seshaw Cape",
+        back="Aurist's Cape +1",
 		waist="Yamabuki-no-Obi",
 		legs=gear.MerlinicShalwar.MB,
 		feet=gear.MerlinicCrackows.MB}
@@ -237,7 +237,7 @@ function init_gear_sets()
 		hands=gear.AmalricGages.D,
 		ring1="Archon Ring",
 		ring2="Evanescence Ring",
-        back="Seshaw Cape",
+        back="Aurist's Cape +1",
 		waist="Fucho-no-obi",
 		legs=gear.MerlinicShalwar.MB,
 		feet=gear.MerlinicCrackows.MB}
@@ -271,7 +271,7 @@ function init_gear_sets()
 		hands="Helios Gloves",
 		ring1="Kishar Ring",
 		ring2="Stikini Ring",
-		back="Swith Cape +1",
+		back="Aurist's Cape +1",
 		waist="Witful Belt",
 		legs=gear.psycloth.legs.D,
 		feet="Regal Pumps +1"}
@@ -287,7 +287,7 @@ function init_gear_sets()
 		hands="Lurid Mitts",
 		ring1="Kishar Ring",
 		ring2="Stikini Ring",
-		back="Seshaw Cape",
+		back="Aurist's Cape +1",
 		waist="Luminary Sash",
 		legs=gear.psycloth.legs.D,
 		feet="Uk'uxkaj Boots"}
@@ -602,7 +602,7 @@ function init_gear_sets()
     sets.defense.MEVA = {main="Terra's Staff",sub="Enki Strap",ammo="Sancus Sachet +1",
         head="Amalric Coif",neck="Warder's Charm +1",ear1="Sanare Earring",ear2="Lugalbanda Earring",
 		body="Inyanga Jubbah +1",hands="Telchine Gloves",ring1="Vengeful Ring",Ring2="Purity Ring",
-        back="Seshaw Cape",waist="Luminary Sash",legs="Telchine Braconi",feet="Telchine Pigaches"}
+        back="Aurist's Cape +1",waist="Luminary Sash",legs="Telchine Braconi",feet="Telchine Pigaches"}
 		
     sets.Kiting = {}
     sets.latent_refresh = {waist="Fucho-no-obi"}

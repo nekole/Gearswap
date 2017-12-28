@@ -355,7 +355,7 @@ function init_gear_sets()
 	sets.idle.PDT = {main="Terra's Staff",sub="Umbra Strap",
 		head="Hagondes Hat +1",neck="Loricate Torque +1",ear1="Genmei Earring",ear2="Ethereal Earring",
 		body="Jhakri Robe +2",hands="Hagondes Cuffs +1",ring1="Defending Ring",ring2="Shadow Ring",
-		back="Shadow Mantle",waist="Flax Sash",legs="Hagondes Pants +1",feet="Mallquis Clogs +1"}
+		back="Repulse Mantle",waist="Flax Sash",legs="Hagondes Pants +1",feet="Mallquis Clogs +1"}
 		
 	sets.idle.TPEat = set_combine(sets.idle, {neck="Chrys. Torque",ring2="Karieyh Ring"})
 	sets.idle.Regain = set_combine(sets.idle, {ring2="Karieyh Ring"})

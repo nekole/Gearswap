@@ -246,7 +246,7 @@ sets.TreasureHunter = {waist="Chaac Belt"}
 
     gear.gendewitha = {}
     gear.gendewitha.head = { name="Gende. Caubeen +1" }
-    gear.gendewitha.head.pdt = { name="Gende. Caubeen +1", augments={'Phys. dmg. taken -4%', '"Cure" spellcasting time -1%'} }
+    gear.gendewitha.head.pdt = { name="Gende. Caubeen +1", augments={'Phys. dmg. taken -3%','Magic dmg. taken -4%','"Cure" spellcasting time -4%'} }
 	
 	-- Helios
 	
@@ -671,7 +671,7 @@ sets.TreasureHunter = {waist="Chaac Belt"}
 	 -- BLU
     gear.jse.artifact.blu = {
         head="Assimilator's Keffiyeh +1",
-        body="Assimilator's Jubbah +1",
+        body="Assimilator's Jubbah +2",
         hands="Assimilator's Bazubands +1",
         legs="Assimilator's Shalwar +1",
         feet="Assimilator's Charuqs +1"
@@ -907,7 +907,7 @@ sets.TreasureHunter = {waist="Chaac Belt"}
         head="Melee Crown",
         body="Melee Cyclas",
         hands="Melee Gloves",
-        legs="Melee Hose",
+        legs="Hesychast's Hose +1",
         feet="Melee Gaiters"
     }
     gear.jse.empyrean.mnk = {  
@@ -915,7 +915,7 @@ sets.TreasureHunter = {waist="Chaac Belt"}
         body="Tantra Cyclas",
         hands="Tantra Gloves",
         legs="Tantra Hose",
-        feet=""
+        feet="Tantra Gaiters +1"
 	}
 				-- DRK
     gear.jse.artifact.drk = {

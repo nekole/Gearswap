@@ -326,7 +326,7 @@ function init_gear_sets()
 	sets.TreasureHunter = set_combine(sets.TreasureHunter, {})
 	sets.Skillchain = {legs="Ryuo Hakama"}
 	
-	sets.RedProcDagger = {main="Beestinger"}
+	sets.RedProcDagger = {main="Chicken Knife II"}
 	sets.RedProcSword = {main="Ark Sword"}
 	sets.RedProcGreatSword = {main="Irradiance Blade"}
 	sets.RedProcScythe = {main="Ark Scythe"}

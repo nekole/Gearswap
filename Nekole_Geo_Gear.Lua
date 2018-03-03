@@ -131,9 +131,9 @@ function init_gear_sets()
 
 	sets.midcast.Geomancy = {
 		main="Idris",
-		sub="Genmei Shield",
+		sub="Ammurapi Shield",
 		range="Dunna",
-		head="Azimuth Hood +1",
+		head=gear.jse.empyrean.geo.head,
 		body="Azimuth Coat +1",
 		hands="Azimuth Gloves +1",
 		legs="Azimuth Tights +1",
@@ -324,7 +324,7 @@ function init_gear_sets()
 		neck="Chrys. Torque",
 		ear1="Etiolation Earring",
 		ear2="Ethereal Earring",
-		body="Jhakri Robe +2",
+		body=gear.ambuscade.jhakri.body,
 		hands="Bagua Mitaines +1",
 		ring1="Defending Ring",
 		ring2="Dark Ring",
@@ -340,7 +340,7 @@ function init_gear_sets()
 		sub="Genmei Shield",
 		range="Dunna",
 		head="Befouled Crown",
-		body="Jhakri Robe +2",
+		body=gear.ambuscade.jhakri.body,
 		hands="Bagua Mitaines +1",
 		legs="Assid. Pants +1",
 		feet="Geo. Sandals +1",
@@ -352,10 +352,20 @@ function init_gear_sets()
 		back=gear.jsecapes.amb.geo.pet,
 		waist="Flax Sash"}
 		
-	sets.idle.PDT = {main="Terra's Staff",sub="Umbra Strap",
-		head="Hagondes Hat +1",neck="Loricate Torque +1",ear1="Genmei Earring",ear2="Ethereal Earring",
-		body="Jhakri Robe +2",hands="Hagondes Cuffs +1",ring1="Defending Ring",ring2="Shadow Ring",
-		back="Repulse Mantle",waist="Flax Sash",legs="Hagondes Pants +1",feet="Mallquis Clogs +1"}
+	sets.idle.PDT = {
+		main="Terra's Staff",
+		sub="Umbra Strap",
+		head="Hagondes Hat +1",
+		neck="Loricate Torque +1",
+		ear1="Genmei Earring",
+		ear2="Ethereal Earring",
+		body=gear.ambuscade.jhakri.body,
+		hands="Hagondes Cuffs +1",
+		ring1="Defending Ring",ring2="Shadow Ring",
+		back="Repulse Mantle",
+		waist="Flax Sash",
+		legs="Hagondes Pants +1",
+		feet="Mallquis Clogs +1"}
 		
 	sets.idle.TPEat = set_combine(sets.idle, {neck="Chrys. Torque",ring2="Karieyh Ring"})
 	sets.idle.Regain = set_combine(sets.idle, {ring2="Karieyh Ring"})
@@ -385,7 +395,7 @@ function init_gear_sets()
 		neck="Loricate Torque +1",
 		ear1="Handler's Earring",
 		ear2="Handler's Earring +1",
-		body="Jhakri Robe +2",
+		body=gear.ambuscade.jhakri.body,
 		hands="Geo. Mitaines +2",
 		ring1="Defending Ring",
 		ring2="Sheltered Ring",
@@ -402,7 +412,7 @@ function init_gear_sets()
 
 	sets.idle.Weak = {main="Bolelabunga",sub="Genmei Shield",
 		head="Befouled Crown",neck="Loricate Torque +1",ear1="Etiolation Earring",ear2="Ethereal Earring",
-		body="Jhakri Robe +2",hands=gear.merlinic_refresh_hands,ring1="Defending Ring",ring2="Dark Ring",
+		body=gear.ambuscade.jhakri.body,hands=gear.merlinic_refresh_hands,ring1="Defending Ring",ring2="Dark Ring",
 		back="Umbra Cape",waist="Flax Sash",legs="Assid. Pants +1",feet="Azimuth Gaiters +1"}
 
 	-- Defense sets
@@ -435,8 +445,8 @@ function init_gear_sets()
 	sets.TreasureHunter = set_combine(sets.TreasureHunter, {feet=gear.chironic_treasure_feet})
 	
 	sets.HPDown = {head="Pixie Hairpin +1",ear1="Mendicant's Earring",ear2="Evans Earring",
-		body="Jhakri Robe +2",hands="Jhakri Cuffs +2",ring1="Mephitas's Ring +1",ring2="Mephitas's Ring",
-		back="Swith Cape +1",legs="Shedir Seraweels",feet="Jhakri Pigaches +1"}
+		body=gear.ambuscade.jhakri.body,hands=gear.ambuscade.jhakri.hands,ring1="Mephitas's Ring +1",ring2="Mephitas's Ring",
+		back="Swith Cape +1",legs="Shedir Seraweels",feet=gear.ambuscade.jhakri.feet}
 	
 	sets.buff.Doom = set_combine(sets.buff.Doom, {})
 
@@ -452,12 +462,12 @@ function init_gear_sets()
 	-- Normal melee group
 	sets.engaged = {
 		head="Befouled Crown",neck="Asperity Necklace",ear1="Cessance Earring",ear2="Brutal Earring",
-		body="Jhakri Robe +2",hands="Lurid Mitts",ring1="Ramuh Ring +1",ring2="Ramuh Ring +1",
+		body=gear.ambuscade.jhakri.body,hands="Lurid Mitts",ring1="Ramuh Ring +1",ring2="Ramuh Ring +1",
 		back="Rancorous Mantle",waist="Witful Belt",legs="Assid. Pants +1",feet="Battlecast Gaiters"}
 		
 	sets.engaged.DualWield = {
 		head="Befouled Crown",neck="Asperity Necklace",ear1="Dudgeon Earring",ear2="Heartseeker Earring",
-		body="Jhakri Robe +2",hands="Lurid Mitts",ring1="Ramuh Ring +1",ring2="Ramuh Ring +1",
+		body=gear.ambuscade.jhakri.body,hands="Lurid Mitts",ring1="Ramuh Ring +1",ring2="Ramuh Ring +1",
 		back="Rancorous Mantle",waist="Witful Belt",legs="Assid. Pants +1",feet="Battlecast Gaiters"}
 
 	--------------------------------------
@@ -469,11 +479,11 @@ function init_gear_sets()
 	
 	-- Gear for Magic Burst mode.
     sets.MagicBurst = {
-		head=gear.MerlinicHood.MAB,
-		body=gear.MerlinicJubbah.MB,
+		head="Ea Hat",
+		body="Ea Houppelande",
 		hands=gear.AmalricGages.A,
-		legs=gear.MerlinicShalwar.MB,
-		feet=gear.MerlinicCrackows.MAB,
+		legs="Ea Slops",
+		feet=gear.ambuscade.jhakri.feet,
 		neck="Mizu. Kubikazari", --10
 		ring1="Mujin Band", --(5)
 		back=gear.jsecapes.amb.geo.magic}
@@ -484,7 +494,7 @@ function init_gear_sets()
 		hands="Ea Cuffs",
 		ring1="Mujin Band",
 		legs="Ea Slops",
-		feet="Jhakri Pigaches +2"}
+		feet=gear.ambuscade.jhakri.feet}
 
 end
 

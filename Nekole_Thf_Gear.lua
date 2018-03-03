@@ -50,11 +50,11 @@ function init_gear_sets()
     -- Extra Melee sets.  Apply these on top of melee sets.
     sets.Knockback = {}
 	sets.Suppa = {ear1="Suppanomimi", ear2="Sherida Earring"}
-	sets.Weapons = {main="Mandau",sub="Taming Sari"}
+	sets.Weapons = {main="Mandau",sub="Twashtar"}
 	sets.MagicWeapons = {main="Malevolence",sub="Malevolence"}
 	sets.Throwing = {range="Raider's Bmrng."}
 	sets.DWEarrings = {ear1="Dudgeon Earring",ear2="Heartseeker Earring"}
-	sets.DWMax = {ear1="Dudgeon Earring",ear2="Heartseeker Earring",body="Adhemar Jacket",hands="Floral Gauntlets",waist="Shetal Stone"}
+	sets.DWMax = {ear1="Dudgeon Earring",ear2="Heartseeker Earring",body=gear.AdhemarJacket.Bplus,hands="Floral Gauntlets",waist="Shetal Stone"}
 	sets.Ambush = {} --body="Plunderer's Vest +1"
 	
     -- Actions we want to use to tag TH.
@@ -131,8 +131,8 @@ function init_gear_sets()
     sets.precast.WS = {
 		ammo="Focal Orb",
 		head=gear.lustratio.head.A,
-		body="Meg. Cuirie +1",
-		hands="Meg. Gloves +1",
+		body=gear.AdhemarJacket.Bplus,
+		hands=gear.ambuscade.meghanada.hands,
 		legs=gear.lustratio.legs.A,
 		feet=gear.lustratio.feet.A,
 		neck="Fotia Gorget",
@@ -143,8 +143,8 @@ function init_gear_sets()
 		back=gear.jsecapes.amb.thf.ws,
 		waist="Fotia Belt",}
     sets.precast.WS.SomeAcc = set_combine(sets.precast.WS, {neck="Combatant's Torque",hands="Meg. Gloves +1"})
-    sets.precast.WS.Acc = set_combine(sets.precast.WS, {neck="Combatant's Torque",ear1="Telos Earring",body="Meg. Cuirie +1",hands="Meg. Gloves +1",waist="Olseni Belt",legs="Meg. Chausses +1"})
-	sets.precast.WS.FullAcc = set_combine(sets.precast.WS, {neck="Combatant's Torque",ear1="Telos Earring",body="Meg. Cuirie +1",hands="Meg. Gloves +1",waist="Olseni Belt",legs="Meg. Chausses +1"})
+    sets.precast.WS.Acc = set_combine(sets.precast.WS, {neck="Combatant's Torque",ear1="Telos Earring",body=gear.ambuscade.meghanada.body,hands=gear.ambuscade.meghanada.hands,waist="Olseni Belt",legs=gear.ambuscade.meghanada.legs})
+	sets.precast.WS.FullAcc = set_combine(sets.precast.WS, {neck="Combatant's Torque",ear1="Telos Earring",body=gear.ambuscade.meghanada.body,hands=gear.ambuscade.meghanada.hands,waist="Olseni Belt",legs=gear.ambuscade.meghanada.legs})
 
     -- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
     sets.precast.WS["Rudra's Storm"] = set_combine(sets.precast.WS, {
@@ -153,11 +153,11 @@ function init_gear_sets()
         neck=gear.neck.ws,
         ear1="Brutal Earring",
         ear2=gear.ears.ws,
-        body=gear.AdhemarJacket.B,
+        body=gear.AdhemarJacket.Bplus,
         hands=gear.lustratio.hands.A,
         ring1="Rajas Ring",
         ring2="Epona's Ring",
-        back="Bleating Mantle",
+        back=gear.jsecapes.amb.thf.ws,
         waist=gear.waist.ws,
         legs=gear.HerculeanTrousers.WS,
         feet=gear.lustratio.feet.A})
@@ -267,7 +267,7 @@ function init_gear_sets()
 		ammo="Ginsen",
 		head="Dampening Tam",
 		body="Mekosu. Harness",
-		hands=gear.HerculeanGloves.TA,
+		hands="Regal Gloves",
 		legs="Samnuha Tights",
 --		feet="Jute Boots +1",
 		feet="Skd. Jambeaux +1",
@@ -276,7 +276,7 @@ function init_gear_sets()
 		ear2="Infused Earring",
 		ring1="Paguroidea Ring",
 		ring2="Ilabrat Ring",
-		back="Solemnity Cape",
+		back="Moonbeam Cape",
 		waist="Flume Belt +1",}
 		
     sets.idle.Sphere = set_combine(sets.idle, {body="Mekosu. Harness"})
@@ -316,8 +316,8 @@ function init_gear_sets()
     sets.engaged = {
 		ammo="Yamarang",
 		head="Dampening Tam",
-		body=gear.AdhemarJacket.B, -- 5
-		hands=gear.AdhemarHands.A,
+		body=gear.AdhemarJacket.Bplus, -- 5
+		hands=gear.AdhemarHands.B,
 		legs=gear.SamnuhaTights.TP,
 		feet=gear.HerculeanBoots.TA, --9
 		neck="Anu Torque",

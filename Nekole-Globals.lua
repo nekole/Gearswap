@@ -32,7 +32,6 @@ state.CancelStoneskin = M(true, 'Cancel Stone Skin') --Set this to false if you 
 	# = Apps Key
 ]]
 
---Global binds you may want to change.
 send_command('bind !@^f7 gs c toggle AutoWSMode') --Turns auto-ws mode on and off.
 send_command('bind !^f7 gs c toggle AutoFoodMode') --Turns auto-ws mode on and off.
 send_command('bind @f8 gs c toggle AutoNukeMode') --Turns auto-nuke mode on and off.

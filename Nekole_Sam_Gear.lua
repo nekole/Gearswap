@@ -1,4 +1,4 @@
--- Setup vars that are user-dependent.
+--- Setup vars that are user-dependent.
 function user_setup()
     state.OffenseMode:options('Normal','SomeAcc','Acc','FullAcc','Fodder')
     state.HybridMode:options('Normal','DTLite','PDT','Reraise')
@@ -11,8 +11,6 @@ function user_setup()
 	
     update_combat_form()
 
---	gear.ws_jse_back = {name="Smertrios's Mantle",augments={'STR+20','Accuracy+20 Attack+20','Weapon skill damage +10%',}}
---	gear.stp_jse_back = {name="Smertrios's Mantle",augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Store TP"+10',}}
 -- Additional local binds
     send_command('bind ^` input /ja "Hasso" <me>')
     send_command('bind !` input /ja "Seigan" <me>')
@@ -35,24 +33,39 @@ function init_gear_sets()
     
     -- Precast Sets
     -- Precast sets to enhance JAs
-    sets.precast.JA.Meditate = {head="Wakido Kabuto +1",hands="Sakonji Kote +1",back=gear.jsecapes.amb.sam.ws}
-    sets.precast.JA['Warding Circle'] = {head="Wakido Kabuto +1"}
-    sets.precast.JA['Blade Bash'] = {hands="Sakonji Kote +1"}
-	sets.precast.JA['Sekkanoki'] = {hands="Kasuga Kote +1"}
-	sets.precast.JA['Sengikori'] = {feet="Kas. Sune-Ate +1"}
+    sets.precast.JA.Meditate = {head=gear.jse.artifact.sam.head,hands=gear.jse.relic.sam.hands,back=gear.jsecapes.amb.sam.ws}
+    sets.precast.JA['Warding Circle'] = {head=gear.jse.artifact.sam.head}
+    sets.precast.JA['Blade Bash'] = {hands=gear.jse.relic.sam.hands}
+	sets.precast.JA['Sekkanoki'] = {hands=gear.jse.empyrean.sam.hands}
+	sets.precast.JA['Sengikori'] = {feet=gear.jse.empyrean.sam.feet}
 	
     sets.precast.Step = {
-        head="Flam. Zucchetto +1",neck="Moonbeam Nodowa",ear1="Zennaroi Earring",ear2="Telos Earring",
-        body="Tartarus Platemail",hands="Acro Gauntlets",ring1="Ramuh Ring +1",ring2="Ramuh Ring +1",
-        back=gear.stp_jse_back,waist="Olseni Belt",legs="Acro Breeches",feet="Founder's Greaves"}
+        head=gear.ambuscade.flamma.head,
+		neck="Moonbeam Nodowa",
+		ear1="Zennaroi Earring",
+		ear2="Telos Earring",
+        body="Tartarus Platemail",
+		hands="Acro Gauntlets",
+		ring1="Ramuh Ring +1",
+		ring2="Ramuh Ring +1",
+        back=gear.jsecapes.amb.sam.tp,
+		waist="Olseni Belt",
+		legs="Acro Breeches",
+		feet="Founder's Greaves"}
     sets.precast.JA['Violent Flourish'] = {
-        head="Founder's Corona",neck="Sanctity Necklace",ear1="Gwati Earring",ear2="Telos Earring",
-        body="Found. Breastplate",hands="Leyline Gloves",ring1="Stikini Ring",ring2="Ramuh Ring +1",
-        back=gear.stp_jse_back,waist="Olseni Belt",legs="Acro Breeches",feet="Founder's Greaves"}
+        head="Founder's Corona",
+		neck="Sanctity Necklace",
+		ear1="Gwati Earring",
+		ear2="Telos Earring",
+        body="Found. Breastplate",
+		hands="Leyline Gloves",
+		ring1="Stikini Ring",
+		ring2="Ramuh Ring +1",
+        back=gear.jsecapes.amb.sam.tp,waist="Olseni Belt",legs="Acro Breeches",feet="Founder's Greaves"}
 
     -- Waltz set (chr and vit)
     sets.precast.Waltz = {
-        head="Flam. Zucchetto +1",
+        head=gear.ambuscade.flamma.head,
         body="Tartarus Platemail",hands="Acro Gauntlets",ring1="Asklepian Ring",ring2="Valseur's Ring",
         waist="Chaac Belt",legs="Acro Breeches",feet="Sak. Sune-Ate +1"}
         
@@ -60,7 +73,7 @@ function init_gear_sets()
     sets.precast.Waltz['Healing Waltz'] = {}
 
     -- Fast cast sets for spells
-    sets.precast.FC = {neck="Voltsurge Torque",ear1="Enchntr. Earring +1",ear2="Loquacious Earring",hands="Leyline Gloves",ring1="Lebeche Ring",ring2="Prolix Ring"}
+    sets.precast.FC = {neck="Orunmila's Torque",ear1="Enchntr. Earring +1",ear2="Loquacious Earring",hands="Leyline Gloves",ring1="Lebeche Ring",ring2="Prolix Ring"}
 	   
     -- Ranged snapshot gear
     sets.precast.RA = {}
@@ -79,17 +92,17 @@ function init_gear_sets()
 		ring2="Regal Ring",
         back=gear.jsecapes.amb.sam.ws,
 		waist="Fotia Belt",
-		legs=gear.ambuscade.hizamaru.feet,
+		legs=gear.ambuscade.hizamaru.legs,
 		feet=gear.ValorousGreaves.WSD}
     sets.precast.WS.SomeAcc = set_combine(sets.precast.WS, {ear1="Cessance Earring",body="Hiza. Haramaki +1"})
-	sets.precast.WS.Acc = set_combine(sets.precast.WS, {head="Ynglinga Sallet",ear1="Cessance Earring",body="Hiza. Haramaki +1"})
-    sets.precast.WS.FullAcc = set_combine(sets.precast.WS, {head="Ynglinga Sallet",neck="Moonbeam Nodowa",ear1="Zennaroi Earring",ear2="Telos Earring",body="Hiza. Haramaki +1",ring1="Ramuh Ring +1",ring2="Ramuh Ring +1",})
+	sets.precast.WS.Acc = set_combine(sets.precast.WS, {head=gear.jse.artifact.sam.head,ear1="Cessance Earring",body=gear.ambuscade.hizamaru.body})
+    sets.precast.WS.FullAcc = set_combine(sets.precast.WS, {head=gear.jse.artifact.sam.head,neck="Moonbeam Nodowa",ear1="Zennaroi Earring",ear2="Telos Earring",body=gear.ambuscade.hizamaru.body,ring1="Ramuh Ring +1",ring2="Ramuh Ring +1",})
     sets.precast.WS.Fodder = set_combine(sets.precast.WS, {ring2="Karieyh Ring"})
 	
 	sets.precast.WS.Proc = {ammo="Hasty Pinion +1",
-        head="Flam. Zucchetto +1",neck="Moonbeam Nodowa",ear1="Zennaroi Earring",ear2="Telos Earring",
-        body="Tartarus Platemail",hands=gear.valorous_wsd_hands,ring1="Ramuh Ring +1",ring2="Ramuh Ring +1",
-        back=gear.stp_jse_back,waist="Olseni Belt",legs="Acro Breeches",feet="Flam. Gambieras +1"}
+        head=gear.ambuscade.flamma.head,neck="Moonbeam Nodowa",ear1="Zennaroi Earring",ear2="Telos Earring",
+        body="Tartarus Platemail",hands=gear.ambuscade.flamma.hands,ring1="Ramuh Ring +1",ring2="Ramuh Ring +1",
+        back=gear.jsecapes.amb.sam.tp,waist="Olseni Belt",legs="Acro Breeches",feet=gear.ambuscade.flamma.feet}
 	
     -- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
     sets.precast.WS['Tachi: Fudo'] = set_combine(sets.precast.WS, {})
@@ -128,22 +141,22 @@ function init_gear_sets()
     sets.precast.WS['Tachi: Yukikaze'].FullAcc = set_combine(sets.precast.WS.FullAcc, {})
     sets.precast.WS['Tachi: Yukikaze'].Fodder = set_combine(sets.precast.WS.Fodder, {})
 
-    sets.precast.WS['Tachi: Ageha'] = set_combine(sets.precast.WS, {})
-    sets.precast.WS['Tachi: Ageha'].SomeAcc = set_combine(sets.precast.WS.SomeAcc, {})
-    sets.precast.WS['Tachi: Ageha'].Acc = set_combine(sets.precast.WS.Acc, {})
-    sets.precast.WS['Tachi: Ageha'].FullAcc = set_combine(sets.precast.WS.FullAcc, {})
-    sets.precast.WS['Tachi: Ageha'].Fodder = set_combine(sets.precast.WS.Fodder, {})
-
-    sets.precast.WS['Tachi: Jinpu'] = set_combine(sets.precast.WS, {})
-    sets.precast.WS['Tachi: Jinpu'].SomeAcc = set_combine(sets.precast.WS.SomeAcc, {})
-    sets.precast.WS['Tachi: Jinpu'].Acc = set_combine(sets.precast.WS.Acc, {})
-    sets.precast.WS['Tachi: Jinpu'].FullAcc = set_combine(sets.precast.WS.FullAcc, {})
-    sets.precast.WS['Tachi: Jinpu'].Fodder = set_combine(sets.precast.WS.Fodder, {})
+    sets.precast.WS['Tachi: Ageha'] = {ammo="Pemphredo Tathlum",
+        head=gear.ambuscade.flamma.head,neck="Sanctity Necklace",ear1="Digni. Earring",ear2="Moonshade Earring",
+        body=gear.ambuscade.flamma.body,hands=gear.ambuscade.flamma.hands,ring1="Ramuh Ring +1",ring2="Ramuh Ring +1",
+        back=gear.jsecapes.amb.sam.ws,waist="Eschan Stone",legs=gear.ambuscade.flamma.legs,feet=gear.ambuscade.flamma.feet}
+		
+    sets.precast.WS['Tachi: Hobaku'] = {ammo="Pemphredo Tathlum",
+        head=gear.ambuscade.flamma.head,neck="Sanctity Necklace",ear1="Digni. Earring",ear2="Moonshade Earring",
+        body=gear.ambuscade.flamma.body,hands=gear.ambuscade.flamma.hands,ring1="Ramuh Ring +1",ring2="Ramuh Ring +1",
+        back=gear.jsecapes.amb.sam.ws,waist="Eschan Stone",legs=gear.ambuscade.flamma.legs,feet=gear.ambuscade.flamma.feet}
+		
+    sets.precast.WS['Tachi: Jinpu'] = set_combine(sets.precast.WS, {head=gear.ValorousMask.WSD,ear1="Friomisi Earring",body="Found. Breastplate",hands="Founder's Gauntlets",feet="Founder's Greaves"})
 
     sets.precast.WS['Apex Arrow'] = {
-        head="Ynglinga Sallet",neck="Fotia Gorget",ear1="Clearview Earring",ear2="Moonshade Earring",
+        head=gear.jse.artifact.sam.head,neck="Fotia Gorget",ear1="Clearview Earring",ear2="Moonshade Earring",
         body="Kyujutsugi",hands="Buremte Gloves",ring1="Ilabrat Ring",ring2="Regal Ring",
-        back=gear.ws_jse_back,waist="Fotia Belt",legs="Acro Breeches",feet="Waki. Sune-Ate +1"}
+        back=gear.jsecapes.amb.sam.ws,waist="Fotia Belt",legs=gear.jse.artifact.sam.legs,feet=gear.jse.artifact.sam.feet}
 		
     sets.precast.WS['Apex Arrow'].SomeAcc = set_combine(sets.precast.WS['Apex Arrow'], {})
     sets.precast.WS['Apex Arrow'].Acc = set_combine(sets.precast.WS['Apex Arrow'], {})
@@ -162,7 +175,7 @@ function init_gear_sets()
     sets.midcast.FastRecast = {
         head="Loess Barbuta +1",neck="Orunmila's Torque",ear1="Enchntr. Earring +1",ear2="Loquacious Earring",
         body="Tartarus Platemail",hands="Leyline Gloves",ring1="Defending Ring",ring2="Prolix Ring",
-        back="Moonbeam Cape",waist="Tempus Fugit",legs="Hiza. Hizayoroi +2",feet="Amm Greaves"}
+        back="Moonbeam Cape",waist="Tempus Fugit",legs=gear.ambuscade.hizamaru.legs,feet="Amm Greaves"}
 		
     -- Specific spells
     sets.midcast.Utsusemi = set_combine(sets.midcast.FastRecast, {back="Mujin Mantle"})
@@ -184,9 +197,9 @@ function init_gear_sets()
     
     -- Resting sets
     sets.resting = {ammo="Staunch Tathlum",
-        head=gear.valorous_wsd_head,neck="Loricate Torque +1",ear1="Etiolation Earring",ear2="Sanare Earring",
-        body="Hiza. Haramaki +1",hands="Sakonji Kote +1",ring1="Defending Ring",ring2="Karieyh Ring",
-        back="Solemnity Cape",waist="Flume Belt",legs="Hiza. Hizayoroi +2",feet="Flam. Gambieras +1"}
+        head=gear.ValorousMask.WSD,neck="Loricate Torque +1",ear1="Etiolation Earring",ear2="Sanare Earring",
+        body=gear.ambuscade.hizamaru.body,hands=gear.jse.relic.sam.hands,ring1="Defending Ring",ring2="Karieyh Ring",
+        back="Solemnity Cape",waist="Flume Belt",legs=gear.ambuscade.hizamaru.legs,feet=gear.ambuscade.flamma.feet}
     
 
     -- Idle sets (default idle set not needed since the other three are defined, but leaving for testing purposes)
@@ -208,13 +221,13 @@ function init_gear_sets()
 		neck="Loricate Torque +1",
 		ear1="Etiolation Earring",
 		ear2="Sanare Earring",
-        body="Hiza. Haramaki +1",
+        body=gear.ambuscade.hizamaru.body,
 		hands="Sakonji Kote +1",
 		ring1="Defending Ring",
 		ring2="Regal Ring",
-        back="Solemnity Cape",
+        back="Moonbeam Cape",
 		waist="Flume Belt +1",
-		legs="Flamma Dirs +1",
+		legs=gear.ambuscade.flamma.legs,
 		feet="Danzo Sune-ate"}
 		
     sets.idle.Reraise = set_combine(sets.idle, sets.Reraise)
@@ -260,34 +273,34 @@ function init_gear_sets()
     -- Delay 450 GK, 25 Save TP => 65 Store TP for a 5-hit (25 Store TP in gear)
     sets.engaged = {
 		ammo="Ginsen",
-        head="Flam. Zucchetto +1",
+        head=gear.ambuscade.flamma.head,
 		neck="Moonbeam Nodowa",
 		ear1="Cessance Earring",
 		ear2="Brutal Earring",
-        body="Kasuga Domaru +1",
+        body=gear.jse.empyrean.sam.body,
 		hands=gear.ValorousMitts.WSD,
 		ring1="Niqmaddu Ring",
 		ring2="Petrov Ring",
         back=gear.jsecapes.amb.sam.tp,
 		waist="Ioskeha Belt",
 		legs="Acro Breeches",
-		feet="Flam. Gambieras +1"}
+		feet=gear.ambuscade.flamma.feet}
     sets.engaged.SomeAcc = {ammo="Ginsen",
         head="Flam. Zucchetto +1",neck="Moonbeam Nodowa",ear1="Cessance Earring",ear2="Brutal Earring",
         body="Kasuga Domaru +1",hands=gear.valorous_wsd_hands,ring1="Niqmaddu Ring",ring2="Ilabrat Ring",
-        back=gear.stp_jse_back,waist="Ioskeha Belt",legs="Acro Breeches",feet="Flam. Gambieras +1"}
+        back=gear.jsecapes.amb.sam.tp,waist="Ioskeha Belt",legs="Acro Breeches",feet="Flam. Gambieras +1"}
     sets.engaged.Acc = {ammo="Ginsen",
         head="Flam. Zucchetto +1",neck="Moonbeam Nodowa",ear1="Digni. Earring",ear2="Telos Earring",
         body="Kasuga Domaru +1",hands=gear.valorous_wsd_hands,ring1="Niqmaddu Ring",ring2="Ilabrat Ring",
-        back=gear.stp_jse_back,waist="Ioskeha Belt",legs="Acro Breeches",feet="Flam. Gambieras +1"}
+        back=gear.jsecapes.amb.sam.tp,waist="Ioskeha Belt",legs="Acro Breeches",feet="Flam. Gambieras +1"}
     sets.engaged.FullAcc = {ammo="Ginsen",
         head="Flam. Zucchetto +1",neck="Moonbeam Nodowa",ear1="Zennaroi Earring",ear2="Telos Earring",
         body="Tartarus Platemail",hands=gear.valorous_wsd_hands,ring1="Ramuh Ring +1",ring2="Ramuh Ring +1",
-        back=gear.stp_jse_back,waist="Olseni Belt",legs="Hiza. Hizayoroi +2",feet="Flam. Gambieras +1"}
+        back=gear.jsecapes.amb.sam.tp,waist="Olseni Belt",legs="Hiza. Hizayoroi +2",feet="Flam. Gambieras +1"}
     sets.engaged.Fodder = {ammo="Ginsen",
         head="Flam. Zucchetto +1",neck="Moonbeam Nodowa",ear1="Cessance Earring",ear2="Brutal Earring",
         body="Kasuga Domaru +1",hands=gear.valorous_wsd_hands,ring1="Niqmaddu Ring",ring2="Petrov Ring",
-        back=gear.stp_jse_back,waist="Ioskeha Belt",legs="Acro Breeches",feet="Flam. Gambieras +1"}
+        back=gear.jsecapes.amb.sam.tp,waist="Ioskeha Belt",legs="Acro Breeches",feet="Flam. Gambieras +1"}
     sets.engaged.PDT = {ammo="Staunch Tathlum",
         head="Loess Barbuta +1",neck="Loricate Torque +1",ear1="Etiolation Earring",ear2="Sanare Earring",
         body="Tartarus Platemail",hands=gear.valorous_wsd_hands,ring1="Defending Ring",ring2="Dark Ring",
@@ -311,23 +324,23 @@ function init_gear_sets()
 	sets.engaged.DTLite = {ammo="Staunch Tathlum",
         head="Ynglinga Sallet",neck="Loricate Torque +1",ear1="Cessance Earring",ear2="Brutal Earring",
         body="Tartarus Platemail",hands=gear.valorous_wsd_hands,ring1="Defending Ring",ring2="Patricius Ring",
-        back=gear.stp_jse_back,waist="Ioskeha Belt",legs="Acro Breeches",feet="Amm Greaves"}	
+        back=gear.jsecapes.amb.sam.tp,waist="Ioskeha Belt",legs="Acro Breeches",feet="Amm Greaves"}	
     sets.engaged.SomeAcc.DTLite = {ammo="Staunch Tathlum",
         head="Ynglinga Sallet",neck="Loricate Torque +1",ear1="Cessance Earring",ear2="Brutal Earring",
         body="Tartarus Platemail",hands=gear.valorous_wsd_hands,ring1="Defending Ring",ring2="Patricius Ring",
-        back=gear.stp_jse_back,waist="Ioskeha Belt",legs="Acro Breeches",feet="Amm Greaves"}		
+        back=gear.jsecapes.amb.sam.tp,waist="Ioskeha Belt",legs="Acro Breeches",feet="Amm Greaves"}		
     sets.engaged.Acc.DTLite = {ammo="Staunch Tathlum",
         head="Ynglinga Sallet",neck="Loricate Torque +1",ear1="Cessance Earring",ear2="Brutal Earring",
         body="Tartarus Platemail",hands=gear.valorous_wsd_hands,ring1="Defending Ring",ring2="Patricius Ring",
-        back=gear.stp_jse_back,waist="Ioskeha Belt",legs="Acro Breeches",feet="Amm Greaves"}	
+        back=gear.jsecapes.amb.sam.tp,waist="Ioskeha Belt",legs="Acro Breeches",feet="Amm Greaves"}	
     sets.engaged.FullAcc.DTLite = {ammo="Staunch Tathlum",
         head="Ynglinga Sallet",neck="Loricate Torque +1",ear1="Cessance Earring",ear2="Brutal Earring",
         body="Tartarus Platemail",hands=gear.valorous_wsd_hands,ring1="Defending Ring",ring2="Patricius Ring",
-        back=gear.stp_jse_back,waist="Ioskeha Belt",legs="Acro Breeches",feet="Amm Greaves"}	
+        back=gear.jsecapes.amb.sam.tp,waist="Ioskeha Belt",legs="Acro Breeches",feet="Amm Greaves"}	
     sets.engaged.Fodder.DTLite = {ammo="Staunch Tathlum",
         head="Flam. Zucchetto +1",neck="Loricate Torque +1",ear1="Cessance Earring",ear2="Brutal Earring",
         body="Tartarus Platemail",hands=gear.valorous_wsd_hands,ring1="Defending Ring",ring2="Patricius Ring",
-        back=gear.stp_jse_back,waist="Ioskeha Belt",legs="Acro Breeches",feet="Amm Greaves"}	
+        back=gear.jsecapes.amb.sam.tp,waist="Ioskeha Belt",legs="Acro Breeches",feet="Amm Greaves"}	
 
     sets.engaged.Reraise = set_combine(sets.engaged, sets.Reraise)		
     sets.engaged.SomeAcc.Reraise = set_combine(sets.engaged.SomeAcc, sets.Reraise)		
@@ -341,23 +354,23 @@ function init_gear_sets()
 	sets.engaged.Adoulin = {ammo="Ginsen",
         head="Flam. Zucchetto +1",neck="Moonbeam Nodowa",ear1="Cessance Earring",ear2="Brutal Earring",
         body="Kasuga Domaru +1",hands=gear.valorous_wsd_hands,ring1="Niqmaddu Ring",ring2="Ilabrat Ring",
-        back=gear.stp_jse_back,waist="Ioskeha Belt",legs="Acro Breeches",feet="Flam. Gambieras +1"}
+        back=gear.jsecapes.amb.sam.tp,waist="Ioskeha Belt",legs="Acro Breeches",feet="Flam. Gambieras +1"}
     sets.engaged.Adoulin.SomeAcc = {ammo="Ginsen",
         head="Flam. Zucchetto +1",neck="Combatant's Torque",ear1="Cessance Earring",ear2="Brutal Earring",
         body="Kasuga Domaru +1",hands="Acro Gauntlets",ring1="Niqmaddu Ring",ring2="Ilabrat Ring",
-        back=gear.stp_jse_back,waist="Windbuffet Belt +1",legs="Acro Breeches",feet="Amm Greaves"}
+        back=gear.jsecapes.amb.sam.tp,waist="Windbuffet Belt +1",legs="Acro Breeches",feet="Amm Greaves"}
 	sets.engaged.Adoulin.Acc = {ammo="Ginsen",
         head="Flam. Zucchetto +1",neck="Combatant's Torque",ear1="Zennaroi Earring",ear2="Telos Earring",
         body="Kasuga Domaru +1",hands="Acro Gauntlets",ring1="Niqmaddu Ring",ring2="Ilabrat Ring",
-        back=gear.stp_jse_back,waist="Olseni Belt",legs="Acro Breeches",feet="Amm Greaves"}
+        back=gear.jsecapes.amb.sam.tp,waist="Olseni Belt",legs="Acro Breeches",feet="Amm Greaves"}
     sets.engaged.Adoulin.FullAcc = {ammo="Ginsen",
         head="Flam. Zucchetto +1",neck="Combatant's Torque",ear1="Zennaroi Earring",ear2="Telos Earring",
         body="Kasuga Domaru +1",hands="Acro Gauntlets",ring1="Ramuh Ring +1",ring2="Ramuh Ring +1",
-        back=gear.stp_jse_back,waist="Olseni Belt",legs="Acro Breeches",feet="Flam. Gambieras +1"}
+        back=gear.jsecapes.amb.sam.tp,waist="Olseni Belt",legs="Acro Breeches",feet="Flam. Gambieras +1"}
     sets.engaged.Adoulin.Fodder = {ammo="Ginsen",
         head="Flam. Zucchetto +1",neck="Asperity Necklace",ear1="Cessance Earring",ear2="Brutal Earring",
         body="Kasuga Domaru +1",hands="Acro Gauntlets",ring1="Niqmaddu Ring",ring2="Ilabrat Ring",
-        back=gear.stp_jse_back,waist="Windbuffet Belt +1",legs="Acro Breeches",feet="Flam. Gambieras +1"}
+        back=gear.jsecapes.amb.sam.tp,waist="Windbuffet Belt +1",legs="Acro Breeches",feet="Flam. Gambieras +1"}
     sets.engaged.Adoulin.PDT = {ammo="Staunch Tathlum",
         head="Flam. Zucchetto +1",neck="Loricate Torque +1",ear1="Cessance Earring",ear2="Brutal Earring",
         body="Tartarus Platemail",hands=gear.valorous_wsd_hands,ring1="Defending Ring",ring2="Dark Ring",

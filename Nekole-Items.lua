@@ -1,4 +1,4 @@
---Gearsets your character will use among multiple jobs.
+---Gearsets your character will use among multiple jobs.
 
 sets.Sheltered = {ring2="Sheltered Ring"}
 sets.Capacity = {back="Mecisto. Mantle"}
@@ -215,14 +215,15 @@ sets.TreasureHunter = {waist="Chaac Belt"}
 	gear.jsecapes.amb.rng.tp ={ name="Belenus's Cape", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','Rng.Acc.+10','"Store TP"+10'}}
 	gear.jsecapes.amb.rng.ws={ name="Belenus's Cape", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','AGI+10','Weapon skill damage +10%'}}
 	gear.jsecapes.amb.sam = { name="Smertrios's Mantle" }
-    gear.jsecapes.amb.sam.tp = { name="Smertrios's Mantle" }
-    gear.jsecapes.amb.sam.ws = { name="Smertrios's Mantle" }
---	gear.ws_jse_back = {name="Smertrios's Mantle",augments={'STR+20','Accuracy+20 Attack+20','Weapon skill damage +10%',}}
---	gear.stp_jse_back = {name="Smertrios's Mantle",augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Store TP"+10',}}
+    gear.jsecapes.amb.sam.tp = { name="Smertrios's Mantle",augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Store TP"+10'}}
+    gear.jsecapes.amb.sam.ws = { name="Smertrios's Mantle",augments={'STR+20','Accuracy+20 Attack+20','Weapon skill damage +10%'}}
 	gear.jsecapes.amb.sch = { name="Lugh's Cape" }
 	gear.jsecapes.amb.sch.mab = { name="Lugh's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Mag.Atk.Bns."+10'}} 
     gear.jsecapes.amb.sch.fc = { name="Lugh's Cape", augments={'MND+20','Mag. Acc+20 /Mag. Dmg.+20','"Fast Cast"+10'}}
-
+	gear.jsecapes.amb.cor = { name="Camulus's Mantle" }
+	gear.jsecapes.amb.cor.tp = { name="Camulus's Mantle",augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Store TP"+10'}}
+    gear.jsecapes.amb.cor.mwsd = { name="Camulus's Mantle",augments={'AGI+20','Mag. Acc+20 /Mag. Dmg.+20','AGI+10','Weapon skill damage +10%'}}
+	gear.jsecapes.amb.cor.wsd = { name="Camulus's Mantle",augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','AGI+10','Weapon skill damage +10%'}}
 
     -- Skirmish pieces
     gear.hagondes = {}
@@ -247,6 +248,15 @@ sets.TreasureHunter = {waist="Chaac Belt"}
     gear.gendewitha = {}
     gear.gendewitha.head = { name="Gende. Caubeen +1" }
     gear.gendewitha.head.pdt = { name="Gende. Caubeen +1", augments={'Phys. dmg. taken -3%','Magic dmg. taken -4%','"Cure" spellcasting time -4%'} }
+	
+	gear.gendewitha.hands = { name="Gende. Gages +1" }
+	gear.gendewitha.hands.pdt = { name="Gende. Gages +1", augments={'Phys. dmg. taken -3%','"Cure" potency +4%'}}
+	
+	gear.gendewitha.legs = { name="Gende. Spats +1" }
+	gear.gendewitha.legs.pdt = { name="Gende. Spats +1", augments={'Phys. dmg. taken -3%','Song spellcasting time -5%'}}
+	
+	gear.gendewitha.feet = { name="Gende. Galosh. +1" }
+	gear.gendewitha.feet.pdt = { name="Gende. Galosh. +1", augments={'Phys. dmg. taken -2%','"Cure" potency +2%'}}
 	
 	-- Helios
 	
@@ -364,6 +374,7 @@ sets.TreasureHunter = {waist="Chaac Belt"}
 	
 	gear.RawhideTrousers = {}
 	gear.RawhideTrousers.A = {name="Rawhide Trousers", augments={'DEX+10','STR+7','INT+7'}}
+	gear.RawhideTrousers.D = {name="Rawhide Trousers", augments={'MP+50','"Fast Cast"+5','"Refresh"+1'}}
 	
 	gear.RawhideBoots = {}
 	gear.RawhideBoots.D = {name="Rawhide Boots", augments={'STR+10','Attack+15','"Store TP"+5'}}
@@ -392,11 +403,13 @@ sets.TreasureHunter = {waist="Chaac Belt"}
     gear.AdhemarBonnet.B = {name="Adhemar Bonnet", augments={'STR+10','DEX+10','Attack+15'}}
     
     gear.AdhemarJacket = {}
-    gear.AdhemarJacket.B = {name="Adhemar Jacket", augments={'STR+10','DEX+10','Attack+15'}}
+    gear.AdhemarJacket.A = {name="Adhemar Jacket", augments={'DEX+10','AGI+10','Accuracy+15'}}
+	gear.AdhemarJacket.Bplus = {name="Adhemar Jacket +1", augments={'STR+12','DEX+12','Attack+20'}}
 
 	gear.AdhemarHands = {}
 	gear.AdhemarHands.A = {name="Adhemar Wristbands", augments={'DEX+10','AGI+10','Accuracy+15'}}
-	gear.AdhemarHands.B = {name="Adhemar Wristbands", augments={'STR+10','DEX+10','Attack+15',}}
+	gear.AdhemarHands.B = {name="Adhemar Wrist. +1", augments={'STR+12','DEX+12','Attack+20',}}
+	gear.AdhemarHands.C = {name="Adhemar Wristbands", augments={'AGI+10','Rng.Acc.+15','Rng.Atk.+15',}}
 
     gear.AdhemarKecks = {}
     gear.AdhemarKecks.C = {name="Adhemar Kecks", augments={'AGI+10','Rng.Acc.+15','Rng.Atk.+15'}}
@@ -454,9 +467,12 @@ sets.TreasureHunter = {waist="Chaac Belt"}
     gear.carmine.legs = { name="Carmine Cuisses +1"}
     gear.carmine.legs.D = { name="Carmine Cuisses +1", augments={ 'Accuracy+20', 'Attack+12', '"Dual Wield"+6'}}
 	gear.CarmineMask = {}
-    gear.CarmineMask.D = {name="Carmine Mask", augments={'Accuracy+15','Mag. Acc.+10','"Fast Cast"+3',}}
+    gear.CarmineMask.D = {name="Carmine Mask +1", augments={'Accuracy+20','Mag. Acc.+12','"Fast Cast"+4'}}
+	gear.CarmineMask.B = {name="Carmine Mask", augments={'Accuracy+10','DEX+10','MND+15'}}
 	gear.carmine.hands = { name="Carmine Fin. Ga. +1"}
     gear.carmine.hands.D = {name="Carmine Fin. Ga. +1", augments={'Rng.Atk.+20','"Mag.Atk.Bns."+12','"Store TP"+6'}}
+	gear.carmine.feet = { name="Carmine Greaves +1"}
+    gear.carmine.feet.D = {name="Carmine Greaves +1", augments={'HP+80','MP+80','Phys. dmg. taken -4'}}
 
     gear.lustratio = {}
     gear.lustratio.head = { name="Lustratio Cap" }
@@ -650,15 +666,15 @@ sets.TreasureHunter = {waist="Chaac Belt"}
         head="Spaekona's Petasos", -- Need Finish
         body="Spaekona's Coat +1",
         hands="Spaekona's Gloves", -- Need Finish
-        legs="Spaekona's Tonban", -- Need Finish
+        legs="Spaekona's Tonban +1", 
         feet="Spaekona's Sabots" -- Need Finish
     }
     gear.jse.relic.blm = {
-        head="Archmage's Petasos ",  -- Need Finish
+        head="Archmage's Petasos",  -- Need Finish
         body="Arch. Coat +1", 
         hands="Archmage's Gloves +1",
         legs="Archmage's Tonban",  -- Need Finish
-        feet="Sorcerer's Sabots" 
+        feet="Archmage's Sabots" 
     }
     gear.jse.empyrean.blm = {
         head="Goetia Petasos +2",  -- Need Finish
@@ -671,10 +687,10 @@ sets.TreasureHunter = {waist="Chaac Belt"}
 	 -- BLU
     gear.jse.artifact.blu = {
         head="Assimilator's Keffiyeh +1",
-        body="Assimilator's Jubbah +2",
-        hands="Assimilator's Bazubands +1",
+        body="Assimilator's Jubbah +3",
+        hands="Assimilator's Bazubands +2",
         legs="Assimilator's Shalwar +1",
-        feet="Assimilator's Charuqs +1"
+        feet="Assimilator's Charuqs +2"
     }
     gear.jse.relic.blu = {
         head="Luhlaza Keffiyeh +1",  
@@ -701,16 +717,16 @@ sets.TreasureHunter = {waist="Chaac Belt"}
     }
     gear.jse.relic.thf = {
         head="Plunderer's Bonnet +1", 
-        body="Assassin's Vest", -- Need Finish
+        body="Plunderer's Vest +1",
         hands="Plunderer's Armlets +1",
-        legs="Assassin's Culottes", 
+        legs="Plunderer's Culottes", 
         feet="Plunderer's Poulaines +1"
     }
     gear.jse.empyrean.thf = {
-        head="Raider's Bonnet", -- Need Finish
-        body="Raider's Vest", -- Need Finish
-        hands="Raider's Armlets", -- Need Finish
-        legs="Raider's Culottes", -- Need Finish
+        head="Raider's Bonnet +2", -- Need Finish
+        body="Raider's Vest +2", -- Need Finish
+        hands="Raider's Armlets +1", -- Need Finish
+        legs="Raider's Culottes +1", -- Need Finish
         feet="Skulker's Poulaines +1"
     }
 	
@@ -719,38 +735,38 @@ sets.TreasureHunter = {waist="Chaac Belt"}
         head="Pummeler's Mask",
         body="Pummeler's Lorica",
         hands="Pummeler's Mufflers",
-        legs="Pummeler's Cuisses",
+        legs="Pumm. Cuisses +1",
         feet="Pummeler's Calligae"
     }
     gear.jse.relic.war = {
-        head="Warrior's Mask",
+        head="Agoge Mask",
         body="Warrior's Lorica",
         hands="Warrior's Mufflers",
         legs="Warrior's Cuisses",
         feet="Warrior's Calligae"
     }
     gear.jse.empyrean.war = {
-        head="Ravager's Mask",
-        body="Ravager's Lorica",
-        hands="Ravager's Mufflers",
-        legs="Ravager's Cuisses",
-        feet="Ravager's Calligae"
+        head="Ravager's Mask +1",
+        body="Ravager's Lorica +1",
+        hands="Ravager's Mufflers +1",
+        legs="Ravager's Cuisses +1",
+        feet="Ravager's Calligae +1"
     }
 
     -- RDM
     gear.jse.artifact.rdm = {
-        head="Atrophy Chapeau +1",
-        body="Wlk. Tabard +1",
-        hands="Wlk. Gloves +1",
-        legs="Atrophy Tights",
-        feet="Wlk. Boots +1"
+        head="Atrophy Chapeau",
+        body="Atrophy Tabard",
+        hands="Atrophy Gloves",
+        legs="Atrophy Tights +1",
+        feet="Atrophy Boots"
     }
     gear.jse.relic.rdm = {
         head="Vitivation Chapeau",
         body="Vitivation Tabard",
         hands="Vitivation Gloves",
-        legs="Duelist's Tights",
-        feet="Duelist's Boots"
+        legs="Vitiation Tights",
+        feet="Vitiation Boots"
     }
     gear.jse.empyrean.rdm = {
         head="Estq. Chappel +2",
@@ -835,7 +851,7 @@ sets.TreasureHunter = {waist="Chaac Belt"}
         body="Convoker's Doublet +3",
         hands="Convoker's Bracers +1",
         legs="Convoker's Spats +1",
-        feet="Convoker's Pigaches +2",
+        feet="Convoker's Pigaches +3",
     }
 	gear.jse.relic.smn = {
         head="Glyphic Horn +1",
@@ -879,7 +895,7 @@ sets.TreasureHunter = {waist="Chaac Belt"}
 		body="Theophany Cap +1",
 		hands="Theophany Mitts +1",
         legs="Theophany Pantaloons +1",
-        feet="Theophany Duckbills +1",
+        feet="Theophany Duckbills",
     }
 	gear.jse.relic.whm = {
         head="Cleric's Cap",
@@ -891,16 +907,16 @@ sets.TreasureHunter = {waist="Chaac Belt"}
     gear.jse.empyrean.whm = {  
         head="Ebers Cap",
         body="Ebers Bliaud",
-        hands="Ebers Mitts",
+        hands="Ebers Mitts +1",
         legs="Ebers Pantaloons +1",
-        feet="Ebers Duckbills"
+        feet="Ebers Duckbills +1"
 	}
 					-- MNK
     gear.jse.artifact.mnk = {
 		head="Anchorite's Crown",
 		body="Anchorite's Cyclas",
 		hands="Anchorite's Gloves",
-        legs="Anchorite's Hose",
+        legs="Anchorite's Hose +1",
         feet="Anchorite's Gaiters",
     }
 	gear.jse.relic.mnk = {
@@ -919,11 +935,11 @@ sets.TreasureHunter = {waist="Chaac Belt"}
 	}
 				-- DRK
     gear.jse.artifact.drk = {
-		head="Chaos Burgeonet",
-		body="Chaos Cuirass",
-		hands="Chaos Gauntlets",
-        legs="Chaos Flanchard",
-        feet="Chaos Sollerets",
+		head="Ignominy Burgeonet",
+		body="Ignominy Cuirass",
+		hands="Ignominy Gauntlets",
+        legs="Ignominy Flanchard +1",
+        feet="Ignominy Sollerets",
     }
 	gear.jse.relic.drk = {
         head="Abyss Burgeonet",
@@ -941,11 +957,11 @@ sets.TreasureHunter = {waist="Chaac Belt"}
 	}
 			-- BST
     gear.jse.artifact.bst = {
-		head="Beast Helm",
-		body="Beast Jackcoat",
-		hands="Beast Gloves",
-        legs="Beast Trousers",
-        feet="Beast Gaiters",
+		head="Totemic Helm",
+		body="Totemic Jackcoat +1",
+		hands="Totemic Gloves",
+        legs="Totemic Trousers +1",
+        feet="Totemic Gaiters",
     }
 	gear.jse.relic.bst = {
         head="Monster Helm",
@@ -988,7 +1004,7 @@ sets.TreasureHunter = {waist="Chaac Belt"}
 		head="Wakido Kabuto +1",
 		body="Wakido Domaru",
 		hands="Wakido Kote",
-        legs="Wakido Haidate",
+        legs="Wakido Haidate +1",
         feet="Wakido Sune-Ate +1",
     }
 	gear.jse.relic.sam = {
@@ -1001,23 +1017,23 @@ sets.TreasureHunter = {waist="Chaac Belt"}
     gear.jse.empyrean.sam = {  
         head="Unkai Kabuto",
         body="Kasuga Domaru",
-        hands="Unkai Kote +1",
+        hands="Kasuga Kote +1",
         legs="Unkai Haidate",
-        feet=""
+        feet="Kasuga Sune-Ate +1"
 	}
 			-- NIN
     gear.jse.artifact.nin = {
 		head="Hachiya Hatsuburi",
 		body="Hachiya Chainmail",
 		hands="Hachiya Tekko",
-        legs="Hachiya Hakama",
+        legs="Hachiya Hakama +1",
         feet="Hachiya Kyahan",
     }
 	gear.jse.relic.nin = {
         head="Koga Hatsuburi",
         body="Koga Chainmail",
         hands="Koga Tekko",
-        legs="",
+        legs="Koga Hakama",
         feet="Koga Kyahan"
     }
     gear.jse.empyrean.nin = {  
@@ -1025,37 +1041,37 @@ sets.TreasureHunter = {waist="Chaac Belt"}
         body="Iga Ningi",
         hands="Iga Tekko",
         legs="Iga Hakama",
-        feet=""
+        feet="Iga Kyahan"
 	}
 			-- COR
     gear.jse.artifact.cor = {
 		head="Laksamana's Hat",
-		body="Laksamana's Frac",
+		body="Laksamana's Frac +1",
 		hands="Laksamana's Gants",
-        legs="Laksamana's Trews",
-        feet="Laksamana's Bottes",
+        legs="Laksamana's Trews +1",
+        feet="Laksamana's Bottes +1",
     }
 	gear.jse.relic.cor = {
-        head="Lanun Tricorne",
-        body="Lanun Frac",
-        hands="Lanun Gants",
-        legs="Commodore Culottes",
-        feet="Lanun Bottes"
+        head="Lanun Tricorne +1",
+        body="Lanun Frac +1",
+        hands="Lanun Gants +1",
+        legs="Lanun Culottes +1",
+        feet="Lanun Bottes +1"
     }
     gear.jse.empyrean.cor = {  
-        head="Navarch's Tricorne",
-        body="Navarch's Frac",
-        hands="Navarch's Gants",
-        legs="Navarch's Culottes",
-        feet=""
+        head="Chasseur's Tricorne +1",
+        body="Chasseur's Frac +1",
+        hands="Chasseur's Gants +1",
+        legs="Chasseur's Culottes +1",
+        feet="Chasseur's Bottes +1"
 	}
 			-- DRG
     gear.jse.artifact.drg = {
-		head="Drachen Armet",
-		body="Drachen Mail",
-		hands="Drachen Finger Gauntlets",
-        legs="Drachen Brais",
-        feet="Drachen Greaves",
+		head="Vishap Armet",
+		body="Vishap Mail",
+		hands="Vishap Finger Gauntlets",
+        legs="Vishap Brais +1",
+        feet="Vishap Greaves",
     }
 	gear.jse.relic.drg = {
         head="Wyrm Armet",
@@ -1069,15 +1085,15 @@ sets.TreasureHunter = {waist="Chaac Belt"}
         body="Lancer Plackart",
         hands="Lancer Vambraces",
         legs="Lancer's Cuissots",
-        feet=""
+        feet="Lancer's Schynbalds"
 	}
 			-- PUP
     gear.jse.artifact.pup = {
-		head="Puppetry Taj",
-		body="Puppetry Tobe",
-		hands="Puppetry Dastanas",
-        legs="Puppetry Churidars",
-        feet="Puppetry Babouches",
+		head="Foire Taj",
+		body="Foire Tobe",
+		hands="Foire Dastanas",
+        legs="Foire Churidars +1",
+        feet="Foire Babouches",
     }
 	gear.jse.relic.pup = {
         head="Pantin Taj",
@@ -1091,15 +1107,15 @@ sets.TreasureHunter = {waist="Chaac Belt"}
         body="Cirque Farsetto",
         hands="Cirque Guanti",
         legs="Cirque Pantaloni",
-        feet=""
+        feet="Cirque Scarpe"
 	}
 			-- DNC
     gear.jse.artifact.dnc = {
-		head="Dancer's Tiara",
-		body="Dancer's Casaque",
-		hands="Dancer's Bangles",
-        legs="Dancer's Tights",
-        feet="Dancer's Shoes",
+		head="Maxixi Tiara",
+		body="Maxixi Casaque",
+		hands="Maxixi Bangles",
+        legs="Maxixi Tights +1",
+        feet="Maxixi Toeshoes",
     }
 	gear.jse.relic.dnc = {
         head="Etoile Tiara",
@@ -1113,6 +1129,29 @@ sets.TreasureHunter = {waist="Chaac Belt"}
         body="Charis Casaque",
         hands="Charis Bangles",
         legs="Charis Tights",
+        feet="Charis Toeshoes"
+	}
+	
+				-- RUN
+    gear.jse.artifact.run = {
+		head="Runeist Bandeau",
+		body="Runeist Coat",
+		hands="Runeist Mitons",
+        legs="Runeist Trousers",
+        feet="Runeist Bottes",
+    }
+	gear.jse.relic.run = {
+        head="",
+        body="",
+        hands="",
+        legs="",
+        feet=""
+    }
+    gear.jse.empyrean.run = {  
+        head="",
+        body="",
+        hands="",
+        legs="",
         feet=""
 	}
 
@@ -1129,10 +1168,10 @@ sets.TreasureHunter = {waist="Chaac Belt"}
 
     gear.ambuscade.meghanada = {
         head="Meghanada Visor +1",
-        body="Meghanada Cuirie +1",
+        body="Meghanada Cuirie +2",
         hands="Meghanada Gloves +1",
         legs="Meghanada Chausses +1",
-        feet="Meghanada Jambeaux +1",
+        feet="Meghanada Jambeaux +2",
     }
 
     gear.ambuscade.hizamaru = {
@@ -1152,11 +1191,11 @@ sets.TreasureHunter = {waist="Chaac Belt"}
     }
 
     gear.ambuscade.jhakri = {
-        head="Jhakri Coronal +1",
+        head="Jhakri Coronal +2",
         body="Jhakri Robe +2",
-        hands="Jhakri Cuffs +1",
-        legs="Jhakri Slops +1",
-        feet="Jhakri Pigaches +1",
+        hands="Jhakri Cuffs +2",
+        legs="Jhakri Slops +2",
+        feet="Jhakri Pigaches +2",
     }
 
     gear.ambuscade.flamma = {
@@ -1171,7 +1210,7 @@ sets.TreasureHunter = {waist="Chaac Belt"}
         head="Tali'ah Turban +1",
         body="Tali'ah Manteel +1",
         hands="Tali'ah Gages +1",
-        legs="Tali'ah Seraweels +1",
+        legs="Tali'ah Seraweels +2",
         feet="Tali'ah Crackows +1",
     }
 	

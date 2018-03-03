@@ -79,6 +79,7 @@ function init_gear_sets()
 		
     sets.precast.FC['Enhancing Magic'] = set_combine(sets.precast.FC, {
 		waist="Siegel Sash",
+		ammo="Staunch Tathlum",
 		back="Perimede Cape",})
 	
 	sets.precast.FC.Stoneskin = set_combine(sets.precast.FC['Enhancing Magic'], {})
@@ -264,11 +265,11 @@ function init_gear_sets()
 		sub="Enki Strap",
 		ammo="Pemphredo Tathlum",
         head="Befouled Crown",
-		neck="Sanctity Necklace",
+		neck="Erra Pendant",
 		ear1="Digni. Earring",
-		ear2="Enchntr. Earring +1",
+		ear2="Regal Earring",
         body=gear.MerlinicJubbah.MAB,
-		hands="Jhakri Cuffs +1",
+		hands=gear.ambuscade.jhakri.hands,
 		ring1="Kishar Ring",
 		ring2="Stikini Ring",
         back=gear.jsecapes.amb.blm.mab,
@@ -281,11 +282,11 @@ function init_gear_sets()
 		sub="Enki Strap",
 		ammo="Pemphredo Tathlum",
         head="Befouled Crown",
-		neck="Sanctity Necklace",
+		neck="Erra Pendant",
 		ear1="Digni. Earring",
-		ear2="Enchntr. Earring +1",
+		ear2="Regal Earring",
         body=gear.MerlinicJubbah.MAB,
-		hands="Jhakri Cuffs +1",
+		hands=gear.ambuscade.jhakri.hands,
 		ring1="Stikini Ring",
 		ring2="Stikini Ring",
         back=gear.jsecapes.amb.blm.mab,
@@ -313,10 +314,10 @@ function init_gear_sets()
     sets.midcast['Dark Magic'] = {
 		main="Rubicundity",
 		sub="Culminus",
-        neck="Incanter's Torque",
+        neck="Erra Pendant",
 		head=gear.AmalricCoif.C,
 		ear1="Digni. Earring",
-		ear2="Gwati Earring",
+		ear2="Regal Earring",
         body=gear.MerlinicJubbah.MAB,
 		hands=gear.AmalricGages.D,
 		ring1="Stikini Ring",
@@ -331,9 +332,9 @@ function init_gear_sets()
 		sub="Culminus",
 		ammo="Pemphredo Tathlum",
         head="Pixie Hairpin +1",
-		neck="Sanctity Necklace",
+		neck="Erra Pendant",
 		ear1="Barkaro. Earring",
-		ear2="Digni. Earring",
+		ear2="Regal Earring",
         body="Helios Jacket",
 		hands=gear.AmalricGages.D,
 		ring1="Evanescence Ring",
@@ -350,9 +351,9 @@ function init_gear_sets()
 		sub="Niobid Strap",
 		ammo="Pemphredo Tathlum",
         head="Pixie Hairpin +1",
-		neck="Sanctity Necklace",
+		neck="Erra Pendant",
 		ear1="Barkaro. Earring",
-		ear2="Friomisi Earring",
+		ear2="Regal Earring",
         body="Helios Jacket",
 		hands=gear.AmalricGages.A,
 		ring1="Evanescence Ring",
@@ -402,9 +403,9 @@ function init_gear_sets()
 		sub="Enki Strap",
 		ammo="Pemphredo Tathlum",
         head="Nahtirah Hat",
-		neck=gear.neck.fc,
+		neck="Erra Pendant",
 		ear1="Barkaro. Earring",
-		ear2="Friomisi Earring",
+		ear2="Regal Earring",
         body="Zendik Robe",
 		hands=gear.hands.mage_fc,
 		ring1="Stikini Ring",
@@ -421,7 +422,7 @@ function init_gear_sets()
         head=gear.AmalricCoif.C,
 		neck="Sanctity Necklace",
 		ear1="Digni. Earring",
-		ear2="Gwati Earring",
+		ear2="Regal Earring",
         body="Zendik Robe",
 		hands="Lurid Mitts",
 		ring1="Stikini Ring",
@@ -436,9 +437,9 @@ function init_gear_sets()
 		sub="Enki Strap",
 		ammo="Pemphredo Tathlum",
 		head=empty,
-		neck="Sanctity Necklace",
+		neck="Erra Pendant",
 		ear1="Barkaro. Earring",
-		ear2="Enchntr. Earring +1",
+		ear2="Regal Earring",
 		body="Twilight Cloak",
 		hands="Lurid Mitts",
 		ring1="Stikini Ring",
@@ -474,7 +475,7 @@ function init_gear_sets()
         head=gear.MerlinicHood.MAB,
 		neck="Sanctity Necklace",
 		ear1="Barkaro. Earring",
-		ear2="Friomisi Earring",
+		ear2="Regal Earring",
         body=gear.MerlinicJubbah.MAB,
 		hands=gear.AmalricGages.A,
 		ring1="Shiva Ring +1",
@@ -500,9 +501,9 @@ function init_gear_sets()
 		legs=gear.MerlinicShalwar.MB,
 		feet=gear.MerlinicCrackows.MAB}
 
-	sets.midcast['Elemental Magic'].HighTierNuke = set_combine(sets.midcast['Elemental Magic'], {sub="Niobid Strap",ammo="Pemphredo Tathlum",ear1="Barkaro. Earring",hands=gear.AmalricGages.A,back=gear.jsecapes.amb.blm.mab,feet=gear.MerlinicCrackows.MAB})
-	sets.midcast['Elemental Magic'].Resistant.HighTierNuke = set_combine(sets.midcast['Elemental Magic'].Resistant, {sub="Niobid Strap",ammo="Pemphredo Tathlum",ear1="Barkaro. Earring",hands=gear.AmalricGages.A,back=gear.jsecapes.amb.blm.mab})
-	sets.midcast['Elemental Magic'].Fodder.HighTierNuke = set_combine(sets.midcast['Elemental Magic'].Fodder, {ammo="Pemphredo Tathlum",ear1="Barkaro. Earring",hands=gear.AmalricGages.A,back=gear.jsecapes.amb.blm.mab,feet=gear.MerlinicCrackows.MAB})
+	sets.midcast['Elemental Magic'].HighTierNuke = set_combine(sets.midcast['Elemental Magic'], {sub="Niobid Strap",ammo="Pemphredo Tathlum",ear1="Barkaro. Earring",ear2="Regal Earring",hands=gear.AmalricGages.A,back=gear.jsecapes.amb.blm.mab,feet=gear.MerlinicCrackows.MAB})
+	sets.midcast['Elemental Magic'].Resistant.HighTierNuke = set_combine(sets.midcast['Elemental Magic'].Resistant, {sub="Niobid Strap",ammo="Pemphredo Tathlum",ear1="Barkaro. Earring",ear2="Regal Earring",hands=gear.AmalricGages.A,back=gear.jsecapes.amb.blm.mab})
+	sets.midcast['Elemental Magic'].Fodder.HighTierNuke = set_combine(sets.midcast['Elemental Magic'].Fodder, {ammo="Pemphredo Tathlum",ear1="Barkaro. Earring",ear2="Regal Earring",hands=gear.AmalricGages.A,back=gear.jsecapes.amb.blm.mab,feet=gear.MerlinicCrackows.MAB})
 	
 	sets.midcast.Helix = sets.midcast['Elemental Magic']
 	sets.midcast.Helix.Resistant = sets.midcast['Elemental Magic'].Resistant
@@ -577,12 +578,12 @@ function init_gear_sets()
 
 	sets.idle.Death = {main=gear.grioavolr_nuke_staff,sub="Niobid Strap",ammo="Staunch Tathlum",
 		head="Befouled Crown",neck="Loricate Torque +1",ear1="Gifted Earring",ear2="Etiolation Earring",
-		body="Jhakri Robe +2",hands=gear.merlinic_refresh_hands,ring1="Mephitas's Ring +1",ring2="Mephitas's Ring",
+		body=gear.ambuscade.jhakri.body,hands=gear.merlinic_refresh_hands,ring1="Mephitas's Ring +1",ring2="Mephitas's Ring",
 		back="Umbra Cape",waist="Fucho-no-obi",legs="Assid. Pants +1",feet=gear.merlinic_refresh_feet}
 
     sets.idle.Weak = {main="Bolelabunga",sub="Genmei Shield",ammo="Staunch Tathlum",
 		head="Befouled Crown",neck="Loricate Torque +1",ear1="Ethereal Earring",ear2="Etiolation Earring",
-		body="Jhakri Robe +2",hands=gear.merlinic_refresh_hands,ring1="Defending Ring",ring2=gear.ring.regen_right,
+		body=gear.ambuscade.jhakri.body,hands=gear.merlinic_refresh_hands,ring1="Defending Ring",ring2=gear.ring.regen_right,
 		back="Umbra Cape",waist="Flax Sash",legs="Assid. Pants +1",feet=gear.merlinic_refresh_feet}
 
     -- Defense sets
@@ -610,8 +611,8 @@ function init_gear_sets()
     -- Buff sets: Gear that needs to be worn to actively enhance a current player buff.
 	
 	sets.HPDown = {head="Pixie Hairpin +1",ear1="Mendicant's Earring",ear2="Evans Earring",
-		body="Jhakri Robe +2",hands="Jhakri Cuffs +1",ring1="Mephitas's Ring +1",ring2="Mephitas's Ring",
-		back="Swith Cape +1",legs="Shedir Seraweels",feet="Jhakri Pigaches +1"}
+		body=gear.ambuscade.jhakri.body,hands=gear.ambuscade.jhakri.hands,ring1="Mephitas's Ring +1",ring2="Mephitas's Ring",
+		back="Swith Cape +1",legs="Shedir Seraweels",feet=gear.ambuscade.jhakri.feet}
 	
 	sets.buff.Doom = set_combine(sets.buff.Doom, {})
     sets.buff['Mana Wall'] = {back="Taranus's Cape",feet="Wicce Sabots +1"}
@@ -619,8 +620,8 @@ function init_gear_sets()
 	-- Gear that converts elemental damage done to recover MP.	
 	sets.RecoverMP = {body="Spaekona's Coat +1"}
 	-- Gear for Magic Burst mode.
-    sets.MagicBurst = {neck="Mizu. Kubikazari",hands=gear.AmalricGages.A,ring1="Mujin Band",ring2="Locus Ring"}
-	sets.RecoverBurst = {neck="Mizu. Kubikazari",body="Spaekona's Coat +1",hands=gear.AmalricGages.A,ring1="Mujin Band",ring2="Locus Ring",feet="Jhakri Pigaches +1"}
+    sets.MagicBurst = {head="Ea Hat",body="Ea Houppelande",neck="Mizu. Kubikazari",hands=gear.AmalricGages.A,ring1="Mujin Band",legs="Ea Slops",ring2="Locus Ring",feet=gear.ambuscade.jhakri.feet}
+	sets.RecoverBurst = {head="Ea Hat",neck="Mizu. Kubikazari",body="Spaekona's Coat +1",hands=gear.AmalricGages.A,ring1="Mujin Band",ring2="Locus Ring",legs="Ea Slops",feet=gear.ambuscade.jhakri.feet}
 	
 	-- Gear for specific elemental nukes.
 	sets.element.Wind = {main="Marin Staff +1"}

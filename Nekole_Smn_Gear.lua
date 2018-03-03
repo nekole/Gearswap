@@ -11,7 +11,7 @@ function user_setup()
     send_command('bind !` input /ja "Release" <me>')
 	send_command('bind @` gs c cycle MagicBurst')
 	send_command('bind ^` gs c toggle PactSpamMode')
-	send_command('bind @f10 gs c cycle RecoverMode')
+--	send_command('bind @f10 gs c cycle RecoverMode')
 	send_command('bind !pause gs c toggle AutoSubMode') --Automatically uses sublimation.
 	
     select_default_macro_book()
@@ -24,7 +24,7 @@ function init_gear_sets()
     -- Precast Sets
     --------------------------------------
     
-	sets.TreasureHunter = set_combine(sets.TreasureHunter, {feet=gear.merlinic_treasure_feet})
+	sets.TreasureHunter = set_combine(sets.TreasureHunter, {})
 	
     -- Precast sets to enhance JAs
     sets.precast.JA['Astral Flow'] = {head=gear.jse.relic.smn.head}
@@ -39,7 +39,7 @@ function init_gear_sets()
 		legs=gear.TelchineBraconi.ES,
 		feet=gear.jse.empyrean.smn.feet,
 		neck="Incanter's Torque",
-		waist="Lucidity Sash",
+		waist="Kobo Obi",
 		ear1="Gifted Earring",
 		ear1="Andoaa earring",
 		ring1="Stikini Ring",
@@ -63,13 +63,15 @@ function init_gear_sets()
 		ring1="Evoker's Ring",
 		ring2="Stikini Ring",
 		back=gear.jsecapes.smn, --II -2
+		waist="Kobo Obi",
 		feet="Baayami Sabots"}
 
     sets.precast.BloodPactRage = sets.precast.BloodPactWard
 
     -- Fast cast sets for spells
     
-    sets.precast.FC = {main="Oranyan", --7
+    sets.precast.FC = {
+		main="Oranyan", --7
 		sub="Clerisy Strap +1", --3
 		head=gear.vanya.head.A,
 		neck="Orunmila's Torque",--5
@@ -127,7 +129,7 @@ function init_gear_sets()
 		neck="Orunmila's Torque",
 		ear1="Enchntr. Earring +1",
 		ear2="Loquacious Earring",
-		body="Inyanga Jubbah +1",
+		body=gear.ambuscade.inyanga.body,
 		hands=gear.TelchineGloves.FCandEnh,
 		ring1="Weather. Ring",
 		ring2="Prolix Ring",
@@ -140,18 +142,19 @@ function init_gear_sets()
 		main="Serenity",
 		sub="Curatio Grip",
 		head=gear.vanya.head.A,--10%
-		body=gear.vanya.body.C,
-		hands="Reveal. Mitts +1",--14%
+		body="Vrikodara Jupon",
+		hands=gear.TelchineGloves.PetRegen,
+--		hands="Reveal. Mitts +1",--14%
 	    legs="Gyve Trousers",
 		feet=gear.vanya.feet.D,--5%
 		ear1="Mendicant's Earring",--5%
-		ear2="Roundel Earring",--5%
+		ear2="Gifted Earring",--5%
 	--right_ring="Sirona's Ring",
 		ring1="Lebeche Ring",--3%, -5 enmity
-		ring2={name="Mephitas's Ring +1",priority=3},
+		ring2="Mephitas's Ring +1",
 		neck="Nodens Gorget",--5%
 		waist="Witful Belt",
-		back="Thaumaturge's Cape"}
+		back="Tempered Cape +1"}
 		
 	sets.Self_Healing = {neck="Phalaina Locket",ring1="Kunaji Ring",ring2="Asklepian Ring",waist="Gishdubar Sash"}
 	sets.Cure_Recieved = {neck="Phalaina Locket",ring1="Kunaji Ring",ring2="Asklepian Ring",waist="Gishdubar Sash"}
@@ -251,7 +254,7 @@ function init_gear_sets()
 		neck="Orunmila's Torque",
 		ear1="Enchntr. Earring +1",
 		ear2="Loquacious Earring",
-		body="Inyanga Jubbah +1",
+		body=gear.ambuscade.inyanga.body,
 		hands="Helios Gloves",
 		ring1="Kishar Ring",
 		ring2="Stikini Ring",
@@ -267,7 +270,7 @@ function init_gear_sets()
 		neck="Orunmila's Torque",
 		ear1="Enchntr. Earring +1",
 		ear2="Loquacious Earring",
-		body="Inyanga Jubbah +1",
+		body=gear.ambuscade.inyanga.body,
 		hands="Helios Gloves",
 		ring1="Kishar Ring",
 		ring2="Stikini Ring",
@@ -361,18 +364,18 @@ function init_gear_sets()
 		main=gear.weapons.smn.smnskillstaff,
 		sub="Vox Grip",
 		ammo="Sancus Sachet +1",
-		head="Tali'ah Turban +1",
+		head=gear.ambuscade.taliah.head,
 		neck="Adad Amulet",
 		ear1="Andoaa Earring",
 		ear2="Enmerkar Earring",
-        body="Tali'ah Manteel +1",
+        body=gear.ambuscade.taliah.body,
 		hands=gear.ApogeeMitts.Dplus,
 		ring1="Evoker's Ring",
 		ring2="Stikini Ring",
         back=gear.jsecapes.amb.smn.magic,
 		waist="Incarnation Sash",
-		legs="Tali'ah Sera. +1",
-		feet="Tali'ah Crackows +1"}
+		legs=gear.ambuscade.taliah.legs,
+		feet=gear.ambuscade.taliah.feet}
         
     sets.midcast.Pet.DebuffBloodPactWard.Acc = sets.midcast.Pet.DebuffBloodPactWard
     
@@ -410,7 +413,7 @@ function init_gear_sets()
         back=gear.jsecapes.amb.smn.magic,
 		waist="Regal Belt",
 		legs="Enticer's Pants",
-		feet="Con. Pigaches +1"}
+		feet=gear.jse.artifact.smn.feet}
 
     sets.midcast.Pet.MagicalBloodPactRage.Acc = {feet=gear.jse.artifact.smn.feet}
 
@@ -601,7 +604,7 @@ function init_gear_sets()
 
     sets.defense.MEVA = {main="Terra's Staff",sub="Enki Strap",ammo="Sancus Sachet +1",
         head="Amalric Coif",neck="Warder's Charm +1",ear1="Sanare Earring",ear2="Lugalbanda Earring",
-		body="Inyanga Jubbah +1",hands="Telchine Gloves",ring1="Vengeful Ring",Ring2="Purity Ring",
+		body=gear.ambuscade.inyanga.body,hands="Telchine Gloves",ring1="Vengeful Ring",Ring2="Purity Ring",
         back="Aurist's Cape +1",waist="Luminary Sash",legs="Telchine Braconi",feet="Telchine Pigaches"}
 		
     sets.Kiting = {}

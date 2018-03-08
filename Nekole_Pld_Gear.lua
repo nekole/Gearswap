@@ -11,7 +11,7 @@ function user_setup()
 	state.IdleMode:options('Normal','Tank','KiteTank','PDT','MDT','Refresh','Reraise')
     
     state.ExtraDefenseMode = M{['description']='Extra Defense Mode', 'None', 'MP', 'Twilight'}
-	
+	set_lockstyle()	
 	gear.fastcast_jse_back = {name="Rudianos's Mantle",augments={'INT+20','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','"Fast Cast"+10',}}
 	gear.enmity_jse_back = {name="Rudianos's Mantle",augments={'MND+20','Mag. Acc+20 /Mag. Dmg.+20','HP+20','Enmity+10',}}
 
@@ -474,16 +474,19 @@ end
 function select_default_macro_book()
     -- Default macro set/book
     if player.sub_job == 'NIN' then
-        set_macro_page(2, 4)
+        set_macro_page(2, 1)
     elseif player.sub_job == 'RUN' then
-        set_macro_page(9, 4)
+        set_macro_page(9, 1)
     elseif player.sub_job == 'RDM' then
-        set_macro_page(6, 4)
+        set_macro_page(6, 1)
     elseif player.sub_job == 'BLU' then
-        set_macro_page(8, 4)
+        set_macro_page(8, 1)
     elseif player.sub_job == 'DNC' then
-        set_macro_page(4, 4)
+        set_macro_page(4, 1)
     else
-        set_macro_page(1, 4) --War/Etc
+        set_macro_page(1, 1) --War/Etc
     end
+end
+function set_lockstyle()
+	send_command('wait 2; input /lockstyleset 17')
 end

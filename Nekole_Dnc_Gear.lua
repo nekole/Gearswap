@@ -11,7 +11,7 @@ function user_setup()
 
 	gear.stp_jse_back = {name="Senuna's Mantle",augments={'DEX+20','Accuracy+20 Attack+20','"Store TP"+10',}}
 	gear.wsd_jse_back = {name="Senuna's Mantle",augments={'DEX+20','Accuracy+20 Attack+20','Weapon skill damage +10%',}}
-	
+	set_lockstyle()	
     -- Additional local binds
     send_command('bind ^` input /ja "Saber Dance" <me>')
     send_command('bind !` input /ja "Fan Dance" <me>')
@@ -270,14 +270,17 @@ end
 function select_default_macro_book()
     -- Default macro set/book
     if player.sub_job == 'WAR' then
-        set_macro_page(10, 9)
+        set_macro_page(10, 19)
     elseif player.sub_job == 'NIN' then
-        set_macro_page(1, 9)
+        set_macro_page(1, 19)
     elseif player.sub_job == 'SAM' then
-        set_macro_page(9, 9)
+        set_macro_page(9, 19)
     elseif player.sub_job == 'THF' then
-        set_macro_page(8, 9)
+        set_macro_page(8, 19)
     else
-        set_macro_page(10, 9)
+        set_macro_page(1, 19)
     end
+end
+function set_lockstyle()
+	send_command('wait 2; input /lockstyleset 17')
 end

@@ -9,7 +9,7 @@ function user_setup()
 	state.IdleMode:options('Normal', 'PDT','Refresh','Reraise')
     state.ExtraMeleeMode = M{['description']='Extra Melee Mode','None'}
 	state.Passive = M{['description'] = 'Passive Mode','None','MP','Twilight'}
-
+	set_lockstyle()
 	-- Additional local binds
 	send_command('bind ^` input /ja "Hasso" <me>')
 	send_command('bind !` input /ja "Seigan" <me>')
@@ -517,14 +517,17 @@ function init_gear_sets()
 function select_default_macro_book()
     -- Default macro set/book
     if player.sub_job == 'WAR' then
-        set_macro_page(2, 15)
+        set_macro_page(1, 11)
     elseif player.sub_job == 'SAM' then
-        set_macro_page(3, 15)
+        set_macro_page(3, 11)
     elseif player.sub_job == 'DNC' then
-        set_macro_page(4, 15)
+        set_macro_page(4, 11)
     elseif player.sub_job == 'THF' then
-        set_macro_page(1, 15)
+        set_macro_page(1, 11)
     else
-        set_macro_page(5, 15)
+        set_macro_page(1, 11)
     end
+end
+function set_lockstyle()
+	send_command('wait 2; input /lockstyleset 17')
 end

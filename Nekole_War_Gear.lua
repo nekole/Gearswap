@@ -9,7 +9,7 @@ function user_setup()
 	state.IdleMode:options('Normal', 'PDT', 'MDT', 'Regen', 'Reraise')
 
     state.ExtraMeleeMode = M{['description']='Extra Melee Mode', 'None', 'Knockback', 'Reraise'}
-
+	set_lockstyle()
 --	gear.da_jse_back = {name="Cichol's Mantle",augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10'}}
 --	gear.crit_jse_back = {name="Cichol's Mantle",augments={'STR+20','Accuracy+20 Attack+20','Crit.hit rate+10'}}
 	
@@ -1212,14 +1212,17 @@ end
 function select_default_macro_book()
     -- Default macro set/book
     if player.sub_job == 'DRK' then
-        set_macro_page(2, 15)
+        set_macro_page(2, 9)
     elseif player.sub_job == 'SAM' then
-        set_macro_page(3, 15)
+        set_macro_page(3, 9)
     elseif player.sub_job == 'DNC' then
-        set_macro_page(4, 15)
+        set_macro_page(4, 9)
     elseif player.sub_job == 'THF' then
-        set_macro_page(1, 15)
+        set_macro_page(1, 9)
     else
-        set_macro_page(5, 15)
+        set_macro_page(1, 9)
     end
+end
+function set_lockstyle()
+	send_command('wait 2; input /lockstyleset 17')
 end

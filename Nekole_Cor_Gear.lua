@@ -1,18 +1,19 @@
 -- Setup vars that are user-dependent.  Can override this function in a sidecar file.
 function user_setup()
-    state.OffenseMode:options('Normal', 'Acc', 'None')
+    state.OffenseMode:options('Normal','Acc')
     state.RangedMode:options('Normal', 'Acc')
     state.WeaponskillMode:options('Match','Normal', 'Acc','Proc')
     state.CastingMode:options('Normal', 'Resistant')
     state.IdleMode:options('Normal', 'PDT', 'Refresh')
 	state.ExtraMeleeMode = M{['description']='Extra Melee Mode', 'None', 'DWMax'}
+	state.Weapons:options('Default','DualWeapons','SavageWeapons','DualRangedWeapons','LeadenWeapons','None')
 
     gear.RAbullet = "Chrono Bullet"
     gear.WSbullet = "Chrono Bullet"
-    gear.MAbullet = "Orichalc. Bullet" --For MAB WS, do not put single-use bullets here.
+    gear.MAbullet = "Chrono Bullet" --For MAB WS, do not put single-use bullets here.
     gear.QDbullet = "Animikii Bullet"
     options.ammo_warning_limit = 15
-
+	set_lockstyle()
 --	gear.tp_ranger_jse_back = {}
 --	gear.snapshot_jse_back = {name="Camulus's Mantle",augments={'"Snapshot"+10',}}
 --	gear.tp_jse_back = {name="Camulus's Mantle",augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Store TP"+10',}}
@@ -229,7 +230,7 @@ function init_gear_sets()
     sets.midcast.RA = {ammo=gear.RAbullet,
         head=gear.ambuscade.meghanada.head,neck="Iskur Gorget",ear1="Enervating Earring",ear2="Telos Earring",
         body=gear.jse.artifact.cor.body,hands=gear.carmine.hands.D,ring1="Regal Ring",ring2="Dingir Ring",
-        back=gear.jsecapes.amb.cor.wsd,waist="Yemaya Belt",legs="Adhemar Kecks",feet=gear.ambuscade.meghanada.feet}
+        back=gear.jsecapes.amb.cor.wsd,waist="Yemaya Belt",legs=gear.AdhemarKecks.C,feet=gear.ambuscade.meghanada.feet}
 
     sets.midcast.RA.Acc = {ammo=gear.RAbullet,
         head=gear.ambuscade.meghanada.head,neck="Iskur Gorget",ear1="Enervating Earring",ear2="Telos Earring",
@@ -298,17 +299,17 @@ function init_gear_sets()
     -- Normal melee group
     sets.engaged = {
 		head="Dampening Tam",neck="Iskur Gorget",ear1="Cessance Earring",ear2="Brutal Earring",
-		body=gear.ambuscade.meghanada.body,hands="Adhemar Wrist. +1",ring1="Epona's Ring",ring2="Petrov Ring",
+		body=gear.ambuscade.meghanada.body,hands=gear.AdhemarHands.B,ring1="Epona's Ring",ring2="Petrov Ring",
 		back=gear.jsecapes.amb.cor.tp,waist="Windbuffet Belt +1",legs="Samnuha Tights",feet=gear.HerculeanBoots.TA}
     
     sets.engaged.Acc = {
 		head=gear.CarmineMask.D,neck="Combatant's Torque",ear1="Cessance Earring",ear2="Telos Earring",
-		body=gear.ambuscade.meghanada.body,hands="Adhemar Wrist. +1",ring1="Epona's Ring",ring2="Petrov Ring",
+		body=gear.ambuscade.meghanada.body,hands=gear.AdhemarHands.B,ring1="Epona's Ring",ring2="Petrov Ring",
 		back=gear.jsecapes.amb.cor.tp,waist="Olseni Belt",legs=gear.carmine.legs.D,feet=gear.HerculeanBoots.TA}
 
     sets.engaged.DW = {
 		head="Dampening Tam",neck="Iskur Gorget",ear1="Cessance Earring",ear2="Brutal Earring",
-		body=gear.AdhemarJacket.Bplus,hands="Adhemar Wrist. +1",ring1="Epona's Ring",ring2="Petrov Ring",
+		body=gear.AdhemarJacket.Bplus,hands=gear.AdhemarHands.B,ring1="Epona's Ring",ring2="Petrov Ring",
 		back=gear.jsecapes.amb.cor.tp,waist="Reiki Yotai",legs="Samnuha Tights",feet=gear.HerculeanBoots.TA}
     
     sets.engaged.DW.Acc = {
@@ -321,14 +322,15 @@ end
 -- Select default macro book on initial load or subjob change.
 function select_default_macro_book()
     if player.sub_job == 'NIN' then
-        set_macro_page(2, 11)
+        set_macro_page(2, 17)
     elseif player.sub_job == 'DNC' then
-		set_macro_page(1, 11)
+		set_macro_page(1, 17)
     elseif player.sub_job == 'RNG' then
-        set_macro_page(9, 11)
+        set_macro_page(9, 17)
     else
-        set_macro_page(10, 11)
+        set_macro_page(1, 17)
     end   
-
-
+end
+function set_lockstyle()
+	send_command('wait 2; input /lockstyleset 14')
 end

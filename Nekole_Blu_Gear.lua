@@ -1,14 +1,15 @@
 function user_setup()
-	--- Options: Override default values
-    state.OffenseMode:options('Fodder','Normal','MinAcc','SomeAcc','Acc','HighAcc','FullAcc','None')
+	-- Options: Override default values
+    state.OffenseMode:options('Fodder','Normal','MinAcc','SomeAcc','Acc','HighAcc','FullAcc')
 	state.HybridMode:options('Normal','DTLite','PDT','MDT')
-    state.WeaponskillMode:options('Normal','SomeAcc','Acc','HighAcc','FullAcc','Fodder')
+    state.WeaponskillMode:options('Match','Normal','SomeAcc','Acc','HighAcc','FullAcc','Fodder')
     state.CastingMode:options('Normal','Resistant','Fodder')
     state.IdleMode:options('Normal','Sphere','PDT','DTHippo')
 	state.PhysicalDefenseMode:options('PDT', 'NukeLock')
 	state.MagicalDefenseMode:options('MDT', 'NukeLock')
 	state.ResistDefenseMode:options('MEVA')
-	
+	state.Weapons:options('Default','Sequence','None','Almace','MagicWeapons','MaccWeapons','HybridWeapons')
+
     state.ExtraMeleeMode = M{['description']='Extra Melee Mode', 'None', 'MP','SuppaBrutal', 'DWEarrings','DWMax'}
 	
 --	gear.da_jse_back = {name="Rosmerta's Cape",augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dbl.Atk."+10',}}

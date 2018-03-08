@@ -34,6 +34,7 @@ state.CancelStoneskin = M(true, 'Cancel Stone Skin') --Set this to false if you 
 
 send_command('bind !@^f7 gs c toggle AutoWSMode') --Turns auto-ws mode on and off.
 send_command('bind !^f7 gs c toggle AutoFoodMode') --Turns auto-ws mode on and off.
+send_command('bind f7 gs c cycle Weapons') --Turns auto-ws mode on and off.
 send_command('bind @f8 gs c toggle AutoNukeMode') --Turns auto-nuke mode on and off.
 send_command('bind ^f8 gs c toggle AutoStunMode') --Turns auto-stun mode off and on.
 send_command('bind !f8 gs c toggle AutoDefenseMode') --Turns auto-defense mode off and on.
@@ -110,7 +111,9 @@ send_command('bind ^!u gs c quietenable ear2;put "Reraise Earring" satchel')
 
 --Capacity item binds.
 send_command('bind ^@!z get "Mecisto. Mantle" satchel;get "Capacity Ring" satchel;wait 1;get "Trizek Ring" satchel;wait 1;get "Vocation Ring" satchel;wait 1;get "Facility Ring" satchel')
-send_command('bind ^!z put "Mecisto. Mantle" satchel;put "Capacity Ring" satchel;wait 1;put "Trizek Ring" satchel;wait 1;put "Vocation Ring" satchel;wait 1;put "Facility Ring" satchel')
+send_command('bind ^!z put "Mecisto. Mantle" satchel;put "Capacity Ring" satchel;wait 1;put "Trizek Ring" satchel;wait 1;put "Vocation Ring" satchel;wait 1;put "Facility Ring" satchel;wait 1;put "Guide Beret" satchel')
+
+--Place to override Tables and other definitions you may want to.
 
 bayld_items = {'Tlalpoloani','Macoquetza','Camatlatia','Icoyoca','Tlamini','Suijingiri Kanemitsu',
 'Zoquittihuitz','Quauhpilli Helm','Chocaliztli Mask','Xux Hat','Quauhpilli Gloves','Xux Trousers',

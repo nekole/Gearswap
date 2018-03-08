@@ -2,14 +2,18 @@
 function user_setup()
     state.OffenseMode:options('Normal','SomeAcc','Acc','FullAcc','Fodder')
     state.HybridMode:options('Normal','DTLite','PDT','Reraise')
-    state.WeaponskillMode:options('Normal','SomeAcc','Acc','FullAcc','Fodder','Proc')
+    state.WeaponskillMode:options('Match','Normal','SomeAcc','Acc','FullAcc','Fodder','Proc')
     state.RangedMode:options('Normal', 'Acc')
     state.PhysicalDefenseMode:options('PDT','PDTReraise')
 	state.MagicalDefenseMode:options('MDT','MDTReraise')
 	state.ResistDefenseMode:options('MEVA')
     state.IdleMode:options('Normal', 'Reraise')
-	
+	state.Weapons:options('Default','ProcWeapon')
+	set_lockstyle()	
     update_combat_form()
+	
+--	gear.ws_jse_back = {name="Smertrios's Mantle",augments={'STR+20','Accuracy+20 Attack+20','Weapon skill damage +10%',}}
+--	gear.stp_jse_back = {name="Smertrios's Mantle",augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Store TP"+10',}}
 
 -- Additional local binds
     send_command('bind ^` input /ja "Hasso" <me>')
@@ -427,9 +431,9 @@ function select_default_macro_book()
     else
         set_macro_page(1, 7)
     end
-function set_lockstyle()
-	send_command('wait 2; input /lockstyleset 12')
 end
+function set_lockstyle()
+	send_command('wait 2; input /lockstyleset 17')
 end
 
 --Job Specific Trust Overwrite

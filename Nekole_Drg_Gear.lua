@@ -12,7 +12,7 @@ function user_setup()
 	state.Passive = M{['description'] = 'Passive Mode','None','MP','Twilight'}
 	
     update_combat_form()
-
+	set_lockstyle()
     select_default_macro_book()
 	
 	-- Additional local binds
@@ -256,12 +256,15 @@ end
 function select_default_macro_book()
     -- Default macro set/book
     if player.sub_job == 'WAR' then
-        set_macro_page(5, 13)
+        set_macro_page(1, 13)
     elseif player.sub_job == 'SAM' then
         set_macro_page(3, 13)
     elseif player.sub_job == 'BLU' then
         set_macro_page(2, 13)
     else
-        set_macro_page(5, 13)
+        set_macro_page(1, 13)
     end
+end
+function set_lockstyle()
+	send_command('wait 2; input /lockstyleset 17')
 end

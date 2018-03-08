@@ -7,7 +7,7 @@ function user_setup()
     state.PhysicalDefenseMode:options('PDT', 'NukeLock')
 	state.MagicalDefenseMode:options('MDT')
 	state.ResistDefenseMode:options('MEVA')
-
+	set_lockstyle()
 	gear.obi_cure_back = "Tempered Cape +1"
 	gear.obi_cure_waist = "Witful Belt"
 
@@ -353,14 +353,17 @@ end
 -- Default macro set/book
 function select_default_macro_book()
 	if player.sub_job == 'DNC' then
-		set_macro_page(4, 8)
+		set_macro_page(4, 4)
 	elseif player.sub_job == 'NIN' then
-		set_macro_page(4, 8)
+		set_macro_page(4, 4)
 	elseif player.sub_job == 'BLM' then
-		set_macro_page(2, 8)
+		set_macro_page(2, 4)
 	else
-		set_macro_page(3, 8)
+		set_macro_page(3, 4)
 	end
+end
+function set_lockstyle()
+	send_command('wait 2; input /lockstyleset 17')
 end
 
 function user_job_self_command(commandArgs, eventArgs)

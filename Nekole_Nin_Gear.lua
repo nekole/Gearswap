@@ -11,7 +11,7 @@ function user_setup()
 	state.ResistDefenseMode:options('MEVA')
 	
     state.ExtraMeleeMode = M{['description']='Extra Melee Mode', 'None','Knockback','SuppaBrutal','DWEarrings','DWMax'}
-	
+	set_lockstyle()	
 --	"Andartia's Mantle" = {name="Andartia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','Weapon skill damage +10%',}}
 --	"Andartia's Mantle" = {name="Andartia's Mantle",augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10',}}
 	
@@ -349,4 +349,7 @@ function select_default_macro_book()
     else
         set_macro_page(10, 10)
     end
+end
+function set_lockstyle()
+	send_command('wait 2; input /lockstyleset 17')
 end

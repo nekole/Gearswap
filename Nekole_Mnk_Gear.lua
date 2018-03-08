@@ -9,7 +9,7 @@ function user_setup()
 	state.IdleMode:options('Normal', 'PDT')
 
     state.ExtraMeleeMode = M{['description']='Extra Melee Mode', 'None'}
-	
+	set_lockstyle()	
     update_combat_form()
     update_melee_groups()
 	
@@ -301,14 +301,17 @@ end
 function select_default_macro_book()
 	-- Default macro set/book
 	if player.sub_job == 'DNC' then
-		set_macro_page(5, 20)
+		set_macro_page(1, 6)
 	elseif player.sub_job == 'NIN' then
-		set_macro_page(4, 20)
+		set_macro_page(4, 6)
 	elseif player.sub_job == 'THF' then
-		set_macro_page(6, 20)
+		set_macro_page(6, 6)
 	elseif player.sub_job == 'RUN' then
-		set_macro_page(7, 20)
+		set_macro_page(7, 6)
 	else
-		set_macro_page(6, 20)
+		set_macro_page(1, 6)
 	end
+end
+function set_lockstyle()
+	send_command('wait 2; input /lockstyleset 17')
 end

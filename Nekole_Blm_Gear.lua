@@ -3,6 +3,7 @@ function user_setup()
 	state.CastingMode:options('Normal', 'Resistant', 'Fodder', 'Proc')
 	state.OffenseMode:options('None', 'Normal')
 	state.IdleMode:options('Normal', 'PDT', 'TPEat','Regain','DTHippo')
+	state.Weapons:options('None','Default')
 	state.Moving  = M(false, "moving")
 
 	gear.obi_cure_waist = "Witful Belt"

@@ -12,7 +12,7 @@ function user_setup()
 
     state.ExtraMeleeMode = M{['description']='Extra Melee Mode', 'None', 'Suppa', 'DWEarrings', 'DWMax'}
 	state.AmbushMode = M(false, 'Ambush Mode')
-
+	set_lockstyle()
     -- Additional local binds
     send_command('bind ^` input /ja "Flee" <me>')
     send_command('bind !` input /ra <t>')
@@ -392,6 +392,9 @@ function select_default_macro_book()
 	else
 		set_macro_page(1, 2)
     end
+end
+function set_lockstyle()
+	send_command('wait 2; input /lockstyleset 7')
 end
 
 --Dynamis Trust Overwrite

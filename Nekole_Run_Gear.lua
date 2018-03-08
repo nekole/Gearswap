@@ -10,7 +10,7 @@ function user_setup()
 	state.IdleMode:options('Normal','Tank','KiteTank','Sphere')
 	
 	state.ExtraDefenseMode = M{['description']='Extra Defense Mode','None','MP'}
-
+	set_lockstyle()
 	gear.enmity_jse_back = {name="Ogma's cape",augments={'INT+20','Eva.+20 /Mag. Eva.+20','Enmity+10',}}
 	gear.stp_jse_back = {name="Ogma's cape",augments={'DEX+20','Accuracy+20 Attack+20','"Store TP"+10',}}
 	gear.da_jse_back = {name="Ogma's cape",augments={'STR+20','Accuracy+20 Attack+20','"Dbl.Atk."+10',}}
@@ -370,24 +370,27 @@ end
 function select_default_macro_book()
 	-- Default macro set/book
 	if player.sub_job == 'DNC' then
-		set_macro_page(4, 19)
+		set_macro_page(4, 20)
 	elseif player.sub_job == 'RDM' then
-		set_macro_page(5, 19)
+		set_macro_page(5, 20)
 	elseif player.sub_job == 'SCH' then
-		set_macro_page(5, 19)
+		set_macro_page(5, 20)
 	elseif player.sub_job == 'BLU' then
-		set_macro_page(6, 19)
+		set_macro_page(6, 20)
 	elseif player.sub_job == 'WAR' then
-		set_macro_page(7, 19)
+		set_macro_page(7, 20)
 	elseif player.sub_job == 'SAM' then
-		set_macro_page(8, 19)
+		set_macro_page(8, 20)
 	elseif player.sub_job == 'DRK' then
-		set_macro_page(9, 19)
+		set_macro_page(9, 20)
 	elseif player.sub_job == 'NIN' then
-		set_macro_page(10, 19)
+		set_macro_page(10, 20)
 	else
-		set_macro_page(5, 19)
+		set_macro_page(5, 20)
 	end
+end
+function set_lockstyle()
+	send_command('wait 2; input /lockstyleset 17')
 end
 
 --Job Specific Trust Overwrite

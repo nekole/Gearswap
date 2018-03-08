@@ -4,7 +4,7 @@ function user_setup()
     state.CastingMode:options('Normal', 'Resistant', 'Proc')
     state.IdleMode:options('Normal', 'PDT', 'TPEat')
 	state.HybridMode:options('Normal','PDT')
-
+	set_lockstyle()
 	gear.nuke_jse_back = {name="Lugh's Cape",augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','"Mag.Atk.Bns."+10'}}
 	
 	gear.obi_cure_back = "Tempered Cape +1"
@@ -354,12 +354,15 @@ end
 -- Default macro set/book
 function select_default_macro_book()
 	if player.sub_job == 'RDM' then
-		set_macro_page(1, 18)
+		set_macro_page(1, 19)
 	elseif player.sub_job == 'BLM' then
-		set_macro_page(1, 18)
+		set_macro_page(1, 19)
 	elseif player.sub_job == 'WHM' then
-		set_macro_page(1, 18)
+		set_macro_page(1, 19)
 	else
-		set_macro_page(1, 18)
+		set_macro_page(1, 19)
 	end
+end
+function set_lockstyle()
+	send_command('wait 2; input /lockstyleset 17')
 end

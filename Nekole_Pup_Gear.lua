@@ -5,7 +5,7 @@ function user_setup()
     state.WeaponskillMode:options('Match','Normal','Acc','FullAcc','Fodder')
     state.PhysicalDefenseMode:options('PDT')
 	state.IdleMode:options('Normal','PDT','Refresh')
-
+	set_lockstyle()
     -- Default maneuvers 1, 2, 3 and 4 for each pet mode.
     defaultManeuvers = {
         ['Melee'] = {'Fire Maneuver','Thunder Maneuver','Wind Maneuver','Light Maneuver'},
@@ -287,12 +287,15 @@ end
 function select_default_macro_book()
     -- Default macro set/book
     if player.sub_job == 'DNC' then
-        set_macro_page(2, 20)
+        set_macro_page(2, 18)
     elseif player.sub_job == 'NIN' then
-        set_macro_page(2, 20)
+        set_macro_page(2, 18)
     elseif player.sub_job == 'THF' then
-        set_macro_page(2, 20)
+        set_macro_page(2, 18)
     else
-        set_macro_page(2, 20)
+        set_macro_page(2, 18)
     end
+end
+function set_lockstyle()
+	send_command('wait 2; input /lockstyleset 17')
 end

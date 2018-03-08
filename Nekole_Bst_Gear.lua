@@ -1,5 +1,5 @@
 function user_setup()
-	state.OffenseMode:options('Normal', 'SomeAcc', 'Acc', 'FullAcc', 'Fodder')
+	state.OffenseMode:options('Normal','SomeAcc','Acc','FullAcc','Fodder')
 	state.HybridMode:options('Normal', 'PDT')
 	state.WeaponskillMode:options('Match','Normal', 'SomeAcc', 'Acc', 'FullAcc', 'Fodder')
 	state.CastingMode:options('Normal')
@@ -8,10 +8,12 @@ function user_setup()
 	state.PhysicalDefenseMode:options('PetPDT', 'PDT', 'Reraise', 'PKiller')
 	state.MagicalDefenseMode:options('PetMDT','MDT', 'MKiller')
 	state.ResistDefenseMode:options('PetMEVA', 'MEVA')
-	state.ExtraMeleeMode = M{['description']='Extra Melee Mode', 'None', 'Knockback', 'Suppa', 'DWEarrings'}
+	state.Weapons:options('None','Default','DualWeapons')
+	state.ExtraMeleeMode = M{['description']='Extra Melee Mode','None','Knockback','Suppa','DWEarrings'}
 
 	send_command('bind !f11 gs c cycle ExtraMeleeMode')
-
+	set_lockstyle()
+	
 	gear.PHYKumbha1 = {name="Kumbhakarna", augments={'Pet: Attack+20 Pet: Rng.Atk.+20','Pet: "Dbl.Atk."+4 Pet: Crit.hit rate +4','Pet: TP Bonus+180',}}
 	gear.PHYKumbha2 = {name="Kumbhakarna", augments={'Pet: Accuracy+18 Pet: Rng. Acc.+18','Pet: TP Bonus+160',}}
 	gear.PDTMABKumbha = {name="Kumbhakarna", augments={'Pet: "Mag.Atk.Bns."+20','Pet: Phys. dmg. taken -4%','Pet: TP Bonus+200',}}
@@ -59,7 +61,7 @@ function init_gear_sets()
 
 	sets.precast.JA.Reward = {
 								neck="Phalaina Locket",ear1="Etiolation Earring",ear2="Domesticator's Earring", --head="Stout Bonnet"
-								body="Tot. Jackcoat +2",hands="Regimen Mittens",ring1="Stikini Ring",ring2="Sirona's Ring",
+								body="Tot. Jackcoat +3",hands="Regimen Mittens",ring1="Stikini Ring",ring2="Sirona's Ring",
 								back="Pastoralist's Mantle",waist="Klouskap Sash",legs="Ankusa Trousers +1",feet="Ankusa Gaiters +1"}
 
 	sets.precast.JA.Reward.Theta = set_combine(sets.precast.JA.Reward, {ammo="Pet Food Theta"})
@@ -71,7 +73,7 @@ function init_gear_sets()
 	-- CURING WALTZ
 	sets.precast.Waltz = {
 								head=gear.valorous_pet_head,neck="Loricate Torque +1",ear1="Enmerkar Earring",ear2="Handler's Earring +1",
-								body="Tot. Jackcoat +2",hands="Regimen Mittens",ring1="Valseur's Ring",ring2="Asklepian Ring",
+								body="Tot. Jackcoat +3",hands="Regimen Mittens",ring1="Valseur's Ring",ring2="Asklepian Ring",
 								back="Moonlight Cape",waist="Chaac Belt",legs="Dashing Subligar",feet="Valorous Greaves"}
 
 		-- HEALING WALTZ
@@ -223,12 +225,12 @@ function init_gear_sets()
 
 	sets.idle.Pet = {ammo="Demonry Core",
 			head="Anwig Salade",neck="Loricate Torque +1",ear1="Enmerkar Earring",ear2="Handler's Earring +1",
-			body="Tot. Jackcoat +2",hands="Ankusa Gloves +1",ring1="Defending Ring",ring2="Sheltered Ring",
+			body="Tot. Jackcoat +3",hands="Ankusa Gloves +1",ring1="Defending Ring",ring2="Sheltered Ring",
 			back="Pastoralist's Mantle",waist="Isa Belt",legs="Tali'ah Sera. +2",feet="Ankusa Gaiters +1"}
 
 	sets.idle.Pet.Engaged = {ammo="Demonry Core",
 			head="Anwig Salade",neck="Shulmanu Collar",ear1="Enmerkar Earring",ear2="Handler's Earring +1",
-			body="Tot. Jackcoat +2",hands="Regimen Mittens",ring1="Defending Ring",ring2="Dark Ring",
+			body="Tot. Jackcoat +3",hands="Regimen Mittens",ring1="Defending Ring",ring2="Dark Ring",
 			back="Pastoralist's Mantle",waist="Klouskap Sash",legs="Tali'ah Sera. +2",feet="Tot. Gaiters +1"}
 
 	-- DEFENSE SETS
@@ -239,12 +241,12 @@ function init_gear_sets()
 
 	sets.defense.PetPDT = {ammo="Demonry Core",
 			head="Anwig Salade",neck="Loricate Torque +1",ear1="Enmerkar Earring",ear2="Handler's Earring +1",
-			body="Tot. Jackcoat +2",hands="Ankusa Gloves +1",ring1="Defending Ring",ring2="Dark Ring",
+			body="Tot. Jackcoat +3",hands="Ankusa Gloves +1",ring1="Defending Ring",ring2="Dark Ring",
 			back="Pastoralist's Mantle",waist="Isa Belt",legs="Tali'ah Sera. +2",feet="Ankusa Gaiters +1"}
 
 	sets.defense.PetMDT = {ammo="Demonry Core",
 			head="Anwig Salade",neck="Loricate Torque +1",ear1="Enmerkar Earring",ear2="Handler's Earring +1",
-			body="Tot. Jackcoat +2",hands="Ankusa Gloves +1",ring1="Defending Ring",ring2="Dark Ring",
+			body="Tot. Jackcoat +3",hands="Ankusa Gloves +1",ring1="Defending Ring",ring2="Dark Ring",
 			back="Pastoralist's Mantle",waist="Isa Belt",legs="Tali'ah Sera. +2",feet="Ankusa Gaiters +1"}
 
 	sets.defense.PetMEVA = sets.defense.PetMDT
@@ -384,7 +386,8 @@ function init_gear_sets()
 				sets.buff.Doom = set_combine(sets.buff.Doom, {})
 		sets.buff.Sleep = {head="Frenzy Sallet"}
 		sets.TreasureHunter = set_combine(sets.TreasureHunter, {})
-		sets.Weapons = {main ="Kerehcatl",sub="Hunahpu"}
+		sets.Weapons = {main ="Kerehcatl"}
+		sets.DualWeapons = {main ="Kerehcatl",sub="Hunahpu"}
 		sets.Knockback = {}
 		sets.SuppaBrutal = {ear1="Suppanomimi", ear2="Sherida Earring"}
 		sets.DWEarrings = {ear1="Dudgeon Earring",ear2="Heartseeker Earring"}
@@ -465,15 +468,15 @@ end
 function select_default_macro_book()
 	-- Default macro set/book
 	if player.sub_job == 'DNC' then
-		set_macro_page(6, 16)
+		set_macro_page(1, 14)
 	elseif player.sub_job == 'NIN' then
-		set_macro_page(4, 16)
+		set_macro_page(4, 14)
 	elseif player.sub_job == 'THF' then
-		set_macro_page(6, 20)
+		set_macro_page(6, 14)
 	elseif player.sub_job == 'RUN' then
-		set_macro_page(7, 20)
+		set_macro_page(1, 14)
 	else
-		set_macro_page(6, 20)
+		set_macro_page(1, 14)
 	end
 end
 
@@ -489,4 +492,7 @@ function user_job_tick()
 
 	end
 	return false
+end
+function set_lockstyle()
+	send_command('wait 2; input /lockstyleset 17')
 end

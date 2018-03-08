@@ -4,7 +4,7 @@ function user_setup()
 	state.RangedMode:options('Normal', 'Acc')
 	state.WeaponskillMode:options('Match','Normal', 'Acc')
 	state.IdleMode:options('Normal', 'PDT')
-	
+	set_lockstyle()	
 	DefaultAmmo = {['Annihilator'] = "Eradicating bullet"}
 	U_Shot_Ammo = {['Annihilator'] = "Eradicating bullet"}
 	
@@ -49,7 +49,7 @@ function init_gear_sets()
 		hands="Leyline Gloves",
 		ring1="Lebeche Ring", 
 		ring2="Prolix Ring",
-		legs=gear.RawhideTrousers.D
+		legs=gear.RawhideTrousers.D,
 		feet=gear.carmine.feet.D}
 
 	sets.precast.FC.Utsusemi = set_combine(sets.precast.FC, {
@@ -87,7 +87,7 @@ function init_gear_sets()
 		legs=gear.ambuscade.meghanada.legs,
 		waist="Fotia Belt",
 		back=gear.jsecapes.amb.rng.ws,
-		feet=gear.ambuscade.meghanada..feet}
+		feet=gear.ambuscade.meghanada.feet}
 		
 	sets.precast.WS.Acc = {
         head="Meghanada Visor +2",neck="Fotia Gorget",ear1="Moonshade Earring",ear2="Telos Earring",
@@ -277,4 +277,7 @@ end
 -- Select default macro book on initial load or subjob change.
 function select_default_macro_book()
 	set_macro_page(1, 8)
+end
+function set_lockstyle()
+	send_command('wait 2; input /lockstyleset 17')
 end

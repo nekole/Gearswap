@@ -6,7 +6,7 @@ function user_setup()
 	state.PhysicalDefenseMode:options('PDT')
 	state.MagicalDefenseMode:options('MDT')
 	state.ResistDefenseMode:options('MEVA')
-
+	set_lockstyle()
 	gear.obi_cure_waist = "Austerity Belt +1"
 	gear.obi_cure_back = "Alaunus's Cape"
 
@@ -478,4 +478,7 @@ end
 -- Select default macro book on initial load or subjob change.
 function select_default_macro_book()
 	set_macro_page(1, 5)
+end
+function set_lockstyle()
+	send_command('wait 2; input /lockstyleset 17')
 end

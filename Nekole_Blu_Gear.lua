@@ -8,7 +8,7 @@ function user_setup()
 	state.PhysicalDefenseMode:options('PDT', 'NukeLock')
 	state.MagicalDefenseMode:options('MDT', 'NukeLock')
 	state.ResistDefenseMode:options('MEVA')
-	state.Weapons:options('Default','Sequence','None','Almace','MagicWeapons','MaccWeapons','HybridWeapons')
+	state.Weapons:options('Tizalmace','Sequence','None','Almace','MagicWeapons','MeleeClubs','MaccWeapons','HybridWeapons')
 
     state.ExtraMeleeMode = M{['description']='Extra Melee Mode', 'None', 'MP','SuppaBrutal', 'DWEarrings','DWMax'}
 	
@@ -942,25 +942,22 @@ function init_gear_sets()
 	sets.DWMax = {ear1="Dudgeon Earring",ear2="Heartseeker Earring",body=gear.AdhemarJacket.B,waist="Shetal Stone"}
 	sets.TreasureHunter = set_combine(sets.TreasureHunter, {})
 	sets.Assault = {ring1="Balrahn's Ring"}
-	sets.Weapons = {main="Sequence",sub="Almace"}
-	sets.Almace = {main="Almace",sub="Sequence"}
-	sets.Sequence = {main="Sequence",sub="Almace"}
-	sets.MagicWeapons = {main="Nibiru Cudgel", sub="Nibiru Cudgel"}
-	sets.MaccWeapons = {main="Iris", sub="Iris"}
-	sets.HybridWeapons = {main="Vampirism", sub="Vampirism"}
+	
+	-- Weapons sets	
+	sets.weapons.Tizalmace = {main="Sequence",sub="Almace"}
+	sets.weapons.MeleeClubs = {main="Nehushtan",sub="Nehushtan"}
+	sets.weapons.Almace = {main="Almace",sub="Sequence"}
+	sets.weapons.Sequence = {main="Sequence",sub="Almace"}
+	sets.weapons.MagicWeapons = {main="Nibiru Cudgel",sub="Nibiru Cudgel"}
+	sets.weapons.MaccWeapons = {main="Iris",sub="Iris"}
+	sets.weapons.HybridWeapons = {main="Vampirism",sub="Vampirism"}
 	
 	-- Engaged sets
 
-	-- Variations for TP weapon and (optional) offense/defense modes.  Code will fall back on previous
-	-- sets if more refined versions aren't defined.
-	-- If you create a set with both offense and defense modes, the offense mode should be first.
-	-- EG: sets.engaged.Dagger.Accuracy.Evasion
-	
-	-- Caps with Magic Haste Cap, +5DW = Change Earrings, 10DW
 	
 	sets.engaged = {
-		main="Sequence", 
-		sub="Almace",
+		main="Almace",
+		sub="Sequence", 
 		ammo="Ginsen",
         head=gear.AdhemarBonnet.B,
         neck="Asperity Necklace",
@@ -1055,10 +1052,22 @@ function init_gear_sets()
 			    body=gear.jse.artifact.blu.body,hands=gear.jse.artifact.blu.hands,ring1="Ramuh Ring +1",ring2="Ramuh Ring +1",
 			    back=gear.stp_jse_back,waist="Olseni Belt",legs="Carmine Cuisses +1",feet=gear.HerculeanBoots.TA}
 
-	sets.engaged.Fodder = {ammo="Ginsen",
-			    head="Dampening Tam",neck="Ainia Collar",ear1="Dedition Earring",ear2="Brutal Earring",
-			    body=gear.AdhemarJacket.Bplus,hands=gear.AdhemarHands.B,ring1="Epona's Ring",ring2="Petrov Ring",
-			    back=gear.da_jse_back,waist="Windbuffet Belt +1",legs="Samnuha Tights",feet=gear.HerculeanBoots.TA}
+	sets.engaged.Fodder = {main="Almace",
+		sub="Sequence", 
+		ammo="Ginsen",
+        head=gear.AdhemarBonnet.B,
+        neck="Asperity Necklace",
+        ear1="Telos Earring",
+        ear2="Suppanomimi",
+        body=gear.AdhemarJacket.Bplus,
+        hands=gear.AdhemarHands.B,
+--		hands=gear.HerculeanGloves.TA,
+        ring1="Hetairoi Ring",
+		ring2="Epona's Ring",
+        back=gear.jsecapes.amb.blu.tp,
+        waist=gear.waist.nohaste,
+        legs=gear.SamnuhaTights.TP,
+        feet=gear.HerculeanBoots.TA}
 				
 	sets.engaged.Fodder.AM = {ammo="Ginsen",
 			    head="Dampening Tam",neck="Ainia Collar",ear1="Dedition Earring",ear2="Telos Earring",

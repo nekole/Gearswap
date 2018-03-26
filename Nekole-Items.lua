@@ -719,31 +719,31 @@ sets.TreasureHunter = {waist="Chaac Belt"}
         head="Plunderer's Bonnet +1", 
         body="Plunderer's Vest +1",
         hands="Plunderer's Armlets +1",
-        legs="Plunderer's Culottes", 
+        legs="Plunderer's Culottes", -- Need Finish Rem's Tale Ch.9 x8
         feet="Plunderer's Poulaines +1"
     }
     gear.jse.empyrean.thf = {
-        head="Raider's Bonnet +2", -- Need Finish
-        body="Raider's Vest +2", -- Need Finish
-        hands="Raider's Armlets +1", -- Need Finish
-        legs="Raider's Culottes +1", -- Need Finish
+        head="Skulker's Bonnet", -- Need Finish Rem's Tale Ch.6 x8	Etched Memory x15	Defiant Sweat
+        body="Skulker's Vest", -- Need Finish Rem's Tale Ch.7 x8	Etched Memory x25	Dark Matter
+        hands="Skulker's Armlets", -- Need Finish Rem's Tale Ch.8 x8	Etched Memory x15	Macuil Horn
+        legs="Skulker's Culottes", -- Need Finish Rem's Tale Ch.9 x8	Etched Memory x20	Tartarian Chain
         feet="Skulker's Poulaines +1"
     }
 	
 	-- WAR
     gear.jse.artifact.war = {
-        head="Pummeler's Mask",
-        body="Pummeler's Lorica",
-        hands="Pummeler's Mufflers",
+        head="Pummeler's Mask", -- Need Finish
+        body="Pummeler's Lorica", -- Need Finish
+        hands="Pummeler's Mufflers", -- Need Finish
         legs="Pumm. Cuisses +1",
-        feet="Pummeler's Calligae"
+        feet="Pummeler's Calligae" -- Need Finish
     }
     gear.jse.relic.war = {
-        head="Agoge Mask",
-        body="Warrior's Lorica",
-        hands="Warrior's Mufflers",
-        legs="Warrior's Cuisses",
-        feet="Warrior's Calligae"
+        head="Agoge Mask", -- Need Finish
+        body="Warrior's Lorica", -- Need Finish
+        hands="Warrior's Mufflers", -- Need Finish
+        legs="Warrior's Cuisses", -- Need Finish
+        feet="Warrior's Calligae" -- Need Finish
     }
     gear.jse.empyrean.war = {
         head="Ravager's Mask +1",
@@ -1169,8 +1169,8 @@ sets.TreasureHunter = {waist="Chaac Belt"}
     gear.ambuscade.meghanada = {
         head="Meghanada Visor +1",
         body="Meghanada Cuirie +2",
-        hands="Meghanada Gloves +1",
-        legs="Meghanada Chausses +1",
+        hands="Meghanada Gloves +2",
+        legs="Meghanada Chausses +2",
         feet="Meghanada Jambeaux +2",
     }
 
@@ -1207,11 +1207,11 @@ sets.TreasureHunter = {waist="Chaac Belt"}
     }
 	
 	gear.ambuscade.taliah = {
-        head="Tali'ah Turban +1",
-        body="Tali'ah Manteel +1",
+        head="Tali'ah Turban +2",
+        body="Tali'ah Manteel +2",
         hands="Tali'ah Gages +1",
         legs="Tali'ah Seraweels +2",
-        feet="Tali'ah Crackows +1",
+        feet="Tali'ah Crackows +2",
     }
 	
 	gear.ambuscade.mummu = {

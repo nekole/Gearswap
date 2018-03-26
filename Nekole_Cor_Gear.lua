@@ -10,7 +10,7 @@ function user_setup()
 
     gear.RAbullet = "Chrono Bullet"
     gear.WSbullet = "Chrono Bullet"
-    gear.MAbullet = "Chrono Bullet" --For MAB WS, do not put single-use bullets here.
+    gear.MAbullet = "Orichalc. Bullet" --For MAB WS, do not put single-use bullets here.
     gear.QDbullet = "Animikii Bullet"
     options.ammo_warning_limit = 15
 	set_lockstyle()
@@ -61,7 +61,7 @@ function init_gear_sets()
     sets.precast.JA['Random Deal'] = {body=gear.jse.relic.cor.body}
     sets.precast.FoldDoubleBust = {hands=gear.jse.relic.cor.hands}
     
-    sets.precast.CorsairRoll = {
+    sets.precast.CorsairRoll = {range="Compensator",
         head=gear.jse.relic.cor.head,neck="Regal Necklace",ear1="Etiolation Earring",ear2="Sanare Earring",
         body=gear.jse.relic.cor.body,hands=gear.jse.empyrean.cor.hands,ring1="Defending Ring",ring2="Ilabrat Ring",
         back=gear.jsecapes.amb.cor.tp,waist="Flume Belt +1",legs="Desultor Tassets",feet=gear.jse.relic.cor.feet}
@@ -176,7 +176,7 @@ function init_gear_sets()
 	
     sets.precast.WS['Leaden Salute'] = {ammo=gear.MAbullet,
         head="Pixie Hairpin +1",neck="Baetyl Pendant",ear1="Moonshade Earring",ear2="Friomisi Earring",
-        body=gear.jse.artifact.cor.body,hands=gear.carmine.hands.D,ring1="Dingir Ring",ring2="Archon Ring",
+        body="Samnuha Coat",hands=gear.carmine.hands.D,ring1="Dingir Ring",ring2="Archon Ring",
         back=gear.jsecapes.amb.cor.mwsd,waist="Eschan Stone",legs=gear.jse.artifact.cor.legs,feet=gear.herculean_nuke_feet}
 
     sets.precast.WS['Leaden Salute'].Acc = {ammo=gear.MAbullet,
@@ -279,12 +279,13 @@ function init_gear_sets()
 
     sets.Kiting = {legs=gear.carmine.legs.D}
 	
-	sets.Weapons = {main="Fettering Blade",sub="Blurred Knife +1",range="Fomalhaut"}
-	sets.SavageWeapons = {main="Hep. Sapara +1",sub="Blurred Knife +1",range="Ataktos"}
-	sets.SingleWeapon = {main="Fettering Blade",sub="Nusku Shield"}
-	sets.DualRangedWeapons = {main="Fettering Blade",sub="Kustawi +1"}
-	sets.LeadenWeapons = {main="Fettering Blade",sub="Atoyac"}
-	sets.RollWeapons = {range="Compensator"}
+	sets.weapons.Default = {main="Fettering Blade",sub="Nusku Shield",range="Fomalhaut"}
+	sets.weapons.DualWeapons = {main="Fettering Blade",sub="Blurred Knife +1",range="Fomalhaut"}
+	sets.weapons.RollMeleeWeapons = {main="Hep. Sapara +1",sub="Blurred Knife +1",range="Compensator"}
+	sets.weapons.RollRangedWeapons = {main="Fettering Blade",sub="Kustawi +1",range="Compensator"}
+	sets.weapons.SavageWeapons = {main="Hep. Sapara +1",sub="Blurred Knife +1",range="Ataktos"}
+	sets.weapons.DualRangedWeapons = {main="Fettering Blade",sub="Kustawi +1"}
+	sets.weapons.LeadenWeapons = {main="Fettering Blade",sub="Atoyac",range="Fomalhaut"}
 	sets.TreasureHunter = set_combine(sets.TreasureHunter, {})
 	
 	sets.DWMax = {ear1="Dudgeon Earring",ear2="Heartseeker Earring",body=gear.AdhemarJacket.Bplus,hands="Floral Gauntlets",waist="Reiki Yotai"}

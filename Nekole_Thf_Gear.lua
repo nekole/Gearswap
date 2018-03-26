@@ -4,16 +4,18 @@ function user_setup()
     state.OffenseMode:options('Normal','SomeAcc','Acc','FullAcc','Fodder')
     state.HybridMode:options('Normal','PDT')
     state.RangedMode:options('Normal', 'Acc')
-    state.WeaponskillMode:options('Normal','SomeAcc','Acc','FullAcc','Fodder')
+    state.WeaponskillMode:options('Match','Normal','SomeAcc','Acc','FullAcc','Fodder')
 	state.IdleMode:options('Normal', 'Sphere')
     state.PhysicalDefenseMode:options('PDT')
 	state.MagicalDefenseMode:options('MDT')
 	state.ResistDefenseMode:options('MEVA')
+	state.Weapons:options('Aeneas','MagicWeapons','Throwing')
 
     state.ExtraMeleeMode = M{['description']='Extra Melee Mode', 'None', 'Suppa', 'DWEarrings', 'DWMax'}
 	state.AmbushMode = M(false, 'Ambush Mode')
 	set_lockstyle()
-    -- Additional local binds
+ 
+ -- Additional local binds
     send_command('bind ^` input /ja "Flee" <me>')
     send_command('bind !` input /ra <t>')
     send_command('bind !- gs c cycle targetmode')
@@ -56,6 +58,10 @@ function init_gear_sets()
 	sets.DWEarrings = {ear1="Dudgeon Earring",ear2="Heartseeker Earring"}
 	sets.DWMax = {ear1="Dudgeon Earring",ear2="Heartseeker Earring",body=gear.AdhemarJacket.Bplus,hands="Floral Gauntlets",waist="Shetal Stone"}
 	sets.Ambush = {} --body="Plunderer's Vest +1"
+	
+	sets.weapons.Aeneas = {main="Mandau",sub="Taming Sari"}
+	sets.weapons.MagicWeapons = {main="Malevolence",sub="Malevolence"}
+	sets.weapons.Throwing = {range="Raider's Bmrng."}
 	
     -- Actions we want to use to tag TH.
 	sets.precast.Step = set_combine(sets.engaged.FullAcc, sets.TreasureHunter)

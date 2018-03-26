@@ -1,8 +1,10 @@
--- Setup vars that are user-dependent.  Can override this function in a sidecar file.
+-- Setup vars that are user-dependent.  Can override this function in a sidecar file..
 function user_setup()
-    state.OffenseMode:options('None', 'Normal', 'Acc')
-    state.CastingMode:options('Normal', 'Resistant')
-    state.IdleMode:options('Normal', 'PDT', 'TPEat', 'Regain')
+    state.OffenseMode:options('Normal','Acc')
+    state.CastingMode:options('Normal','Resistant')
+    state.IdleMode:options('Normal', 'PDT','TPEat')
+	state.Weapons:options('None','Nirvana')
+	
 	state.Moving  = M(false, "moving")
 	
 	gear.perp_staff = {name=gear.weapons.smn.bpmagicstaff}
@@ -11,7 +13,6 @@ function user_setup()
     send_command('bind !` input /ja "Release" <me>')
 	send_command('bind @` gs c cycle MagicBurst')
 	send_command('bind ^` gs c toggle PactSpamMode')
---	send_command('bind @f10 gs c cycle RecoverMode')
 	send_command('bind !pause gs c toggle AutoSubMode') --Automatically uses sublimation.
 	
     select_default_macro_book()
@@ -391,8 +392,8 @@ function init_gear_sets()
 		waist="Incarnation Sash",
 		ear1="Gelos Earring",
 		ear2="Lugalbanda Earring",
-		ring1={name="Varar Ring",priority=3},
-		ring2={name="Varar Ring",priority=3},
+		ring1={name="Varar Ring +1",priority=3},
+		ring2={name="Varar Ring +1",priority=3},
 		back=gear.jsecapes.amb.smn.att,
 		feet=gear.ApogeePumps.Bplus,}
 		
@@ -408,8 +409,8 @@ function init_gear_sets()
 		ear2="Lugalbanda Earring",
         body=gear.jse.artifact.smn.body,
 		hands=gear.MerlinicDastanas.MAB,
-		ring1="Varar Ring",
-		ring2="Varar Ring",
+		ring1="Varar Ring +1",
+		ring2="Varar Ring +1",
         back=gear.jsecapes.amb.smn.magic,
 		waist="Regal Belt",
 		legs="Enticer's Pants",
@@ -434,13 +435,13 @@ function init_gear_sets()
 		ear1="Gelos Earring",
 		ear2="Lugalbanda Earring",
         body=gear.jse.artifact.smn.body,
-		hands=gear.ApogeeDalmatica.B,
-		ring1="Varar Ring",
-		ring2="Varar Ring",
+		hands=gear.MerlinicDastanas.MAB,
+		ring1="Varar Ring +1",
+		ring2="Varar Ring +1",
         back=gear.jsecapes.amb.smn.att,
 		waist="Regal Belt",
-		legs=gear.ApogeeSlacks.D,
-		feet=gear.ApogeePumps.Bplus}
+		legs=gear.ApogeeSlacks.Aplus,
+		feet=gear.jse.artifact.smn.feet}
 		
 	sets.midcast.Pet['Flaming Crush'].Acc = {feet=gear.jse.artifact.smn.feet}
 
@@ -618,7 +619,7 @@ function init_gear_sets()
 	
 	sets.buff.Doom = set_combine(sets.buff.Doom, {})
 	sets.buff.Sleep = {neck="Sacrifice Torque"}
-	sets.Weapons = {main="Gridarvor", sub="Elan Strap +1"}
+	sets.weapons.Nirvana = {main="Nirvana", sub="Elan Strap +1"}
 	
 	sets.Adoulin = {
         body="Councilor's Garb",

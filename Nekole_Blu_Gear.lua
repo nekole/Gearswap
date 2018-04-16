@@ -867,8 +867,6 @@ function init_gear_sets()
 
 	-- Idle sets
 	sets.idle = {
-		main="Sequence",
-		sub="Almace",
         ammo=gear.ammo.dt,
         head=gear.RawhideMask.A,
         neck="Loricate Torque +1",
@@ -956,8 +954,6 @@ function init_gear_sets()
 
 	
 	sets.engaged = {
-		main="Almace",
-		sub="Sequence", 
 		ammo="Ginsen",
         head=gear.AdhemarBonnet.B,
         neck="Asperity Necklace",
@@ -1052,8 +1048,7 @@ function init_gear_sets()
 			    body=gear.jse.artifact.blu.body,hands=gear.jse.artifact.blu.hands,ring1="Ramuh Ring +1",ring2="Ramuh Ring +1",
 			    back=gear.stp_jse_back,waist="Olseni Belt",legs="Carmine Cuisses +1",feet=gear.HerculeanBoots.TA}
 
-	sets.engaged.Fodder = {main="Almace",
-		sub="Sequence", 
+	sets.engaged.Fodder = {
 		ammo="Ginsen",
         head=gear.AdhemarBonnet.B,
         neck="Asperity Necklace",

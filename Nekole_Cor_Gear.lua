@@ -7,12 +7,14 @@ function user_setup()
     state.IdleMode:options('Normal', 'PDT', 'Refresh')
 	state.ExtraMeleeMode = M{['description']='Extra Melee Mode', 'None', 'DWMax'}
 	state.Weapons:options('Default','DualWeapons','SavageWeapons','DualRangedWeapons','LeadenWeapons','None')
+	state.CompensatorMode:options('300','1000','Never','Always')
 
     gear.RAbullet = "Chrono Bullet"
     gear.WSbullet = "Chrono Bullet"
     gear.MAbullet = "Orichalc. Bullet" --For MAB WS, do not put single-use bullets here.
     gear.QDbullet = "Animikii Bullet"
     options.ammo_warning_limit = 15
+	
 	set_lockstyle()
 --	gear.tp_ranger_jse_back = {}
 --	gear.snapshot_jse_back = {name="Camulus's Mantle",augments={'"Snapshot"+10',}}
@@ -176,7 +178,7 @@ function init_gear_sets()
 	
     sets.precast.WS['Leaden Salute'] = {ammo=gear.MAbullet,
         head="Pixie Hairpin +1",neck="Baetyl Pendant",ear1="Moonshade Earring",ear2="Friomisi Earring",
-        body="Samnuha Coat",hands=gear.carmine.hands.D,ring1="Dingir Ring",ring2="Archon Ring",
+        body=gear.jse.artifact.cor.body,hands=gear.carmine.hands.D,ring1="Dingir Ring",ring2="Archon Ring",
         back=gear.jsecapes.amb.cor.mwsd,waist="Eschan Stone",legs=gear.jse.artifact.cor.legs,feet=gear.herculean_nuke_feet}
 
     sets.precast.WS['Leaden Salute'].Acc = {ammo=gear.MAbullet,
@@ -251,12 +253,12 @@ function init_gear_sets()
     
 
     -- Idle sets
-    sets.idle = {ammo=gear.RAbullet,
+    sets.idle = {ammo=gear.RAbullet,range="Fomalhaut",
         head=gear.ambuscade.meghanada.head,neck="Regal Necklace",ear1="Genmei Earring",ear2="Sanare Earring",
         body=gear.ambuscade.meghanada.body,hands=gear.HerculeanGloves.PDT,ring1="Defending Ring",ring2="Ilabrat Ring",
         back="Moonbeam Cape",waist="Flume Belt +1",legs=gear.carmine.legs.D,feet=gear.jse.relic.cor.feet}
 		
-    sets.idle.Refresh = {ammo=gear.RAbullet,
+    sets.idle.Refresh = {ammo=gear.RAbullet,range="Fomalhaut",
         head="Rawhide Mask",neck="Loricate Torque +1",ear1="Genmei Earring",ear2="Ethereal Earring",
         body="Mekosu. Harness",hands=gear.herculean_refresh_hands,ring1="Defending Ring",ring2="Ilabrat Ring",
         back="Moonbeam Cape",waist="Flume Belt +1",legs="Rawhide Trousers",feet=gear.jse.relic.cor.feet}

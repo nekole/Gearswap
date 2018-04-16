@@ -504,12 +504,14 @@ function init_gear_sets()
 	--Extra Special Sets
 	
 	sets.buff.Souleater = {}
-	sets.Weapons = {main="Montante +1",sub="Utu Grip"}
-	sets.Scythe = {main="Misanthropy",sub="Utu Grip"}
 	sets.buff.Doom = set_combine(sets.buff.Doom, {})
 	sets.buff.Sleep = {head="Frenzy Sallet"}
 	sets.latent_refresh = {waist="Fucho-no-Obi"}
 	sets.TreasureHunter = set_combine(sets.TreasureHunter, {})
+	
+	-- Weapons sets
+	sets.weapons.Montante = {main="Montante +1",sub="Utu Grip"}
+	sets.weapons.Misanthropy = {main="Misanthropy",sub="Utu Grip"}
 	
     end
 	

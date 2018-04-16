@@ -1,9 +1,9 @@
 function user_setup()
 	-- Options: Override default values
-	state.CastingMode:options('Normal', 'Resistant', 'Fodder', 'Proc')
-	state.OffenseMode:options('None', 'Normal')
-	state.IdleMode:options('Normal', 'PDT', 'TPEat','Regain','DTHippo')
-	state.Weapons:options('None','Default')
+	state.CastingMode:options('Normal','Resistant','Fodder','Proc')
+	state.OffenseMode:options('Normal')
+	state.IdleMode:options('Normal', 'PDT', 'TPEat','DTHippo')
+	state.Weapons:options('None','NukeWeapons')
 	state.Moving  = M(false, "moving")
 
 	gear.obi_cure_waist = "Witful Belt"
@@ -11,7 +11,7 @@ function user_setup()
 	gear.obi_high_nuke_waist = "Refoccilation Stone"
 	set_lockstyle()
 
-		-- Additional local binds
+		--- Additional local binds
 	send_command('bind ^` gs c cycle ElementalMode')
 	send_command('bind !\\\\ input /ja "Manawell" <me>')
 	send_command('bind !` input /ma "Aspir III" <t>')
@@ -38,7 +38,7 @@ function init_gear_sets()
     -- Start defining the sets
     --------------------------------------
 	
-	sets.Weapons = {main=gear.weapons.BLM.magicstaff,sub="Niobid Strap"}
+	sets.weapons.NukeWeapons = {main=gear.weapons.BLM.magicstaff,sub="Niobid Strap"}
     
     ---- Precast Sets ----
     

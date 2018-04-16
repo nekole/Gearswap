@@ -555,7 +555,7 @@ sets.TreasureHunter = {waist="Chaac Belt"}
 	gear.MerlinicJubbah.MB = {name="Merlinic Jubbah", augments={'Mag. Acc.+14 "Mag.Atk.Bns."+14','Magic burst dmg.+11%','Mag. Acc.+11',}}
 
     gear.MerlinicDastanas = {}
-    --gear.MerlinicDastanas.BPD = {name="Merlinic Dastanas", augments={'Pet: Accuracy+22 Pet: Rng. Acc.+22','Blood Pact Dmg.+10','Pet: Mag. Acc.+5'}}
+    gear.MerlinicDastanas.BPD = {name="Merlinic Dastanas", augments={'Pet: Attack+28 Pet: Rng.Atk.+28','Blood Pact Dmg.+9','Pet: Mag. Acc.+1'}}
 	gear.MerlinicDastanas.FST = {name="Merlinic Dastanas", augments={'Mag. Acc.+23','"Fast Cast"+6','INT+6',}}
 	gear.MerlinicDastanas.MAB = {name="Merlinic Dastanas", augments={'Blood Pact Dmg.+9','Pet: DEX+5','Pet: Mag. Acc.+14','Pet: "Mag.Atk.Bns."+14'}}
     
@@ -643,7 +643,7 @@ sets.TreasureHunter = {waist="Chaac Belt"}
 	gear.weapons.SCH.Enh = { name="Grioavolr", augments={'Enh. Mag. eff. dur. +10','Mag. Acc.+14','"Mag.Atk.Bns."+21','Magic Damage +3',}}
     gear.weapons.mage.macc = { name="Lehbrailg +2" }
     gear.weapons.mage.refresh = { name="Bolelabunga" }
-	gear.weapons.smn.bpmagicstaff = { name="Grioavolr", augments={'Blood Pact Dmg.+6','Pet: Mag. Acc.+11','Pet: "Mag.Atk.Bns."+24'}}
+	gear.weapons.smn.bpmagicstaff = { name="Grioavolr", augments={'Blood Pact Dmg.+7','Pet: STR+3','Pet: Mag. Acc.+27','Pet: "Mag.Atk.Bns."+21'}}
 	gear.weapons.smn.smnskillstaff = { name="Espiritus", augments={'Summoning magic skill +15','Pet: Mag. Acc.+30','Pet: Damage taken -4%'}}
 	gear.weapons.smn.attackstaff = { name="Gridarvor", augments={'Pet: Accuracy+70','Pet: Attack+70','Pet: "Dbl. Atk."+15'}}
 	
@@ -964,18 +964,18 @@ sets.TreasureHunter = {waist="Chaac Belt"}
         feet="Totemic Gaiters",
     }
 	gear.jse.relic.bst = {
-        head="Monster Helm",
-        body="Monster Jackcoat",
-        hands="Monster Gloves",
-        legs="Monster Trousers",
-        feet="Monster Gaiters"
+        head="Ankusa Helm",
+        body="Ankusa Jackcoat",
+        hands="Ankusa Gloves",
+        legs="Ankusa Trousers",
+        feet="Ankusa Gaiters"
     }
     gear.jse.empyrean.bst = {  
-        head="Ferine Cabasset",
-        body="Ferine Gausape",
-        hands="Ferine Manoplas",
-        legs="Ferine Quijotes",
-        feet="Ferine Ocreae"
+        head="Nukumi Cabasset",
+        body="Nukumi Gausape",
+        hands="Nukumi Manoplas",
+        legs="Nukumi Quijotes",
+        feet="Nukumi Ocreae"
 	}
 			-- BRD
     gear.jse.artifact.brd = {
@@ -1016,7 +1016,7 @@ sets.TreasureHunter = {waist="Chaac Belt"}
     }
     gear.jse.empyrean.sam = {  
         head="Unkai Kabuto",
-        body="Kasuga Domaru",
+        body="Kasuga Domaru +1",
         hands="Kasuga Kote +1",
         legs="Unkai Haidate",
         feet="Kasuga Sune-Ate +1"
@@ -1046,9 +1046,9 @@ sets.TreasureHunter = {waist="Chaac Belt"}
 			-- COR
     gear.jse.artifact.cor = {
 		head="Laksamana's Hat",
-		body="Laksamana's Frac +1",
+		body="Laksamana's Frac +2",
 		hands="Laksamana's Gants",
-        legs="Laksamana's Trews +1",
+        legs="Laksamana's Trews +2",
         feet="Laksamana's Bottes +1",
     }
 	gear.jse.relic.cor = {
@@ -1199,11 +1199,11 @@ sets.TreasureHunter = {waist="Chaac Belt"}
     }
 
     gear.ambuscade.flamma = {
-        head="Flam. Zucchetto +1",
+        head="Flam. Zucchetto +2",
         body="Flamma Korazin +1",
         hands="Flam. Manopolas +1",
-        legs="Flamma Dirs +1",
-        feet="Flam. Gambieras +1",
+        legs="Flamma Dirs +2",
+        feet="Flam. Gambieras +2",
     }
 	
 	gear.ambuscade.taliah = {

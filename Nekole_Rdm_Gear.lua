@@ -1,12 +1,14 @@
 function user_setup()
 	-- Options: Override default values
-    state.OffenseMode:options('None', 'Normal')
+    state.OffenseMode:options('Normal')
     state.HybridMode:options('Normal', 'PhysicalDef', 'MagicalDef')
 	state.CastingMode:options('Normal', 'Resistant', 'Fodder', 'Proc')
     state.IdleMode:options('Normal', 'PDT', 'MDT', 'TPEat','DTHippo')
     state.PhysicalDefenseMode:options('PDT', 'NukeLock')
 	state.MagicalDefenseMode:options('MDT')
 	state.ResistDefenseMode:options('MEVA')
+	state.Weapons:options('None','Sequence','Almace','DualWeapons','DualClubs','DualAlmace')
+	
 	set_lockstyle()
 	gear.obi_cure_back = "Tempered Cape +1"
 	gear.obi_cure_waist = "Witful Belt"
@@ -308,11 +310,16 @@ function init_gear_sets()
 	sets.idle.TPEat = set_combine(sets.idle, {neck="Chrys. Torque"})
 
 	sets.Kiting = {legs="Carmine Cuisses +1"}
-
-	sets.Weapons = {main="Sequence",sub="Almace"}
 	sets.latent_refresh = {waist="Fucho-no-obi"}
 	sets.DayIdle = {}
 	sets.NightIdle = {}
+	
+	-- Weapons sets
+	sets.weapons.Sequence = {main="Sequence",sub="Ammurapi Shield"}
+	sets.weapons.Almace = {main="Almace",sub="Ammurapi Shield"}
+	sets.weapons.DualWeapons = {main="Sequence",sub="Almace"}
+	sets.weapons.DualClubs = {main="Nehushtan",sub="Nehushtan"}
+	sets.weapons.DualAlmace = {main="Almace",sub="Sequence"}
 
 	-- Engaged sets
 

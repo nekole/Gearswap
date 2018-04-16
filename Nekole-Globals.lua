@@ -11,7 +11,7 @@
 conserveshadows = false
 
 --Display related settings.
-state.DisplayMode.value = true --Set this to false if you don't want to display modes at the bottom of your screen.
+state.DisplayMode = M(true, 'Display Mode') --Set this to false if you don't want to display modes at the bottom of your screen.
 --Uncomment the settings below and change the numbers if you want to move the display to a custom location.
 displayx = 600
 displayy = 850
@@ -69,7 +69,7 @@ send_command('bind !t input /target <bt>') --Targets the battle target.
 send_command('bind ^o fillmode') --Lets you see through walls.
 send_command('bind @p gs equip sets.Sheltered') --Equip sheltered ring, for when being Pro/Shelled.
 send_command('bind !p gs equip sets.Cure_Recieved') --Equip Cure Potency Recieved set for when being cured.
-send_command('bind @m input /mount Fenrir') --Because I like Fenrir.
+send_command('bind @m input /mount Omega') --Because I like Fenrir.
 
 --Usable item binds.
 

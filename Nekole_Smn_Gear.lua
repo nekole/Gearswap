@@ -386,21 +386,21 @@ function init_gear_sets()
 		ammo="Sancus Sachet +1",
 		head=gear.ApogeeCrown.B,
 		body=gear.jse.artifact.smn.body,
-		hands=gear.MerlinicDastanas.MAB,
+		hands=gear.MerlinicDastanas.BPD,
 		legs=gear.ApogeeSlacks.D,
 		neck="Shulmanu Collar",
 		waist="Incarnation Sash",
 		ear1="Gelos Earring",
 		ear2="Lugalbanda Earring",
-		ring1={name="Varar Ring +1",priority=3},
-		ring2={name="Varar Ring +1",priority=3},
+		ring1="Varar Ring +1",
+		ring2="Varar Ring +1",
 		back=gear.jsecapes.amb.smn.att,
 		feet=gear.ApogeePumps.Bplus,}
 		
     sets.midcast.Pet.PhysicalBloodPactRage.Acc = {feet=gear.jse.artifact.smn.feet}
 
     sets.midcast.Pet.MagicalBloodPactRage = {
-		main=gear.weapons.smn.smnskillstaff,
+		main=gear.weapons.smn.bpmagicstaff,
 		sub="Elan Strap +1",
 		ammo="Sancus Sachet +1",
         head=gear.ApogeeCrown.Aplus,
@@ -414,6 +414,7 @@ function init_gear_sets()
         back=gear.jsecapes.amb.smn.magic,
 		waist="Regal Belt",
 		legs="Enticer's Pants",
+--		legs=gear.ApogeeSlacks.Aplus,
 		feet=gear.jse.artifact.smn.feet}
 
     sets.midcast.Pet.MagicalBloodPactRage.Acc = {feet=gear.jse.artifact.smn.feet}

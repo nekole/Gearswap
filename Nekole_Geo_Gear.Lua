@@ -1,12 +1,13 @@
 function user_setup()
 
 	-- Options: Override default values
-    state.OffenseMode:options('None', 'Normal','DualWield')
+    state.OffenseMode:options('Normal','DualWield')
 	state.CastingMode:options('Normal', 'Resistant', 'Fodder', 'Proc')
-    state.IdleMode:options('Normal', 'PDT', 'TPEat', 'Regain')
+    state.IdleMode:options('Normal', 'PDT', 'TPEat')
 	state.PhysicalDefenseMode:options('PDT', 'NukeLock', 'GeoLock', 'PetPDT')
 	state.MagicalDefenseMode:options('MDT', 'NukeLock')
 	state.ResistDefenseMode:options('MEVA')
+	state.Weapons:options('None','Nehushtan','DualWeapons')
 	set_lockstyle()
 
 	gear.nuke_jse_back = {name="Nantosuelta's Cape",augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','"Mag.Atk.Bns."+10'}}
@@ -495,6 +496,10 @@ function init_gear_sets()
 		ring1="Mujin Band",
 		legs="Ea Slops",
 		feet=gear.ambuscade.jhakri.feet}
+		
+		-- Weapons sets
+	sets.weapons.Nehushtan = {main='Nehushtan',sub='Genmei Shield'}
+	sets.weapons.DualWeapons = {main='Nehushtan',sub='Nehushtan'}
 
 end
 

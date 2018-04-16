@@ -1,9 +1,10 @@
 -- Setup vars that are user-dependent.  Can override this function in a sidecar file.
 function user_setup()
-    state.OffenseMode:options('None', 'Normal')
-    state.CastingMode:options('Normal', 'Resistant', 'Proc')
+    state.OffenseMode:options('Normal')
+    state.CastingMode:options('Normal','Resistant','Proc')
     state.IdleMode:options('Normal', 'PDT', 'TPEat')
 	state.HybridMode:options('Normal','PDT')
+	state.Weapons:options('None','Akademos')
 	set_lockstyle()
 	gear.nuke_jse_back = {name="Lugh's Cape",augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','"Mag.Atk.Bns."+10'}}
 	
@@ -347,6 +348,9 @@ function init_gear_sets()
 
     sets.buff.FullSublimation = {}
     sets.buff.PDTSublimation = {}
+	
+	-- Weapons sets
+	sets.weapons.Akademos = {main="Akademos",sub="Niobid Strap"}
 	
 end
 

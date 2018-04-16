@@ -1,12 +1,15 @@
 function user_setup()
 	-- Options: Override default values
-    state.OffenseMode:options('Normal','SomeAcc','Acc','FullAcc', 'Fodder')
-    state.WeaponskillMode:options('Normal', 'SomeAcc', 'Acc','FullAcc', 'Fodder')
-    state.HybridMode:options('Normal', 'PDT','MDT')
-    state.PhysicalDefenseMode:options('PDT', 'PDTReraise','PDTHP')
-	state.MagicalDefenseMode:options('MDT', 'MDTReraise', 'BDT', 'MDTHP')
-	state.ResistDefenseMode:options('MEVA', 'Death','Charm')
-	state.IdleMode:options('Normal', 'PDT', 'MDT', 'Regen', 'Reraise')
+    state.OffenseMode:options('Normal','SomeAcc','Acc','FullAcc','Fodder')
+    state.WeaponskillMode:options('Match','Normal','SomeAcc','Acc','FullAcc','Fodder')
+    state.HybridMode:options('Normal')
+    state.PhysicalDefenseMode:options('PDT', 'PDTReraise')
+    state.MagicalDefenseMode:options('MDT', 'MDTReraise')
+	state.ResistDefenseMode:options('MEVA')
+	state.IdleMode:options('Normal', 'PDT','Refresh','Reraise')
+    state.ExtraMeleeMode = M{['description']='Extra Melee Mode','None'}
+	state.Passive = M{['description'] = 'Passive Mode','None','Twilight'}
+	state.Weapons:options('Chango','DualWeapons','Greatsword','ProcDagger','ProcSword','ProcGreatSword','ProcScythe','ProcPolearm','ProcGreatKatana','ProcClub','ProcStaff')
 
     state.ExtraMeleeMode = M{['description']='Extra Melee Mode', 'None', 'Knockback', 'Reraise'}
 	set_lockstyle()
@@ -1199,12 +1202,23 @@ function init_gear_sets()
 	
 	--Extra Special Sets
 	
-	sets.Weapons = {main="",sub=""}
 	sets.buff.Doom = set_combine(sets.buff.Doom, {})
 	sets.buff.Retaliation = {}
 	sets.buff.Restraint = {}
-	sets.buff.Sleep = {head="Frenzy Sallet"}
 	sets.TreasureHunter = set_combine(sets.TreasureHunter, {})
+	
+	-- Weapons sets
+	sets.weapons.Chango = {main="Chango",sub="Utu Grip"}
+	sets.weapons.DualWeapons = {main="Firangi",sub="Reikiko"}
+	sets.weapons.Greatsword = {main="Montante +1",sub="Utu Grip"}
+	sets.weapons.ProcDagger = {main="Kustawi",sub=empty}
+	sets.weapons.ProcSword = {main="Ark Sword",sub=empty}
+	sets.weapons.ProcGreatSword = {main="Irradiance Blade",sub=empty}
+	sets.weapons.ProcScythe = {main="Ark Scythe",sub=empty}
+	sets.weapons.ProcPolearm = {main="Pitchfork +1",sub=empty}
+	sets.weapons.ProcGreatKatana = {main="Hardwood Katana",sub=empty}
+	sets.weapons.ProcClub = {main="Dream Bell +1",sub=empty}
+	sets.weapons.ProcStaff = {main="Terra's Staff",sub=empty}
 
 end
 	

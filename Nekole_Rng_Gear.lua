@@ -1,9 +1,11 @@
 -- Setup vars that are user-dependent.  Can override this function in a sidecar file.
 function user_setup()
-	state.OffenseMode:options('Normal', 'Acc')
-	state.RangedMode:options('Normal', 'Acc')
+	state.OffenseMode:options('Normal','Acc')
+	state.RangedMode:options('Normal','Acc')
 	state.WeaponskillMode:options('Match','Normal', 'Acc')
 	state.IdleMode:options('Normal', 'PDT')
+	state.Weapons:options('Default','DualWeapons','DualMagicWeapons')
+	
 	set_lockstyle()	
 	DefaultAmmo = {['Annihilator'] = "Eradicating bullet"}
 	U_Shot_Ammo = {['Annihilator'] = "Eradicating bullet"}
@@ -213,12 +215,13 @@ function init_gear_sets()
 		back="Toro Cape",waist="Luminary Sash",legs="Meg. Chausses +1",feet=gear.herculean_acc_feet}
 
 	sets.Kiting = {back="Solemnity Cape",feet="Skd. Jambeaux +1"}
-	sets.TreasureHunter = set_combine(sets.TreasureHunter, {})
-	sets.Weapons = {main="Kustawi +1",sub="Kustawi",range="Annihilator",ammo="Eradicating bullet"}
-	sets.SingleWeapon = {main="Kustawi +1",sub="Nusku Shield",range="Fomalhaut",ammo="Chrono Bullet"}
-	sets.MagicWeapons = {main="Malevolence",sub="Malevolence",range="Fomalhaut",ammo="Chrono Bullet"}
 	sets.DayIdle = {}
 	sets.NightIdle = {}
+	
+		-- Weapons sets
+	sets.weapons.DualWeapons = {main="Kustawi +1",sub="Kustawi",range="Annihilator",ammo="Eradicating bullet"}
+	sets.weapons.Default = {main="Kustawi +1",sub="Nusku Shield",range="Annihilator",ammo="Eradicating bullet"}
+	sets.weapons.DualMagicWeapons = {main="Malevolence",sub="Malevolence",range="Annihilator",ammo="Eradicating bullet"}
 
 	--------------------------------------
 	-- Engaged sets

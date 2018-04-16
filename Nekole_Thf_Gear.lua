@@ -9,9 +9,9 @@ function user_setup()
     state.PhysicalDefenseMode:options('PDT')
 	state.MagicalDefenseMode:options('MDT')
 	state.ResistDefenseMode:options('MEVA')
-	state.Weapons:options('Aeneas','MagicWeapons','Throwing')
+	state.Weapons:options('Aeneas','Mandau','TH','MagicWeapons','LowBuff','Throwing')
 
-    state.ExtraMeleeMode = M{['description']='Extra Melee Mode', 'None', 'Suppa', 'DWEarrings', 'DWMax'}
+    state.ExtraMeleeMode = M{['description']='Extra Melee Mode','None','Suppa','DWEarrings','DWMax'}
 	state.AmbushMode = M(false, 'Ambush Mode')
 	set_lockstyle()
  
@@ -59,7 +59,10 @@ function init_gear_sets()
 	sets.DWMax = {ear1="Dudgeon Earring",ear2="Heartseeker Earring",body=gear.AdhemarJacket.Bplus,hands="Floral Gauntlets",waist="Shetal Stone"}
 	sets.Ambush = {} --body="Plunderer's Vest +1"
 	
-	sets.weapons.Aeneas = {main="Mandau",sub="Taming Sari"}
+	sets.weapons.Aeneas = {main="Aeneas",sub="Twashtar"}
+	sets.weapons.TH = {main="Aeneas",sub="Taming Sari"}
+	sets.weapons.Mandau = {main="Mandau",sub="Twashtar"}
+	sets.weapons.LowBuff = {main="Aeneas",sub="Blurred Knife +1"}
 	sets.weapons.MagicWeapons = {main="Malevolence",sub="Malevolence"}
 	sets.weapons.Throwing = {range="Raider's Bmrng."}
 	

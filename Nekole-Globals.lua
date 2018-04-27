@@ -91,27 +91,9 @@ send_command('bind ^, gs c forceequip HollaRing ring2')
 send_command('bind !, input /item "Dim. Ring (Holla)" <me>')
 send_command('bind ^!, gs c quietenable ring2;put "Dim. Ring (Holla)" satchel')
 
---Dimensional Ring (Dem) binds.
-send_command('bind ^@!. get "Dim. Ring (Dem)" satchel')
-send_command('bind ^. gs c forceequip DemRing ring2')
-send_command('bind !. input /item "Dim. Ring (Dem)" <me>')
-send_command('bind ^!. gs c quietenable ring2;put "Dim. Ring (Dem)" satchel')
-
---Dimensional Ring (Mea) binds.
-send_command('bind ^@!/ get "Dim. Ring (Mea)" satchel')
-send_command('bind ^/ gs c forceequip MeaRing ring2')
-send_command('bind !/ input /item "Dim. Ring (Mea)" <me>')
-send_command('bind ^!/ gs c quietenable ring2;put "Dim. Ring (Mea)" satchel')
-
---Reraise Earring binds.
-send_command('bind ^@!u get "Reraise Earring" satchel')
-send_command('bind ^u gs c forceequip RREar ear2')
-send_command('bind !u input /item "Reraise Earring" <me>')
-send_command('bind ^!u gs c quietenable ear2;put "Reraise Earring" satchel')
-
 --Capacity item binds.
-send_command('bind ^@!z get "Mecisto. Mantle" satchel;get "Capacity Ring" satchel;wait 1;get "Trizek Ring" satchel;wait 1;get "Vocation Ring" satchel;wait 1;get "Facility Ring" satchel')
-send_command('bind ^!z put "Mecisto. Mantle" satchel;put "Capacity Ring" satchel;wait 1;put "Trizek Ring" satchel;wait 1;put "Vocation Ring" satchel;wait 1;put "Facility Ring" satchel;wait 1;put "Guide Beret" satchel')
+send_command('bind ^@!z get "Mecisto. Mantle" satchel;get "Trizek Ring" satchel;wait 1;get "Facility Ring" satchel')
+send_command('bind ^!z put "Mecisto. Mantle" satchel;put "Trizek Ring" satchel;wait 1;put "Facility Ring" satchel;wait 1;put "Guide Beret" satchel')
 
 --Place to override Tables and other definitions you may want to.
 

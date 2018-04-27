@@ -3,7 +3,7 @@ function user_setup()
     state.OffenseMode:options('Normal','Acc')
     state.CastingMode:options('Normal','Resistant')
     state.IdleMode:options('Normal', 'PDT','TPEat')
-	state.Weapons:options('None','Nirvana')
+	state.Weapons:options('None','Gridarvor','Nirvana','Khatvanga')
 	
 	state.Moving  = M(false, "moving")
 	
@@ -14,6 +14,8 @@ function user_setup()
 	send_command('bind @` gs c cycle MagicBurst')
 	send_command('bind ^` gs c toggle PactSpamMode')
 	send_command('bind !pause gs c toggle AutoSubMode') --Automatically uses sublimation.
+	send_command('bind ^q gs c weapons Khatvanga;gs c set CastingMode OccultAcumen')
+	send_command('bind !q gs c weapons default;gs c reset CastingMode')
 	
     select_default_macro_book()
 	set_lockstyle()
@@ -51,19 +53,19 @@ function init_gear_sets()
 
     -- Pact delay reduction gear
     sets.precast.BloodPactWard = {
-		main=gear.weapons.smn.smnskillstaff, --II -2
+		main="Espiritus", 
 		sub="Vox Grip",
 		ammo="Sancus Sachet +1",
-		head=gear.jse.empyrean.smn.head,-- 3 Favor
+		head=gear.jse.empyrean.smn.head,
 		neck="Incanter's Torque",
-		body=gear.jse.artifact.smn.body, --8
-		hands="Baayami Cuffs",--6
+		body=gear.jse.artifact.smn.body, 
+		hands="Baayami Cuffs",
 		legs="Baayami Slops",
 		ear1="Andoaa Earring",
 		ear2="Evans Earring",
 		ring1="Evoker's Ring",
 		ring2="Stikini Ring",
-		back=gear.jsecapes.smn, --II -2
+		back=gear.jsecapes.smn, 
 		waist="Kobo Obi",
 		feet="Baayami Sabots"}
 
@@ -79,9 +81,8 @@ function init_gear_sets()
 		ear1="Enchntr. Earring +1",--2
 		ear2="Loquacious earring",--2
 		hands=gear.TelchineGloves.FCandEnh,
---		body="Inyanga Jubbah +1", --13
-		body="Zendik Robe",
-		ring1={name="Mephitas's Ring +1",priority=3},
+		body=gear.ambuscade.inyanga.body, --13
+		ring1="Kishar Ring",
 		ring2="Weather. Ring", -- 5 FC 3 QC
 		waist="Witful belt", --3
 		legs=gear.psycloth.legs.D, --7
@@ -335,9 +336,9 @@ function init_gear_sets()
 		legs=gear.TelchineBraconi.ES,
 		feet=gear.TelchinePigaches.ES}
 		
-	sets.midcast.Refresh = set_combine(sets.midcast['Enhancing Magic'], {head=gear.AmalricCoif.C})
+	sets.midcast.Refresh = set_combine(sets.midcast['Enhancing Magic'], {head=gear.AmalricCoif.C,waist="Gishdubar Sash"})
 	sets.midcast.Aquaveil = set_combine(sets.midcast['Enhancing Magic'], {main="Vadose Rod",sub="Genmei Shield",head=gear.AmalricCoif.C,waist="Emphatikos Rope",legs="Shedir Seraweels"})
-    sets.midcast.Stoneskin = set_combine(sets.midcast['Enhancing Magic'], {neck="Nodens Gorget",ear2="Earthcry Earring",waist="Siegel Sash",legs="Shedir Seraweels"})
+    sets.midcast.Stoneskin = set_combine(sets.midcast['Enhancing Magic'], {neck="Nodens Gorget",ear2="Earthcry Earring",waist="Siegel Sash",hands="Carapacho Cuffs",legs="Shedir Seraweels"})
 	sets.midcast.BarElement = set_combine(sets.precast.FC['Enhancing Magic'], {legs="Shedir Seraweels"})
 
 
@@ -353,8 +354,7 @@ function init_gear_sets()
 		legs="Baayami Slops",
 		feet="Baayami Sabots",
 		neck="Incanter's Torque",
---	waist="Kobo Obi",  Need
-		waist="Lucidity Sash",
+		waist="Kobo Obi", 
 		ear1="Summoning earring",
 		ear2="Andoaa earring",
 		ring1="Stikini Ring",
@@ -605,22 +605,25 @@ function init_gear_sets()
         back="Umbra Cape",waist="Regal Belt",legs="Hagondes Pants +1",feet="Battlecast Gaiters"}
 
     sets.defense.MEVA = {main="Terra's Staff",sub="Enki Strap",ammo="Sancus Sachet +1",
-        head="Amalric Coif",neck="Warder's Charm +1",ear1="Sanare Earring",ear2="Lugalbanda Earring",
-		body=gear.ambuscade.inyanga.body,hands="Telchine Gloves",ring1="Vengeful Ring",Ring2="Purity Ring",
+        head=gear.AmalricCoif.C,neck="Warder's Charm +1",ear1="Sanare Earring",ear2="Lugalbanda Earring",
+		body=gear.ambuscade.inyanga.body,hands=gear.TelchineGloves.PetRegen,ring1="Vengeful Ring",Ring2="Purity Ring",
         back="Aurist's Cape +1",waist="Luminary Sash",legs="Telchine Braconi",feet="Telchine Pigaches"}
 		
-    sets.Kiting = {}
+    sets.Kiting = {feet="Herald's Gaiters"}
     sets.latent_refresh = {waist="Fucho-no-obi"}
 	sets.DayIdle = {}
 	sets.NightIdle = {}
 
-	sets.HPDown = {head="Apogee Crown",ear1="Mendicant's Earring",ear2="Evans Earring",
+	sets.HPDown = {head=gear.ApogeeCrown.Aplus,ear1="Mendicant's Earring",ear2="Evans Earring",
 		body="Seidr Cotehardie",hands="Hieros Mittens",ring1="Mephitas's Ring +1",ring2="Mephitas's Ring",
-		back="Swith Cape +1",legs="Shedir Seraweels",feet="Herald's Gaiters"}
+		back="Swith Cape +1",legs=gear.ApogeeSlacks.Aplus,feet=gear.ApogeePumps.Bplus}
 	
 	sets.buff.Doom = set_combine(sets.buff.Doom, {})
 	sets.buff.Sleep = {neck="Sacrifice Torque"}
+	
 	sets.weapons.Nirvana = {main="Nirvana", sub="Elan Strap +1"}
+	sets.weapons.Gridarvor = {main="Gridarvor", sub="Elan Strap +1"}
+	sets.weapons.Khatvanga = {main="Khatvanga",sub="Bloodrain Strap"}
 	
 	sets.Adoulin = {
         body="Councilor's Garb",
@@ -636,7 +639,7 @@ function init_gear_sets()
     -- Normal melee group
     sets.engaged = {main="Gridarvor",sub="Bloodrain Strap",ammo="Sancus Sachet +1",
         head=gear.jse.empyrean.smn.head,neck="Shulmanu Collar",ear1="Digni. Earring",ear2="Telos Earring",
-        body=gear.jse.artifact.smn.body,hands=gear.merlinic_refresh_hands,ring1="Ramuh Ring +1",ring2="Ramuh Ring +1",
+        body=gear.jse.artifact.smn.body,hands="Gazu Bracelet +1",ring1="Ramuh Ring +1",ring2="Ramuh Ring +1",
         back=gear.phys_jse_back,waist="Olseni Belt",legs="Assid. Pants +1",feet=gear.jse.artifact.smn.feet}
 end
 

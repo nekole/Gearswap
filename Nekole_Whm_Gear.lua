@@ -43,8 +43,8 @@ function init_gear_sets()
     --------------------------------------
 
 	-- Weapons sets
-	sets.weapons.DualWeapons = {main="Nehushtan",sub="Nehushtan"}
 	sets.weapons.MeleeWeapons = {main="Izcalli",sub="Ammurapi Shield"}
+	sets.weapons.DualWeapons = {main="Izcalli",sub="Nehushtan"}
     -- Precast Sets
 
     -- Fast cast sets for spells

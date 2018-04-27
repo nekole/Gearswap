@@ -224,6 +224,9 @@ sets.TreasureHunter = {waist="Chaac Belt"}
 	gear.jsecapes.amb.cor.tp = { name="Camulus's Mantle",augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Store TP"+10'}}
     gear.jsecapes.amb.cor.mwsd = { name="Camulus's Mantle",augments={'AGI+20','Mag. Acc+20 /Mag. Dmg.+20','AGI+10','Weapon skill damage +10%'}}
 	gear.jsecapes.amb.cor.wsd = { name="Camulus's Mantle",augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','AGI+10','Weapon skill damage +10%'}}
+	gear.jsecapes.amb.mnk = { name="Segomo's Mantle" }
+    gear.jsecapes.amb.mnk.tp = { name="Segomo's Mantle",augments={'STR+20','Accuracy+20 Attack+20','Accuracy+10','"Store TP"+10'}}
+    gear.jsecapes.amb.mnk.ws = { name="Segomo's Mantle",augments={'STR+20','Accuracy+20 Attack+20','Weapon skill damage +10%'}}
 
     -- Skirmish pieces
     gear.hagondes = {}
@@ -1184,7 +1187,7 @@ sets.TreasureHunter = {waist="Chaac Belt"}
 
     gear.ambuscade.inyanga = {
         head="Inyanga Tiara +1",
-        body="Inyanga Jubbah +1",
+        body="Inyanga Jubbah +2",
         hands="Inyanga Dastanas +1",
         legs="Inyanga Shalwar +1",
         feet="Inyanga Crackows +1",

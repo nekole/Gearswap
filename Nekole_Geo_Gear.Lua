@@ -168,13 +168,13 @@ function init_gear_sets()
     sets.midcast.LightWeatherCure = {main="Chatoyant Staff",sub="Curatio Grip",
         head="Nahtirah Hat",neck="Phalaina Locket",ear1="Gifted Earring",ear2="Etiolation Earring",
         body="Heka's Kalasiris",hands="Telchine Gloves",ring1="Sirona's Ring",ring2="Lebeche Ring",
-        back="Twilight Cape",waist="Hachirin-no-Obi",legs="Geo. Pants +1",feet="Vanya Clogs"}
+        back="Twilight Cape",waist="Hachirin-no-Obi",legs=gear.jse.artifact.geo.legs,feet="Vanya Clogs"}
 		
 		--Cureset for if it's not light weather but is light day.
     sets.midcast.LightDayCure = {main="Serenity",sub="Curatio Grip",
         head="Nahtirah Hat",neck="Phalaina Locket",ear1="Gifted Earring",ear2="Etiolation Earring",
         body="Vanir Cotehardie",hands="Telchine Gloves",ring1="Sirona's Ring",ring2="Lebeche Ring",
-        back="Twilight Cape",waist="Hachirin-no-Obi",legs="Geo. Pants +1",feet="Vanya Clogs"}
+        back="Twilight Cape",waist="Hachirin-no-Obi",legs=gear.jse.artifact.geo.legs,feet="Vanya Clogs"}
 
     sets.midcast.Curaga = sets.midcast.Cure
 
@@ -332,7 +332,7 @@ function init_gear_sets()
 		waist="Shinjutsu-no-Obi +1",
 		back="Umbra Cape",
 		legs="Assid. Pants +1",
-		feet="Geo. Sandals +1"}
+		feet=gear.jse.artifact.geo.feet}
 
 	-- Idle sets
 
@@ -344,7 +344,7 @@ function init_gear_sets()
 		body=gear.ambuscade.jhakri.body,
 		hands="Bagua Mitaines +1",
 		legs="Assid. Pants +1",
-		feet="Geo. Sandals +1",
+		feet=gear.jse.artifact.geo.feet,
 		neck="Sanctity Necklace",
 		ear1="Genmei Earring",
 		ear2="Infused Earring",
@@ -379,7 +379,7 @@ function init_gear_sets()
 		head="Azimuth Hood +1", --0/3
 		neck="Loricate Torque +1",
 		body=gear.TelchineChasuble.PetRegen, --0/3
-		hands="Geo. Mitaines +1", --11/0
+		hands=gear.jse.artifact.geo.hands, --11/0
 		legs=gear.TelchineBraconi.PetRegen, --0/3
 		feet=gear.TelchinePigaches.PetRegen, --0/3
 		ear1="Handler's Earring", --3*/0
@@ -397,7 +397,7 @@ function init_gear_sets()
 		ear1="Handler's Earring",
 		ear2="Handler's Earring +1",
 		body=gear.ambuscade.jhakri.body,
-		hands="Geo. Mitaines +2",
+		hands=gear.jse.artifact.geo.hands,
 		ring1="Defending Ring",
 		ring2="Sheltered Ring",
 		back=gear.jsecapes.amb.geo.pet,

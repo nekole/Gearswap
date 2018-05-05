@@ -1,12 +1,13 @@
 function user_setup()
 	-- Options: Override default values
-    state.OffenseMode:options('Normal','SomeAcc','Acc','FullAcc','Fodder')
+     state.OffenseMode:options('Normal','SomeAcc','Acc','FullAcc','Fodder')
     state.WeaponskillMode:options('Match','Normal','SomeAcc','Acc','FullAcc','Fodder')
     state.HybridMode:options('Normal')
     state.PhysicalDefenseMode:options('PDT', 'PDTReraise')
     state.MagicalDefenseMode:options('MDT', 'MDTReraise')
 	state.ResistDefenseMode:options('MEVA')
 	state.IdleMode:options('Normal', 'PDT','Refresh','Reraise')
+	state.Weapons:options('Montante','Misanthropy')
     state.ExtraMeleeMode = M{['description']='Extra Melee Mode','None'}
 	state.Passive = M{['description'] = 'Passive Mode','None','MP','Twilight'}
 	set_lockstyle()

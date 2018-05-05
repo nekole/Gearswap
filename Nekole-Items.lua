@@ -577,10 +577,13 @@ sets.TreasureHunter = {waist="Chaac Belt"}
     gear.ValorousMask = {}
     gear.ValorousMask.Pet ={name="Valorous Mask", augments={'Pet: Attack+30 Pet: Rng.Atk.+30','Pet: DEX+5','Pet: Accuracy+13 Pet: Rng. Acc.+13'}}
 	gear.ValorousMask.WSD ={name="Valorous Mask", augments={'Accuracy+20 Attack+20','Weapon skill damage +3%','STR+10','Attack+1'}}
+	
+	gear.ValorousMail = {}
+	gear.ValorousMail.WSD ={name="Valorous Mail", augments={'Accuracy+22 Attack+22','Weapon skill damage +4%','MND+10','Accuracy+1','Attack+8'}}
     
     gear.ValorousMitts = {}
     gear.ValorousMitts.Pet = {name="Valorous Mitts", augments={'Pet: Attack+26 Pet: Rng.Atk.+26','Pet: Phys. dmg. taken -4%','Pet: Accuracy+12 Pet: Rng. Acc.+12'}}
-    gear.ValorousMitts.TP = {name="Valorous Mitts", augments={'Accuracy+20 Attack+20','"Store TP"+1'}}
+    gear.ValorousMitts.TP = {name="Valorous Mitts", augments={'Accuracy+22 Attack+22','"Store TP"+5','STR+6','Accuracy+14'}}
 	gear.ValorousMitts.WSD = {name="Valorous Mitts", augments={'Attack+10','Weapon skill damage +5%','STR+7','Accuracy+15'}}
     
     gear.ValorousHose = {}

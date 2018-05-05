@@ -227,7 +227,7 @@ function init_gear_sets()
 		ring1="Stikini Ring",
 		ring2="Stikini Ring",
         back="Aurist's Cape +1",
-		waist="Yamabuki-no-Obi",
+		waist="Refoccilation Stone",
 		legs=gear.MerlinicShalwar.MB,
 		feet=gear.MerlinicCrackows.MB}
 	

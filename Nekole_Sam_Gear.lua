@@ -92,7 +92,8 @@ function init_gear_sets()
 		neck="Fotia Gorget",
 		ear1="Lugra Earring +1",
 		ear2="Moonshade Earring",
-        body="Phorcys Korazin",
+ --       body="Phorcys Korazin",
+		body=gear.ValorousMail.WSD,
 		hands=gear.ValorousMitts.WSD,
 		ring1="Niqmaddu Ring",
 		ring2="Regal Ring",
@@ -173,7 +174,7 @@ function init_gear_sets()
 	sets.precast.MaxTP = {ear1="Cessance Earring",ear2="Lugra Earring +1",}
 	sets.precast.AccMaxTP = {ear1="Zennaroi Earring",ear2="Telos Earring"}
 	sets.AccDayMaxTPWSEars = {ear1="Zennaroi Earring",ear2="Telos Earring"}
-	sets.DayMaxTPWSEars = {ear1="Ishvara Earring",ear2="Brutal Earring",}
+	sets.DayMaxTPWSEars = {ear1="Ishvara Earring",ear2="Cessance Earring",}
 	sets.AccDayWSEars = {ear1="Zennaroi Earring",ear2="Telos Earring"}
 	sets.DayWSEars = {ear1="Ishvara Earring",ear2="Moonshade Earring",}
 	
@@ -220,18 +221,18 @@ function init_gear_sets()
     sets.idle = {
 		ammo="Staunch Tathlum",
 		sub="Utu Grip",
-        head=gear.ValorousMask.WSD,
+        head="Ken. Jinpachi +1",
 		neck="Loricate Torque +1",
-		ear1="Etiolation Earring",
-		ear2="Sanare Earring",
-        body=gear.ambuscade.hizamaru.body,
-		hands=gear.jse.relic.sam.hands,
+		ear1="Cessance Earring",
+		ear2="Telos Earring",
+        body="Kendatsuba Samue +1",
+		hands="Ken. Tekko +1",
 		ring1="Defending Ring",
 		ring2="Regal Ring",
         back="Moonbeam Cape",
 		waist="Flume Belt +1",
-		legs=gear.ambuscade.flamma.legs,
-		feet="Danzo Sune-ate"}
+		legs="Ken. Hakama +1",
+		feet="Ken. Sune-Ate +1"}
 		
     sets.idle.Reraise = set_combine(sets.idle, sets.Reraise)
 
@@ -261,9 +262,9 @@ function init_gear_sets()
 	sets.defense.MDTReraise = set_combine(sets.defense.MDT, sets.Reraise)
 	
     sets.defense.MEVA = {ammo="Staunch Tathlum",
-        head="Loess Barbuta +1",neck="Warder's Charm +1",ear1="Etiolation Earring",ear2="Sanare Earring",
-		body="Tartarus Platemail",hands="Leyline Gloves",ring1="Vengeful Ring",Ring2="Purity Ring",
-        back="Engulfer Cape +1",waist="Flax Sash",legs=gear.ambuscade.hizamaru.legs,feet="Amm Greaves"}
+        head="Ken. Jinpachi +1",neck="Warder's Charm +1",ear1="Etiolation Earring",ear2="Sanare Earring",
+		body="Ken. Samue +1",hands="Ken. Tekko +1",ring1="Vengeful Ring",Ring2="Purity Ring",
+        back="Engulfer Cape +1",waist="Flax Sash",legs="Ken. Hakama +1",feet="Ken. Sune-Ate +1"}
 
     -- Engaged sets
 
@@ -276,18 +277,23 @@ function init_gear_sets()
     -- Delay 450 GK, 25 Save TP => 65 Store TP for a 5-hit (25 Store TP in gear)
     sets.engaged = {
 		ammo="Ginsen",
-        head=gear.ambuscade.flamma.head,
+ --       head=gear.ambuscade.flamma.head,
+		head="Ken. Jinpachi +1",
 		neck="Moonbeam Nodowa",
 		ear1="Cessance Earring",
-		ear2="Brutal Earring",
-        body=gear.jse.empyrean.sam.body,
-		hands=gear.ValorousMitts.WSD,
+		ear2="Telos Earring",
+        body="Ken. Samue +1",
+--		hands=gear.ValorousMitts.WSD,
+		hands="Ken. Tekko +1",
 		ring1="Niqmaddu Ring",
-		ring2="Petrov Ring",
+--		ring2="Petrov Ring",
+		ring2="Ilabrat Ring",
         back=gear.jsecapes.amb.sam.tp,
 		waist="Ioskeha Belt",
-		legs="Acro Breeches",
-		feet=gear.ambuscade.flamma.feet}
+--		legs="Acro Breeches",
+		legs="Ken. Hakama +1",
+--		feet=gear.ambuscade.flamma.feet}
+		feet="Ken. Sune-Ate +1"}
     sets.engaged.SomeAcc = {ammo="Ginsen",
         head=gear.ambuscade.flamma.head,neck="Moonbeam Nodowa",ear1="Cessance Earring",ear2="Brutal Earring",
         body=gear.jse.empyrean.sam.body,hands=gear.valorous_wsd_hands,ring1="Niqmaddu Ring",ring2="Ilabrat Ring",
@@ -437,7 +443,7 @@ function select_default_macro_book()
     end
 end
 function set_lockstyle()
-	send_command('wait 2; input /lockstyleset 17')
+	send_command('wait 5; input /lockstyleset 12')
 end
 
 --Job Specific Trust Overwrite

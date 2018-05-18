@@ -173,6 +173,7 @@ sets.TreasureHunter = {waist="Chaac Belt"}
 	gear.jsecapes.cor = { name="Gunslinger's Cape", augments={'Enmity-1','"Mag.Atk.Bns."+2','"Phantom Roll" ability delay -4'}}
 	gear.jsecapes.geo = { name="Lifestream Cape", augments={'Geomancy Skill +10','Indi. eff. dur. +19','Pet: Damage taken -2%'}}
 	gear.jsecapes.rng = { name="Lutian Cape", augments={'STR+3','AGI+3','"Store TP"+3','"Snapshot"+1'}}
+	gear.jsecapes.sam = { name="Takaha Mantle", augments={'STR+3','"Zanshin"+4','"Store TP"+3','Meditate eff. dur. +4'}}
 
     gear.jsecapes.amb = {}
     gear.jsecapes.amb.blu = { name="Rosmerta's Cape"}
@@ -189,8 +190,8 @@ sets.TreasureHunter = {waist="Chaac Belt"}
 	gear.jsecapes.amb.pld.enmity = { name="Rudianos's Mantle", augments={'HP+60','Eva.+20 /Mag. Eva.+20','HP+2','Enmity+10'}}
     gear.jsecapes.amb.war = { name="Cichol's Mantle"}
     gear.jsecapes.amb.war.idle = { name="Cichol's Mantle"}
-    gear.jsecapes.amb.war.tp = { name="Cichol's Mantle"}
-    gear.jsecapes.amb.war.ws = { name="Cichol's Mantle"}
+    gear.jsecapes.amb.war.tp = { name="Cichol's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10'}}
+    gear.jsecapes.amb.war.ws = { name="Cichol's Mantle",augments={'STR+20','Accuracy+20 Attack+20','Crit.hit rate+10'}}
     gear.jsecapes.amb.drk = { name="Ankou's Mantle"}
     gear.jsecapes.amb.drk.idle = { name="Ankou's Mantle", augments={'STR+20','Accuracy+20 Attack+20','DEX+10','"Dbl.Atk."+10'}}
     gear.jsecapes.amb.drk.tp = { name="Ankou's Mantle", augments={'STR+20','Accuracy+20 Attack+20','DEX+10','"Dbl.Atk."+10'}}
@@ -746,17 +747,17 @@ sets.TreasureHunter = {waist="Chaac Belt"}
     }
     gear.jse.relic.war = {
         head="Agoge Mask", -- Need Finish
-        body="Warrior's Lorica", -- Need Finish
-        hands="Warrior's Mufflers", -- Need Finish
-        legs="Warrior's Cuisses", -- Need Finish
-        feet="Warrior's Calligae" -- Need Finish
+        body="Agoge Lorica", -- Need Finish
+        hands="Agoge Mufflers", -- Need Finish
+        legs="Agoge Cuisses", -- Need Finish
+        feet="Agoge Calligae" -- Need Finish
     }
     gear.jse.empyrean.war = {
-        head="Ravager's Mask +1",
-        body="Ravager's Lorica +1",
-        hands="Ravager's Mufflers +1",
-        legs="Ravager's Cuisses +1",
-        feet="Ravager's Calligae +1"
+        head="Boii Mask",
+        body="Boii Lorica",
+        hands="Boii Mufflers",
+        legs="Boii Cuisses",
+        feet="Boii Calligae"
     }
 
     -- RDM

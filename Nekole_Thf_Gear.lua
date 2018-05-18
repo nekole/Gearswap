@@ -403,9 +403,9 @@ function select_default_macro_book()
     end
 end
 function set_lockstyle()
-	send_command('wait 2; input /lockstyleset 7')
+	send_command('wait 5; input /lockstyleset 7')
 end
-
+ 
 --Dynamis Trust Overwrite
 function check_trust()
 	if not moving then

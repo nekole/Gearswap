@@ -7,9 +7,12 @@ function user_setup()
     state.MagicalDefenseMode:options('MDT', 'MDTReraise')
 	state.ResistDefenseMode:options('MEVA')
 	state.IdleMode:options('Normal', 'PDT','Refresh','Reraise')
-	state.Weapons:options('Montante','Misanthropy')
+	state.Weapons:options('Anguta','Misanthropy')
     state.ExtraMeleeMode = M{['description']='Extra Melee Mode','None'}
 	state.Passive = M{['description'] = 'Passive Mode','None','MP','Twilight'}
+	
+	autows = 'Entropy'
+	
 	set_lockstyle()
 	-- Additional local binds
 	send_command('bind ^` input /ja "Hasso" <me>')
@@ -96,9 +99,9 @@ function init_gear_sets()
 	-- Weaponskill sets
 	-- Default set for any weaponskill that isn't any more specifically defined
     sets.precast.WS = {ammo="Knobkierrie",
-		head="Flam. Zucchetto +2",neck="Fotia Gorget",ear1="Lugra Earring +1",ear2="Moonshade Earring",
-		body=gear.valorous_wsd_body,hands="Sulev. Gauntlets +2",ring1="Regal Ring",ring2="Niqmaddu Ring",
-		back="Ankou's Mantle",waist="Fotia Belt",legs="Sulev. Cuisses +2",feet="Flam. Gambieras +2"}
+		head=gear.argosy.head.D,neck="Fotia Gorget",ear1="Lugra Earring +1",ear2="Moonshade Earring",
+		body=gear.argosy.body.D,hands=gear.argosy.hands.D,ring1="Regal Ring",ring2="Niqmaddu Ring",
+		back="Ankou's Mantle",waist="Fotia Belt",legs=gear.argosy.legs.D,feet=gear.argosy.feet.D}
 
 	sets.precast.WS.SomeAcc = set_combine(sets.precast.WS, {})
 	sets.precast.WS.Acc = set_combine(sets.precast.WS, {})
@@ -134,15 +137,15 @@ function init_gear_sets()
 	sets.AccMaxTP = {ear1="Zennaroi Earring",ear2="Telos Earring"}
 	sets.AccDayMaxTPWSEars = {ear1="Zennaroi Earring",ear2="Telos Earring"}
 	sets.DayMaxTPWSEars = {ear1="Ishvara Earring",ear2="Brutal Earring",}
-	sets.AccDayWSEars = {ear1="Zennaroi Earring",ear2="Telos Earring"}
+	sets.AccDayWSEars = {ear1="Cessance Earring",ear2="Telos Earring"}
 	sets.DayWSEars = {ear1="Brutal Earring",ear2="Moonshade Earring",}
      
             -- Idle sets
            
     sets.idle = {ammo="Staunch Tathlum",
-		head="Jumalik Helm",neck="Loricate Torque +1",ear1="Genmei Earring",ear2="Ethereal Earring",
-		body="Jumalik Mail",hands="Sulev. Gauntlets +2",ring1="Defending Ring",ring2="Dark Ring",
-		back="Shadow Mantle",waist="Flume Belt",legs="Carmine Cuisses +1",feet="Amm Greaves"}
+		head="Jumalik Helm",neck="Loricate Torque +1",ear1="Genmei Earring",ear2="Cessance Earring",
+		body="Jumalik Mail",hands="Sulev. Gauntlets +2",ring1="Telos Earring",ring2="Sheltered Ring",
+		back="Moonbeam Cape",waist="Flume Belt +1",legs="Carmine Cuisses +1",feet="Amm Greaves"}
 		
     sets.idle.PDT = {ammo="Staunch Tathlum",
 		head="Jumalik Helm",neck="Loricate Torque +1",ear1="Genmei Earring",ear2="Ethereal Earring",
@@ -180,9 +183,9 @@ function init_gear_sets()
      
 	-- Engaged sets
 	sets.engaged = {ammo="Ginsen",
-		head="Flam. Zucchetto +2",neck="Asperity Necklace",ear1="Brutal Earring",ear2="Cessance Earring",
-		body=gear.valorous_wsd_body,hands=gear.valorous_acc_hands,ring1="Petrov Ring",ring2="Niqmaddu Ring",
-		back="Ankou's Mantle",waist="Ioskeha Belt",legs="Sulev. Cuisses +2",feet="Flam. Gambieras +2"}
+		head=gear.ambuscade.flamma.head,neck="Shulmanu Collar",ear1="Telos Earring",ear2="Cessance Earring",
+		body=gear.ValorousMail.WSD,hands=gear.ValorousMitts.TP,ring1="Petrov Ring",ring2="Niqmaddu Ring",
+		back="Ankou's Mantle",waist="Ioskeha Belt",legs=gear.ambuscade.sulevia.legs,feet=gear.ambuscade.flamma.feet}
     sets.engaged.SomeAcc = {ammo="Ginsen",
 		head="Flam. Zucchetto +2",neck="Combatant's Torque",ear1="Brutal Earring",ear2="Cessance Earring",
 		body=gear.valorous_wsd_body,hands=gear.valorous_acc_hands,ring1="Flamma Ring",ring2="Niqmaddu Ring",
@@ -511,7 +514,7 @@ function init_gear_sets()
 	sets.TreasureHunter = set_combine(sets.TreasureHunter, {})
 	
 	-- Weapons sets
-	sets.weapons.Montante = {main="Montante +1",sub="Utu Grip"}
+	sets.weapons.Anguta = {main="Anguta",sub="Utu Grip"}
 	sets.weapons.Misanthropy = {main="Misanthropy",sub="Utu Grip"}
 	
     end

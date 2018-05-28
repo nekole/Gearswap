@@ -189,9 +189,8 @@ sets.TreasureHunter = {waist="Chaac Belt"}
     gear.jsecapes.amb.pld.ws = { name="Rudianos's Mantle"}
 	gear.jsecapes.amb.pld.enmity = { name="Rudianos's Mantle", augments={'HP+60','Eva.+20 /Mag. Eva.+20','HP+2','Enmity+10'}}
     gear.jsecapes.amb.war = { name="Cichol's Mantle"}
-    gear.jsecapes.amb.war.idle = { name="Cichol's Mantle"}
     gear.jsecapes.amb.war.tp = { name="Cichol's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10'}}
-    gear.jsecapes.amb.war.ws = { name="Cichol's Mantle",augments={'STR+20','Accuracy+20 Attack+20','Crit.hit rate+10'}}
+    gear.jsecapes.amb.war.ws = { name="Cichol's Mantle", augments={'STR+20','Accuracy+20 Attack+20','Crit.hit rate+10'}}
     gear.jsecapes.amb.drk = { name="Ankou's Mantle"}
     gear.jsecapes.amb.drk.idle = { name="Ankou's Mantle", augments={'STR+20','Accuracy+20 Attack+20','DEX+10','"Dbl.Atk."+10'}}
     gear.jsecapes.amb.drk.tp = { name="Ankou's Mantle", augments={'STR+20','Accuracy+20 Attack+20','DEX+10','"Dbl.Atk."+10'}}
@@ -292,7 +291,7 @@ sets.TreasureHunter = {waist="Chaac Belt"}
     gear.acro.body = { name="Acro Surcoat" }
     gear.acro.body.tp = { name="Acro Surcoat", augments={'Accuracy+20 Attack+20','"Store TP"+6','STR+6 AGI+6'}}
     gear.acro.hands = {}
-    gear.acro.hands.tp = { name="Acro Gauntlets", augments={'HP+19', 'Accuracy+15 Attack+15', '"Store TP"+3'}}
+    gear.acro.hands.tp = { name="Acro Gauntlets", augments={'Accuracy+16 Attack+16','"Store TP"+6','STR+7 DEX+7'}}
     gear.acro.legs = { name="Acro Breeches" }
     gear.acro.legs.tp = { name="Acro Breeches", augments={'VIT+10', 'Attack+22', '"Dbl. Atk."+2'}}
     gear.acro.feet = { name="Acro Leggings" }
@@ -491,16 +490,16 @@ sets.TreasureHunter = {waist="Chaac Belt"}
 	gear.lustratio.feet.A = { name="Lustratio Leggings", augments={'Attack+15','STR+5','"Dbl.Atk."+2'}}
 
     gear.argosy = {}
-    gear.argosy.head = { name="Argosy Celata" }
-    gear.argosy.head.A = { name="Argosy Celata", augments={'STR+10', 'DEX+10', 'Attack+15'} }
-    gear.argosy.body = { name="Argosy Hauberk" }
-    gear.argosy.body.A = { name="Argosy Hauberk", augments={'STR+10', 'DEX+10', 'Attack+15'} }
-    gear.argosy.hands = { name="Argosy Mufflers" }
-    gear.argosy.hands.A = { name="Argosy Mufflers", augments={'STR+10', 'DEX+10', 'Attack+15'} }
-    gear.argosy.legs = { name="Argosy Breeches" }
-    gear.argosy.legs.A = { name="Argosy Breeches", augments={'STR+10', 'DEX+10', 'Attack+15'} }
-    gear.argosy.feet = { name="Argosy Sollerets" }
-    gear.argosy.feet.A = { name="Argosy Sollerets", augments={'STR+10', 'DEX+10', 'Attack+15'} }
+    gear.argosy.head = { name="Argosy Celata +1" }
+    gear.argosy.head.D = { name="Argosy Celata +1", augments={'DEX+12','Accuracy+20','"Dbl.Atk."+3'}}
+    gear.argosy.body = { name="Argosy Hauberk +1" }
+    gear.argosy.body.D = { name="Argosy Hauberk +1", augments={'STR+12','Attack+20','"Store TP"+6'}}
+    gear.argosy.hands = { name="Argosy Mufflers +1" }
+    gear.argosy.hands.D = { name="Argosy Mufflers +1", augments={'STR+20','"Dbl.Atk."+3','Haste+3%'}}
+    gear.argosy.legs = { name="Argosy Breeches +1" }
+    gear.argosy.legs.D = { name="Argosy Breeches +1", augments={'STR+12','Attack+25','"Store TP"+6'}}
+    gear.argosy.feet = { name="Argosy Sollerets +1" }
+    gear.argosy.feet.D = { name="Argosy Sollerets +1", augments={'HP+65','"Dbl.Atk."+3','"Store TP"+5'}}
 
     -- Reisenjima pieces
 
@@ -518,6 +517,7 @@ sets.TreasureHunter = {waist="Chaac Belt"}
     gear.odyssean.legs.tp = { name="Odyssean Cuisses", augments={'Accuracy+23 Attack+23','DEX+5','Accuracy+11'}}
     gear.odyssean.legs.ws = { name="Odyssean Cuisses", augments={'Accuracy+27','"Store TP"+5','DEX+10','Attack+3'}}
     gear.odyssean.legs.dt = { name="Odyssean Cuisses", augments={'Accuracy+1','"Resist Silence"+7','Damage taken-5%','Accuracy+10 Attack+10','Mag. Acc.+16 "Mag.Atk.Bns."+16',}}
+	gear.odyssean.legs.fc = { name="Odyssean Cuisses", augments={'Accuracy+1','"Resist Silence"+7','Damage taken-5%','Accuracy+10 Attack+10','Mag. Acc.+16 "Mag.Atk.Bns."+16',}}
     gear.odyssean.feet = { name="Odyssean Greaves" }
     gear.odyssean.feet.tp = { name="Odyssean Greaves", augments={'Accuracy+23 Attack+23','DEX+7','Accuracy+15',}}
     gear.odyssean.feet.fc = { name="Odyssean Greaves", augments={'Accuracy+23 Attack+23','DEX+7','Accuracy+15',}}
@@ -535,6 +535,7 @@ sets.TreasureHunter = {waist="Chaac Belt"}
 	gear.HerculeanGloves.Crit = {name="Herculean Gloves", augments={'Attack+24','Crit.hit rate+3','DEX+10','Accuracy+14',}}
     gear.HerculeanGloves.PDT = {name="Herculean Gloves", augments={'Accuracy+15 Attack+15','Phys. dmg. taken -4%','Accuracy+6',}}
     gear.HerculeanGloves.TA = {name="Herculean Gloves", augments={'Accuracy+9 Attack+9','"Triple Atk."+4','AGI+9','Accuracy+8','Attack+15',}}
+	gear.HerculeanGloves.Ref = {name="Herculean Gloves", augments={'Pet: DEX+4','Crit. hit damage +1%','"Refresh"+1','Accuracy+20 Attack+20',}}
     
     gear.HerculeanTrousers = {}
 --    gear.HerculeanTrousers.STR = {name="Herculean Trousers", augments={'Pet: Accuracy+21 Pet: Rng. Acc.+21','Accuracy+18','Accuracy+14 Attack+14','Mag. Acc.+20 "Mag.Atk.Bns."+20'}}
@@ -547,6 +548,7 @@ sets.TreasureHunter = {waist="Chaac Belt"}
     gear.HerculeanBoots.TA = {name="Herculean Boots", augments={'Attack+12','"Triple Atk."+4','CHR+4','Accuracy+10',}}
 	gear.HerculeanBoots.MAB = {name="Herculean Boots", augments={'Mag. Acc.+18','Magic burst dmg.+3%','DEX+7','"Mag.Atk.Bns."+13',}}
 	gear.HerculeanBoots.WS = {name="Herculean Boots", augments={'Attack+17','Weapon skill damage +4%','Accuracy+10',}}
+	gear.HerculeanBoots.Ref = {name="Herculean Boots", augments={'Pet: "Mag.Atk.Bns."+9','Accuracy+25','"Refresh"+1','Mag. Acc.+4 "Mag.Atk.Bns."+4',}}
 
     gear.merlinic = {}
     gear.MerlinicHood = {}
@@ -581,6 +583,7 @@ sets.TreasureHunter = {waist="Chaac Belt"}
 	
 	gear.ValorousMail = {}
 	gear.ValorousMail.WSD ={name="Valorous Mail", augments={'Accuracy+22 Attack+22','Weapon skill damage +4%','MND+10','Accuracy+1','Attack+8'}}
+	gear.ValorousMail.TP ={name="Valorous Mail", augments={'Accuracy+28','"Dbl.Atk."+4','Attack+14'}}
     
     gear.ValorousMitts = {}
     gear.ValorousMitts.Pet = {name="Valorous Mitts", augments={'Pet: Attack+26 Pet: Rng.Atk.+26','Pet: Phys. dmg. taken -4%','Pet: Accuracy+12 Pet: Rng. Acc.+12'}}
@@ -589,7 +592,8 @@ sets.TreasureHunter = {waist="Chaac Belt"}
     
     gear.ValorousHose = {}
     gear.ValorousHose.Pet = {name="Valorous Hose", augments={'Pet: "Subtle Blow"+9','Pet: STR+14','Pet: Accuracy+15 Pet: Rng. Acc.+15','Pet: Attack+13 Pet: Rng.Atk.+13'}}
-    gear.ValorousHose.WSD = {name="Valorous Hose", augments={'Accuracy+16 Attack+16','Damage taken-1%','VIT+4','Accuracy+12','Attack+14'}}
+    gear.ValorousHose.WSD = { name="Valor. Hose", augments={'Attack+24','"Dbl.Atk."+3','STR+9'}}
+	gear.ValorousHose.TP = { name="Valor. Hose", augments={'Attack+25','"Store TP"+6','STR+8'}}
     
     gear.ValorousGreaves = {}
     gear.ValorousGreaves.Pet = {name="Valorous Greaves", augments={'Pet: Accuracy+30 Pet: Rng. Acc.+30','Pet: "Dbl. Atk."+2','Pet: STR+9','Pet: Attack+1 Pet: Rng.Atk.+1'}}
@@ -1168,8 +1172,8 @@ sets.TreasureHunter = {waist="Chaac Belt"}
     gear.ambuscade.sulevia = {
         head="Sulevia's Mask +1",
         body="Sulevia's Platemail +1",
-        hands="Sulevia's Gauntlets +1",
-        legs="Sulevia's Cuisses +1",
+        hands="Sulevia's Gauntlets +2",
+        legs="Sulevia's Cuisses +2",
         feet="Sulevia's Leggings +1",
     }
 

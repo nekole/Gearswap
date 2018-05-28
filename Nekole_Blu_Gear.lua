@@ -840,7 +840,7 @@ function init_gear_sets()
 	-- Sets to return to when not performing an action.
 
 	sets.latent_refresh = {waist="Fucho-no-obi"}
-	sets.DayIdle = {feet="Serpentes Sabots"}
+	sets.DayIdle = {}
 	sets.NightIdle = {}
 	
 	-- Gear for learning spells: +skill and AF hands.
@@ -873,13 +873,15 @@ function init_gear_sets()
         ear2=gear.ears.regen,
         ear1="Telos Earring",
         body="Mekosuchinae Harness",
-        hands="Serpentes Cuffs",
+		hands=gear.HerculeanGloves.Ref,
+ --       hands="Serpentes Cuffs",
         ring1=gear.ring.regen_left,
         ring2=gear.ring.regen_right,
         back="Moonbeam Cape",
         waist=gear.waist.pdt,
         legs=gear.carmine.legs.D,
-        feet="Serpentes Sabots"}
+--		feet="Serpentes Sabots"}
+        feet=gear.HerculeanBoots.Ref}
 	
 	sets.idle.Sphere = {body="Mekosu. Harness"}
 

@@ -228,7 +228,7 @@ function init_gear_sets()
         body="Kendatsuba Samue +1",
 		hands="Ken. Tekko +1",
 		ring1="Defending Ring",
-		ring2="Regal Ring",
+		ring2="Sheltered Ring",
         back="Moonbeam Cape",
 		waist="Flume Belt +1",
 		legs="Ken. Hakama +1",
@@ -249,7 +249,7 @@ function init_gear_sets()
     -- Defense sets
     sets.defense.PDT = {ammo="Staunch Tathlum",
         head="Loess Barbuta +1",neck="Loricate Torque +1",ear1="Etiolation Earring",ear2="Sanare Earring",
-        body="Tartarus Platemail",hands=gear.valorous_wsd_hands,ring1="Defending Ring",ring2="Dark Ring",
+        body="Tartarus Platemail",hands=gear.ValorousMitts.WSD,ring1="Defending Ring",ring2="Patricius Ring",
         back="Moonbeam Cape",waist="Ioskeha Belt",legs=gear.ambuscade.hizamaru.legs,feet="Amm Greaves"}
 
     sets.defense.PDTReraise = set_combine(sets.defense.PDT, sets.Reraise)

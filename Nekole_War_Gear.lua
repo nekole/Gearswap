@@ -11,7 +11,8 @@ function user_setup()
 	state.Passive = M{['description'] = 'Passive Mode','None','Twilight'}
 	state.Weapons:options('Chango','DualWeapons','Greatsword','ProcDagger','ProcSword','ProcGreatSword','ProcScythe','ProcPolearm','ProcGreatKatana','ProcClub','ProcStaff')
 
- 
+	autows = "Upheaval"
+	
 	set_lockstyle()
 --	gear.da_jse_back = {name="Cichol's Mantle",augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10'}}
 --	gear.crit_jse_back = {name="Cichol's Mantle",augments={'STR+20','Accuracy+20 Attack+20','Crit.hit rate+10'}}
@@ -38,18 +39,148 @@ function init_gear_sets()
 	sets.Reraise = {head="Twilight Helm",body="Twilight Mail"}
 	
 	-- Precast sets to enhance JAs
-	sets.precast.JA['Berserk'] = {gear.jsecapes.amb.war.tp,feet=gear.jse.relic.war.feet,body=gear.jse.artifact.war.body}
-	sets.precast.JA['Warcry'] = {head=gear.jse.relic.warhead}
-	sets.precast.JA['Defender'] = {gear.jse.relic.war.hands}
-	sets.precast.JA['Aggressor'] = {body=gear.jse.relic.war.body,gear.jse.artifact.war.head}
-	sets.precast.JA['Mighty Strikes'] = {hands=gear.jse.relic.war.hands}
-	sets.precast.JA["Warrior's Charge"] = {}
+	sets.precast.JA['Berserk'] = {
+		ammo="Iron Gobbet",
+		head=gear.ambuscade.sulevia.head,
+		body=gear.jse.artifact.war.body,
+		hands=gear.ambuscade.sulevia.hands,
+		legs=gear.ambuscade.sulevia.legs,
+		feet=gear.jse.relic.war.feet,
+		neck="Unmoving Collar +1",
+		waist="Ioskeha Belt",
+		ear1="Cessance Earring",
+		ear2="Ethereal Earring",
+		ring1="Eihwaz Ring",
+		ring2="Petrov Ring",
+		back=gear.jsecapes.amb.war.tp}
+	sets.precast.JA['Warcry'] = {
+		head=gear.jse.relic.war.head,
+		ammo="Iron Gobbet",
+		body=gear.ambuscade.sulevia.body,
+		hands=gear.ambuscade.sulevia.hands,
+		legs=gear.ambuscade.sulevia.legs,
+		feet=gear.ambuscade.sulevia.feet,
+		neck="Unmoving Collar +1",
+		waist="Ioskeha Belt",
+		ear1="Cessance Earring",
+		ear2="Ethereal Earring",
+		ring1="Eihwaz Ring",
+		ring2="Petrov Ring",
+		back="Reiki Cloak"}
+	sets.precast.JA['Defender'] = {
+		head=gear.jse.relic.war.head,
+		ammo="Iron Gobbet",
+		body=gear.ambuscade.sulevia.body,
+		hands=gear.jse.relic.war.hands,
+		legs=gear.ambuscade.sulevia.legs,
+		feet=gear.ambuscade.sulevia.feet,
+		neck="Unmoving Collar +1",
+		waist="Ioskeha Belt",
+		ear1="Cessance Earring",
+		ear2="Ethereal Earring",
+		ring1="Eihwaz Ring",
+		ring2="Petrov Ring",
+		back="Reiki Cloak"}
+	sets.precast.JA['Aggressor'] = {
+		gear.jse.artifact.war.head,
+		ammo="Iron Gobbet",
+		body=gear.jse.relic.war.body,
+		hands=gear.ambuscade.sulevia.hands,
+		legs=gear.ambuscade.sulevia.legs,
+		feet=gear.ambuscade.sulevia.feet,
+		neck="Unmoving Collar +1",
+		waist="Ioskeha Belt",
+		ear1="Cessance Earring",
+		ear2="Ethereal Earring",
+		ring1="Eihwaz Ring",
+		ring2="Petrov Ring",
+		back="Reiki Cloak"}	
+	sets.precast.JA['Mighty Strikes'] = {
+		head=gear.ambuscade.sulevia.head,
+		ammo="Iron Gobbet",
+		body=gear.ambuscade.sulevia.body,
+		hands=gear.jse.relic.war.hands,
+		legs=gear.ambuscade.sulevia.legs,
+		feet=gear.ambuscade.sulevia.feet,
+		neck="Unmoving Collar +1",
+		waist="Ioskeha Belt",
+		ear1="Cessance Earring",
+		ear2="Ethereal Earring",
+		ring1="Eihwaz Ring",
+		ring2="Petrov Ring",
+		back="Reiki Cloak"}
+	sets.precast.JA["Warrior's Charge"] = {
+		head=gear.ambuscade.sulevia.head,
+		ammo="Iron Gobbet",
+		body=gear.ambuscade.sulevia.body,
+		hands=gear.jse.relic.war.hands,
+		legs=gear.ambuscade.sulevia.legs,
+		feet=gear.ambuscade.sulevia.feet,
+		neck="Unmoving Collar +1",
+		waist="Ioskeha Belt",
+		ear1="Cessance Earring",
+		ear2="Ethereal Earring",
+		ring1="Eihwaz Ring",
+		ring2="Petrov Ring",
+		back="Reiki Cloak"}
 	sets.precast.JA['Tomahawk'] = {ammo="Thr. Tomahawk"}
-	sets.precast.JA['Retaliation'] = {feet=gear.jse.empyrean.war.feet}
-	sets.precast.JA['Restraint'] = {gear.jse.empyrean.war.hands}
-	sets.precast.JA['Blood Rage'] = {body=gear.jse.empyrean.war.body}
+	sets.precast.JA['Retaliation'] = {
+		head=gear.ambuscade.sulevia.head,
+		ammo="Iron Gobbet",
+		body=gear.ambuscade.sulevia.body,
+		hands=gear.ambuscade.sulevia.hands,
+		legs=gear.ambuscade.sulevia.legs,
+		feet=gear.jse.empyrean.war.feet,
+		neck="Unmoving Collar +1",
+		waist="Ioskeha Belt",
+		ear1="Cessance Earring",
+		ear2="Ethereal Earring",
+		ring1="Eihwaz Ring",
+		ring2="Petrov Ring",
+		back="Reiki Cloak"}
+	sets.precast.JA['Restraint'] = {
+		head=gear.ambuscade.sulevia.head,
+		ammo="Iron Gobbet",
+		body=gear.ambuscade.sulevia.body,
+		hands=gear.jse.empyrean.war.hands,
+		legs=gear.ambuscade.sulevia.legs,
+		feet=gear.ambuscade.sulevia.feet,
+		neck="Unmoving Collar +1",
+		waist="Ioskeha Belt",
+		ear1="Cessance Earring",
+		ear2="Ethereal Earring",
+		ring1="Eihwaz Ring",
+		ring2="Petrov Ring",
+		back="Reiki Cloak"}
+	sets.precast.JA['Blood Rage'] = {
+		head=gear.ambuscade.sulevia.head,
+		ammo="Iron Gobbet",
+		body=gear.ambuscade.sulevia.body,
+		hands=gear.jse.empyrean.war.hands,
+		legs=gear.ambuscade.sulevia.legs,
+		feet=gear.ambuscade.sulevia.feet,
+		neck="Unmoving Collar +1",
+		waist="Ioskeha Belt",
+		ear1="Cessance Earring",
+		ear2="Ethereal Earring",
+		ring1="Eihwaz Ring",
+		ring2="Petrov Ring",
+		back="Reiki Cloak"}
 	sets.precast.JA['Brazen Rush'] = {}
-	sets.precast.JA['Provoke'] = set_combine(sets.Enmity,{})
+	sets.precast.JA['Provoke'] = set_combine(sets.Enmity,{
+		head=gear.ambuscade.sulevia.head,
+		ammo="Iron Gobbet",
+		body=gear.ambuscade.sulevia.body,
+		hands=gear.ambuscade.sulevia.hands,
+		legs=gear.ambuscade.sulevia.legs,
+		feet=gear.ambuscade.sulevia.feet,
+		neck="Unmoving Collar +1",
+		waist="Ioskeha Belt",
+		ear1="Cessance Earring",
+		ear2="Ethereal Earring",
+		ring1="Eihwaz Ring",
+		ring2="Petrov Ring",
+		back="Reiki Cloak"})
                    
 	-- Waltz set (chr and vit)
 	sets.precast.Waltz = {}
@@ -86,9 +217,9 @@ function init_gear_sets()
 	-- Weaponskill sets
 	-- Default set for any weaponskill that isn't any more specifically defined
     sets.precast.WS = {ammo="Knobkierrie",
-		head=gear.ambuscade.flamma.head,neck="Fotia Gorget",ear1="Lugra Earring +1",ear2="Moonshade Earring",
-		body=gear.valorous_wsd_body,hands=gear.ambuscade.sulevia.hands,ring1="Regal Ring",ring2="Niqmaddu Ring",
-		back=gear.jsecapes.amb.war.tp,waist="Fotia Belt",legs=gear.ambuscade.sulevia.legs,feet=gear.ambuscade.flamma.feet}
+		head=gear.argosy.head.D,neck="Fotia Gorget",ear1="Telos Earring",ear2="Moonshade Earring",
+		body=gear.ValorousMail.WSD,hands=gear.argosy.hands.D,ring1="Regal Ring",ring2="Niqmaddu Ring",
+		back=gear.jsecapes.amb.war.ws,waist="Fotia Belt",legs=gear.argosy.legs.D,feet=gear.argosy.feet.D}
 
 	sets.precast.WS.SomeAcc = set_combine(sets.precast.WS, {back="Letalis Mantle",})
 	sets.precast.WS.Acc = set_combine(sets.precast.WS, {neck="Combatant's Torque"})
@@ -159,7 +290,7 @@ function init_gear_sets()
            
 	-- Idle sets
 	sets.idle = {ammo="Staunch Tathlum",
-		head="Loess Barbuta +1",neck="Loricate Torque +1",ear1="Genmei Earring",ear2="Odnowa Earring +1",
+		head=gear.ambuscade.flamma.head,neck="Loricate Torque +1",ear1="Genmei Earring",ear2="Odnowa Earring +1",
 		body="Tartarus Platemail",hands=gear.ambuscade.sulevia.hands,ring1="Defending Ring",ring2=gear.ring.regen_right,
 		back="Solemnity Cape",waist="Flume Belt +1",legs=gear.ambuscade.sulevia.legs,feet="Hermes' Sandals"}
 		
@@ -194,9 +325,9 @@ function init_gear_sets()
      
             -- Engaged sets
 	sets.engaged = {ammo="Ginsen",
-		head=gear.ambuscade.flamma.head,neck="Asperity Necklace",ear1="Telos Earring",ear2="Cessance Earring",
-		body=gear.valorous_wsd_body,hands=gear.valorous_acc_hands,ring1="Petrov Ring",ring2="Niqmaddu Ring",
-		back=gear.jsecapes.amb.war.tp,waist="Ioskeha Belt",legs=gear.ambuscade.sulevia.legs,feet=gear.ambuscade.flamma.feet}
+		head=gear.argosy.head.D,neck="Combatant's Torque",ear1="Telos Earring",ear2="Cessance Earring",
+		body=gear.argosy.body.D,hands=gear.argosy.hands.D,ring1="Petrov Ring",ring2="Niqmaddu Ring",
+		back=gear.jsecapes.amb.war.tp,waist="Ioskeha Belt",legs=gear.argosy.legs.D,feet=gear.argosy.feet.D}
     sets.engaged.SomeAcc = {ammo="Ginsen",
 		head=gear.ambuscade.flamma.head,neck="Combatant's Torque",ear1="Brutal Earring",ear2="Cessance Earring",
 		body=gear.valorous_wsd_body,hands=gear.valorous_acc_hands,ring1="Flamma Ring",ring2="Niqmaddu Ring",

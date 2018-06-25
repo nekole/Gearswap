@@ -1,9 +1,9 @@
 function user_setup()
 	-- Options: Override default valuels
-	state.CastingMode:options('Normal','Resistant','Fodder','Proc')
+	state.CastingMode:options('Normal','Resistant','Fodder','Proc','OccultAcumen')
 	state.OffenseMode:options('Normal')
 	state.IdleMode:options('Normal', 'PDT', 'TPEat','DTHippo')
-	state.Weapons:options('None','NukeWeapons')
+	state.Weapons:options('None','NukeWeapons','Khatvanga','Malevolence')
 	state.Moving  = M(false, "moving")
 
 	gear.obi_cure_waist = "Witful Belt"
@@ -12,7 +12,10 @@ function user_setup()
 	set_lockstyle()
 
 		--- Additional local binds
-	send_command('bind ^` gs c cycle ElementalMode')
+	send_command('bind ^` gs c cycle ElementalMode') 
+	send_command('bind ~^` gs c cycleback ElementalMode') --Robbiewobbie's idea
+	send_command('bind ^q gs c weapons Khatvanga;gs c set CastingMode OccultAcumen')
+	send_command('bind !q gs c weapons default;gs c reset CastingMode')
 	send_command('bind !\\\\ input /ja "Manawell" <me>')
 	send_command('bind !` input /ma "Aspir III" <t>')
 	send_command('bind @` gs c cycle MagicBurstMode')
@@ -39,6 +42,8 @@ function init_gear_sets()
     --------------------------------------
 	
 	sets.weapons.NukeWeapons = {main=gear.weapons.BLM.magicstaff,sub="Niobid Strap"}
+	sets.weapons.Khatvanga = {main="Khatvanga",sub="Bloodrain Strap"}
+	sets.weapons.Malevolence = {main="Malevolence",sub="Ammurapi Shield"}
     
     ---- Precast Sets ----
     

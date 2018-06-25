@@ -64,7 +64,7 @@ function init_gear_sets()
 	sets.weapons.Mandau = {main="Mandau",sub="Twashtar"}
 	sets.weapons.LowBuff = {main="Aeneas",sub="Blurred Knife +1"}
 	sets.weapons.MagicWeapons = {main="Malevolence",sub="Malevolence"}
-	sets.weapons.Throwing = {range="Raider's Bmrng."}
+	sets.weapons.Throwing = {main="Aeneas",sub="Taming Sari",range="Comet Tail",ammo=empty}
 	
     -- Actions we want to use to tag TH.
 	sets.precast.Step = set_combine(sets.engaged.FullAcc, sets.TreasureHunter)

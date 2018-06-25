@@ -179,7 +179,7 @@ sets.TreasureHunter = {waist="Chaac Belt"}
     gear.jsecapes.amb.blu = { name="Rosmerta's Cape"}
     gear.jsecapes.amb.blu.idle = { name="Rosmerta's Cape"}
     gear.jsecapes.amb.blu.tp = { name="Rosmerta's Cape", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dbl.Atk."+10'}}
-    gear.jsecapes.amb.blu.ws = { name="Rosmerta's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Crit.hit rate+10'}}
+    gear.jsecapes.amb.blu.ws = { name="Rosmerta's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Crit.hit rate+10'}}  --need finish
     gear.jsecapes.amb.blm = { name="Taranus's Cape"}
     gear.jsecapes.amb.blm.mab = { name="Taranus's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Mag.Atk.Bns."+10'}}
     gear.jsecapes.amb.blm.fc = { name="Taranus's Cape", augments={'MP+60','Mag. Acc+20 /Mag. Dmg.+20','"Fast Cast"+10'}}
@@ -192,13 +192,13 @@ sets.TreasureHunter = {waist="Chaac Belt"}
     gear.jsecapes.amb.war.tp = { name="Cichol's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10'}}
     gear.jsecapes.amb.war.ws = { name="Cichol's Mantle", augments={'STR+20','Accuracy+20 Attack+20','Crit.hit rate+10'}}
     gear.jsecapes.amb.drk = { name="Ankou's Mantle"}
-    gear.jsecapes.amb.drk.idle = { name="Ankou's Mantle", augments={'STR+20','Accuracy+20 Attack+20','DEX+10','"Dbl.Atk."+10'}}
+    gear.jsecapes.amb.drk.idle = { name="Ankou's Mantle", augments={'STR+20','Accuracy+20 Attack+20','DEX+10','"Dbl.Atk."+10'}} --need finish
     gear.jsecapes.amb.drk.tp = { name="Ankou's Mantle", augments={'STR+20','Accuracy+20 Attack+20','DEX+10','"Dbl.Atk."+10'}}
     gear.jsecapes.amb.drk.ws = { name="Ankou's Mantle", augments={'STR+20','Accuracy+20 Attack+20','DEX+10','"Dbl.Atk."+10'}}
-    gear.jsecapes.amb.drk.wsd = { name="Ankou's Mantle", augments={'STR+7','VIT+20', 'Accuracy+20 Attack+20', 'Weapon skill damage +10%'}}
+    gear.jsecapes.amb.drk.wsd = { name="Ankou's Mantle", augments={'STR+7','VIT+20', 'Accuracy+20 Attack+20', 'Weapon skill damage +10%'}} --need finish
 	gear.jsecapes.amb.whm = { name="Alaunus's Cape"}
     gear.jsecapes.amb.whm.idle = { name="Alaunus's Cape"}
-    gear.jsecapes.amb.whm.fc = { name="Alaunus's Cape", augments={'"Fast Cast"+10'}}
+    gear.jsecapes.amb.whm.fc = { name="Alaunus's Cape", augments={'"Fast Cast"+10'}} --need finish
     gear.jsecapes.amb.whm.ws = { name="Alaunus's Cape"}
 	gear.jsecapes.amb.thf = { name="Toutatis's Cape"}
     gear.jsecapes.amb.thf.idle = { name="Toutatis's Cape"}
@@ -219,14 +219,14 @@ sets.TreasureHunter = {waist="Chaac Belt"}
     gear.jsecapes.amb.sam.ws = { name="Smertrios's Mantle",augments={'STR+20','Accuracy+20 Attack+20','Weapon skill damage +10%'}}
 	gear.jsecapes.amb.sch = { name="Lugh's Cape" }
 	gear.jsecapes.amb.sch.mab = { name="Lugh's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Mag.Atk.Bns."+10'}} 
-    gear.jsecapes.amb.sch.fc = { name="Lugh's Cape", augments={'MND+20','Mag. Acc+20 /Mag. Dmg.+20','"Fast Cast"+10'}}
+    gear.jsecapes.amb.sch.fc = { name="Lugh's Cape", augments={'MND+20','Mag. Acc+20 /Mag. Dmg.+20','"Fast Cast"+10'}}  --need finish
 	gear.jsecapes.amb.cor = { name="Camulus's Mantle" }
 	gear.jsecapes.amb.cor.tp = { name="Camulus's Mantle",augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Store TP"+10'}}
     gear.jsecapes.amb.cor.mwsd = { name="Camulus's Mantle",augments={'AGI+20','Mag. Acc+20 /Mag. Dmg.+20','AGI+10','Weapon skill damage +10%'}}
 	gear.jsecapes.amb.cor.wsd = { name="Camulus's Mantle",augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','AGI+10','Weapon skill damage +10%'}}
 	gear.jsecapes.amb.mnk = { name="Segomo's Mantle" }
-    gear.jsecapes.amb.mnk.tp = { name="Segomo's Mantle",augments={'STR+20','Accuracy+20 Attack+20','Accuracy+10','"Store TP"+10'}}
-    gear.jsecapes.amb.mnk.ws = { name="Segomo's Mantle",augments={'STR+20','Accuracy+20 Attack+20','Weapon skill damage +10%'}}
+    gear.jsecapes.amb.mnk.tp = { name="Segomo's Mantle",augments={'STR+20','Accuracy+20 Attack+20','Accuracy+10','"Store TP"+10'}}  --need finish
+    gear.jsecapes.amb.mnk.ws = { name="Segomo's Mantle",augments={'STR+20','Accuracy+20 Attack+20','Weapon skill damage +10%'}}  --need finish
 
     -- Skirmish pieces
     gear.hagondes = {}
@@ -1152,18 +1152,18 @@ sets.TreasureHunter = {waist="Chaac Belt"}
         feet="Runeist Bottes",
     }
 	gear.jse.relic.run = {
-        head="",
-        body="",
-        hands="",
-        legs="",
-        feet=""
+        head="Futhark Bandeau",
+        body="Futhark Coat",
+        hands="Futhark Mitons",
+        legs="Futhark Trousers",
+        feet="Futhark Boots"
     }
     gear.jse.empyrean.run = {  
-        head="",
-        body="",
-        hands="",
-        legs="",
-        feet=""
+        head="Erilaz Galea",
+        body="Erilaz Surcoat",
+        hands="Erilaz Gauntlets",
+        legs="Erilaz Leg Guards",
+        feet="Erilaz Greaves"
 	}
 
 

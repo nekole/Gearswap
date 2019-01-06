@@ -3,7 +3,7 @@ function user_setup()
     state.OffenseMode:options('Normal','Acc')
     state.CastingMode:options('Normal','Resistant')
     state.IdleMode:options('Normal','PDT')
-	state.Weapons:options('None','Aeneas','DualWeapons','Swords','NukeWeapons')
+	state.Weapons:options('None','Aeneas','DualWeapons','DualSwords','DualNukeWeapons')
 
 	-- Adjust this if using the Terpander (new +song instrument)
     info.ExtraSongInstrument = 'Daurdabla'
@@ -17,7 +17,7 @@ function user_setup()
 	-- Additional local binds
     send_command('bind ^` gs c cycle ExtraSongsMode')
 	send_command('bind !` input /ma "Chocobo Mazurka" <me>')
-	send_command('bind @` gs c cycle MagicBurst')
+	send_command('bind @` gs c cycle MagicBurstMode')
 	send_command('bind @f10 gs c cycle RecoverMode')
 	send_command('bind @f8 gs c toggle AutoNukeMode')
 	send_command('bind !q gs c weapons NukeWeapons;gs c update')
@@ -36,8 +36,8 @@ function init_gear_sets()
 	-- Weapons sets
 	sets.weapons.Aeneas = {main="Aeneas",sub="Genmei Shield"}
 	sets.weapons.DualWeapons = {main="Aeneas",sub="Taming Sari"}
-	sets.weapons.Swords = {main="Vampirism",sub="Vampirism"}
-	sets.weapons.NukeWeapons = {main="Malevolence",sub="Malevolence"}
+	sets.weapons.DualSwords = {main="Vampirism",sub="Vampirism"}
+	sets.weapons.DualNukeWeapons = {main="Malevolence",sub="Malevolence"}
 
 	-- Precast Sets
 

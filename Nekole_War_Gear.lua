@@ -36,7 +36,7 @@ function init_gear_sets()
 	
     sets.Enmity = {}
 	sets.Knockback = {}
-	sets.Reraise = {head="Twilight Helm",body="Twilight Mail"}
+	sets.Twilight = {head="Twilight Helm",body="Twilight Mail"}
 	
 	-- Precast sets to enhance JAs
 	sets.precast.JA['Berserk'] = {
@@ -1371,7 +1371,7 @@ function init_gear_sets()
 	sets.weapons.Greatsword = {main="Ragnarok",sub="Utu Grip"}
 	sets.weapons.ProcDagger = {main="Chicken Knife II",sub=empty}
 	sets.weapons.ProcSword = {main="Ark Sword",sub=empty}
-	sets.weapons.ProcGreatSword = {main="Irradiance Blade",sub=empty}
+	sets.weapons.ProcGreatSword = {main="Lament",sub=empty}
 	sets.weapons.ProcScythe = {main="Ark Scythe",sub=empty}
 	sets.weapons.ProcPolearm = {main="Pitchfork +1",sub=empty}
 	sets.weapons.ProcGreatKatana = {main="Hardwood Katana",sub=empty}

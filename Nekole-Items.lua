@@ -94,6 +94,7 @@ sets.TreasureHunter = {waist="Chaac Belt"}
 	gear.ring.str2 = { name="Ifrit Ring +1" }
 	gear.ring.mnd1 = { name="Leviathan Ring +1" }
 	gear.ring.mnd2 = { name="Leviathan Ring +1" }
+	gear.ring.mnd2 = { name="Leviathan Ring +1" }
 	gear.ring.dex1 = { name="Ramuh Ring +1" }
 	gear.ring.dex2 = { name="Ramuh Ring +1" }
 	gear.ring.agi1 = { name="Garuda Ring +1" }
@@ -179,7 +180,7 @@ sets.TreasureHunter = {waist="Chaac Belt"}
     gear.jsecapes.amb.blu = { name="Rosmerta's Cape"}
     gear.jsecapes.amb.blu.idle = { name="Rosmerta's Cape"}
     gear.jsecapes.amb.blu.tp = { name="Rosmerta's Cape", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dbl.Atk."+10'}}
-    gear.jsecapes.amb.blu.ws = { name="Rosmerta's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Crit.hit rate+10'}}  --need finish
+    gear.jsecapes.amb.blu.ws = { name="Rosmerta's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Crit.hit rate+10'}}  
     gear.jsecapes.amb.blm = { name="Taranus's Cape"}
     gear.jsecapes.amb.blm.mab = { name="Taranus's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Mag.Atk.Bns."+10'}}
     gear.jsecapes.amb.blm.fc = { name="Taranus's Cape", augments={'MP+60','Mag. Acc+20 /Mag. Dmg.+20','"Fast Cast"+10'}}
@@ -227,6 +228,16 @@ sets.TreasureHunter = {waist="Chaac Belt"}
 	gear.jsecapes.amb.mnk = { name="Segomo's Mantle" }
     gear.jsecapes.amb.mnk.tp = { name="Segomo's Mantle",augments={'STR+20','Accuracy+20 Attack+20','Accuracy+10','"Store TP"+10'}}  --need finish
     gear.jsecapes.amb.mnk.ws = { name="Segomo's Mantle",augments={'STR+20','Accuracy+20 Attack+20','Weapon skill damage +10%'}}  --need finish
+	gear.jsecapes.amb.rdm = { name="Sucellos's Cape"}
+	gear.jsecapes.amb.bst = { name="Artio's Mantle"}
+	gear.jsecapes.amb.nin = { name="Andartia's Mantle"}
+	gear.jsecapes.amb.dnc = { name="Senuna's Mantle"}
+	gear.jsecapes.amb.brd = { name="Intarabus's Cape"}
+	gear.jsecapes.amb.drg = { name="Brigantia's Mantle"}
+	gear.jsecapes.amb.drg.tp = { name="Brigantia's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dbl.Atk."+10'}}
+	gear.jsecapes.amb.drg.ws = { name="Brigantia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10'}}
+	gear.jsecapes.amb.pup = { name="Visucius's Mantle"}
+	gear.jsecapes.amb.run = { name="Ogma's cape"}
 
     -- Skirmish pieces
     gear.hagondes = {}
@@ -388,6 +399,7 @@ sets.TreasureHunter = {waist="Chaac Belt"}
 	
 	gear.AmalricCoif = {}
 	gear.AmalricCoif.C = {name="Amalric Coif", augments={'INT+10','Elem. magic skill +15','Dark magic skill +15'}}
+	gear.AmalricCoif.DPlus = {name="Amalric Coif +1", augments={'INT+12','Mag. Acc.+25','Enmity-6'}}
     
     gear.AmalricDoublet = {}
     gear.AmalricDoublet.A = {name="Amalric Doublet", augments={'MP+60','Mag. Acc.+15','"Mag.Atk.Bns."+15'}}
@@ -674,24 +686,24 @@ sets.TreasureHunter = {waist="Chaac Belt"}
 
 	 -- BLM
     gear.jse.artifact.blm = {
-        head="Spaekona's Petasos", -- Need Finish
+        head="Spaekona's Petasos +1", 
         body="Spaekona's Coat +1",
-        hands="Spaekona's Gloves", -- Need Finish
+        hands="Spaekona's Gloves 1",
         legs="Spaekona's Tonban +1", 
-        feet="Spaekona's Sabots" -- Need Finish
+        feet="Spaekona's Sabots +1" 
     }
     gear.jse.relic.blm = {
-        head="Archmage's Petasos",  -- Need Finish
+        head="Archmage's Petasos +1",  
         body="Arch. Coat +1", 
         hands="Archmage's Gloves +1",
-        legs="Archmage's Tonban",  -- Need Finish
-        feet="Archmage's Sabots" 
+        legs="Archmage's Tonban +1", 
+        feet="Archmage's Sabots"  --Need Finish Rem's Tale Ch.10 x8	Akvan's Pennon	Rockfin Tooth
     }
     gear.jse.empyrean.blm = {
-        head="Goetia Petasos +2",  -- Need Finish
-        body="Goetia Coat +2", 	-- Need Finish
-        hands="Goetia Gloves +2",  -- Need Finish
-        legs="Goetia Chausses +2",  -- Need Finish
+        head="Goetia Petasos +2",  -- Need Finish Rem's Tale Ch.1 x5 Glavoid Shell	Phoenix Feather  /// Rem's Tale Ch.6 x8	Etched Memory x15	Defiant Sweat
+        body="Goetia Coat +2", 	-- Need Finish Rem's Tale Ch.2 x5 Glavoid Shell	Malboro Fiber  /// Rem's Tale Ch.7 x8	Etched Memory x25	Dark Matter
+        hands="Goetia Gloves +2",  -- Need Finish Rem's Tale Ch.3 x5 Glavoid Shell	Beetle Blood /// Rem's Tale Ch.8 x8	Etched Memory x15	Macuil Horn
+        legs="Goetia Chausses +2",  -- Need Finish Rem's Tale Ch.4 x5 Glavoid Shell	Damascene Cloth	/// Rem's Tale Ch.9 x8	Etched Memory x20	Tartarian Chain
         feet="Wicce Sabots +1"
     }
 	
@@ -730,61 +742,61 @@ sets.TreasureHunter = {waist="Chaac Belt"}
         head="Plunderer's Bonnet +1", 
         body="Plunderer's Vest +1",
         hands="Plunderer's Armlets +1",
-        legs="Plunderer's Culottes", -- Need Finish Rem's Tale Ch.9 x8
+        legs="Plunderer's Culottes +1", 
         feet="Plunderer's Poulaines +1"
     }
     gear.jse.empyrean.thf = {
-        head="Skulker's Bonnet", -- Need Finish Rem's Tale Ch.6 x8	Etched Memory x15	Defiant Sweat
-        body="Skulker's Vest", -- Need Finish Rem's Tale Ch.7 x8	Etched Memory x25	Dark Matter
-        hands="Skulker's Armlets", -- Need Finish Rem's Tale Ch.8 x8	Etched Memory x15	Macuil Horn
-        legs="Skulker's Culottes", -- Need Finish Rem's Tale Ch.9 x8	Etched Memory x20	Tartarian Chain
+        head="Skulker's Bonnet +1", 
+        body="Skulker's Vest +1", 
+        hands="Skulker's Armlets +1", 
+        legs="Skulker's Culottes +1", 
         feet="Skulker's Poulaines +1"
     }
 	
 	-- WAR
     gear.jse.artifact.war = {
-        head="Pummeler's Mask", -- Need Finish
-        body="Pummeler's Lorica", -- Need Finish
-        hands="Pummeler's Mufflers", -- Need Finish
+        head="Pummeler's Mask", -- Need Finish Rem's Tale Ch.6 x8	Behemoth Leather	Maliyakaleya Orb
+        body="Pummeler's Lorica", -- Need Finish Rem's Tale Ch.7 x8	Behemoth Leather	Hepatizon Ingot
+        hands="Pummeler's Mufflers", -- Need Finish Rem's Tale Ch.8 x8	Behemoth Leather	Beryllium Ingot
         legs="Pumm. Cuisses +1",
-        feet="Pummeler's Calligae" -- Need Finish
+        feet="Pummeler's Calligae" -- Need Finish Rem's Tale Ch.10 x8	Behemoth Leather	Sif's Macrame
     }
     gear.jse.relic.war = {
-        head="Agoge Mask", -- Need Finish
-        body="Agoge Lorica", -- Need Finish
-        hands="Agoge Mufflers", -- Need Finish
-        legs="Agoge Cuisses", -- Need Finish
-        feet="Agoge Calligae" -- Need Finish
+        head="Agoge Mask", -- Need Finish Rem's Tale Ch.6 x8	Voidwrought Plate	Gabbrath Horn
+        body="Agoge Lorica", -- Need Finish Rem's Tale Ch.7 x8	Voidwrought Plate	Yggdreant Bole
+        hands="Agoge Mufflers", -- Need Finish Rem's Tale Ch.8 x8	Voidwrought Plate	Bztavian Stinger
+        legs="Agoge Cuisses", -- Need Finish Rem's Tale Ch.9 x8	Voidwrought Plate	Waktza Rostrum
+        feet="Agoge Calligae" -- Need Finish Rem's Tale Ch.10 x8	Voidwrought Plate	Rockfin Tooth
     }
     gear.jse.empyrean.war = {
-        head="Boii Mask",
-        body="Boii Lorica",
-        hands="Boii Mufflers",
-        legs="Boii Cuisses",
-        feet="Boii Calligae"
+        head="Boii Mask", -- Need Finish Rem's Tale Ch.6 x8	Etched Memory x15	Defiant Sweat
+        body="Boii Lorica", -- Need Finish Rem's Tale Ch.7 x8	Etched Memory x25	Dark Matter
+        hands="Boii Mufflers", -- Need Finish Rem's Tale Ch.8 x8	Etched Memory x15	Macuil Horn
+        legs="Boii Cuisses", -- Need Finish Rem's Tale Ch.9 x8	Etched Memory x20	Tartarian Chain
+        feet="Boii Calligae" -- Need Finish Rem's Tale Ch.10 x8	Etched Memory x15	Plovid Effluvium
     }
 
     -- RDM
     gear.jse.artifact.rdm = {
-        head="Atrophy Chapeau",
-        body="Atrophy Tabard",
-        hands="Atrophy Gloves",
-        legs="Atrophy Tights +1",
-        feet="Atrophy Boots"
+        head="Atrophy Chapeau", -- Need Finish Rem's Tale Ch.6 x8	Siren's Hair	Maliyakaleya Orb
+        body="Atrophy Tabard", -- Need Finish Rem's Tale Ch.7 x8	Siren's Hair	Hepatizon Ingot
+        hands="Atrophy Gloves", -- Need Finish Rem's Tale Ch.8 x8	Siren's Hair	Beryllium Ingot
+        legs="Atrophy Tights +1", -- Need Finish Rem's Tale Ch.9 x8	Siren's Hair	Exalted Lumber
+        feet="Atrophy Boots" -- Need Finish Rem's Tale Ch.10 x8	Siren's Hair	Sif's Macrame
     }
     gear.jse.relic.rdm = {
-        head="Vitivation Chapeau",
-        body="Vitivation Tabard",
-        hands="Vitivation Gloves",
-        legs="Vitiation Tights",
-        feet="Vitiation Boots"
+        head="Vitivation Chapeau", -- Need Finish Rem's Tale Ch.6 x8	Pil's Tuille	Gabbrath Horn
+        body="Vitivation Tabard", -- Need Finish Rem's Tale Ch.7 x8	Pil's Tuille	Yggdreant Bole
+        hands="Vitivation Gloves", -- Need Finish Rem's Tale Ch.8 x8	Pil's Tuille	Bztavian Stinger
+        legs="Vitiation Tights", -- Need Finish Rem's Tale Ch.9 x8	Pil's Tuille	Waktza Rostrum
+        feet="Vitiation Boots" -- Need Finish Rem's Tale Ch.10 x8	Pil's Tuille	Rockfin Tooth
     }
     gear.jse.empyrean.rdm = {
-        head="Estq. Chappel +2",
-        body="Estq. Sayon +2",
-        hands="Estq. Ganthrt. +2",
-        legs="Estqr. Fuseau +2",
-        feet="Estq. Houseaux +2"
+        head="Estq. Chappel +2", -- Need Finish Rem's Tale Ch.1 x5 Cirein-croin's Lantern	Phoenix Feather /// Rem's Tale Ch.6 x8	Etched Memory x15	Defiant Sweat
+        body="Estq. Sayon +2", -- Need Finish Rem's Tale Ch.2 x5 Cirein-croin's Lantern	Malboro Fiber /// Rem's Tale Ch.7 x8	Etched Memory x25	Dark Matter
+        hands="Estq. Ganthrt. +2", -- Need Finish Rem's Tale Ch.3 x5 Cirein-croin's Lantern	Beetle Blood /// Rem's Tale Ch.8 x8	Etched Memory x15	Macuil Horn
+        legs="Estqr. Fuseau +2", -- Need Finish Rem's Tale Ch.4 x5 Cirein-croin's Lantern	Damascene Cloth /// Rem's Tale Ch.9 x8	Etched Memory x20	Tartarian Chain
+        feet="Estq. Houseaux +2" -- Need Finish Rem's Tale Ch.5 x5 Cirein-croin's Lantern	Oxblood /// Rem's Tale Ch.10 x8	Etched Memory x15	Plovid Effluvium
     }
 
     -- PLD
@@ -803,11 +815,11 @@ sets.TreasureHunter = {waist="Chaac Belt"}
         feet="Cab. Leggings +1"
     }
     gear.jse.empyrean.pld = {
-        head="Creed Armet +1", -- Need Finish
-        body="Creed Cuirass +2", -- Need Finish
-        hands="Creed Gauntlets +1", -- Need Finish
-        legs="Creed Cuisses +1", -- Need Finish
-        feet="Creed Sabatons +1" -- Need Finish
+        head="Creed Armet +1", -- Need Finish Rem's Tale Ch.1 x10 Kukulkan's Fang	Phoenix Feather /// Rem's Tale Ch.6 x8	Etched Memory x15	Defiant Sweat
+        body="Creed Cuirass +2", -- Need Finish Rem's Tale Ch.2 x5 Kukulkan's Fang	Malboro Fiber /// Rem's Tale Ch.7 x8	Etched Memory x25	Dark Matter
+        hands="Creed Gauntlets +1", -- Need Finish Rem's Tale Ch.3 x10 Kukulkan's Fang	Beetle Blood /// Rem's Tale Ch.8 x8	Etched Memory x15	Macuil Horn
+        legs="Creed Cuisses +1", -- Need Finish Rem's Tale Ch.4 x10 Kukulkan's Fang	Damascene Cloth /// Rem's Tale Ch.9 x8	Etched Memory x20	Tartarian Chain
+        feet="Creed Sabatons +1" -- Need Finish Rem's Tale Ch.5 x10 Kukulkan's Fang	Oxblood /// Rem's Tale Ch.10 x8	Etched Memory x15	Plovid Effluvium
     }
 
     -- GEO
@@ -848,12 +860,12 @@ sets.TreasureHunter = {waist="Chaac Belt"}
         legs="Arcadian Braccae +1",
         feet="Arcadian Socks +1"
     }
-    gear.jse.empyrean.rng = {   -- need to finish all these
-        head="Amini Gapette",
-        body="Amini Caban +1",
-        hands="Amini Glovelettes",
-        legs="Amini Brague",
-        feet="Amini Bottillons"
+    gear.jse.empyrean.rng = {   
+        head="Amini Gapette", -- Need Finish Rem's Tale Ch.6 x8	Etched Memory x15	Defiant Sweat
+        body="Amini Caban +1", 
+        hands="Amini Glovelettes", -- Need Finish Rem's Tale Ch.8 x8	Etched Memory x15	Macuil Horn
+        legs="Amini Brague", -- Need Finish Rem's Tale Ch.9 x8	Etched Memory x20	Tartarian Chain
+        feet="Amini Bottillons" -- Need Finish Rem's Tale Ch.10 x8	Etched Memory x15	Plovid Effluvium
 	}
 	
 			    -- SMN
@@ -906,87 +918,87 @@ sets.TreasureHunter = {waist="Chaac Belt"}
 		body="Theophany Cap +1",
 		hands="Theophany Mitts +1",
         legs="Theophany Pantaloons +1",
-        feet="Theophany Duckbills",
+        feet="Theophany Duckbills", --Need Finish Rem's Tale Ch.10 x8	Raxa	Sif's Macrame
     }
 	gear.jse.relic.whm = {
-        head="Cleric's Cap",
+        head="Cleric's Cap", --Need Fnish Rem's Tale Ch.1 x10 M. Silverpiece x2 Sparkling Stone	Phoenix Feather /// Rem's Tale Ch.6 x8	Akvan's Pennon	Gabbrath Horn
         body="Piety Briault +1",
-        hands="Cleric's Mitts",
+        hands="Cleric's Mitts", --Need Fnish Rem's Tale Ch.3 x10 M. Silverpiece x2 Sparkling Stone	Beetle Blood /// Rem's Tale Ch.8 x8	Akvan's Pennon	Bztavian Stinger
         legs="Piety Pantaloons +1",
-        feet="Piety Duckbills"
+        feet="Piety Duckbills" --Need Finish Rem's Tale Ch.10 x8	Akvan's Pennon	Rockfin Tooth
     }
     gear.jse.empyrean.whm = {  
-        head="Ebers Cap",
-        body="Ebers Bliaud",
-        hands="Ebers Mitts +1",
+        head="Ebers Cap", --Need Finish Rem's Tale Ch.6 x8	Etched Memory x15	Defiant Sweat
+        body="Ebers Bliaud", --Need Finish Rem's Tale Ch.7 x8	Etched Memory x25	Dark Matter
+        hands="Ebers Mitts +1", 
         legs="Ebers Pantaloons +1",
         feet="Ebers Duckbills +1"
 	}
 					-- MNK
     gear.jse.artifact.mnk = {
-		head="Anchorite's Crown",
-		body="Anchorite's Cyclas",
-		hands="Anchorite's Gloves",
+		head="Anchorite's Crown", --Need Finish Rem's Tale Ch.6 x8	Platinum Silk Thread	Maliyakaleya Orb
+		body="Anchorite's Cyclas", --Need Finish Rem's Tale Ch.7 x8	Platinum Silk Thread	Hepatizon Ingot
+		hands="Anchorite's Gloves", --Need Finish Rem's Tale Ch.8 x8	Platinum Silk Thread	Beryllium Ingot
         legs="Anchorite's Hose +1",
-        feet="Anchorite's Gaiters",
+        feet="Anchorite's Gaiters", --Need Finish Rem's Tale Ch.10 x8	Platinum Silk Thread	Sif's Macrame	
     }
 	gear.jse.relic.mnk = {
-        head="Melee Crown",
-        body="Melee Cyclas",
-        hands="Melee Gloves",
+        head="Melee Crown", --Need Finish Rem's Tale Ch.1 x10 100 Byne Bill x2 Griffon Hide	Phoenix Feather /// Rem's Tale Ch.6 x8	Kaggen's Cuticle	Gabbrath Horn
+        body="Melee Cyclas", --Need Finish Rem's Tale Ch.2 x10 100 Byne Bill x2 Griffon Hide	Malboro Fiber /// Rem's Tale Ch.7 x8	Kaggen's Cuticle	Yggdreant Bole
+        hands="Melee Gloves", --Need Finish Rem's Tale Ch.3 x10 100 Byne Bill x2 Griffon Hide	Beetle Blood /// Rem's Tale Ch.8 x8	Kaggen's Cuticle	Bztavian Stinger
         legs="Hesychast's Hose +1",
-        feet="Melee Gaiters"
+        feet="Melee Gaiters" --Need Finish Rem's Tale Ch.5 x10 100 Byne Bill x2 Griffon Hide	Oxblood /// Rem's Tale Ch.10 x8	Kaggen's Cuticle	Rockfin Tooth
     }
     gear.jse.empyrean.mnk = {  
-        head="Tantra Crown",
-        body="Tantra Cyclas",
-        hands="Tantra Gloves",
-        legs="Tantra Hose",
-        feet="Tantra Gaiters +1"
+        head="Tantra Crown +1", --Need Finish Rem's Tale Ch.1 x10 Itzpapalotl's Scale	Phoenix Feather
+        body="Tantra Cyclas +1", --Need Finish Rem's Tale Ch.2 x10 Itzpapalotl's Scale	Malboro Fiber
+        hands="Tantra Gloves +1", --Need Finish Rem's Tale Ch.3 x10 Itzpapalotl's Scale	Beetle Blood
+        legs="Tantra Hose +1", --Need Finish Rem's Tale Ch.4 x10 Itzpapalotl's Scale	Damascene Cloth	
+        feet="Tantra Gaiters +1" --Need Finish Rem's Tale Ch.5 x10 Itzpapalotl's Scale	Oxblood
 	}
 				-- DRK
     gear.jse.artifact.drk = {
-		head="Ignominy Burgeonet",
-		body="Ignominy Cuirass",
-		hands="Ignominy Gauntlets",
-        legs="Ignominy Flanchard +1",
-        feet="Ignominy Sollerets",
+		head="Ignominy Burgeonet", --Need Finish Rem's Tale Ch.6 x8	Durium Sheet	Maliyakaleya Orb	
+		body="Ignominy Cuirass", --Need Finish Rem's Tale Ch.7 x8	Durium Sheet	Hepatizon Ingot
+		hands="Ignominy Gauntlets", --Need Finish Rem's Tale Ch.8 x8	Durium Sheet	Beryllium Ingot
+        legs="Ignominy Flanchard +1", --Need Finish Rem's Tale Ch.9 x8	Durium Sheet	Exalted Lumber
+        feet="Ignominy Sollerets", --Need Finish Rem's Tale Ch.10 x8	Durium Sheet	Sif's Macrame
     }
 	gear.jse.relic.drk = {
-        head="Abyss Burgeonet",
-        body="Abyss Cuirass",
-        hands="Abyss Gauntlets",
-        legs="Abyss Flanchard",
-        feet="Abyss Sollerets"
+        head="Abyss Burgeonet", --Need Finish Rem's Tale Ch.1 x10 100 Byne Bill x2 Wootz Ore	Phoenix Feather /// Rem's Tale Ch.6 x8	Pil's Tuille	Gabbrath Horn
+        body="Abyss Cuirass", --Need Finish Rem's Tale Ch.2 x10 100 Byne Bill x2 Wootz Ore	Malboro Fiber /// Rem's Tale Ch.7 x8	Pil's Tuille	Yggdreant Bole
+        hands="Abyss Gauntlets", --Need Finish Rem's Tale Ch.3 x10 100 Byne Bill x2 Wootz Ore	Beetle Blood /// Rem's Tale Ch.8 x8	Pil's Tuille	Bztavian Stinger
+        legs="Abyss Flanchard", --Need Finish Rem's Tale Ch.4 x10 100 Byne Bill x2 Wootz Ore	Damascene Cloth	/// Rem's Tale Ch.9 x8	Pil's Tuille	Waktza Rostrum
+        feet="Abyss Sollerets" --Need Finish Rem's Tale Ch.5 x10 100 Byne Bill x2 Wootz Ore	Oxblood /// Rem's Tale Ch.10 x8	Pil's Tuille	Rockfin Tooth
     }
     gear.jse.empyrean.drk = {  
-        head="Bale Burgeonet",
-        body="Bale Cuirass",
-        hands="Bale Gauntlets",
-        legs="Bale Flanchard",
-        feet="Bale Sollerets"
+        head="Bale Burgeonet +1", --Need Finish Rem's Tale Ch.1 x10		Helm of Briareus	Phoenix Feather /// Rem's Tale Ch.6 x8	Etched Memory x15	Defiant Sweat
+        body="Bale Cuirass +1", --Need Finish Rem's Tale Ch.2 x10		Helm of Briareus	Malboro Fiber /// Rem's Tale Ch.7 x8	Etched Memory x25	Dark Matter
+        hands="Bale Gauntlets +1", --Need Finish Rem's Tale Ch.3 x10	Helm of Briareus	Beetle Blood /// Rem's Tale Ch.8 x8		Etched Memory x15	Macuil Horn
+        legs="Bale Flanchard +1", --Need Finish Rem's Tale Ch.4 x10		Helm of Briareus	Damascene Cloth /// Rem's Tale Ch.9 x8	Etched Memory x20	Tartarian Chain
+        feet="Bale Sollerets +1" --Need Finish Rem's Tale Ch.5 x10		Helm of Briareus	Oxblood /// Rem's Tale Ch.10 x8			Etched Memory x15	Plovid Effluvium
 	}
 			-- BST
     gear.jse.artifact.bst = {
-		head="Totemic Helm",
-		body="Totemic Jackcoat +1",
-		hands="Totemic Gloves",
-        legs="Totemic Trousers +1",
-        feet="Totemic Gaiters",
+		head="Totemic Helm",	--Need Finish Rem's Tale Ch.6 x8		Behemoth Leather	Maliyakaleya Orb
+		body="Totemic Jackcoat +1",	--Need Finish Rem's Tale Ch.7 x8	Behemoth Leather	Hepatizon Ingot
+		hands="Totemic Gloves",	--Need Finish Rem's Tale Ch.8 x8		Behemoth Leather	Beryllium Ingot
+        legs="Totemic Trousers +1",	--Need Finish Rem's Tale Ch.9 x8	Behemoth Leather	Exalted Lumber
+        feet="Totemic Gaiters",	--Need Finish Rem's Tale Ch.10 x8		Behemoth Leather	Sif's Macrame
     }
 	gear.jse.relic.bst = {
-        head="Ankusa Helm",
-        body="Ankusa Jackcoat",
-        hands="Ankusa Gloves",
-        legs="Ankusa Trousers",
-        feet="Ankusa Gaiters"
+        head="Ankusa Helm",		--Need Finish Rem's Tale Ch.6 x8		Hahava's Mail	Gabbrath Horn
+        body="Ankusa Jackcoat",	--Need Finish Rem's Tale Ch.7 x8		Hahava's Mail	Yggdreant Bole
+        hands="Ankusa Gloves",	--Need Finish Rem's Tale Ch.8 x8		Hahava's Mail	Bztavian Stinger
+        legs="Ankusa Trousers",	--Need Finish Rem's Tale Ch.9 x8		Hahava's Mail	Waktza Rostrum	
+        feet="Ankusa Gaiters"	--Need Finish Rem's Tale Ch.10 x8		Hahava's Mail	Rockfin Tooth
     }
     gear.jse.empyrean.bst = {  
-        head="Nukumi Cabasset",
-        body="Nukumi Gausape",
-        hands="Nukumi Manoplas",
-        legs="Nukumi Quijotes",
-        feet="Nukumi Ocreae"
+        head="Nukumi Cabasset",	--Need Finish Rem's Tale Ch.6 x8		Etched Memory x15	Defiant Sweat
+        body="Nukumi Gausape",	--Need Finish Rem's Tale Ch.7 x8		Etched Memory x25	Dark Matter
+        hands="Nukumi Manoplas",	--Need Finish Rem's Tale Ch.8 x8	Etched Memory x15	Macuil Horn
+        legs="Nukumi Quijotes",	--Need Finish Rem's Tale Ch.9 x8		Etched Memory x20	Tartarian Chain
+        feet="Nukumi Ocreae"	--Need Finish Rem's Tale Ch.10 x8		Etched Memory x15	Plovid Effluvium
 	}
 			-- BRD
     gear.jse.artifact.brd = {
@@ -1013,46 +1025,46 @@ sets.TreasureHunter = {waist="Chaac Belt"}
 			-- SAM
     gear.jse.artifact.sam = {
 		head="Wakido Kabuto +1",
-		body="Wakido Domaru",
-		hands="Wakido Kote",
+		body="Wakido Domaru",		--Need Finish Rem's Tale Ch.7 x8	Damascus Ingot	Hepatizon Ingot
+		hands="Wakido Kote",		--Need Finish Rem's Tale Ch.8 x8	Damascus Ingot	Beryllium Ingot
         legs="Wakido Haidate +1",
         feet="Wakido Sune-Ate +1",
     }
 	gear.jse.relic.sam = {
-        head="Saotome Kabuto",
-        body="Saotome Domaru",
+        head="Saotome Kabuto",		--Need Finish Rem's Tale Ch.6 x8	Pil's Tuille	Gabbrath Horn
+        body="Saotome Domaru",		--Need Finish Rem's Tale Ch.7 x8	Pil's Tuille	Yggdreant Bole
         hands="Sakonji Kote +1",
-        legs="Saotome Haidate",
+        legs="Saotome Haidate",		--Need Finish Rem's Tale Ch.9 x8	Pil's Tuille	Waktza Rostrum
         feet="Sakonji Sune-Ate +1"
     }
     gear.jse.empyrean.sam = {  
-        head="Unkai Kabuto",
+        head="Unkai Kabuto +1",		--Need Finish Rem's Tale Ch.6 x8	Apademak's Horn	Phoenix Feather  /// Rem's Tale Ch.6 x8	Etched Memory x15	Defiant Sweat
         body="Kasuga Domaru +1",
         hands="Kasuga Kote +1",
-        legs="Unkai Haidate",
+        legs="Unkai Haidate +1",	--Need Finish Rem's Tale Ch.9 x8	Apademak's Horn	Damascene Cloth ///	Rem's Tale Ch.9 x8	Etched Memory x20	Tartarian Chain
         feet="Kasuga Sune-Ate +1"
 	}
 			-- NIN
     gear.jse.artifact.nin = {
-		head="Hachiya Hatsuburi",
-		body="Hachiya Chainmail",
-		hands="Hachiya Tekko",
+		head="Hachiya Hatsuburi",	--Need Finish Rem's Tale Ch.6 x8	Damascus Ingot	Maliyakaleya Orb
+		body="Hachiya Chainmail",	--Need Finish Rem's Tale Ch.7 x8	Damascus Ingot	Hepatizon Ingot
+		hands="Hachiya Tekko",		--Need Finish Rem's Tale Ch.8 x8	Damascus Ingot	Beryllium Ingot
         legs="Hachiya Hakama +1",
-        feet="Hachiya Kyahan",
+        feet="Hachiya Kyahan",		--Need Finish Rem's Tale Ch.10 x8	Damascus Ingot	Sif's Macrame
     }
 	gear.jse.relic.nin = {
-        head="Koga Hatsuburi",
-        body="Koga Chainmail",
-        hands="Koga Tekko",
-        legs="Koga Hakama",
-        feet="Koga Kyahan"
+        head="Koga Hatsuburi",	--Need Finish Rem's Tale Ch.1 x10 100 Byne Bill x2 Relic Iron	Phoenix Feather ///	Rem's Tale Ch.6 x8	Voidwrought Plate	Gabbrath Horn
+        body="Koga Chainmail",	--Need Finish Rem's Tale Ch.2 x10 100 Byne Bill x2 Relic Iron	Malboro Fiber ///	Rem's Tale Ch.7 x8	Voidwrought Plate	Yggdreant Bole
+        hands="Koga Tekko",		--Need Finish Rem's Tale Ch.3 x10 100 Byne Bill x2 Relic Iron	Beetle Blood ///	Rem's Tale Ch.8 x8	Voidwrought Plate	Bztavian Stinger
+        legs="Koga Hakama",		--Need Finish Rem's Tale Ch.4 x10 100 Byne Bill x2 Relic Iron	Damascene Cloth ///	Rem's Tale Ch.9 x8	Voidwrought Plate	Waktza Rostrum
+        feet="Koga Kyahan"		--Need Finish Rem's Tale Ch.5 x10 100 Byne Bill x2 Relic Iron	Oxblood ///			Rem's Tale Ch.10 x8	Voidwrought Plate	Rockfin Tooth
     }
     gear.jse.empyrean.nin = {  
-        head="Iga Zukin",
-        body="Iga Ningi",
-        hands="Iga Tekko",
-        legs="Iga Hakama",
-        feet="Iga Kyahan"
+        head="Iga Zukin +1",	--Need Finish Rem's Tale Ch.1 x10	Bukhis's Wing	Phoenix Feather  ///	--Need Finish Rem's Tale Ch.6 x8	Etched Memory x15	Defiant Sweat
+        body="Iga Ningi +1",	--Need Finish Rem's Tale Ch.2 x10	Bukhis's Wing	Malboro Fiber	///		--Need Finish Rem's Tale Ch.7 x8	Etched Memory x25	Dark Matter
+        hands="Iga Tekko +1",	--Need Finish Rem's Tale Ch.3 x10	Bukhis's Wing	Beetle Blood	///		--Need Finish Rem's Tale Ch.8 x8	Etched Memory x15	Macuil Horn
+        legs="Iga Hakama +1",	--Need Finish Rem's Tale Ch.4 x10	Bukhis's Wing	Damascene Cloth	///		--Need Finish Rem's Tale Ch.9 x8	Etched Memory x20	Tartarian Chain
+        feet="Iga Kyahan +1"	--Need Finish Rem's Tale Ch.5 x10	Bukhis's Wing	Oxblood			///		--Need Finish Rem's Tale Ch.10 x8	Etched Memory x15	Plovid Effluvium
 	}
 			-- COR
     gear.jse.artifact.cor = {
@@ -1078,92 +1090,92 @@ sets.TreasureHunter = {waist="Chaac Belt"}
 	}
 			-- DRG
     gear.jse.artifact.drg = {
-		head="Vishap Armet",
-		body="Vishap Mail",
-		hands="Vishap Finger Gauntlets",
+		head="Vishap Armet +1",
+		body="Vishap Mail",					--Need Finish Rem's Tale Ch.7 x8	Orichalcum Sheet	Hepatizon Ingot
+		hands="Vishap Finger Gauntlets",	--Need Finish Rem's Tale Ch.8 x8	Orichalcum Sheet	Beryllium Ingot
         legs="Vishap Brais +1",
-        feet="Vishap Greaves",
+        feet="Vishap Greaves",				--Need Finish Rem's Tale Ch.10 x8	Orichalcum Sheet	Sif's Macrame
     }
 	gear.jse.relic.drg = {
-        head="Wyrm Armet",
-        body="Wyrm Mail",
-        hands="Wyrm Finger Gauntlets",
-        legs="Wyrm Brais",
-        feet="Wyrm Greaves"
+        head="Pteroslaver Armet +1",
+        body="Pteroslaver Mail +1",
+        hands="Pteroslaver Finger Gauntlets +1",
+        legs="Pteroslaver Brais",			--Need Finish Rem's Tale Ch.9 x8	Voidwrought Plate	Waktza Rostrum
+        feet="Pteroslaver Greaves"			--Need Finish Rem's Tale Ch.10 x8	Voidwrought Plate	Rockfin Tooth
     }
     gear.jse.empyrean.drg = {  
-        head="Lancer's Mezail",
-        body="Lancer Plackart",
-        hands="Lancer Vambraces",
-        legs="Lancer's Cuissots",
-        feet="Lancer's Schynbalds"
+        head="Peltast's Mezail",			--Need Finish Rem's Tale Ch.6 x8	Etched Memory x15	Defiant Sweat
+        body="Peltast's Plackart",			--Need Finish Rem's Tale Ch.7 x8	Etched Memory x25	Dark Matter
+        hands="Peltast's Vambraces",		--Need Finish Rem's Tale Ch.8 x8	Etched Memory x15	Macuil Horn
+        legs="Peltast's Cuissots",			--Need Finish Rem's Tale Ch.9 x8	Etched Memory x20	Tartarian Chain
+        feet="Peltast's Schynbalds"			--Need Finish Rem's Tale Ch.10 x8	Etched Memory x15	Plovid Effluvium
 	}
 			-- PUP
     gear.jse.artifact.pup = {
-		head="Foire Taj",
-		body="Foire Tobe",
-		hands="Foire Dastanas",
-        legs="Foire Churidars +1",
-        feet="Foire Babouches",
+		head="Foire Taj",					--Need Finish Rem's Tale Ch.6 x8	Twill Damask	Maliyakaleya Orb
+		body="Foire Tobe",					--Need Finish Rem's Tale Ch.7 x8	Twill Damask	Hepatizon Ingot
+		hands="Foire Dastanas",				--Need Finish Rem's Tale Ch.8 x8	Twill Damask	Beryllium Ingot
+        legs="Foire Churidars +1",			--Need Finish Rem's Tale Ch.9 x8	Twill Damask	Exalted Lumber
+        feet="Foire Babouches",				--Need Finish Rem's Tale Ch.10 x8	Twill Damask	Sif's Macrame
     }
 	gear.jse.relic.pup = {
-        head="Pantin Taj",
-        body="Pantin Tobe",
-        hands="Pantin Dastanas",
-        legs="Pantin Churidars",
-        feet="Pantin Babouches"
-    }
+        head="Pantin Taj",					--Need Finish Rem's Tale Ch.6 x8	Hahava's Mail	Gabbrath Horn
+        body="Pantin Tobe",					--Need Finish Rem's Tale Ch.7 x8	Hahava's Mail	Yggdreant Bole
+        hands="Pantin Dastanas",			--Need Finish Rem's Tale Ch.8 x8	Hahava's Mail	Bztavian Stinger
+        legs="Pantin Churidars",			--Need Finish Rem's Tale Ch.9 x8	Hahava's Mail	Waktza Rostrum
+        feet="Pantin Babouches"				--Need Finish Rem's Tale Ch.10 x8	Hahava's Mail	Rockfin Tooth
+    }	
     gear.jse.empyrean.pup = {  
-        head="Cirque Cappello",
-        body="Cirque Farsetto",
-        hands="Cirque Guanti",
-        legs="Cirque Pantaloni",
-        feet="Cirque Scarpe"
+        head="Cirque Cappello +1",			--Need Finish Rem's Tale Ch.1 x10	Carabosse's Gem	Phoenix Feather		///	--Need Finish Rem's Tale Ch.6 x8	Etched Memory x15	Defiant Sweat
+        body="Cirque Farsetto +1",			--Need Finish Rem's Tale Ch.2 x10	Carabosse's Gem	Malboro Fiber		///	--Need Finish Rem's Tale Ch.7 x8	Etched Memory x25	Dark Matter
+        hands="Cirque Guanti +1",			--Need Finish Rem's Tale Ch.3 x10	Carabosse's Gem	Beetle Blood		///	--Need Finish Rem's Tale Ch.8 x8	Etched Memory x15	Macuil Horn
+        legs="Cirque Pantaloni +1",			--Need Finish Rem's Tale Ch.4 x10	Carabosse's Gem	Damascene Cloth		///	--Need Finish Rem's Tale Ch.9 x8	Etched Memory x20	Tartarian Chain
+        feet="Cirque Scarpe +1"				--Need Finish Rem's Tale Ch.5 x10	Carabosse's Gem	Oxblood				///	--Need Finish Rem's Tale Ch.10 x8	Etched Memory x15	Plovid Effluvium
 	}
 			-- DNC
     gear.jse.artifact.dnc = {
-		head="Maxixi Tiara",
-		body="Maxixi Casaque",
-		hands="Maxixi Bangles",
-        legs="Maxixi Tights +1",
-        feet="Maxixi Toeshoes",
+		head="Maxixi Tiara",				--Need Finish Rem's Tale Ch.6 x8	Platinum Silk Thread	Maliyakaleya Orb
+		body="Maxixi Casaque",				--Need Finish Rem's Tale Ch.7 x8	Platinum Silk Thread	Hepatizon Ingot
+		hands="Maxixi Bangles",				--Need Finish Rem's Tale Ch.8 x8	Platinum Silk Thread	Beryllium Ingot
+        legs="Maxixi Tights +1",			--Need Finish Rem's Tale Ch.9 x8	Platinum Silk Thread	Exalted Lumber
+        feet="Maxixi Toeshoes",				--Need Finish Rem's Tale Ch.10 x8	Platinum Silk Thread	Sif's Macrame
     }
 	gear.jse.relic.dnc = {
-        head="Etoile Tiara",
-        body="Etoile Casaque",
-        hands="Etoile Bangles",
-        legs="Etoile Tights",
-        feet="Etoile Shoes"
+        head="Etoile Tiara",				--Need Finish Rem's Tale Ch.1 x10	M. Silverpiece x2	Mammoth Tusk	Phoenix Feather		///	--Need Finish Rem's Tale Ch.6 x8	Celaeno's Cloth	Gabbrath Horn
+        body="Etoile Casaque",				--Need Finish Rem's Tale Ch.2 x10	M. Silverpiece x2	Mammoth Tusk	Malboro Fiber		///	--Need Finish Rem's Tale Ch.7 x8	Celaeno's Cloth	Yggdreant Bole
+        hands="Etoile Bangles",				--Need Finish Rem's Tale Ch.3 x10	M. Silverpiece x2	Mammoth Tusk	Beetle Blood		///	--Need Finish Rem's Tale Ch.8 x8	Celaeno's Cloth	Bztavian Stinger
+        legs="Etoile Tights",				--Need Finish Rem's Tale Ch.4 x10	M. Silverpiece x2	Mammoth Tusk	Damascene Cloth		///	--Need Finish Rem's Tale Ch.9 x8	Celaeno's Cloth	Waktza Rostrum
+        feet="Etoile Shoes"					--Need Finish Rem's Tale Ch.5 x10	M. Silverpiece x2	Mammoth Tusk	Oxblood				///	--Need Finish Rem's Tale Ch.10 x8	Celaeno's Cloth	Rockfin Tooth
     }
     gear.jse.empyrean.dnc = {  
-        head="Charis Tiara",
-        body="Charis Casaque",
-        hands="Charis Bangles",
-        legs="Charis Tights",
-        feet="Charis Toeshoes"
+        head="Charis Tiara +1",				--Need Finish Rem's Tale Ch.1 x10	Two-Leaf Chloris Bud	Phoenix Feather		///	--Need Finish Rem's Tale Ch.6 x8	Etched Memory x15	Defiant Sweat
+        body="Charis Casaque +1",			--Need Finish Rem's Tale Ch.2 x10	Two-Leaf Chloris Bud	Malboro Fiber		///	--Need Finish Rem's Tale Ch.7 x8	Etched Memory x25	Dark Matter
+        hands="Charis Bangles +1",			--Need Finish Rem's Tale Ch.3 x10	Two-Leaf Chloris Bud	Beetle Blood		///	--Need Finish Rem's Tale Ch.8 x8	Etched Memory x15	Macuil Horn
+        legs="Charis Tights +1",			--Need Finish Rem's Tale Ch.4 x10	Two-Leaf Chloris Bud	Damascene Cloth		///	--Need Finish Rem's Tale Ch.9 x8	Etched Memory x20	Tartarian Chain
+        feet="Charis Toeshoes +1"			--Need Finish Rem's Tale Ch.5 x10	Two-Leaf Chloris Bud	Oxblood				///	--Need Finish Rem's Tale Ch.10 x8	Etched Memory x15	Plovid Effluvium
 	}
 	
 				-- RUN
     gear.jse.artifact.run = {
-		head="Runeist Bandeau",
-		body="Runeist Coat",
-		hands="Runeist Mitons",
-        legs="Runeist Trousers",
-        feet="Runeist Bottes",
+		head="Runeist Bandeau",		--Need Finish Rem's Tale Ch.6 x8	Damascus Ingot	Maliyakaleya Orb
+		body="Runeist Coat",		--Need Finish Rem's Tale Ch.7 x8	Damascus Ingot	Hepatizon Ingot
+		hands="Runeist Mitons",		--Need Finish Rem's Tale Ch.8 x8	Damascus Ingot	Beryllium Ingot
+        legs="Runeist Trousers",	--Need Finish Rem's Tale Ch.9 x8	Damascus Ingot	Exalted Lumber
+        feet="Runeist Bottes",		--Need Finish Rem's Tale Ch.10 x8	Damascus Ingot	Sif's Macrame
     }
 	gear.jse.relic.run = {
-        head="Futhark Bandeau",
-        body="Futhark Coat",
-        hands="Futhark Mitons",
-        legs="Futhark Trousers",
-        feet="Futhark Boots"
+        head="Futhark Bandeau",		--Need Finish Rem's Tale Ch.6 x	8	Celaeno's Cloth	Gabbrath Horn
+        body="Futhark Coat",		--Need Finish Rem's Tale Ch.7 x	8	Celaeno's Cloth	Yggdreant Bole
+        hands="Futhark Mitons",		--Need Finish Rem's Tale Ch.8 x	8	Celaeno's Cloth	Bztavian Stinger
+        legs="Futhark Trousers",	--Need Finish Rem's Tale Ch.9 x	8	Celaeno's Cloth	Waktza Rostrum
+        feet="Futhark Boots"		--Need Finish Rem's Tale Ch.10 x8	Celaeno's Cloth	Rockfin Tooth
     }
     gear.jse.empyrean.run = {  
-        head="Erilaz Galea",
-        body="Erilaz Surcoat",
-        hands="Erilaz Gauntlets",
-        legs="Erilaz Leg Guards",
-        feet="Erilaz Greaves"
+        head="Erilaz Galea",		--Need Finish Rem's Tale Ch.6 x8	Etched Memory x15	Defiant Sweat
+        body="Erilaz Surcoat",		--Need Finish Rem's Tale Ch.7 x8	Etched Memory x25	Dark Matter
+        hands="Erilaz Gauntlets",	--Need Finish Rem's Tale Ch.8 x8	Etched Memory x15	Macuil Horn
+        legs="Erilaz Leg Guards",	--Need Finish Rem's Tale Ch.9 x8	Etched Memory x20	Tartarian Chain
+        feet="Erilaz Greaves"		--Need Finish Rem's Tale Ch.10 x8	Etched Memory x15	Plovid Effluvium
 	}
 
 
@@ -1172,33 +1184,33 @@ sets.TreasureHunter = {waist="Chaac Belt"}
     gear.ambuscade.sulevia = {
         head="Sulevia's Mask +1",
         body="Sulevia's Platemail +1",
-        hands="Sulevia's Gauntlets +2",
+        hands="Sulevia's Gauntlets +2",   -----  30 Metals
         legs="Sulevia's Cuisses +2",
         feet="Sulevia's Leggings +1",
     }
 
     gear.ambuscade.meghanada = {
-        head="Meghanada Visor +1",
+        head="Meghanada Visor +2",
         body="Meghanada Cuirie +2",
-        hands="Meghanada Gloves +2",
+        hands="Meghanada Gloves +2", 
         legs="Meghanada Chausses +2",
         feet="Meghanada Jambeaux +2",
     }
 
     gear.ambuscade.hizamaru = {
         head="Hizamaru Somen +1",
-        body="Hizamaru Haramaki +1",
+        body="Hizamaru Haramaki +1",  ----  50 Metals
         hands="Hizamaru Kote +1",
         legs="Hizamaru Hizayoroi +1",
         feet="Hizamaru Sune-ate +1",
     }
 
     gear.ambuscade.inyanga = {
-        head="Inyanga Tiara +1",
+        head="Inyanga Tiara +2",
         body="Inyanga Jubbah +2",
-        hands="Inyanga Dastanas +1",
-        legs="Inyanga Shalwar +1",
-        feet="Inyanga Crackows +1",
+        hands="Inyanga Dastanas +2", 
+        legs="Inyanga Shalwar +2",
+        feet="Inyanga Crackows +2",
     }
 
     gear.ambuscade.jhakri = {
@@ -1212,7 +1224,7 @@ sets.TreasureHunter = {waist="Chaac Belt"}
     gear.ambuscade.flamma = {
         head="Flam. Zucchetto +2",
         body="Flamma Korazin +1",
-        hands="Flam. Manopolas +1",
+        hands="Flam. Manopolas +1",  -- 20 Fibers
         legs="Flamma Dirs +2",
         feet="Flam. Gambieras +2",
     }
@@ -1220,14 +1232,14 @@ sets.TreasureHunter = {waist="Chaac Belt"}
 	gear.ambuscade.taliah = {
         head="Tali'ah Turban +2",
         body="Tali'ah Manteel +2",
-        hands="Tali'ah Gages +1",
+        hands="Tali'ah Gages +1",    --  10 Fibers
         legs="Tali'ah Seraweels +2",
         feet="Tali'ah Crackows +2",
     }
 	
 	gear.ambuscade.mummu = {
 		head="Mummu Bonnet +1",
-		body="Mummu Jacket +1",
+		body="Mummu Jacket +1",  --  50 Fibers
         hands="Mummu Wrists +1",
         legs="Mummu Kecks +1",
         feet="Mummu Gamash. +1",
@@ -1236,7 +1248,7 @@ sets.TreasureHunter = {waist="Chaac Belt"}
 	gear.ambuscade.mallquis = {
 		head="Mallquis Chapeau +1",
 		body="Mallquis Saio +1",
-        hands="Mallquis Cuffs +1",
+        hands="Mallquis Cuffs +1",  -- 50 Fibers
         legs="Mallquis Trews +1",
         feet="Mallquis Clogs +1",
     }
@@ -1244,7 +1256,7 @@ sets.TreasureHunter = {waist="Chaac Belt"}
 	gear.ambuscade.ayanmo = {
 		head="Ayanmo Zucchetto +1",
 		body="Ayanmo Corazza +1",
-        hands="Ayanmo Manopolas +1",
+        hands="Ayanmo Manopolas +1",  -- 50 Fibers
         legs="Ayanmo Cosciales +1",
         feet="Ayanmo Gambieras +1",
     }

@@ -3,10 +3,10 @@ function user_setup()
     state.OffenseMode:options('Fodder','Normal','MinAcc','SomeAcc','Acc','HighAcc','FullAcc')
 	state.HybridMode:options('Normal','DTLite','PDT','MDT')
     state.WeaponskillMode:options('Match','Normal','SomeAcc','Acc','HighAcc','FullAcc','Fodder')
-    state.CastingMode:options('Normal','Resistant','Fodder')
+    state.CastingMode:options('Normal','Resistant','Fodder','Proc')
     state.IdleMode:options('Normal','Sphere','PDT','DTHippo')
-	state.PhysicalDefenseMode:options('PDT', 'NukeLock')
-	state.MagicalDefenseMode:options('MDT', 'NukeLock')
+	state.PhysicalDefenseMode:options('PDT')
+	state.MagicalDefenseMode:options('MDT')
 	state.ResistDefenseMode:options('MEVA')
 	state.Weapons:options('Tizalmace','Sequence','None','Almace','MagicWeapons','MeleeClubs','MaccWeapons','HybridWeapons')
 
@@ -40,7 +40,6 @@ function user_setup()
 	send_command('bind ^q gs c weapons Almace;gs c update')
 	send_command('bind !q gs c weapons HybridWeapons;gs c update')
 
-	update_combat_form()
 	select_default_macro_book()
 end
 
@@ -1224,33 +1223,33 @@ function select_default_macro_book()
 	end
 end
 
---Dynamis Trust Overwrite
+--Job Specific Trust Overwrite
 function check_trust()
 	if not moving then
-		if state.AutoTrustMode.value and not areas.Cities:contains(world.area) and (buffactive['Reive Mark'] or not player.in_combat) then
+		if state.AutoTrustMode.value and not areas.Cities:contains(world.area) and (buffactive['Elvorseal'] or buffactive['Reive Mark'] or not player.in_combat) then
 			local party = windower.ffxi.get_party()
 			if party.p5 == nil then
 				local spell_recasts = windower.ffxi.get_spell_recasts()
-			
-				if spell_recasts[980] == 0 and not have_trust("Yoran-Oran") then
-					windower.send_command('input /ma "Yoran-Oran (UC)" <me>')
-					tickdelay = 1100
+
+				if spell_recasts[980] < spell_latency and not have_trust("Yoran-Oran") then
+					windower.chat.input('/ma "Yoran-Oran (UC)" <me>')
+					tickdelay = (framerate * 3)
 					return true
-				elseif spell_recasts[952] == 0 and not have_trust("Koru-Moru") then
-					windower.send_command('input /ma "Koru-Moru" <me>')
-					tickdelay = 1100
+				elseif spell_recasts[952] < spell_latency and not have_trust("Koru-Moru") then
+					windower.chat.input('/ma "Koru-Moru" <me>')
+					tickdelay = (framerate * 3)
 					return true
-				elseif spell_recasts[967] == 0 and not have_trust("Qultada") then
-					windower.send_command('input /ma "Qultada" <me>')
-					tickdelay = 1100
+				elseif spell_recasts[967] < spell_latency and not have_trust("Qultada") then
+					windower.chat.input('/ma "Qultada" <me>')
+					tickdelay = (framerate * 3)
 					return true
-				elseif spell_recasts[914] == 0 and not have_trust("Ulmia") then
-					windower.send_command('input /ma "Ulmia" <me>')
-					tickdelay = 1100
+				elseif spell_recasts[914] < spell_latency and not have_trust("Ulmia") then
+					windower.chat.input('/ma "Ulmia" <me>')
+					tickdelay = (framerate * 3)
 					return true
-				elseif spell_recasts[979] == 0 and not have_trust("Selh'teus") then
-					windower.send_command('input /ma "Selh\'teus" <me>')
-					tickdelay = 1100
+				elseif spell_recasts[979] < spell_latency and not have_trust("Selh'teus") then
+					windower.chat.input('/ma "Selh\'teus" <me>')
+					tickdelay = (framerate * 3)
 					return true
 				else
 					return false

@@ -1,13 +1,13 @@
 function user_setup()
 
 	-- Options: Override default values
-    state.OffenseMode:options('Normal','DualWield')
+    state.OffenseMode:options('Normal')
 	state.CastingMode:options('Normal', 'Resistant', 'Fodder', 'Proc')
     state.IdleMode:options('Normal', 'PDT', 'TPEat')
 	state.PhysicalDefenseMode:options('PDT', 'NukeLock', 'GeoLock', 'PetPDT')
 	state.MagicalDefenseMode:options('MDT', 'NukeLock')
 	state.ResistDefenseMode:options('MEVA')
-	state.Weapons:options('None','Nehushtan','DualWeapons')
+	state.Weapons:options('None','Idris','DualWeapons')
 	set_lockstyle()
 
 	gear.nuke_jse_back = {name="Nantosuelta's Cape",augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','"Mag.Atk.Bns."+10'}}
@@ -222,8 +222,8 @@ function init_gear_sets()
 }
 
 	sets.midcast['Elemental Magic'].HighTierNuke = set_combine(sets.midcast['Elemental Magic'], {sub="Niobid Strap",ear1="Friomisi Earring",ear1="Regal Earring",ear2="Barkaro. Earring",hands="Amalric Gages"})
-	sets.midcast['Elemental Magic'].Resistant.HighTierNuke = set_combine(sets.midcast['Elemental Magic'].Resistant, {sub="Niobid Strap",ear1="Regal Earring",ear2="Barkaro. Earring",hands="Amalric Gages",})
-	sets.midcast['Elemental Magic'].Fodder.HighTierNuke = set_combine(sets.midcast['Elemental Magic'].Fodder, {sub="Alber Strap",ear1="Regal Earring",ear2="Barkaro. Earring",hands="Amalric Gages"})
+	sets.midcast['Elemental Magic'].HighTierNuke.Resistant = set_combine(sets.midcast['Elemental Magic'].Resistant, {sub="Niobid Strap",ear1="Regal Earring",ear2="Barkaro. Earring",hands="Amalric Gages",})
+	sets.midcast['Elemental Magic'].HighTierNuke.Fodder = set_combine(sets.midcast['Elemental Magic'].Fodder, {sub="Alber Strap",ear1="Regal Earring",ear2="Barkaro. Earring",hands="Amalric Gages"})
 		
     sets.midcast['Dark Magic'] = {main="Rubicundity",sub="Ammurapi Shield",
         head=gear.merlinic_nuke_head,neck="Erra Pendant",ear1="Regal Earring",ear2="Barkaro. Earring",
@@ -498,8 +498,8 @@ function init_gear_sets()
 		feet=gear.ambuscade.jhakri.feet}
 		
 		-- Weapons sets
-	sets.weapons.Nehushtan = {main='Nehushtan',sub='Genmei Shield'}
-	sets.weapons.DualWeapons = {main='Nehushtan',sub='Nehushtan'}
+	sets.weapons.Idris = {main='Idris',sub='Genmei Shield'}
+	sets.weapons.DualWeapons = {main='Idris',sub='Nehushtan'}
 
 end
 

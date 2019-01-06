@@ -40,7 +40,7 @@ function init_gear_sets()
 		head=gear.ambuscade.flamma.head,neck="Ganesha's Mala",ear1="Brutal Earring",ear2="Sherida Earring",
 		body=gear.ValorousMail.WSD,hands=gear.ValorousMitts.TP,ring1="Petrov Ring",ring2="Niqmaddu Ring",
 		back="Brigantia's Mantle",waist="Windbuffet Belt +1",legs=gear.ambuscade.sulevia.legs,feet=gear.ambuscade.flamma.feet}
-	sets.precast.JA['Ancient Circle'] = {} --legs="Vishap Brais"
+	sets.precast.JA['Ancient Circle'] = {legs="Vishap Brais +1"} 
 	sets.precast.JA['High Jump'] = {ammo="Ginsen",
 		head=gear.ambuscade.flamma.head,neck="Ganesha's Mala",ear1="Brutal Earring",ear2="Sherida Earring",
 		body=gear.ValorousMail.WSD,hands=gear.ValorousMitts.TP,ring1="Petrov Ring",ring2="Niqmaddu Ring",
@@ -54,15 +54,15 @@ function init_gear_sets()
 		body=gear.ValorousMail.WSD,hands=gear.ValorousMitts.TP,ring1="Petrov Ring",ring2="Niqmaddu Ring",
 		back="Brigantia's Mantle",waist="Windbuffet Belt +1",legs=gear.ambuscade.sulevia.legs,feet=gear.ambuscade.flamma.feet}
 	sets.precast.JA['Super Jump'] = {}
-	sets.precast.JA['Spirit Link'] = {head="Vishap Armet +1"} --head="Vishap Armet",hands="Lnc. Vmbrc. +2"
-	sets.precast.JA['Call Wyvern'] = {} --body="Ptero. Mail +1"
-	sets.precast.JA['Deep Breathing'] = {} --hands="Ptero. Armet +1"
-	sets.precast.JA['Spirit Surge'] = {} --body="Ptero. Mail +1"
+	sets.precast.JA['Spirit Link'] = {head=gear.jse.artifact.drg.head,hands=gear.jse.empyrean.drg.hands} 
+	sets.precast.JA['Call Wyvern'] = {body=gear.jse.relic.drg.body} 
+	sets.precast.JA['Deep Breathing'] = {head=gear.jse.relic.drg.head} 
+	sets.precast.JA['Spirit Surge'] = {body=gear.jse.relic.drg.body} 
 
 	-- Fast cast sets for spells
 	
 	sets.precast.FC = {ammo="Impatiens",
-		head="Carmine Mask +1",neck="Voltsurge Torque",ear1="Enchntr. Earring +1",ear2="Loquacious Earring",
+		head="Carmine Mask +1",neck="Orunmila's Torque",ear1="Enchntr. Earring +1",ear2="Loquacious Earring",
 		body="Taeon Tabard",hands="Leyline Gloves",ring1="Lebeche Ring",ring2="Prolix Ring",
 		back="Moonbeam Cape",waist="Flume Belt +1",legs="Founder's Greaves",feet="Carmine Greaves +1"}
 	
@@ -80,7 +80,7 @@ function init_gear_sets()
 	
 	-- Midcast Sets
 	sets.midcast.FastRecast = {ammo="Staunch Tathlum",
-		head="Carmine Mask +1",neck="Voltsurge Torque",ear1="Enchntr. Earring +1",ear2="Loquacious Earring",
+		head="Carmine Mask +1",neck="Orunmila's Torque",ear1="Enchntr. Earring +1",ear2="Loquacious Earring",
 		body="Taeon Tabard",hands="Leyline Gloves",ring1="Lebeche Ring",ring2="Prolix Ring",
 		back="Moonbeam Cape",waist="Tempus Fugit",legs="Founder's Greaves",feet="Carmine Greaves +1"}
 		
@@ -99,7 +99,7 @@ function init_gear_sets()
 	sets.precast.WS = {ammo="Knobkierrie",
 		head=gear.ambuscade.flamma.head,neck="Fotia Gorget",ear1="Moonshade Earring",ear2="Sherida Earring",
 		body=gear.ValorousMail.TP,hands=gear.ambuscade.sulevia.hands,ring1="Regal Ring",ring2="Niqmaddu Ring",
-		back="Brigantia's Mantle",waist="Fotia Belt",legs=gear.ValorousHose.WSD,feet=gear.ambuscade.flamma.feet}
+		back=gear.jsecapes.amb.drg.ws,waist="Fotia Belt",legs=gear.ValorousHose.WSD,feet=gear.ambuscade.flamma.feet}
 		
 	sets.precast.WS.SomeAcc = set_combine(sets.precast.WS, {})
 	sets.precast.WS.Acc = set_combine(sets.precast.WS, {neck="Shulmanu Collar"})
@@ -191,24 +191,24 @@ function init_gear_sets()
 
 	sets.engaged = {ammo="Ginsen",
 		head=gear.ambuscade.flamma.head,neck="Anu Torque",ear1="Telos Earring",ear2="Sherida Earring",
-		body=gear.ValorousMail.TP,hands=gear.acro.hands.tp,ring1="Petrov Ring",ring2="Niqmaddu Ring",
-		back="Brigantia's Mantle",waist="Ioskeha Belt",legs=gear.ValorousHose.TP,feet=gear.ambuscade.flamma.feet}
+		body=gear.ValorousMail.TP,hands=gear.ambuscade.sulevia.hands,ring1="Petrov Ring",ring2="Niqmaddu Ring",
+		back=gear.jsecapes.amb.drg.tp,waist="Ioskeha Belt",legs=gear.ValorousHose.TP,feet=gear.ambuscade.flamma.feet}
     sets.engaged.SomeAcc = {ammo="Ginsen",
 		head=gear.ambuscade.flamma.head,neck="Shulmanu Collar",ear1="Telos Earring",ear2="Sherida Earring",
 		body=gear.ValorousMail.TP,hands=gear.acro.hands.tp,ring1="Petrov Ring",ring2="Niqmaddu Ring",
-		back="Brigantia's Mantle",waist="Ioskeha Belt",legs=gear.ValorousHose.TP,feet=gear.ambuscade.flamma.feet}
+		back=gear.jsecapes.amb.drg.tp,waist="Ioskeha Belt",legs=gear.ValorousHose.TP,feet=gear.ambuscade.flamma.feet}
 	sets.engaged.Acc = {ammo="Ginsen",
 		head=gear.ambuscade.flamma.head,neck="Shulmanu Collar",ear1="Digni. Earring",ear2="Telos Earring",
 		body=gear.ValorousMail.WSD,hands=gear.acro.hands.tp,ring1="Ramuh Ring +1",ring2="Niqmaddu Ring",
-		back="Brigantia's Mantle",waist="Ioskeha Belt",legs=gear.ambuscade.sulevia.legs,feet=gear.ambuscade.flamma.feet}
+		back=gear.jsecapes.amb.drg.tp,waist="Ioskeha Belt",legs=gear.ambuscade.sulevia.legs,feet=gear.ambuscade.flamma.feet}
     sets.engaged.FullAcc = {ammo="Ginsen",
 		head=gear.ambuscade.flamma.head,neck="Shulmanu Collar",ear1="Zennaroi Earring",ear2="Telos Earring",
 		body=gear.ValorousMail.WSD,hands=gear.acro.hands.tp,ring1="Ramuh Ring +1",ring2="Ramuh Ring +1",
-		back="Brigantia's Mantle",waist="Ioskeha Belt",legs=gear.ambuscade.sulevia.legs,feet=gear.ambuscade.flamma.feet}
+		back=gear.jsecapes.amb.drg.tp,waist="Ioskeha Belt",legs=gear.ambuscade.sulevia.legs,feet=gear.ambuscade.flamma.feet}
     sets.engaged.Fodder = {ammo="Ginsen",
 		head=gear.ambuscade.flamma.head,neck="Ganesha's Mala",ear1="Brutal Earring",ear2="Sherida Earring",
 		body=gear.ValorousMail.WSD,hands=gear.acro.hands.tp,ring1="Petrov Ring",ring2="Niqmaddu Ring",
-		back="Brigantia's Mantle",waist="Ioskeha Belt",legs=gear.ambuscade.sulevia.legs,feet=gear.ambuscade.flamma.feet}
+		back=gear.jsecapes.amb.drg.tp,waist="Ioskeha Belt",legs=gear.ambuscade.sulevia.legs,feet=gear.ambuscade.flamma.feet}
 
     sets.engaged.AM = {}
     sets.engaged.AM.SomeAcc = {}
@@ -271,5 +271,5 @@ function select_default_macro_book()
     end
 end
 function set_lockstyle()
-	send_command('wait 2; input /lockstyleset 17')
+	send_command('wait 2; input /lockstyleset 6')
 end

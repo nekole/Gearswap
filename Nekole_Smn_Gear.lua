@@ -5,8 +5,6 @@ function user_setup()
     state.IdleMode:options('Normal', 'PDT','TPEat')
 	state.Weapons:options('None','Gridarvor','Nirvana','Khatvanga')
 	
-	state.Moving  = M(false, "moving")
-	
 	gear.perp_staff = {name=gear.weapons.smn.bpmagicstaff}
 
 	
@@ -76,7 +74,7 @@ function init_gear_sets()
     sets.precast.FC = {
 		main="Oranyan", --7
 		sub="Clerisy Strap +1", --3
-		head=gear.vanya.head.A,
+		head=gear.AmalricCoif.DPlus,
 		neck="Orunmila's Torque",--5
 		ear1="Enchntr. Earring +1",--2
 		ear2="Loquacious earring",--2
@@ -572,10 +570,10 @@ function init_gear_sets()
 		
 	--Favor always up and head is best in slot idle so no specific items here at the moment.
     sets.idle.Avatar.Favor = {}
-    sets.idle.Avatar.Melee = {}
+    sets.idle.Avatar.Engaged = {}
 	
-	sets.idle.Avatar.Melee.Carbuncle = {}
-	sets.idle.Avatar.Melee['Cait Sith'] = {hands="Lamassu Mitts +1"}
+	sets.idle.Avatar.Engaged.Carbuncle = {}
+	sets.idle.Avatar.Engaged['Cait Sith'] = {hands="Lamassu Mitts +1"}
         
     sets.perp = {}
     -- Caller's Bracer's halve the perp cost after other costs are accounted for.
@@ -655,36 +653,3 @@ end
 function set_lockstyle()
 	send_command('wait 2; input /lockstyleset 9')
 end
-moving = false
-windower.raw_register_event('prerender',function()
-    mov.counter = mov.counter + 1;
-	if buffactive['Mana Wall'] then
-		moving = false
-    elseif mov.counter>15 then
-        local pl = windower.ffxi.get_mob_by_index(player.index)
-        if pl and pl.x and mov.x then
-            dist = math.sqrt( (pl.x-mov.x)^2 + (pl.y-mov.y)^2 + (pl.z-mov.z)^2 )
-            if dist > 1 and not moving then
-                state.Moving.value = true
-                send_command('gs c update')
-                send_command('gs equip sets.MoveSpeed')
-                if world.area:contains("Adoulin") then
-                    send_command('gs equip sets.Adoulin')
-                end
-
-        moving = true
-
-            elseif dist < 1 and moving then
-                state.Moving.value = false
-                send_command('gs c update')
-                moving = false
-            end
-        end
-        if pl and pl.x then
-            mov.x = pl.x
-            mov.y = pl.y
-            mov.z = pl.z
-        end
-        mov.counter = 0
-    end
-end)

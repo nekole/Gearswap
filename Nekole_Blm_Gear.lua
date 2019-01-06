@@ -4,7 +4,6 @@ function user_setup()
 	state.OffenseMode:options('Normal')
 	state.IdleMode:options('Normal', 'PDT', 'TPEat','DTHippo')
 	state.Weapons:options('None','NukeWeapons','Khatvanga','Malevolence')
-	state.Moving  = M(false, "moving")
 
 	gear.obi_cure_waist = "Witful Belt"
 	gear.obi_low_nuke_waist = "Sekhmet Corset"
@@ -15,7 +14,8 @@ function user_setup()
 	send_command('bind ^` gs c cycle ElementalMode') 
 	send_command('bind ~^` gs c cycleback ElementalMode') --Robbiewobbie's idea
 	send_command('bind ^q gs c weapons Khatvanga;gs c set CastingMode OccultAcumen')
-	send_command('bind !q gs c weapons default;gs c reset CastingMode')
+	send_command('bind !q gs c weapons default;gs c reset CastingMode;gs c reset DeathMode;gs c reset MagicBurstMode')
+	send_command('bind !r gs c set DeathMode Single;gs c set MagicBurstMode Single')
 	send_command('bind !\\\\ input /ja "Manawell" <me>')
 	send_command('bind !` input /ma "Aspir III" <t>')
 	send_command('bind @` gs c cycle MagicBurstMode')
@@ -69,13 +69,13 @@ function init_gear_sets()
     sets.precast.FC = {
 		main="Marin Staff +1",
 		sub="Clerisy Strap +1",
-		ammo=gear.ammo.fc,                                                 
-        head=gear.MerlinicHood.MAB,
-		neck=gear.neck.fc,
-		ear1=gear.ears.fc_left,
-        ear2=gear.ears.fc_right, 
-        body=gear.body.mage_fc,
-		hands=gear.hands.mage_fc,
+		ammo="Impatiens",                                                 
+        head=gear.AmalricCoif.DPlus,
+		neck="Orunmila's Torque",
+		ear1="Enchntr. Earring +1",
+        ear2="Loquacious Earring", 
+        body="Zendik Robe",
+		hands=gear.MerlinicDastanas.FST,
 		gear.ring.fc_left,
 		gear.ring.fc_right,
         back=gear.jsecapes.amb.blm.fc,
@@ -239,7 +239,7 @@ function init_gear_sets()
 
 	sets.midcast['Enhancing Magic'] = {
 		main="Gada",
-		sub="Sors Shield",
+		sub="Ammurapi Shield",
 		ammo="Hasty Pinion +1",
 		head=gear.TelchineCap.ES,
 		neck="Incanter's Torque",
@@ -491,7 +491,8 @@ function init_gear_sets()
 		legs=gear.MerlinicShalwar.MB,
 		feet=gear.MerlinicCrackows.MAB}
 		
-    sets.midcast['Elemental Magic'].Fodder = {main=gear.weapons.BLM.magicstaff,
+    sets.midcast['Elemental Magic'].Fodder = {
+		main=gear.weapons.BLM.magicstaff,
 		sub="Niobid Strap",
 		ammo="Pemphredo Tathlum",
         head=gear.MerlinicHood.MAB,
@@ -508,8 +509,8 @@ function init_gear_sets()
 		feet=gear.MerlinicCrackows.MAB}
 
 	sets.midcast['Elemental Magic'].HighTierNuke = set_combine(sets.midcast['Elemental Magic'], {sub="Niobid Strap",ammo="Pemphredo Tathlum",ear1="Barkaro. Earring",ear2="Regal Earring",hands=gear.AmalricGages.A,back=gear.jsecapes.amb.blm.mab,feet=gear.MerlinicCrackows.MAB})
-	sets.midcast['Elemental Magic'].Resistant.HighTierNuke = set_combine(sets.midcast['Elemental Magic'].Resistant, {sub="Niobid Strap",ammo="Pemphredo Tathlum",ear1="Barkaro. Earring",ear2="Regal Earring",hands=gear.AmalricGages.A,back=gear.jsecapes.amb.blm.mab})
-	sets.midcast['Elemental Magic'].Fodder.HighTierNuke = set_combine(sets.midcast['Elemental Magic'].Fodder, {ammo="Pemphredo Tathlum",ear1="Barkaro. Earring",ear2="Regal Earring",hands=gear.AmalricGages.A,back=gear.jsecapes.amb.blm.mab,feet=gear.MerlinicCrackows.MAB})
+	sets.midcast['Elemental Magic'].HighTierNuke.Resistant = set_combine(sets.midcast['Elemental Magic'].Resistant, {sub="Niobid Strap",ammo="Pemphredo Tathlum",ear1="Barkaro. Earring",ear2="Regal Earring",hands=gear.AmalricGages.A,back=gear.jsecapes.amb.blm.mab})
+	sets.midcast['Elemental Magic'].HighTierNuke.Fodder = set_combine(sets.midcast['Elemental Magic'].Fodder, {ammo="Pemphredo Tathlum",ear1="Barkaro. Earring",ear2="Regal Earring",hands=gear.AmalricGages.A,back=gear.jsecapes.amb.blm.mab,feet=gear.MerlinicCrackows.MAB})
 	
 	sets.midcast.Helix = sets.midcast['Elemental Magic']
 	sets.midcast.Helix.Resistant = sets.midcast['Elemental Magic'].Resistant
@@ -675,36 +676,3 @@ function set_lockstyle()
 	send_command('wait 2; input /lockstyleset 8')
 end
 
-	moving = false
-windower.raw_register_event('prerender',function()
-    mov.counter = mov.counter + 1;
-	if buffactive['Mana Wall'] then
-		moving = false
-    elseif mov.counter>15 then
-        local pl = windower.ffxi.get_mob_by_index(player.index)
-        if pl and pl.x and mov.x then
-            dist = math.sqrt( (pl.x-mov.x)^2 + (pl.y-mov.y)^2 + (pl.z-mov.z)^2 )
-            if dist > 1 and not moving then
-                state.Moving.value = true
-                send_command('gs c update')
-                send_command('gs equip sets.MoveSpeed')
-                if world.area:contains("Adoulin") then
-                    send_command('gs equip sets.Adoulin')
-                end
-
-        moving = true
-
-            elseif dist < 1 and moving then
-                state.Moving.value = false
-                send_command('gs c update')
-                moving = false
-            end
-        end
-        if pl and pl.x then
-            mov.x = pl.x
-            mov.y = pl.y
-            mov.z = pl.z
-        end
-        mov.counter = 0
-    end
-end)

@@ -251,7 +251,7 @@ function init_gear_sets()
 		hands=gear.AdhemarHands.B,
 		ring1="Petrov Ring",
 		ring2="Epona's Ring",
-        back="Andartia's Mantle",
+        back=gear.jsecapes.amb.nin.tp,
 		waist="Windbuffet Belt +1",
 		legs="Samnuha Tights",
 		feet=gear.HerculeanBoots.TA}
@@ -326,10 +326,10 @@ function init_gear_sets()
 	sets.Skillchain = {legs="Ryuo Hakama"}
 	
 	-- Weaopns sets
-	sets.weapons.Heishi = {main="Heishi Shorinken",sub="Kanaria"}
+	sets.weapons.Heishi = {main="Heishi Shorinken",sub="Kikoku"}
 	sets.weapons.LowBuff = {main="Heishi Shorinken",sub="Blurred Knife +1"}
 	sets.weapons.ProcDagger = {main="Chicken Knife II",sub=empty}
-	sets.weapons.ProcSword = {main="Ark Sword",sub=empty}
+	sets.weapons.ProcSword = {main="Firetongue",sub=empty}
 	sets.weapons.ProcGreatSword = {main="Lament",sub=empty}
 	sets.weapons.ProcScythe = {main="Ark Scythe",sub=empty}
 	sets.weapons.ProcPolearm = {main="Pitchfork +1",sub=empty}

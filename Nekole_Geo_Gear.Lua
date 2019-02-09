@@ -76,7 +76,7 @@ function init_gear_sets()
 
 	sets.precast.FC.Geomancy = set_combine(sets.precast.FC, {range="Dunna",ammo=empty})
 	
-    sets.precast.FC['Elemental Magic'] = set_combine(sets.precast.FC, {ear2="Barkaro. Earring", waist="Channeler's Stone"})
+    sets.precast.FC['Elemental Magic'] = set_combine(sets.precast.FC, {ear2="Barkaro. Earring",waist="Channeler's Stone",hands=gear.jse.relic.geo.hands})
 
 	sets.precast.FC.Cure = set_combine(sets.precast.FC, {
 		main="Serenity",
@@ -101,8 +101,6 @@ function init_gear_sets()
 		head=empty,neck="Orunmila's Torque",ear1="Enchntr. Earring +1",ear2="Loquacious Earring",
 		body="Twilight Cloak",hands="Helios Gloves",ring1="Kishar Ring",ring2="Lebeche Ring",
 		back="Lifestream Cape",waist="Witful Belt",legs=gear.jse.artifact.geo.legs,feet="Regal Pumps +1"}
-	
-	sets.precast.FC['Elemental Magic'] = set_combine(sets.precast.FC, {hands=gear.jse.relic.geo.hands})
 	
 	-- Weaponskill sets
 	-- Default set for any weaponskill that isn't any more specifically defined

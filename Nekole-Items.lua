@@ -23,6 +23,10 @@ sets.TreasureHunter = {waist="Chaac Belt"}
 	gear.ammo.crit = { name = "Yetshila" }
 	gear.ammo.att = { name= "Ginsen" }
 	
+	gear.range = {}
+	gear.range.ws = { name="Linos", augments={'Accuracy+13','"Store TP"+4','Quadruple Attack +3'}}
+    gear.range.idle = { name="Linos", augments={'Mag. Evasion+15','Phys. dmg. taken -4%'}}
+	
 
     gear.neck = {}
     gear.neck.hp = { name="Dualism Collar +1" }
@@ -85,8 +89,8 @@ sets.TreasureHunter = {waist="Chaac Belt"}
     gear.ring.drain_aspir = { name="Evanescence Ring" }
     gear.ring.mb_left = { name="Mujin Band" }
     gear.ring.mb_right = { name="Locus Ring" }
-	gear.ring.ms_left = { name="Stikini Ring" }
-	gear.ring.ms_right = { name="Stikini Ring" }
+	gear.ring.ms_left = { name="Stikini Ring +1" }
+	gear.ring.ms_right = { name="Stikini Ring +1" }
 	gear.ring.str_left = { name="Pyrosoul Ring" }
 	gear.ring.strvitint= { name="Spiral Ring"  }
 	gear.ring.racc = { name="Hadjuk Ring +1" }
@@ -231,8 +235,11 @@ sets.TreasureHunter = {waist="Chaac Belt"}
 	gear.jsecapes.amb.rdm = { name="Sucellos's Cape"}
 	gear.jsecapes.amb.bst = { name="Artio's Mantle"}
 	gear.jsecapes.amb.nin = { name="Andartia's Mantle"}
+	gear.jsecapes.amb.nin.tp = { name="Andartia's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10'}}
 	gear.jsecapes.amb.dnc = { name="Senuna's Mantle"}
 	gear.jsecapes.amb.brd = { name="Intarabus's Cape"}
+	gear.jsecapes.amb.brd.fc = { name="Intarabus's Cape", augments={'CHR+20','Mag. Acc+20 /Mag. Dmg.+20','Mag. Acc.+10','"Fast Cast"+10'}}
+	gear.jsecapes.amb.brd.ws = { name="Intarabus's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Weapon skill damage +10%'}}
 	gear.jsecapes.amb.drg = { name="Brigantia's Mantle"}
 	gear.jsecapes.amb.drg.tp = { name="Brigantia's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dbl.Atk."+10'}}
 	gear.jsecapes.amb.drg.ws = { name="Brigantia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10'}}
@@ -264,7 +271,7 @@ sets.TreasureHunter = {waist="Chaac Belt"}
     gear.gendewitha.head.pdt = { name="Gende. Caubeen +1", augments={'Phys. dmg. taken -3%','Magic dmg. taken -4%','"Cure" spellcasting time -4%'} }
 	
 	gear.gendewitha.hands = { name="Gende. Gages +1" }
-	gear.gendewitha.hands.pdt = { name="Gende. Gages +1", augments={'Phys. dmg. taken -3%','"Cure" potency +4%'}}
+	gear.gendewitha.hands.pdt = { name="Gende. Gages +1", augments={'Phys. dmg. taken -3%','Magic dmg. taken -2%','Song spellcasting time -5%'}}
 	
 	gear.gendewitha.legs = { name="Gende. Spats +1" }
 	gear.gendewitha.legs.pdt = { name="Gende. Spats +1", augments={'Phys. dmg. taken -3%','Song spellcasting time -5%'}}
@@ -347,7 +354,7 @@ sets.TreasureHunter = {waist="Chaac Belt"}
     
 	gear.TelchinePigaches = {}
 	gear.TelchinePigaches.CurePot = {name="Telchine Pigaches", augments={'Potency of "Cure" effect received+7%'}}
-	gear.TelchinePigaches.Song = {name="Telchine Pigaches", augments={'Song spellcasting time -7%',}}
+	gear.TelchinePigaches.Song = {name="Telchine Pigaches", augments={'Evasion+20','Song spellcasting time -7%','"Regen" potency+3'}}
 	gear.TelchinePigaches.ES = { name="Telchine Pigaches", augments={'Accuracy+17','"Elemental Siphon"+35','Enh. Mag. eff. dur. +8'}}
 	gear.TelchinePigaches.PetRegen = { name="Telchine Pigaches", augments={'Pet: "Regen"+3','Pet: Damage taken -4%'}}
 
@@ -660,6 +667,7 @@ sets.TreasureHunter = {waist="Chaac Belt"}
     gear.weapons.BLM = {}
     gear.weapons.SCH = {}
 	gear.weapons.smn = {}
+	gear.weapons.brd = {}
     gear.weapons.BLM.Nuke = { name="Keraunos", augments={'"Mag.Atk.Bns."+17','"Fast Cast"+3','INT+9 MND+9'}}
 	gear.weapons.BLM.magicstaff = { name="Grioavolr", augments={'Magic burst dmg.+4%','INT+13','Mag. Acc.+14','"Mag.Atk.Bns."+19',}}
     gear.weapons.SCH.Nuke = { name="Akademos", augments={'INT+15','"Mag.Atk.Bns."+15','Mag. Acc.+15'}}
@@ -669,6 +677,8 @@ sets.TreasureHunter = {waist="Chaac Belt"}
 	gear.weapons.smn.bpmagicstaff = { name="Grioavolr", augments={'Blood Pact Dmg.+7','Pet: STR+3','Pet: Mag. Acc.+27','Pet: "Mag.Atk.Bns."+21'}}
 	gear.weapons.smn.smnskillstaff = { name="Espiritus", augments={'Summoning magic skill +15','Pet: Mag. Acc.+30','Pet: Damage taken -4%'}}
 	gear.weapons.smn.attackstaff = { name="Gridarvor", augments={'Pet: Accuracy+70','Pet: Attack+70','Pet: "Dbl. Atk."+15'}}
+	gear.weapons.brd.magacc = { name="Kali", augments={'DMG:+15','CHR+15','Mag. Acc.+15'}}
+	gear.weapons.brd.skill = { name="Kali", augments={'Mag. Acc.+15','String instrument skill +10','Wind instrument skill +10'}}
 	
     gear.weapons.BLU = {
         sword_right= { name="Colada", augments={'"Dbl.Atk."+2','Accuracy+12','Attack+18','DMG:+16'}},
@@ -1182,11 +1192,11 @@ sets.TreasureHunter = {waist="Chaac Belt"}
     -- Ambuscade gear
     gear.ambuscade = {}
     gear.ambuscade.sulevia = {
-        head="Sulevia's Mask +1",
-        body="Sulevia's Platemail +1",
-        hands="Sulevia's Gauntlets +2",   -----  30 Metals
+        head="Sulevia's Mask +2",
+        body="Sulevia's Platemail +2",
+        hands="Sulevia's Gauntlets +2",  
         legs="Sulevia's Cuisses +2",
-        feet="Sulevia's Leggings +1",
+        feet="Sulevia's Leggings +2",
     }
 
     gear.ambuscade.meghanada = {
@@ -1198,11 +1208,11 @@ sets.TreasureHunter = {waist="Chaac Belt"}
     }
 
     gear.ambuscade.hizamaru = {
-        head="Hizamaru Somen +1",
-        body="Hizamaru Haramaki +1",  ----  50 Metals
-        hands="Hizamaru Kote +1",
-        legs="Hizamaru Hizayoroi +1",
-        feet="Hizamaru Sune-ate +1",
+        head="Hizamaru Somen +2",
+        body="Hizamaru Haramaki +2",  
+        hands="Hizamaru Kote +2",
+        legs="Hizamaru Hizayoroi +2",
+        feet="Hizamaru Sune-ate +2",
     }
 
     gear.ambuscade.inyanga = {
@@ -1223,8 +1233,8 @@ sets.TreasureHunter = {waist="Chaac Belt"}
 
     gear.ambuscade.flamma = {
         head="Flam. Zucchetto +2",
-        body="Flamma Korazin +1",
-        hands="Flam. Manopolas +1",  -- 20 Fibers
+        body="Flamma Korazin +2",
+        hands="Flam. Manopolas +2", 
         legs="Flamma Dirs +2",
         feet="Flam. Gambieras +2",
     }
@@ -1232,32 +1242,32 @@ sets.TreasureHunter = {waist="Chaac Belt"}
 	gear.ambuscade.taliah = {
         head="Tali'ah Turban +2",
         body="Tali'ah Manteel +2",
-        hands="Tali'ah Gages +1",    --  10 Fibers
+        hands="Tali'ah Gages +2",    
         legs="Tali'ah Seraweels +2",
         feet="Tali'ah Crackows +2",
     }
 	
 	gear.ambuscade.mummu = {
-		head="Mummu Bonnet +1",
-		body="Mummu Jacket +1",  --  50 Fibers
-        hands="Mummu Wrists +1",
-        legs="Mummu Kecks +1",
-        feet="Mummu Gamash. +1",
+		head="Mummu Bonnet +2",
+		body="Mummu Jacket +2", 
+        hands="Mummu Wrists +2",
+        legs="Mummu Kecks +2",
+        feet="Mummu Gamash. +2",
     }
 	
 	gear.ambuscade.mallquis = {
-		head="Mallquis Chapeau +1",
-		body="Mallquis Saio +1",
-        hands="Mallquis Cuffs +1",  -- 50 Fibers
-        legs="Mallquis Trews +1",
-        feet="Mallquis Clogs +1",
+		head="Mallquis Chapeau +2",
+		body="Mallquis Saio +2",
+        hands="Mallquis Cuffs +2",  
+        legs="Mallquis Trews +2",
+        feet="Mallquis Clogs +2",
     }
 	
 	gear.ambuscade.ayanmo = {
 		head="Ayanmo Zucchetto +1",
-		body="Ayanmo Corazza +1",
+		body="Ayanmo Corazza +2",
         hands="Ayanmo Manopolas +1",  -- 50 Fibers
-        legs="Ayanmo Cosciales +1",
+        legs="Ayanmo Cosciales +2",
         feet="Ayanmo Gambieras +1",
     }
 

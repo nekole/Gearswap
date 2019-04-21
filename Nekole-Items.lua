@@ -211,7 +211,7 @@ sets.TreasureHunter = {waist="Chaac Belt"}
     gear.jsecapes.amb.thf.ws = { name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','Weapon skill damage +10%'}}
 	gear.jsecapes.amb.smn = { name="Campestres's Cape"} -- need to finish
 	gear.jsecapes.amb.smn.magic = {name="Campestres's Cape", augments={'Pet: M.Acc.+20 Pet: M.Dmg.+20','Mag. Acc+20 /Mag. Dmg.+20','Pet: Haste+10'}}
-	gear.jsecapes.amb.smn.att = { name="Campestres's Cape", augments={'Pet: Acc.+20 Pet: R.Acc.+20 Pet: Atk.+20 Pet: R.Atk.+20','Accuracy+20 Attack+20','Pet: Haste+10'}}
+	gear.jsecapes.amb.smn.att = { name="Campestres's Cape", augments={'Pet: Acc.+20 Pet: R.Acc.+20 Pet: Atk.+20 Pet: R.Atk.+20','Eva.+20 /Mag. Eva.+20','Pet: Attack+10 Pet: Rng.Atk.+10','Pet: "Regen"+10'}}
 	gear.jsecapes.amb.smn.pidle = { name="Campestres's Cape", augments={'MP+60','Eva.+20 /Mag. Eva.+20','Pet: "Regen"+10'}}
 	gear.jsecapes.amb.geo  = { name="Nantosuelta's Cape "} 
 	gear.jsecapes.amb.geo.magic = { name="Nantosuelta's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Mag.Atk.Bns."+10',}}
@@ -244,6 +244,8 @@ sets.TreasureHunter = {waist="Chaac Belt"}
 	gear.jsecapes.amb.drg.tp = { name="Brigantia's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dbl.Atk."+10'}}
 	gear.jsecapes.amb.drg.ws = { name="Brigantia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10'}}
 	gear.jsecapes.amb.pup = { name="Visucius's Mantle"}
+	gear.jsecapes.amb.pup.tp = { name="Visucius's Mantle", augments={'Pet: Acc.+20 Pet: R.Acc.+20 Pet: Atk.+20 Pet: R.Atk.+20','Accuracy+20 Attack+20','"Dbl.Atk."+10'}}
+	gear.jsecapes.amb.pup.ws = { name="Visucius's Mantle", augments={'STR+20','Accuracy+20 Attack+20','Crit.hit rate+10'}}
 	gear.jsecapes.amb.run = { name="Ogma's cape"}
 
     -- Skirmish pieces
@@ -788,25 +790,25 @@ sets.TreasureHunter = {waist="Chaac Belt"}
 
     -- RDM
     gear.jse.artifact.rdm = {
-        head="Atrophy Chapeau", -- Need Finish Rem's Tale Ch.6 x8	Siren's Hair	Maliyakaleya Orb
-        body="Atrophy Tabard", -- Need Finish Rem's Tale Ch.7 x8	Siren's Hair	Hepatizon Ingot
-        hands="Atrophy Gloves", -- Need Finish Rem's Tale Ch.8 x8	Siren's Hair	Beryllium Ingot
-        legs="Atrophy Tights +1", -- Need Finish Rem's Tale Ch.9 x8	Siren's Hair	Exalted Lumber
-        feet="Atrophy Boots" -- Need Finish Rem's Tale Ch.10 x8	Siren's Hair	Sif's Macrame
+        head="Atrophy Chapeau +1", 
+        body="Atrophy Tabard +1", 
+        hands="Atrophy Gloves +1", 
+        legs="Atrophy Tights +1",
+        feet="Atrophy Boots +1" 
     }
     gear.jse.relic.rdm = {
-        head="Vitivation Chapeau", -- Need Finish Rem's Tale Ch.6 x8	Pil's Tuille	Gabbrath Horn
-        body="Vitivation Tabard", -- Need Finish Rem's Tale Ch.7 x8	Pil's Tuille	Yggdreant Bole
-        hands="Vitivation Gloves", -- Need Finish Rem's Tale Ch.8 x8	Pil's Tuille	Bztavian Stinger
-        legs="Vitiation Tights", -- Need Finish Rem's Tale Ch.9 x8	Pil's Tuille	Waktza Rostrum
-        feet="Vitiation Boots" -- Need Finish Rem's Tale Ch.10 x8	Pil's Tuille	Rockfin Tooth
+        head="Vitivation Chapeau +1", 
+        body="Vitivation Tabard +1", 
+        hands="Vitivation Gloves +1", 
+        legs="Vitiation Tights +1",
+        feet="Vitiation Boots +1"
     }
     gear.jse.empyrean.rdm = {
-        head="Estq. Chappel +2", -- Need Finish Rem's Tale Ch.1 x5 Cirein-croin's Lantern	Phoenix Feather /// Rem's Tale Ch.6 x8	Etched Memory x15	Defiant Sweat
-        body="Estq. Sayon +2", -- Need Finish Rem's Tale Ch.2 x5 Cirein-croin's Lantern	Malboro Fiber /// Rem's Tale Ch.7 x8	Etched Memory x25	Dark Matter
-        hands="Estq. Ganthrt. +2", -- Need Finish Rem's Tale Ch.3 x5 Cirein-croin's Lantern	Beetle Blood /// Rem's Tale Ch.8 x8	Etched Memory x15	Macuil Horn
-        legs="Estqr. Fuseau +2", -- Need Finish Rem's Tale Ch.4 x5 Cirein-croin's Lantern	Damascene Cloth /// Rem's Tale Ch.9 x8	Etched Memory x20	Tartarian Chain
-        feet="Estq. Houseaux +2" -- Need Finish Rem's Tale Ch.5 x5 Cirein-croin's Lantern	Oxblood /// Rem's Tale Ch.10 x8	Etched Memory x15	Plovid Effluvium
+        head="Lethargy Chappel +1", 
+        body="Lethargy Sayon +1", 
+        hands="Lethargy Gantherots +1", 
+        legs="Lethargy Fuseau +1", 
+        feet="Lethargy Houseaux +1" 
     }
 
     -- PLD
@@ -887,8 +889,8 @@ sets.TreasureHunter = {waist="Chaac Belt"}
         feet="Convoker's Pigaches +3",
     }
 	gear.jse.relic.smn = {
-        head="Glyphic Horn +1",
-        body="Glyphic Doublet +1",
+        head="Glyphic Horn +2",
+        body="Glyphic Doublet +3",
         hands="Glyphic Bracers +1",
         legs="Glyphic Spats +1",
         feet="Glyphic Pigaches +1"
@@ -1037,7 +1039,7 @@ sets.TreasureHunter = {waist="Chaac Belt"}
 		head="Wakido Kabuto +1",
 		body="Wakido Domaru",		--Need Finish Rem's Tale Ch.7 x8	Damascus Ingot	Hepatizon Ingot
 		hands="Wakido Kote",		--Need Finish Rem's Tale Ch.8 x8	Damascus Ingot	Beryllium Ingot
-        legs="Wakido Haidate +1",
+        legs="Wakido Haidate +2",
         feet="Wakido Sune-Ate +1",
     }
 	gear.jse.relic.sam = {
@@ -1264,11 +1266,11 @@ sets.TreasureHunter = {waist="Chaac Belt"}
     }
 	
 	gear.ambuscade.ayanmo = {
-		head="Ayanmo Zucchetto +1",
+		head="Ayanmo Zucchetto +2",
 		body="Ayanmo Corazza +2",
-        hands="Ayanmo Manopolas +1",  -- 50 Fibers
+        hands="Ayanmo Manopolas +2",  
         legs="Ayanmo Cosciales +2",
-        feet="Ayanmo Gambieras +1",
+        feet="Ayanmo Gambieras +2",
     }
 
     -- Things I always have on me, no matter what

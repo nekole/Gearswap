@@ -184,9 +184,6 @@ function init_gear_sets()
 		
 	sets.midcast['Elemental Magic'].Resistant = {}
 		
-	sets.midcast.Helix = sets.midcast['Elemental Magic']
-	sets.midcast.Helix.Resistant = sets.midcast['Elemental Magic'].Fodder
-		
 	sets.midcast.Cursna =  set_combine(sets.midcast.Cure, {neck="Debilis Medallion",
 		ring1="Haoma's Ring",ring2="Haoma's Ring",waist="Witful Belt"})
 		
@@ -218,11 +215,8 @@ function init_gear_sets()
 		body="Respite Cloak",hands="Gende. Gages +1",ring1="Defending Ring",ring2="Gelatinous Ring +1",
 		back="Umbra Cape",waist="Flume Belt +1",legs="Assid. Pants +1",feet=gear.jse.empyrean.brd.feet}
 
-	sets.Kiting = {}
+	sets.Kiting = {feet=gear.jse.empyrean.brd.feet}
 
-	-- Gear for specific elemental nukes.
-	sets.WindNuke = {main="Marin Staff +1"}
-	sets.IceNuke = {}
 	
 	-- Engaged sets
 
@@ -242,11 +236,11 @@ function init_gear_sets()
 	sets.engaged.DW = {main="Aeneas",sub="Twashtar",range=gear.range.ws,ammo=empty,
 		head=gear.ambuscade.ayanmo.head,neck="Bard's Charm +1",ear1="Suppanomimi",ear2="Telos Earring",
 		body=gear.ambuscade.ayanmo.body,hands=gear.ambuscade.ayanmo.hands,ring1="Hetairoi Ring",ring2="Ilabrat Ring",
-		back=gear.jsecapes.amb.brd.ws,waist="Dynamic Belt +1",legs=gear.ambuscade.ayanmo.legs,feet="Battlecast Gaiters"}
+		back=gear.jsecapes.amb.brd.ws,waist="Reiki Yotai",legs=gear.ambuscade.ayanmo.legs,feet="Battlecast Gaiters"}
 	sets.engaged.DW.Acc = {main="Aeneas",sub="Twashtar",range=gear.range.ws,ammo=empty,
 		head=gear.ambuscade.ayanmo.head,neck="Combatant's Torque",ear1="Suppanomimi",ear2="Telos Earring",
 		body=gear.ambuscade.ayanmo.body,hands=gear.ambuscade.ayanmo.hands,ring1="Ramuh Ring +1",ring2="Ilabrat Ring",
-		back=gear.jsecapes.amb.brd.ws,waist="Dynamic Belt +1",legs=gear.ambuscade.ayanmo.legs,feet="Battlecast Gaiters"}
+		back=gear.jsecapes.amb.brd.ws,waist="Reiki Yotai",legs=gear.ambuscade.ayanmo.legs,feet="Battlecast Gaiters"}
 end
 
 -- Select default macro book on initial load or subjob change.

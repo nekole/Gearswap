@@ -56,7 +56,7 @@ function init_gear_sets()
 	sets.MagicWeapons = {main="Malevolence",sub="Malevolence"}
 	sets.Throwing = {range="Raider's Bmrng."}
 	sets.DWEarrings = {ear1="Dudgeon Earring",ear2="Heartseeker Earring"}
-	sets.DWMax = {ear1="Dudgeon Earring",ear2="Heartseeker Earring",body=gear.AdhemarJacket.Bplus,hands="Floral Gauntlets",waist="Shetal Stone"}
+	sets.DWMax = {ear1="Dudgeon Earring",ear2="Heartseeker Earring",body=gear.AdhemarJacket.Bplus,hands="Floral Gauntlets",waist="Reiki Yotai"}
 	sets.Ambush = {} --body="Plunderer's Vest +1"
 	
 	sets.weapons.Aeneas = {main="Aeneas",sub="Twashtar"}
@@ -341,7 +341,8 @@ function init_gear_sets()
     sets.engaged.SomeAcc = {
 		ammo="Yamarang",
 		neck="Combatant's Torque",
-		ring1="Chirich Ring"}
+		ring1="Chirich Ring",
+		waist="Reiki Yotai"}
     
 	sets.engaged.Acc = {
 		ring1="Ilabrat Ring",

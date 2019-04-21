@@ -7,11 +7,12 @@ function user_setup()
     state.PhysicalDefenseMode:options('PDT')
 	state.MagicalDefenseMode:options('MDT')
 	state.ResistDefenseMode:options('MEVA')
-	state.Weapons:options('Aeneas','LowBuff')
+	state.Weapons:options('Tauret','Aeneas','LowBuff')
     state.ExtraMeleeMode = M{['description']='Extra Melee Mode','None','Suppa','DWEarrings','DWMax'}
 
-	gear.stp_jse_back = {name="Senuna's Mantle",augments={'DEX+20','Accuracy+20 Attack+20','"Store TP"+10',}}
-	gear.wsd_jse_back = {name="Senuna's Mantle",augments={'DEX+20','Accuracy+20 Attack+20','Weapon skill damage +10%',}}
+	
+---	gear.stp_jse_back = {name="Senuna's Mantle",augments={'DEX+20','Accuracy+20 Attack+20','"Store TP"+10',}}
+---	gear.wsd_jse_back = {name="Senuna's Mantle",augments={'DEX+20','Accuracy+20 Attack+20','Weapon skill damage +10%',}}
 	
     -- Additional local binds
     send_command('bind @` gs c step')
@@ -25,6 +26,7 @@ function user_setup()
 	send_command('bind !backspace input /ja "Reverse Flourish" <me>')
 	send_command('bind ^backspace input /ja "No Foot Rise" <me>')
 	send_command('bind %~` gs c cycle SkillchainMode')
+
 
     select_default_macro_book()
 end
@@ -41,10 +43,11 @@ function init_gear_sets()
     -- Extra Melee sets.  Apply these on top of melee sets.
 	sets.Suppa = {ear1="Suppanomimi", ear2="Sherida Earring"}
 	sets.DWEarrings = {ear1="Dudgeon Earring",ear2="Heartseeker Earring"}
-	sets.DWMax = {ear1="Dudgeon Earring",ear2="Heartseeker Earring",body="Adhemar Jacket +1",hands="Floral Gauntlets",waist="Shetal Stone"}
+	sets.DWMax = {ear1="Dudgeon Earring",ear2="Heartseeker Earring",body=gear.AdhemarJacket.Bplus,hands="Floral Gauntlets",waist="Shetal Stone"}
 	
 	-- Weapons sets
-	sets.weapons.Aeneas = {main="Aeneas",sub="Taming Sari"}
+	sets.weapons.Aeneas = {main="Aeneas",sub="Twashtar"}
+	sets.weapons.Tauret = {main="Tauret",sub="Twashtar"}
 	sets.weapons.LowBuff = {main="Aeneas",sub="Blurred Knife +1"}
 	
     -- Precast Sets

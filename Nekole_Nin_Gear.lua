@@ -4,12 +4,12 @@ function user_setup()
     state.HybridMode:options('Normal','Evasion','PDT')
     state.RangedMode:options('Normal','Acc')
     state.WeaponskillMode:options('Match','Normal', 'SomeAcc', 'Acc', 'FullAcc', 'Fodder')
-    state.CastingMode:options('Normal', 'Resistant')
+    state.CastingMode:options('Normal','Proc','Resistant')
     state.IdleMode:options('Normal', 'PDT', 'Sphere')
     state.PhysicalDefenseMode:options('PDT')
 	state.MagicalDefenseMode:options('MDT')
 	state.ResistDefenseMode:options('MEVA')
-	state.Weapons:options('Heishi','MagicWeapons','ProcDagger','ProcSword','ProcGreatSword','ProcScythe','ProcPolearm','ProcGreatKatana','ProcKatana','ProcClub','ProcStaff')
+	state.Weapons:options('Heishi','LowBuff','MagicWeapons','ProcDagger','ProcSword','ProcGreatSword','ProcScythe','ProcPolearm','ProcGreatKatana','ProcKatana','ProcClub','ProcStaff')
 	
     state.ExtraMeleeMode = M{['description']='Extra Melee Mode', 'None','Knockback','SuppaBrutal','DWEarrings','DWMax'}
 	set_lockstyle()	
@@ -138,6 +138,8 @@ function init_gear_sets()
         head=gear.herculean_nuke_head,neck="Baetyl Pendant",ear1="Crematio Earring",ear2="Friomisi Earring",
         body="Samnuha Coat",hands="Hattori Tekko +1",ring1="Shiva Ring +1",ring2="Shiva Ring +1",
         back="Toro Cape",waist="Eschan Stone",legs="Gyve Trousers",feet=gear.herculean_nuke_feet}
+		
+	sets.midcast.ElementalNinjutsu.Proc = sets.midcast.FastRecast
 		
     sets.midcast.ElementalNinjutsu.Resistant = set_combine(sets.midcast.ElementalNinjutsu, {})
 	
@@ -337,6 +339,7 @@ function init_gear_sets()
 	sets.weapons.ProcKatana = {main="Mokuto",sub=empty}
 	sets.weapons.ProcClub = {main="Seika Uchiwa",sub=empty}
 	sets.weapons.ProcStaff = {main="Cobra Staff",sub=empty}
+	sets.weapons.MagicWeapons = {main="Ochu",sub="Ochu"}
 end
 
 -- Select default macro book on initial load or subjob change.

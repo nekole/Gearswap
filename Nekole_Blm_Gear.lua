@@ -125,7 +125,7 @@ function init_gear_sets()
     sets.precast.WS = {
 		ammo="Dosis Tathlum",
 		head="Pixie Hairpin +1",
-		body="Weather. Robe +1",
+		body=gear.ambuscade.jhakri.body,
 		hands=gear.TelchineGloves.Enh,
 		legs=gear.AmalricSlops.A,
 		feet="Medium's Sabots",

@@ -6,7 +6,7 @@ function user_setup()
     state.CastingMode:options('Normal', 'Resistant')
     state.IdleMode:options('Normal', 'PDT', 'Refresh')
 	state.ExtraMeleeMode = M{['description']='Extra Melee Mode', 'None', 'DWMax'}
-	state.Weapons:options('Default','DualWeapons','SavageWeapons','DualRangedWeapons','LeadenWeapons','None')
+	state.Weapons:options('Default','DualWeapons','DualSavageWeapons','DualLeadenRanged','DualLeadenMelee','DualLeadenMeleeAcc','DualKustawi','None')
 	state.CompensatorMode:options('300','1000','Never','Always')
 
     gear.RAbullet = "Chrono Bullet"
@@ -24,7 +24,6 @@ function user_setup()
 --	gear.str_wsd_jse_back = {name="Camulus's Mantle",augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%',}}
 
     -- Additional local binds
-	send_command('bind !f11 gs c cycle ExtraMeleeMode')
 	send_command('bind ^` gs c cycle ElementalMode')
 	send_command('bind !` gs c elemental quickdraw')
 	
@@ -38,10 +37,10 @@ function user_setup()
 	send_command('bind ^@!\\\\ gs c toggle LuzafRing')
 	send_command('bind @f7 gs c toggle RngHelper')
 
-	send_command('bind !r gs c weapons SingleWeapon;gs c update')
+	send_command('bind !r gs c weapons DualSavageWeapons;gs c update')
 	send_command('bind @q gs c weapons MaccWeapons;gs c update')
-	send_command('bind ^q gs c weapons DualRangedWeapons;gs c update')
-	send_command('bind !q gs c weapons SavageWeapons;gs c update')
+	send_command('bind ^q gs c weapons DualKustawi;gs c update')
+	send_command('bind !q gs c weapons DualLeadenRanged;gs c update')
 	send_command('bind @pause roller roll')
 
     select_default_macro_book()
@@ -280,17 +279,17 @@ function init_gear_sets()
         back="Moonbeam Cape",waist="Flume Belt +1",legs=gear.ambuscade.meghanada.legs,feet="Ahosi Leggings"}
 
     sets.Kiting = {legs=gear.carmine.legs.D}
-	
-	sets.weapons.Default = {main="Fettering Blade",sub="Nusku Shield",range="Fomalhaut"}
-	sets.weapons.DualWeapons = {main="Fettering Blade",sub="Blurred Knife +1",range="Fomalhaut"}
-	sets.weapons.RollMeleeWeapons = {main="Hep. Sapara +1",sub="Blurred Knife +1",range="Compensator"}
-	sets.weapons.RollRangedWeapons = {main="Fettering Blade",sub="Kustawi +1",range="Compensator"}
-	sets.weapons.SavageWeapons = {main="Hep. Sapara +1",sub="Blurred Knife +1",range="Ataktos"}
-	sets.weapons.DualRangedWeapons = {main="Fettering Blade",sub="Kustawi +1"}
-	sets.weapons.LeadenWeapons = {main="Fettering Blade",sub="Atoyac",range="Fomalhaut"}
 	sets.TreasureHunter = set_combine(sets.TreasureHunter, {})
+	sets.DWMax = {ear1="Dudgeon Earring",ear2="Heartseeker Earring",body="Adhemar Jacket +1",hands="Floral Gauntlets",waist="Reiki Yotai"}
+
+	sets.weapons.Default = {main="Fettering Blade",sub="Nusku Shield",range="Fomalhaut"}
+	sets.weapons.DualWeapons = {main="Kaja Sword",sub="Blurred Knife +1",range="Fomalhaut"}
+	sets.weapons.DualSavageWeapons = {main="Kaja Sword",sub="Blurred Knife +1",range="Ataktos"}
+	sets.weapons.DualLeadenRanged = {main="Kaja Sword",sub="Kaja Knife",range="Fomalhaut"}
+	sets.weapons.DualLeadenMelee = {main="Kaja Sword",sub="Atoyac",range="Fomalhaut"}
+	sets.weapons.DualLeadenMeleeAcc = {main="Kaja Sword",sub="Blurred Knife +1",range="Fomalhaut"}
+	sets.weapons.DualKustawi = {main="Kustawi +1",sub="Kustawi",range="Fomalhaut"}
 	
-	sets.DWMax = {ear1="Dudgeon Earring",ear2="Heartseeker Earring",body=gear.AdhemarJacket.Bplus,hands="Floral Gauntlets",waist="Reiki Yotai"}
 
     -- Engaged sets
 

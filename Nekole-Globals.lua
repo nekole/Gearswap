@@ -1,7 +1,6 @@
---Place you can overwrite specific functions and settings with your preferences.
---Extra user functions to change how gearswap functions across jobs.
+--Place for settings and custom functions to work across one characters, all jobs.
 
---Time Related Settings
+--Time Related Settings:
 --To determine your offset the first time, uncomment time_offset and set time_test to true,
 --Once you see delay numbers start spamming your chat, (Must be outside of town.)
 --(Also you can't have Commitment or Dedication Buffs) then Equip to ring1 and use "Capacity Ring",
@@ -12,7 +11,6 @@
 
 --time_offset = 0
 time_test = false
-framerate = 75
 latency = .75
 
 --If this is set to true it will prevent you from casting shadows when you have more up than that spell would generate.
@@ -90,12 +88,10 @@ send_command('bind !t input /target <bt>') --Targets the battle target.
 send_command('bind ^o fillmode') --Lets you see through walls.
 send_command('bind @m gs c mount Omega')
 
---Place to override Tables and other definitions you may want to.
+NotifyBuffs = S{'doom','petrification'}
 
 bayld_items = {'Tlalpoloani','Macoquetza','Camatlatia','Icoyoca','Tlamini','Suijingiri Kanemitsu',
 'Zoquittihuitz','Quauhpilli Helm','Chocaliztli Mask','Xux Hat','Quauhpilli Gloves','Xux Trousers',
 'Chocaliztli Boots','Maochinoli','Xiutleato','Hatxiik','Kuakuakait','Azukinagamitsu','Atetepeyorg',
 'Kaquljaan','Ajjub Bow','Baqil Staff','Ixtab','Tamaxchi','Otomi Helm','Otomi Gloves','Kaabnax Hat',
 'Kaabnax Trousers','Ejekamal Mask','Ejekamal Boots','Quiahuiz Helm','Quiahuiz Trousers','Uk\'uxkaj Cap'}
-
-NotifyBuffs = S{'doom','petrification'}

@@ -938,7 +938,7 @@ function init_gear_sets()
     sets.MP_Knockback = {}
 	sets.SuppaBrutal = {ear1="Suppanomimi", ear2="Brutal Earring"}
 	sets.DWEarrings = {ear1="Dudgeon Earring",ear2="Heartseeker Earring"}
-	sets.DWMax = {ear1="Dudgeon Earring",ear2="Heartseeker Earring",body=gear.AdhemarJacket.B,waist="Shetal Stone"}
+	sets.DWMax = {ear1="Dudgeon Earring",ear2="Heartseeker Earring",body=gear.AdhemarJacket.B,waist="Reiki Yotai",legs=gear.carmine.legs.D}
 	sets.TreasureHunter = set_combine(sets.TreasureHunter, {})
 	sets.Assault = {ring1="Balrahn's Ring"}
 	
@@ -1233,23 +1233,23 @@ function check_trust()
 
 				if spell_recasts[980] < spell_latency and not have_trust("Yoran-Oran") then
 					windower.chat.input('/ma "Yoran-Oran (UC)" <me>')
-					tickdelay = (framerate * 3)
+					tickdelay = os.clock() + 3
 					return true
 				elseif spell_recasts[952] < spell_latency and not have_trust("Koru-Moru") then
 					windower.chat.input('/ma "Koru-Moru" <me>')
-					tickdelay = (framerate * 3)
+					tickdelay = os.clock() + 3
 					return true
 				elseif spell_recasts[967] < spell_latency and not have_trust("Qultada") then
 					windower.chat.input('/ma "Qultada" <me>')
-					tickdelay = (framerate * 3)
+					tickdelay = os.clock() + 3
 					return true
 				elseif spell_recasts[914] < spell_latency and not have_trust("Ulmia") then
 					windower.chat.input('/ma "Ulmia" <me>')
-					tickdelay = (framerate * 3)
+					tickdelay = os.clock() + 3
 					return true
 				elseif spell_recasts[979] < spell_latency and not have_trust("Selh'teus") then
 					windower.chat.input('/ma "Selh\'teus" <me>')
-					tickdelay = (framerate * 3)
+					tickdelay = os.clock() + 3
 					return true
 				else
 					return false

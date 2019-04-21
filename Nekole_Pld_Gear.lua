@@ -2,16 +2,18 @@ function user_setup()
 
     -- Options: Override default values	
 	state.OffenseMode:options('Normal','Acc')
-    state.HybridMode:options('Tank', 'DDTank', 'BreathTank', 'NoShellTank', 'Reraise', 'Normal')
+    state.HybridMode:options('Tank','DDTank','BreathTank','Dawn','NoShellTank','Normal')
     state.WeaponskillMode:options('Match','Normal', 'Acc')
-    state.CastingMode:options('Normal', 'Resistant')
-    state.PhysicalDefenseMode:options('PDT', 'PDT_HP', 'PDT_Reraise', 'Tank')
+    state.CastingMode:options('Normal','SIRD')
+	state.Passive:options('None','AbsorbMP')
+    state.PhysicalDefenseMode:options('PDT','PDT_HP','Tank')
     state.MagicalDefenseMode:options('BDT','MDT_HP','AegisMDT','AegisNoShellMDT','OchainMDT','OchainNoShellMDT','MDT_Reraise')
 	state.ResistDefenseMode:options('MEVA','MEVA_HP','Death','Charm')
 	state.IdleMode:options('Normal','Tank','KiteTank','PDT','MDT','Refresh','Reraise')
-	state.Weapons:options('Deacon','DDWeapons','DualWeapons')
-    
-    state.ExtraDefenseMode = M{['description']='Extra Defense Mode', 'None', 'MP', 'Twilight'}
+	state.Weapons:options('None','DeaconAegis','SequenceAegis','SequenceBlurred')
+	
+    state.ExtraDefenseMode = M{['description']='Extra Defense Mode','None','MP','Twilight'}
+	
 	set_lockstyle()	
 	gear.fastcast_jse_back = {name="Rudianos's Mantle",augments={'INT+20','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','"Fast Cast"+10',}}
 	gear.enmity_jse_back = {name="Rudianos's Mantle",augments={'MND+20','Mag. Acc+20 /Mag. Dmg.+20','HP+20','Enmity+10',}}
@@ -27,10 +29,10 @@ function user_setup()
 	send_command('bind !delete input /ma "Cure IV" <stal>')
 	send_command('bind @delete input /ma "Flash" <stnpc>')
     send_command('bind !f11 gs c cycle ExtraDefenseMode')
-    send_command('bind @f10 gs c toggle EquipShield')
 	send_command('bind @` gs c cycle RuneElement')
-	send_command('bind @pause gs c toggle AutoRuneMode')
+	send_command('bind ^pause gs c toggle AutoRuneMode')
 	send_command('bind @f8 gs c toggle AutoTankMode')
+	send_command('bind @f10 gs c toggle TankAutoDefense')
 	send_command('bind ^@!` gs c cycle SkillchainMode')
 	
     select_default_macro_book()

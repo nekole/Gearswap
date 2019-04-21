@@ -453,26 +453,26 @@ function check_trust()
 			local party = windower.ffxi.get_party()
 			if party.p5 == nil then
 				local spell_recasts = windower.ffxi.get_spell_recasts()
-			
+
 				if spell_recasts[980] < spell_latency and not have_trust("Yoran-Oran") then
-					windower.send_command('input /ma "Yoran-Oran (UC)" <me>')
-					tickdelay = (framerate * 3)
+					windower.chat.input('/ma "Yoran-Oran (UC)" <me>')
+					tickdelay = os.clock() + 3
 					return true
 				elseif spell_recasts[952] < spell_latency and not have_trust("Koru-Moru") then
-					windower.send_command('input /ma "Koru-Moru" <me>')
-					tickdelay = (framerate * 3)
+					windower.chat.input('/ma "Koru-Moru" <me>')
+					tickdelay = os.clock() + 3
 					return true
 				elseif spell_recasts[967] < spell_latency and not have_trust("Qultada") then
-					windower.send_command('input /ma "Qultada" <me>')
-					tickdelay = (framerate * 3)
+					windower.chat.input('/ma "Qultada" <me>')
+					tickdelay = os.clock() + 3
 					return true
 				elseif spell_recasts[914] < spell_latency and not have_trust("Ulmia") then
-					windower.send_command('input /ma "Ulmia" <me>')
-					tickdelay = (framerate * 3)
+					windower.chat.input('/ma "Ulmia" <me>')
+					tickdelay = os.clock() + 3
 					return true
 				elseif spell_recasts[979] < spell_latency and not have_trust("Selh'teus") then
-					windower.send_command('input /ma "Selh\'teus" <me>')
-					tickdelay = (framerate * 3)
+					windower.chat.input('/ma "Selh\'teus" <me>')
+					tickdelay = os.clock() + 3
 					return true
 				else
 					return false

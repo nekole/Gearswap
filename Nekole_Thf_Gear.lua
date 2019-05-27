@@ -131,7 +131,7 @@ function init_gear_sets()
 
 
     -- Ranged snapshot gear
-    sets.precast.RA = {legs="Adhemar Kecks"}
+    sets.precast.RA = {legs=gear.AdhemarKecks.C}
 
 
     -- Weaponskill sets

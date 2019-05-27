@@ -235,7 +235,8 @@ sets.TreasureHunter = {waist="Chaac Belt"}
 	gear.jsecapes.amb.rdm = { name="Sucellos's Cape"}
 	gear.jsecapes.amb.bst = { name="Artio's Mantle"}
 	gear.jsecapes.amb.nin = { name="Andartia's Mantle"}
-	gear.jsecapes.amb.nin.tp = { name="Andartia's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10'}}
+	gear.jsecapes.amb.nin.tp = { name="Andartia's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Attack+10','"Dbl.Atk."+10'}}
+	gear.jsecapes.amb.nin.ws = { name="Andartia's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Weapon skill damage +10%'}}
 	gear.jsecapes.amb.dnc = { name="Senuna's Mantle"}
 	gear.jsecapes.amb.brd = { name="Intarabus's Cape"}
 	gear.jsecapes.amb.brd.fc = { name="Intarabus's Cape", augments={'CHR+20','Mag. Acc+20 /Mag. Dmg.+20','Mag. Acc.+10','"Fast Cast"+10'}}
@@ -427,7 +428,6 @@ sets.TreasureHunter = {waist="Chaac Belt"}
     gear.AdhemarBonnet.B = {name="Adhemar Bonnet", augments={'STR+10','DEX+10','Attack+15'}}
     
     gear.AdhemarJacket = {}
-    gear.AdhemarJacket.A = {name="Adhemar Jacket", augments={'DEX+10','AGI+10','Accuracy+15'}}
 	gear.AdhemarJacket.Bplus = {name="Adhemar Jacket +1", augments={'STR+12','DEX+12','Attack+20'}}
 
 	gear.AdhemarHands = {}
@@ -709,13 +709,13 @@ sets.TreasureHunter = {waist="Chaac Belt"}
         body="Arch. Coat +1", 
         hands="Archmage's Gloves +1",
         legs="Archmage's Tonban +1", 
-        feet="Archmage's Sabots"  --Need Finish Rem's Tale Ch.10 x8	Akvan's Pennon	Rockfin Tooth
+        feet="Archmage's Sabots +1"  
     }
     gear.jse.empyrean.blm = {
-        head="Goetia Petasos +2",  -- Need Finish Rem's Tale Ch.1 x5 Glavoid Shell	Phoenix Feather  /// Rem's Tale Ch.6 x8	Etched Memory x15	Defiant Sweat
-        body="Goetia Coat +2", 	-- Need Finish Rem's Tale Ch.2 x5 Glavoid Shell	Malboro Fiber  /// Rem's Tale Ch.7 x8	Etched Memory x25	Dark Matter
-        hands="Goetia Gloves +2",  -- Need Finish Rem's Tale Ch.3 x5 Glavoid Shell	Beetle Blood /// Rem's Tale Ch.8 x8	Etched Memory x15	Macuil Horn
-        legs="Goetia Chausses +2",  -- Need Finish Rem's Tale Ch.4 x5 Glavoid Shell	Damascene Cloth	/// Rem's Tale Ch.9 x8	Etched Memory x20	Tartarian Chain
+        head="Wicce Petasos +1", 
+        body="Wicce Coat +1", 	
+        hands="Wicce Gloves +1",  
+        legs="Wicce Chausses +1", 
         feet="Wicce Sabots +1"
     }
 	
@@ -1149,15 +1149,15 @@ sets.TreasureHunter = {waist="Chaac Belt"}
 		head="Maxixi Tiara",				--Need Finish Rem's Tale Ch.6 x8	Platinum Silk Thread	Maliyakaleya Orb
 		body="Maxixi Casaque",				--Need Finish Rem's Tale Ch.7 x8	Platinum Silk Thread	Hepatizon Ingot
 		hands="Maxixi Bangles",				--Need Finish Rem's Tale Ch.8 x8	Platinum Silk Thread	Beryllium Ingot
-        legs="Maxixi Tights +1",			--Need Finish Rem's Tale Ch.9 x8	Platinum Silk Thread	Exalted Lumber
+        legs="Maxixi Tights +1",			
         feet="Maxixi Toeshoes",				--Need Finish Rem's Tale Ch.10 x8	Platinum Silk Thread	Sif's Macrame
     }
 	gear.jse.relic.dnc = {
-        head="Etoile Tiara",				--Need Finish Rem's Tale Ch.1 x10	M. Silverpiece x2	Mammoth Tusk	Phoenix Feather		///	--Need Finish Rem's Tale Ch.6 x8	Celaeno's Cloth	Gabbrath Horn
-        body="Etoile Casaque",				--Need Finish Rem's Tale Ch.2 x10	M. Silverpiece x2	Mammoth Tusk	Malboro Fiber		///	--Need Finish Rem's Tale Ch.7 x8	Celaeno's Cloth	Yggdreant Bole
-        hands="Etoile Bangles",				--Need Finish Rem's Tale Ch.3 x10	M. Silverpiece x2	Mammoth Tusk	Beetle Blood		///	--Need Finish Rem's Tale Ch.8 x8	Celaeno's Cloth	Bztavian Stinger
-        legs="Etoile Tights",				--Need Finish Rem's Tale Ch.4 x10	M. Silverpiece x2	Mammoth Tusk	Damascene Cloth		///	--Need Finish Rem's Tale Ch.9 x8	Celaeno's Cloth	Waktza Rostrum
-        feet="Etoile Shoes"					--Need Finish Rem's Tale Ch.5 x10	M. Silverpiece x2	Mammoth Tusk	Oxblood				///	--Need Finish Rem's Tale Ch.10 x8	Celaeno's Cloth	Rockfin Tooth
+        head="Horos Tiara",				    --Need Finish Rem's Tale Ch.6 x8	Celaeno's Cloth	Gabbrath Horn
+        body="Horos Casaque",				--Need Finish Rem's Tale Ch.7 x8	Celaeno's Cloth	Yggdreant Bole
+        hands="Horos Bangles",				--Need Finish Rem's Tale Ch.8 x8	Celaeno's Cloth	Bztavian Stinger
+        legs="Horos Tights",				--Need Finish Rem's Tale Ch.9 x8	Celaeno's Cloth	Waktza Rostrum
+        feet="Horos Shoes"					--Need Finish Rem's Tale Ch.10 x8	Celaeno's Cloth	Rockfin Tooth
     }
     gear.jse.empyrean.dnc = {  
         head="Charis Tiara +1",				--Need Finish Rem's Tale Ch.1 x10	Two-Leaf Chloris Bud	Phoenix Feather		///	--Need Finish Rem's Tale Ch.6 x8	Etched Memory x15	Defiant Sweat

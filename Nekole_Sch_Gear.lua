@@ -307,7 +307,7 @@ function init_gear_sets()
         body=gear.merlinic_nuke_body,hands="Gende. Gages +1",ring1="Vengeful Ring",ring2="Purity Ring",
         back=gear.nuke_jse_back,waist="Acuity Belt +1",legs="Merlinic Shalwar",feet=gear.merlinic_nuke_feet}
 		
-    sets.Kiting = {feet="Herald's Gaiters"}
+    sets.Kiting = {feet="Crier's Gaiters"}
     sets.latent_refresh = {waist="Fucho-no-obi"}
 	sets.DayIdle = {}
 	sets.NightIdle = {}
@@ -347,8 +347,8 @@ function init_gear_sets()
 	
 	sets.buff.Doom = set_combine(sets.buff.Doom, {})
 
-    sets.buff.FullSublimation = {}
-    sets.buff.PDTSublimation = {}
+   sets.buff.Sublimation = {}
+   sets.buff.DTSublimation = {}
 	
 	-- Weapons sets
 	sets.weapons.Akademos = {main="Akademos",sub="Niobid Strap"}

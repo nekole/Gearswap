@@ -607,7 +607,7 @@ function init_gear_sets()
 		body=gear.ambuscade.inyanga.body,hands=gear.TelchineGloves.PetRegen,ring1="Vengeful Ring",Ring2="Purity Ring",
         back="Aurist's Cape +1",waist="Luminary Sash",legs="Telchine Braconi",feet="Telchine Pigaches"}
 		
-    sets.Kiting = {feet="Herald's Gaiters"}
+    sets.Kiting = {feet="Crier's Gaiters"}
     sets.latent_refresh = {waist="Fucho-no-obi"}
 	sets.DayIdle = {}
 	sets.NightIdle = {}
@@ -628,7 +628,7 @@ function init_gear_sets()
     }
 
     sets.MoveSpeed = {
-        feet ="Herald's Gaiters",
+        feet ="Crier's Gaiters",
     }
     --------------------------------------
     -- Engaged sets

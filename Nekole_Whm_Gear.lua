@@ -135,7 +135,7 @@ function init_gear_sets()
 
     -- Midcast Sets
 
-    sets.Kiting = {feet="Herald's Gaiters"}sets.NightIdle = {back="Umbra Cape"}
+    sets.Kiting = {feet="Crier's Gaiters"}sets.NightIdle = {back="Umbra Cape"}
     sets.latent_refresh = {waist="Fucho-no-obi"}
 	sets.DayIdle = {}
 	sets.NightIdle = {back="Umbra Cape"}

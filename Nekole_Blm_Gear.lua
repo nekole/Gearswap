@@ -10,11 +10,11 @@ function user_setup()
 	gear.obi_high_nuke_waist = "Refoccilation Stone"
 	set_lockstyle()
 
-		--- Additional local binds
+		-- Additional local binds
 	send_command('bind ^` gs c cycle ElementalMode') 
 	send_command('bind ~^` gs c cycleback ElementalMode') --Robbiewobbie's idea
 	send_command('bind ^q gs c weapons Khatvanga;gs c set CastingMode OccultAcumen')
-	send_command('bind !q gs c weapons default;gs c reset CastingMode;gs c reset DeathMode;gs c reset MagicBurstMode')
+	send_command('bind !q gs c weapons Default;gs c reset CastingMode;gs c reset DeathMode;gs c reset MagicBurstMode')
 	send_command('bind !r gs c set DeathMode Single;gs c set MagicBurstMode Single')
 	send_command('bind !\\\\ input /ja "Manawell" <me>')
 	send_command('bind !` input /ma "Aspir III" <t>')
@@ -41,9 +41,14 @@ function init_gear_sets()
     -- Start defining the sets
     --------------------------------------
 	
-	sets.weapons.NukeWeapons = {main=gear.weapons.BLM.magicstaff,sub="Niobid Strap"}
+	sets.weapons.NukeWeapons = {main=gear.weapons.BLM.magicstaff,sub="Enki Strap"}
 	sets.weapons.Khatvanga = {main="Khatvanga",sub="Bloodrain Strap"}
 	sets.weapons.Malevolence = {main="Malevolence",sub="Ammurapi Shield"}
+	
+	sets.buff.Sublimation = {waist="Embla Sash"}
+    sets.buff.DTSublimation = {waist="Embla Sash"}
+	
+	sets.TreasureHunter = set_combine(sets.TreasureHunter)
     
     ---- Precast Sets ----
     
@@ -54,15 +59,6 @@ function init_gear_sets()
     
     -- equip to maximize HP (for Tarus) and minimize MP loss before using convert
     sets.precast.JA.Convert = {}
-	
-	sets.Adoulin = {
-        body="Councilor's Garb",
-    }
-
-    sets.MoveSpeed = {
-        feet ="Herald's Gaiters",
-    }
-
 
     -- Fast cast sets for spells
 

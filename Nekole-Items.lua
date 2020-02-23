@@ -3,8 +3,11 @@
 sets.Sheltered = {ring2="Sheltered Ring"}
 sets.Capacity = {back="Mecisto. Mantle"}
 
-sets.buff.Doom = {waist="Gishdubar Sash",ring1="Saida Ring",ring2="Saida Ring"}
-sets.TreasureHunter = {waist="Chaac Belt"}
+sets.buff.Doom = {neck="Nicander's Necklace",back="Moonbeam Cape",waist="Gishdubar Sash",ring1="Eshmun's Ring",ring2="Eshmun's Ring"}
+sets.TreasureHunter = {head="Wh. Rarab Cap +1",waist="Chaac Belt"}
+
+sets.precast.Item['Hallowed Water'] = {}
+sets.precast.Item['Holy Water'] = {}
 
 	gear.weapon = {}
 	gear.weapon.blue_main = { name="Almace" }
@@ -67,8 +70,8 @@ sets.TreasureHunter = {waist="Chaac Belt"}
     gear.ears.mab_right = { name="Barkarole Earring" }
     gear.ears.enmity_right = { name="Friomisi Earring" }
     gear.ears.conserve_mp = { mame="Calamitous Earring" }
-    gear.ears.melee_left = { name="Mache Earring" }
-    gear.ears.melee_acc_left = { name="Mache Earring" }
+    gear.ears.melee_left = { name="Mache Earring +1" }
+    gear.ears.melee_acc_left = { name="Mache Earring +1" }
     gear.ears.melee_right = { name="Mache Earring" }
     gear.ears.melee_acc_right = { name="Mache Earring" }
 	gear.ears.melee_dex = { name="Dedition Earring" }
@@ -230,7 +233,7 @@ sets.TreasureHunter = {waist="Chaac Belt"}
     gear.jsecapes.amb.cor.mwsd = { name="Camulus's Mantle",augments={'AGI+20','Mag. Acc+20 /Mag. Dmg.+20','AGI+10','Weapon skill damage +10%'}}
 	gear.jsecapes.amb.cor.wsd = { name="Camulus's Mantle",augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','AGI+10','Weapon skill damage +10%'}}
 	gear.jsecapes.amb.mnk = { name="Segomo's Mantle" }
-    gear.jsecapes.amb.mnk.tp = { name="Segomo's Mantle",augments={'STR+20','Accuracy+20 Attack+20','Accuracy+10','"Store TP"+10'}}  --need finish
+    gear.jsecapes.amb.mnk.tp = { name="Segomo's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Dbl.Atk."+10',}} 
     gear.jsecapes.amb.mnk.ws = { name="Segomo's Mantle",augments={'STR+20','Accuracy+20 Attack+20','Weapon skill damage +10%'}}  --need finish
 	gear.jsecapes.amb.rdm = { name="Sucellos's Cape"}
 	gear.jsecapes.amb.bst = { name="Artio's Mantle"}
@@ -245,7 +248,7 @@ sets.TreasureHunter = {waist="Chaac Belt"}
 	gear.jsecapes.amb.drg.tp = { name="Brigantia's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dbl.Atk."+10'}}
 	gear.jsecapes.amb.drg.ws = { name="Brigantia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10'}}
 	gear.jsecapes.amb.pup = { name="Visucius's Mantle"}
-	gear.jsecapes.amb.pup.tp = { name="Visucius's Mantle", augments={'Pet: Acc.+20 Pet: R.Acc.+20 Pet: Atk.+20 Pet: R.Atk.+20','Accuracy+20 Attack+20','"Dbl.Atk."+10'}}
+	gear.jsecapes.amb.pup.tp = { name="Visucius's Mantle", augments={'Pet: Acc.+20 Pet: R.Acc.+20 Pet: Atk.+20 Pet: R.Atk.+20','Accuracy+20 Attack+20','"Dbl.Atk."+10','Pet: "Regen"+5'}}
 	gear.jsecapes.amb.pup.ws = { name="Visucius's Mantle", augments={'STR+20','Accuracy+20 Attack+20','Crit.hit rate+10'}}
 	gear.jsecapes.amb.run = { name="Ogma's cape"}
 
@@ -426,6 +429,7 @@ sets.TreasureHunter = {waist="Chaac Belt"}
 	
 	gear.AdhemarBonnet = {}
     gear.AdhemarBonnet.B = {name="Adhemar Bonnet", augments={'STR+10','DEX+10','Attack+15'}}
+	gear.AdhemarBonnet.Aplus = {name="Adhemar Bonnet +1", augments={'DEX+12','AGI+12','Accuracy+20'}}
     
     gear.AdhemarJacket = {}
 	gear.AdhemarJacket.Bplus = {name="Adhemar Jacket +1", augments={'STR+12','DEX+12','Attack+20'}}
@@ -930,7 +934,7 @@ sets.TreasureHunter = {waist="Chaac Belt"}
 		body="Theophany Cap +1",
 		hands="Theophany Mitts +1",
         legs="Theophany Pantaloons +1",
-        feet="Theophany Duckbills", --Need Finish Rem's Tale Ch.10 x8	Raxa	Sif's Macrame
+        feet="Theophany Duckbills +1", 
     }
 	gear.jse.relic.whm = {
         head="Cleric's Cap", --Need Fnish Rem's Tale Ch.1 x10 M. Silverpiece x2 Sparkling Stone	Phoenix Feather /// Rem's Tale Ch.6 x8	Akvan's Pennon	Gabbrath Horn
@@ -963,7 +967,7 @@ sets.TreasureHunter = {waist="Chaac Belt"}
     }
     gear.jse.empyrean.mnk = {  
         head="Tantra Crown +1", --Need Finish Rem's Tale Ch.1 x10 Itzpapalotl's Scale	Phoenix Feather
-        body="Tantra Cyclas +1", --Need Finish Rem's Tale Ch.2 x10 Itzpapalotl's Scale	Malboro Fiber
+        body="Bhikku Cyclas +1", 
         hands="Tantra Gloves +1", --Need Finish Rem's Tale Ch.3 x10 Itzpapalotl's Scale	Beetle Blood
         legs="Tantra Hose +1", --Need Finish Rem's Tale Ch.4 x10 Itzpapalotl's Scale	Damascene Cloth	
         feet="Tantra Gaiters +1" --Need Finish Rem's Tale Ch.5 x10 Itzpapalotl's Scale	Oxblood
@@ -1037,8 +1041,8 @@ sets.TreasureHunter = {waist="Chaac Belt"}
 			-- SAM
     gear.jse.artifact.sam = {
 		head="Wakido Kabuto +1",
-		body="Wakido Domaru",		--Need Finish Rem's Tale Ch.7 x8	Damascus Ingot	Hepatizon Ingot
-		hands="Wakido Kote",		--Need Finish Rem's Tale Ch.8 x8	Damascus Ingot	Beryllium Ingot
+		body="Wakido Domaru +1",
+		hands="Wakido Kote +1",		
         legs="Wakido Haidate +2",
         feet="Wakido Sune-Ate +1",
     }
@@ -1131,10 +1135,10 @@ sets.TreasureHunter = {waist="Chaac Belt"}
         feet="Foire Babouches",				--Need Finish Rem's Tale Ch.10 x8	Twill Damask	Sif's Macrame
     }
 	gear.jse.relic.pup = {
-        head="Pantin Taj",					--Need Finish Rem's Tale Ch.6 x8	Hahava's Mail	Gabbrath Horn
-        body="Pantin Tobe",					--Need Finish Rem's Tale Ch.7 x8	Hahava's Mail	Yggdreant Bole
-        hands="Pantin Dastanas",			--Need Finish Rem's Tale Ch.8 x8	Hahava's Mail	Bztavian Stinger
-        legs="Pantin Churidars",			--Need Finish Rem's Tale Ch.9 x8	Hahava's Mail	Waktza Rostrum
+        head="Pitre Taj +1",				
+        body="Pitre Tobe +1",				
+        hands="Pitre Dastanas +1",			
+        legs="Pitre Churidars +1",			
         feet="Pantin Babouches"				--Need Finish Rem's Tale Ch.10 x8	Hahava's Mail	Rockfin Tooth
     }	
     gear.jse.empyrean.pup = {  

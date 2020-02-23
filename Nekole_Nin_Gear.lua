@@ -181,7 +181,7 @@ function init_gear_sets()
 		neck="Loricate Torque +1",
 		ear1="Infused Earring",
 		ear2="Sanare Earring",
-        body="Hiza. Haramaki +1",
+        body="Hiza. Haramaki +2",
 		hands=gear.HerculeanGloves.TA,
 		ring1="Defending Ring",
 		ring2="Ilabrat Ring",

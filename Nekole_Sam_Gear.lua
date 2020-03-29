@@ -65,7 +65,7 @@ function init_gear_sets()
 		ear2="Telos Earring",
         body="Found. Breastplate",
 		hands="Leyline Gloves",
-		ring1="Stikini Ring",
+		ring1="Stikini Ring +1",
 		ring2="Ramuh Ring +1",
         back=gear.jsecapes.amb.sam.tp,waist="Olseni Belt",legs="Acro Breeches",feet="Founder's Greaves"}
 

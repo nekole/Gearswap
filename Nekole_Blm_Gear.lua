@@ -98,6 +98,7 @@ function init_gear_sets()
     sets.precast.FC.Curaga = sets.precast.FC.Cure
 	
 	sets.precast.FC.Impact = set_combine(sets.precast.FC, {head=empty,body="Twilight Cloak"})
+	sets.precast.FC.Dispelga = set_combine(sets.precast.FC, {main="Daybreak",sub="Genmei Shield"})
 
 	sets.precast.FC.Death = {
 		main={ name="Lathi", augments={'MP+80','INT+20','"Mag.Atk.Bns."+20',}},
@@ -263,8 +264,8 @@ function init_gear_sets()
 	sets.midcast.BarElement = set_combine(sets.precast.FC['Enhancing Magic'], {legs="Shedir Seraweels"})
 
     sets.midcast['Enfeebling Magic'] = {
-		main="Oranyan",
-		sub="Enki Strap",
+		main="Daybreak",
+		sub="Ammurapi Shield",
 		ammo="Pemphredo Tathlum",
         head="Befouled Crown",
 		neck="Erra Pendant",
@@ -280,8 +281,8 @@ function init_gear_sets()
 		feet="Medium's Sabots"}
 		
     sets.midcast['Enfeebling Magic'].Resistant = {
-	    main="Oranyan",
-		sub="Enki Strap",
+	   main="Daybreak",
+	   sub="Ammurapi Shield",
 		ammo="Pemphredo Tathlum",
         head="Befouled Crown",
 		neck="Erra Pendant",
@@ -401,8 +402,8 @@ function init_gear_sets()
 		feet="Regal Pumps +1"}
 		
     sets.midcast.Stun.Resistant = {
-		main="Rubicundity",
-		sub="Enki Strap",
+		main="Daybreak",
+		sub="Ammurapi Shield",
 		ammo="Pemphredo Tathlum",
         head="Nahtirah Hat",
 		neck="Erra Pendant",
@@ -418,8 +419,8 @@ function init_gear_sets()
 		feet="Regal Pumps +1"}
 
     sets.midcast.BardSong = {
-		main="Oranyan",
-		sub="Clerisy Strap +1",
+		main="Daybreak",
+		sub="Ammurapi Shield",
 		ammo="Dosis Tathlum",
         head=gear.AmalricCoif.C,
 		neck="Sanctity Necklace",
@@ -435,8 +436,8 @@ function init_gear_sets()
 		feet="Medium's Sabots"}
 		
 	sets.midcast.Impact = {
-		main="Oranyan",
-		sub="Enki Strap",
+		main="Daybreak",
+		sub="Ammurapi Shield",
 		ammo="Pemphredo Tathlum",
 		head=empty,
 		neck="Erra Pendant",
@@ -454,8 +455,8 @@ function init_gear_sets()
     -- Elemental Magic sets
     
     sets.midcast['Elemental Magic'] = {
-		main=gear.weapons.BLM.magicstaff,
-		sub="Niobid Strap",
+		main="Daybreak",
+		sub="Ammurapi Shield",
 		ammo="Pemphredo Tathlum",
         head=gear.MerlinicHood.MAB,
 		neck="Sanctity Necklace",
@@ -471,8 +472,8 @@ function init_gear_sets()
 		feet=gear.MerlinicCrackows.MAB}
 
     sets.midcast['Elemental Magic'].Resistant = {
-		main=gear.weapons.BLM.magicstaff,
-		sub="Niobid Strap",
+		main="Daybreak",
+		sub="Ammurapi Shield",
 		ammo="Pemphredo Tathlum",
         head=gear.MerlinicHood.MAB,
 		neck="Sanctity Necklace",
@@ -488,8 +489,8 @@ function init_gear_sets()
 		feet=gear.MerlinicCrackows.MAB}
 		
     sets.midcast['Elemental Magic'].Fodder = {
-		main=gear.weapons.BLM.magicstaff,
-		sub="Niobid Strap",
+		main="Daybreak",
+		sub="Ammurapi Shield",
 		ammo="Pemphredo Tathlum",
         head=gear.MerlinicHood.MAB,
 		neck="Sanctity Necklace",
@@ -564,12 +565,12 @@ function init_gear_sets()
 		waist=gear.waist.mage_idle,
 		ear1="Evans Earring",
 		ear2="Loquac. Earring",
-		ring1="Bifrost Ring",
-		ring2="Sangoma Ring",
+		ring1="Stikini Ring +1",
+		ring2="Stikini Ring +1",
 		back=gear.jsecapes.amb.blm.fc}
 
     -- Idle mode that keeps PDT gear on, but doesn't prevent normal gear swaps for precast/etc.
-    sets.idle.PDT = {main="Terra's Staff",sub="Oneiros Grip",ammo="Staunch Tathlum",
+    sets.idle.PDT = {main="Malignance Pole",sub="Oneiros Grip",ammo="Staunch Tathlum",
         head="Hagondes Hat +1",neck="Loricate Torque +1",ear1="Hearty Earring",ear2="Etiolation Earring",
         body="Vrikodara Jupon",hands=gear.merlinic_refresh_hands,ring1="Defending Ring",ring2="Dark Ring",
         back="Repulse Mantle",waist="Flax Sash",legs="Assid. Pants +1",feet="Mallquis Clogs +1"}
@@ -591,17 +592,17 @@ function init_gear_sets()
 
     -- Defense sets
 
-    sets.defense.PDT = {main="Terra's Staff",sub="Umbra Strap",ammo="Staunch Tathlum",
+    sets.defense.PDT = {main="Malignance Pole",sub="Umbra Strap",ammo="Staunch Tathlum",
         head="Hagondes Hat +1",neck="Loricate Torque +1",ear1="Hearty Earring",ear2="Etiolation Earring",
         body="Mallquis Saio +1",hands="Hagondes Cuffs +1",ring1="Defending Ring",ring2="Dark Ring",
         back="Repulse Mantle",waist="Flax Sash",legs="Hagondes Pants +1",feet="Mallquis Clogs +1"}
 
-    sets.defense.MDT = {main="Terra's Staff",sub="Umbra Strap",ammo="Staunch Tathlum",
+    sets.defense.MDT = {main="Malignance Pole",sub="Umbra Strap",ammo="Staunch Tathlum",
         head="Hagondes Hat +1",neck="Loricate Torque +1",ear1="Hearty Earring",ear2="Etiolation Earring",
         body="Mallquis Saio +1",hands="Hagondes Cuffs +1",ring1="Defending Ring",ring2="Shadow Ring",
         back="Solemnity Cape",waist="Flax Sash",legs="Hagondes Pants +1",feet="Mallquis Clogs +1"}
 		
-    sets.defense.MEVA = {main="Terra's Staff",sub="Enki Strap",ammo="Staunch Tathlum",
+    sets.defense.MEVA = {main="Malignance Pole",sub="Enki Strap",ammo="Staunch Tathlum",
         head=gear.merlinic_nuke_head,neck="Warder's Charm +1",ear1="Sanare Earring",ear2="Etiolation Earring",
 		body="Merlinic Jubbah",hands="Amalric Gages",ring1="Vengeful Ring",ring2="Purity Ring",
         back="Taranus's Cape",waist="Luminary Sash",legs="Hagondes Pants +1",feet=gear.merlinic_nuke_feet}

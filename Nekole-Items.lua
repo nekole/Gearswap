@@ -64,7 +64,7 @@ sets.precast.Item['Holy Water'] = {}
     gear.ears.macc_int = { name="Psystorm Earring" }
 	gear.ears.macc_left = { name="Dignitary's Earring" }
     gear.ears.macc_right = { name="Gwati Earring" }
-    gear.ears.ws = { name="Moonshade Earring", augments={'Attack+4','TP Bonus +25',}}
+    gear.ears.ws = { name="Moonshade Earring", augments={'Attack+4','TP Bonus +250',}}
     gear.ears.wsd = { name="Ishvara Earring" }
     gear.ears.mab_left = { name="Friomisi Earring" }
     gear.ears.mab_right = { name="Barkarole Earring" }
@@ -84,7 +84,6 @@ sets.precast.Item['Holy Water'] = {}
     gear.ring.regen_right = { name="Paguroidea Ring" }
     gear.ring.fc_left = { name="Kishar Ring" }
     gear.ring.fc_right = { name="Weather. Ring" }
-    gear.ring.macc = { name="Sangoma Ring" }
     gear.ring.healing_left = { name="Sirona's Ring" }
     gear.ring.healing_right = { name="Haoma's Ring" }
     gear.ring.enmity_left = { name="Apeile Ring +1" }
@@ -676,6 +675,7 @@ sets.precast.Item['Holy Water'] = {}
 	gear.weapons.brd = {}
     gear.weapons.BLM.Nuke = { name="Keraunos", augments={'"Mag.Atk.Bns."+17','"Fast Cast"+3','INT+9 MND+9'}}
 	gear.weapons.BLM.magicstaff = { name="Grioavolr", augments={'Magic burst dmg.+4%','INT+13','Mag. Acc.+14','"Mag.Atk.Bns."+19',}}
+--	gear.grioavolr_nuke_staff = {name="Grioavolr",augments={'Magic burst dmg.+8%','MP+61','Mag. Acc.+16','"Mag.Atk.Bns."+30','Magic Damage +7',}}
     gear.weapons.SCH.Nuke = { name="Akademos", augments={'INT+15','"Mag.Atk.Bns."+15','Mag. Acc.+15'}}
 	gear.weapons.SCH.Enh = { name="Grioavolr", augments={'Enh. Mag. eff. dur. +10','Mag. Acc.+14','"Mag.Atk.Bns."+21','Magic Damage +3',}}
     gear.weapons.mage.macc = { name="Lehbrailg +2" }
@@ -771,11 +771,11 @@ sets.precast.Item['Holy Water'] = {}
 	
 	-- WAR
     gear.jse.artifact.war = {
-        head="Pummeler's Mask", -- Need Finish Rem's Tale Ch.6 x8	Behemoth Leather	Maliyakaleya Orb
-        body="Pummeler's Lorica", -- Need Finish Rem's Tale Ch.7 x8	Behemoth Leather	Hepatizon Ingot
-        hands="Pummeler's Mufflers", -- Need Finish Rem's Tale Ch.8 x8	Behemoth Leather	Beryllium Ingot
+        head="Pummeler's Mask +1", 
+        body="Pummeler's Lorica +1", 
+        hands="Pummeler's Mufflers +1", 
         legs="Pumm. Cuisses +1",
-        feet="Pummeler's Calligae" -- Need Finish Rem's Tale Ch.10 x8	Behemoth Leather	Sif's Macrame
+        feet="Pummeler's Calligae +1" 
     }
     gear.jse.relic.war = {
         head="Agoge Mask", -- Need Finish Rem's Tale Ch.6 x8	Voidwrought Plate	Gabbrath Horn
@@ -952,18 +952,18 @@ sets.precast.Item['Holy Water'] = {}
 	}
 					-- MNK
     gear.jse.artifact.mnk = {
-		head="Anchorite's Crown", --Need Finish Rem's Tale Ch.6 x8	Platinum Silk Thread	Maliyakaleya Orb
-		body="Anchorite's Cyclas", --Need Finish Rem's Tale Ch.7 x8	Platinum Silk Thread	Hepatizon Ingot
-		hands="Anchorite's Gloves", --Need Finish Rem's Tale Ch.8 x8	Platinum Silk Thread	Beryllium Ingot
+		head="Anchorite's Crown +1", 
+		body="Anchorite's Cyclas +1", 
+		hands="Anchorite's Gloves +1", 
         legs="Anchorite's Hose +1",
-        feet="Anchorite's Gaiters", --Need Finish Rem's Tale Ch.10 x8	Platinum Silk Thread	Sif's Macrame	
+        feet="Anchorite's Gaiters +1",
     }
 	gear.jse.relic.mnk = {
-        head="Melee Crown", --Need Finish Rem's Tale Ch.1 x10 100 Byne Bill x2 Griffon Hide	Phoenix Feather /// Rem's Tale Ch.6 x8	Kaggen's Cuticle	Gabbrath Horn
-        body="Melee Cyclas", --Need Finish Rem's Tale Ch.2 x10 100 Byne Bill x2 Griffon Hide	Malboro Fiber /// Rem's Tale Ch.7 x8	Kaggen's Cuticle	Yggdreant Bole
-        hands="Melee Gloves", --Need Finish Rem's Tale Ch.3 x10 100 Byne Bill x2 Griffon Hide	Beetle Blood /// Rem's Tale Ch.8 x8	Kaggen's Cuticle	Bztavian Stinger
+        head="Hesychast's Crown +1", 
+        body="Hesychast's Cyclas +1", 
+        hands="Hesychast's Gloves +1",
         legs="Hesychast's Hose +1",
-        feet="Melee Gaiters" --Need Finish Rem's Tale Ch.5 x10 100 Byne Bill x2 Griffon Hide	Oxblood /// Rem's Tale Ch.10 x8	Kaggen's Cuticle	Rockfin Tooth
+        feet="Hesychast's Gaiters +1"
     }
     gear.jse.empyrean.mnk = {  
         head="Tantra Crown +1", --Need Finish Rem's Tale Ch.1 x10 Itzpapalotl's Scale	Phoenix Feather
@@ -996,18 +996,18 @@ sets.precast.Item['Holy Water'] = {}
 	}
 			-- BST
     gear.jse.artifact.bst = {
-		head="Totemic Helm",	--Need Finish Rem's Tale Ch.6 x8		Behemoth Leather	Maliyakaleya Orb
-		body="Totemic Jackcoat +1",	--Need Finish Rem's Tale Ch.7 x8	Behemoth Leather	Hepatizon Ingot
-		hands="Totemic Gloves",	--Need Finish Rem's Tale Ch.8 x8		Behemoth Leather	Beryllium Ingot
-        legs="Totemic Trousers +1",	--Need Finish Rem's Tale Ch.9 x8	Behemoth Leather	Exalted Lumber
-        feet="Totemic Gaiters",	--Need Finish Rem's Tale Ch.10 x8		Behemoth Leather	Sif's Macrame
+		head="Totemic Helm +1",	
+		body="Totemic Jackcoat +1",	
+		hands="Totemic Gloves +1",	
+        legs="Totemic Trousers +1",	
+        feet="Totemic Gaiters +1",	
     }
 	gear.jse.relic.bst = {
-        head="Ankusa Helm",		--Need Finish Rem's Tale Ch.6 x8		Hahava's Mail	Gabbrath Horn
-        body="Ankusa Jackcoat",	--Need Finish Rem's Tale Ch.7 x8		Hahava's Mail	Yggdreant Bole
-        hands="Ankusa Gloves",	--Need Finish Rem's Tale Ch.8 x8		Hahava's Mail	Bztavian Stinger
-        legs="Ankusa Trousers",	--Need Finish Rem's Tale Ch.9 x8		Hahava's Mail	Waktza Rostrum	
-        feet="Ankusa Gaiters"	--Need Finish Rem's Tale Ch.10 x8		Hahava's Mail	Rockfin Tooth
+        head="Ankusa Helm +1",		
+        body="Ankusa Jackcoat +1",	
+        hands="Ankusa Gloves +1",	
+        legs="Ankusa Trousers +1",		
+        feet="Ankusa Gaiters +1"	
     }
     gear.jse.empyrean.bst = {  
         head="Nukumi Cabasset",	--Need Finish Rem's Tale Ch.6 x8		Etched Memory x15	Defiant Sweat
@@ -1062,11 +1062,11 @@ sets.precast.Item['Holy Water'] = {}
 	}
 			-- NIN
     gear.jse.artifact.nin = {
-		head="Hachiya Hatsuburi",	--Need Finish Rem's Tale Ch.6 x8	Damascus Ingot	Maliyakaleya Orb
-		body="Hachiya Chainmail",	--Need Finish Rem's Tale Ch.7 x8	Damascus Ingot	Hepatizon Ingot
-		hands="Hachiya Tekko",		--Need Finish Rem's Tale Ch.8 x8	Damascus Ingot	Beryllium Ingot
+		head="Hachiya Hatsuburi +1",	
+		body="Hachiya Chainmail +1",	
+		hands="Hachiya Tekko +1",		
         legs="Hachiya Hakama +1",
-        feet="Hachiya Kyahan",		--Need Finish Rem's Tale Ch.10 x8	Damascus Ingot	Sif's Macrame
+        feet="Hachiya Kyahan +1",		
     }
 	gear.jse.relic.nin = {
         head="Koga Hatsuburi",	--Need Finish Rem's Tale Ch.1 x10 100 Byne Bill x2 Relic Iron	Phoenix Feather ///	Rem's Tale Ch.6 x8	Voidwrought Plate	Gabbrath Horn
@@ -1128,18 +1128,18 @@ sets.precast.Item['Holy Water'] = {}
 	}
 			-- PUP
     gear.jse.artifact.pup = {
-		head="Foire Taj",					--Need Finish Rem's Tale Ch.6 x8	Twill Damask	Maliyakaleya Orb
-		body="Foire Tobe",					--Need Finish Rem's Tale Ch.7 x8	Twill Damask	Hepatizon Ingot
-		hands="Foire Dastanas",				--Need Finish Rem's Tale Ch.8 x8	Twill Damask	Beryllium Ingot
-        legs="Foire Churidars +1",			--Need Finish Rem's Tale Ch.9 x8	Twill Damask	Exalted Lumber
-        feet="Foire Babouches",				--Need Finish Rem's Tale Ch.10 x8	Twill Damask	Sif's Macrame
+		head="Foire Taj +1",				
+		body="Foire Tobe +1",				
+		hands="Foire Dastanas +1",		
+        legs="Foire Churidars +1",			
+        feet="Foire Babouches +1",				
     }
 	gear.jse.relic.pup = {
         head="Pitre Taj +1",				
         body="Pitre Tobe +1",				
         hands="Pitre Dastanas +1",			
         legs="Pitre Churidars +1",			
-        feet="Pantin Babouches"				--Need Finish Rem's Tale Ch.10 x8	Hahava's Mail	Rockfin Tooth
+        feet="Pitre Babouches +1"				
     }	
     gear.jse.empyrean.pup = {  
         head="Cirque Cappello +1",			--Need Finish Rem's Tale Ch.1 x10	Carabosse's Gem	Phoenix Feather		///	--Need Finish Rem's Tale Ch.6 x8	Etched Memory x15	Defiant Sweat
@@ -1171,13 +1171,13 @@ sets.precast.Item['Holy Water'] = {}
         feet="Charis Toeshoes +1"			--Need Finish Rem's Tale Ch.5 x10	Two-Leaf Chloris Bud	Oxblood				///	--Need Finish Rem's Tale Ch.10 x8	Etched Memory x15	Plovid Effluvium
 	}
 	
-				-- RUN
+				-- RUN2
     gear.jse.artifact.run = {
-		head="Runeist Bandeau",		--Need Finish Rem's Tale Ch.6 x8	Damascus Ingot	Maliyakaleya Orb
-		body="Runeist Coat",		--Need Finish Rem's Tale Ch.7 x8	Damascus Ingot	Hepatizon Ingot
-		hands="Runeist Mitons",		--Need Finish Rem's Tale Ch.8 x8	Damascus Ingot	Beryllium Ingot
-        legs="Runeist Trousers",	--Need Finish Rem's Tale Ch.9 x8	Damascus Ingot	Exalted Lumber
-        feet="Runeist Bottes",		--Need Finish Rem's Tale Ch.10 x8	Damascus Ingot	Sif's Macrame
+		head="Runeist Bandeau +1",		
+		body="Runeist Coat +1",		
+		hands="Runeist Mitons +1",		
+        legs="Runeist Trousers +1",	
+        feet="Runeist Bottes +1",		
     }
 	gear.jse.relic.run = {
         head="Futhark Bandeau",		--Need Finish Rem's Tale Ch.6 x	8	Celaeno's Cloth	Gabbrath Horn

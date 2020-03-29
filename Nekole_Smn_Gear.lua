@@ -93,6 +93,9 @@ function init_gear_sets()
     sets.precast.FC['Enhancing Magic'] = set_combine(sets.precast.FC, {waist="Siegel Sash"})
 	
     sets.precast.FC.Stoneskin = set_combine(sets.precast.FC['Enhancing Magic'], {})
+	
+	sets.precast.FC.Impact = set_combine(sets.precast.FC, {head=empty,body="Twilight Cloak"})       
+	sets.precast.FC.Dispelga = set_combine(sets.precast.FC, {main="Daybreak",sub="Genmei Shield"})
 
        
     -- Weaponskill sets
@@ -166,8 +169,8 @@ function init_gear_sets()
 	sets.midcast.StatusRemoval = set_combine(sets.midcast.FastRecast, {main="Oranyan",sub="Clemency Grip"})
 
 	sets.midcast['Elemental Magic'] = {
-		main=gear.weapons.BLM.magicstaff,
-		sub="Zuuxowu Grip",
+		main="Daybreak",
+		sub="Ammurapi Shield",
         head=gear.MerlinicHood.MAB,
 		neck="Sanctity Necklace",
 		ear1="Crematio Earring",
@@ -182,8 +185,8 @@ function init_gear_sets()
 		feet=gear.MerlinicCrackows.MB}
 		
 	sets.midcast['Elemental Magic'].Resistant = {
-		main=gear.weapons.BLM.magicstaff,
-		sub="Zuuxowu Grip",
+		main="Daybreak",
+		sub="Ammurapi Shield",
         head=gear.MerlinicHood.MAB,
 		neck="Sanctity Necklace",
 		ear1="Crematio Earring",
@@ -198,8 +201,8 @@ function init_gear_sets()
 		feet=gear.MerlinicCrackows.MB}
 
     sets.midcast['Divine Magic'] = {
-		main="Oranyan",
-		sub="Zuuxowu Grip",
+		main="Daybreak",
+		sub="Ammurapi Shield",
         head=gear.MerlinicHood.MAB,
 		neck="Sanctity Necklace",
 		ear1="Crematio Earring",
@@ -264,8 +267,8 @@ function init_gear_sets()
 		feet="Regal Pumps +1"}
 		
     sets.midcast.Stun.Resistant = {
-		main="Oranyan",
-		sub="Clerisy Strap +1",
+		main="Daybreak",
+		sub="Ammurapi Shield",
 		head=gear.AmalricCoif.C,
 		neck="Orunmila's Torque",
 		ear1="Enchntr. Earring +1",
@@ -280,8 +283,8 @@ function init_gear_sets()
 		feet="Regal Pumps +1"}
 		
 	sets.midcast['Enfeebling Magic'] = {
-		main="Oranyan",
-		sub="Enki Strap",
+		main="Daybreak",
+		sub="Ammurapi Shield",
 		head="Befouled Crown",
 		neck="Imbodla Necklace",
 		ear1="Digni. Earring",
@@ -296,8 +299,8 @@ function init_gear_sets()
 		feet="Uk'uxkaj Boots"}
 		
 	sets.midcast['Enfeebling Magic'].Resistant = {
-		main="Oranyan",
-		sub="Clerisy Strap +1",
+		main="Daybreak",
+		sub="Ammurapi Shield",
 		head="Befouled Crown",
 		neck="Imbodla Necklace",
 		ear1="Digni. Earring",
@@ -482,8 +485,9 @@ function init_gear_sets()
 		feet="Baayami Sabots"}
 
     sets.idle.PDT = {
---		main="Mafic Cudgel", --10
-		sub="Genmei Shield", --10
+		main="Malignance Pole",
+		sub="Oneiros Grip",
+		ammo="Staunch Tathlum",
 		ring1="Defending Ring",--10
 		ring2="Gelatinous Ring +1",--6
 		ear1="Etiolation Earring", --3mdt
@@ -538,7 +542,7 @@ function init_gear_sets()
 		legs="Assid. Pants +1",
 		feet=gear.jse.artifact.smn.feet}
 		
-    sets.idle.PDT.Avatar = {main="Terra's Staff",sub="Oneiros Grip",ammo="Sancus Sachet +1",
+    sets.idle.PDT.Avatar = {main="Malignance Pole",sub="Oneiros Grip",ammo="Sancus Sachet +1",
         head=gear.jse.empyrean.smn.head,neck="Loricate Torque +1",ear1="Etiolation Earring",ear2="Evans Earring",
         body="Shomonjijoe +1",hands="Asteria Mitts +1",ring1="Defending Ring",ring2="Gelatinous Ring +1",
         back="Umbra Cape",waist="Regal Belt",legs="Assid. Pants +1",feet=gear.jse.artifact.smn.feet}
@@ -560,7 +564,7 @@ function init_gear_sets()
 		legs="Assid. Pants +1",
 		feet=gear.jse.artifact.smn.feet}
 		
-    sets.idle.PDT.Spirit = {main="Terra's Staff",sub="Oneiros Grip",ammo="Sancus Sachet +1",
+    sets.idle.PDT.Spirit = {main="Malignance Pole",sub="Oneiros Grip",ammo="Sancus Sachet +1",
         head=gear.jse.empyrean.smn.head,neck="Loricate Torque +1",ear1="Etiolation Earring",ear2="Evans Earring",
         body="Shomonjijoe +1",hands="Asteria Mitts +1",ring1="Defending Ring",ring2="Gelatinous Ring +1",
         back="Umbra Cape",waist="Lucidity Sash",legs="Assid. Pants +1",feet="Battlecast Gaiters"}
@@ -592,17 +596,17 @@ function init_gear_sets()
     
     -- Defense sets
     sets.defense.PDT = {
-		main="Terra's Staff",sub="Umbra Strap",ammo="Sancus Sachet +1",
+		main="Malignance Pole",sub="Umbra Strap",ammo="Sancus Sachet +1",
         head="Hagondes Hat +1",neck="Loricate Torque +1",ear1="Handler's Earring +1",ear2="Enmerkar Earring",
         body="Vrikodara Jupon",hands="Hagondes Cuffs +1",ring1="Defending Ring",ring2="Gelatinous Ring +1",
         back="Umbra Cape",waist="Regal Belt",legs="Hagondes Pants +1",feet="Battlecast Gaiters"}
 
-    sets.defense.MDT = {main="Terra's Staff",sub="Umbra Strap",ammo="Sancus Sachet +1",
+    sets.defense.MDT = {main="Malignance Pole",sub="Umbra Strap",ammo="Sancus Sachet +1",
         head="Hagondes Hat +1",neck="Loricate Torque +1",ear1="Etiolation Earring",ear2="Lugalbanda Earring",
         body="Vrikodara Jupon",hands="Hagondes Cuffs +1",ring1="Defending Ring",ring2="Gelatinous Ring +1",
         back="Umbra Cape",waist="Regal Belt",legs="Hagondes Pants +1",feet="Battlecast Gaiters"}
 
-    sets.defense.MEVA = {main="Terra's Staff",sub="Enki Strap",ammo="Sancus Sachet +1",
+    sets.defense.MEVA = {main="Malignance Pole",sub="Enki Strap",ammo="Sancus Sachet +1",
         head=gear.AmalricCoif.C,neck="Warder's Charm +1",ear1="Sanare Earring",ear2="Lugalbanda Earring",
 		body=gear.ambuscade.inyanga.body,hands=gear.TelchineGloves.PetRegen,ring1="Vengeful Ring",Ring2="Purity Ring",
         back="Aurist's Cape +1",waist="Luminary Sash",legs="Telchine Braconi",feet="Telchine Pigaches"}

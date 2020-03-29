@@ -323,8 +323,15 @@ function init_gear_sets()
 	
 	-- Weapons sets
 	sets.weapons.Godhands = {main="Godhands"}
-	sets.weapons.ProcStaff = {main="Terra's Staff"}
-	sets.weapons.ProcClub = {main="Mafic Cudgel"}
+	sets.weapons.Barehanded = {main=empty}
+	sets.weapons.Staff = {main="Malignance Pole",sub="Bloodrain Strap"}
+	sets.weapons.ProcStaff = {main="Cobra Staff",sub=empty}
+	sets.weapons.ProcClub = {main="Seika Uchiwa",sub=empty}
+	sets.weapons.ProcSword = {main="Firetongue",sub=empty}
+	sets.weapons.ProcGreatSword = {main="Lament",sub=empty}
+	sets.weapons.ProcScythe = {main="Ark Scythe",sub=empty}
+	sets.weapons.ProcPolearm = {main="Pitchfork +1",sub=empty}
+	sets.weapons.ProcGreatKatana = {main="Ark Tachi",sub=empty}
 end
 
 -- Select default macro book on initial load or subjob change.

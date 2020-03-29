@@ -50,6 +50,7 @@ function init_gear_sets()
 	sets.precast.FC.Cure = set_combine(sets.precast.FC, {feet=gear.vanya.feet.B})
 
 	sets.precast.FC['Enhancing Magic'] = set_combine(sets.precast.FC, {waist="Siegel Sash"})
+	sets.precast.FC.Dispelga = set_combine(sets.precast.FC, {main="Daybreak",sub="Genmei Shield"})
 	
 	sets.precast.FC.BardSong = {main=gear.weapons.brd.skill,sub="Ammurapi Shield",range="Gjallarhorn",ammo=empty,
 		head=gear.jse.empyrean.brd.head,neck="Aoidos' Matinee",ear1="Aoidos' Earring",ear2="Etiolation Earring",
@@ -140,7 +141,7 @@ function init_gear_sets()
 	sets.midcast.SongEffect.DW = {}
 
 	-- For song defbuffs (duration primary, accuracy secondary)
-	sets.midcast.SongDebuff = {main=gear.weapons.brd.skill,sub="Ammurapi Shield",range="Gjallarhorn",ammo=empty,
+	sets.midcast.SongDebuff = {main="Daybreak",sub="Ammurapi Shield",range="Gjallarhorn",ammo=empty,
 		head=gear.ambuscade.ayanmo.head,neck="Moonbow Whistle +1",ear1="Regal Earring",ear2="Digni. Earring",
 		body=gear.jse.empyrean.brd.body,hands=gear.ambuscade.inyanga.hands,ring1=gear.ring.ms_left,ring2=gear.ring.ms_right,
 		back=gear.jsecapes.amb.brd.fc,waist="Luminary Sash",legs=gear.ambuscade.inyanga.legs,feet=gear.jse.relic.brd.feet}
@@ -180,9 +181,15 @@ function init_gear_sets()
 		
 	sets.midcast.Stoneskin = set_combine(sets.midcast['Enhancing Magic'], {neck="Nodens Gorget",ear2="Earthcry Earring",waist="Siegel Sash"})
 		
-	sets.midcast['Elemental Magic'] = {}
+	sets.midcast['Elemental Magic'] = {main="Daybreak",sub="Ammurapi Shield",ammo="Dosis Tathlum",
+		head="Buremte Hat",neck="Sanctity Necklace",ear1="Friomisi Earring",ear2="Crematio Earring",
+		body="Chironic Doublet",hands="Volte Gloves",ring1="Shiva Ring +1",ring2="Shiva Ring +1",
+		back="Toro Cape",waist="Sekhmet Corset",legs="Gyve Trousers",feet=gear.chironic_nuke_feet}
 		
-	sets.midcast['Elemental Magic'].Resistant = {}
+	sets.midcast['Elemental Magic'].Resistant = {main="Daybreak",sub="Ammurapi Shield",ammo="Dosis Tathlum",
+		head="Buremte Hat",neck="Sanctity Necklace",ear1="Friomisi Earring",ear2="Crematio Earring",
+		body="Chironic Doublet",hands="Volte Gloves",ring1="Shiva Ring +1",ring2="Shiva Ring +1",
+		back="Toro Cape",waist="Yamabuki-no-Obi",legs="Gyve Trousers",feet=gear.chironic_nuke_feet}
 		
 	sets.midcast.Cursna =  set_combine(sets.midcast.Cure, {neck="Debilis Medallion",
 		ring1="Haoma's Ring",ring2="Haoma's Ring",waist="Witful Belt"})
@@ -193,7 +200,7 @@ function init_gear_sets()
 	sets.resting = {}
 	
 	-- Idle sets (default idle set not needed since the other three are defined, but leaving for testing purposes)
-	sets.idle = {main="Sangoma",sub="Genmei Shield",range=gear.range.idle,
+	sets.idle = {main="Daybreak",sub="Ammurapi Shield",range=gear.range.idle,
 		head=gear.ambuscade.inyanga.head,neck="Loricate Torque +1",ear1="Etiolation Earring",ear2="Ethereal Earring",
 		body=gear.ambuscade.inyanga.body,hands=gear.ambuscade.inyanga.hands,ring1="Defending Ring",ring2="Inyanga Ring",
 		back="Moonbeam Cape",waist="Flume Belt +1",legs=gear.jse.relic.brd.legs,feet=gear.jse.empyrean.brd.feet}

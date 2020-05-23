@@ -5,13 +5,14 @@ function user_setup()
     state.WeaponskillMode:options('Match','Normal', 'Acc','Proc')
     state.CastingMode:options('Normal', 'Resistant')
     state.IdleMode:options('Normal', 'PDT', 'Refresh')
+	state.HybridMode:options('Normal','DT')
 	state.ExtraMeleeMode = M{['description']='Extra Melee Mode', 'None', 'DWMax'}
-	state.Weapons:options('Default','DualWeapons','DualSavageWeapons','DualLeadenRanged','DualLeadenMelee','DualLeadenMeleeAcc','DualKustawi','None')
-	state.CompensatorMode:options('300','1000','Never','Always')
+	state.Weapons:options('Default','DualWeapons','DualSavageWeapons','DualLeadenRanged','DualLeadenMelee','DualAeolian','DualLeadenMeleeAcc','DualKustawi','None')
+	state.CompensatorMode:options('Always','300','1000','Never')
 
     gear.RAbullet = "Chrono Bullet"
-    gear.WSbullet = "Chrono Bullet"
-    gear.MAbullet = "Orichalc. Bullet" --For MAB WS, do not put single-use bullets here.
+    gear.WSbullet = "Living Bullet"
+    gear.MAbullet = "Living Bullet" --For MAB WS, do not put single-use bullets here. Orichalc. Bullet
     gear.QDbullet = "Animikii Bullet"
     options.ammo_warning_limit = 15
 	
@@ -38,8 +39,8 @@ function user_setup()
 	send_command('bind @f7 gs c toggle RngHelper')
 
 	send_command('bind !r gs c weapons DualSavageWeapons;gs c update')
-	send_command('bind @q gs c weapons MaccWeapons;gs c update')
-	send_command('bind ^q gs c weapons DualKustawi;gs c update')
+	send_command('bind ^q gs c weapons DualAeolian;gs c update')
+	send_command('bind @q gs c weapons DualKustawi;gs c update')
 	send_command('bind !q gs c weapons DualLeadenRanged;gs c update')
 	send_command('bind @pause roller roll')
 
@@ -62,10 +63,10 @@ function init_gear_sets()
     sets.precast.JA['Random Deal'] = {body=gear.jse.relic.cor.body}
     sets.precast.FoldDoubleBust = {hands=gear.jse.relic.cor.hands}
     
-    sets.precast.CorsairRoll = {range="Compensator",
+    sets.precast.CorsairRoll = {main="Rostam",range="Compensator",
         head=gear.jse.relic.cor.head,neck="Regal Necklace",ear1="Etiolation Earring",ear2="Sanare Earring",
         body=gear.jse.relic.cor.body,hands=gear.jse.empyrean.cor.hands,ring1="Defending Ring",ring2="Ilabrat Ring",
-        back=gear.jsecapes.amb.cor.tp,waist="Flume Belt +1",legs="Desultor Tassets",feet=gear.jse.relic.cor.feet}
+        back=gear.jsecapes.amb.cor.tp,waist="Flume Belt +1",legs="Desultor Tassets",feet="Malignance Boots"}
 		
     sets.precast.LuzafRing = {ring2="Luzaf's Ring"}
     
@@ -76,27 +77,32 @@ function init_gear_sets()
     sets.precast.CorsairRoll["Allies' Roll"] = set_combine(sets.precast.CorsairRoll, {hands=gear.jse.empyrean.cor.hands})
     
     sets.precast.CorsairShot = {ammo=gear.QDbullet,
-        head=gear.herculean_nuke_head,neck="Sanctity Necklace",ear1="Friomisi Earring",ear2="Crematio Earring",
-        body="Samnuha Coat",hands="Leyline Gloves",ring1="Shiva Ring +1",ring2="Ilabrat Ring",
-        back=gear.jsecapes.amb.cor.wsd,waist="Eschan Stone",legs=gear.ambuscade.mummu.legs,feet=gear.jse.empyrean.cor.feet}
+        head=gear.HerculeanHelm.MAB,neck="Iskur Gorget",ear1="Dedition Earring",ear2="Telos Earring",
+        body="Mummu Jacket +2",hands=gear.AdhemarHands.C,ring1="Ilabrat Ring",ring2="Petrov Ring",
+        back=gear.jsecapes.amb.cor.tprng,waist="Goading Belt",legs=gear.ambuscade.mummu.legs,feet=gear.carmine.feet.D}
 	
-    sets.precast.CorsairShot.Proc = {ammo=gear.RAbullet,
+    sets.precast.CorsairShot.Damage = {ammo=gear.QDbullet,
+        head=gear.HerculeanHelm.MAB,neck="Iskur Gorget",ear1="Dedition Earring",ear2="Telos Earring",
+        body="Samnuha Coat",hands="Leyline Gloves",ring1="Shiva Ring +1",ring2="Dingir Ring",
+        back=gear.jsecapes.amb.cor.wsd,waist="Eschan Stone",legs="Malignance Tights",feet=gear.jse.empyrean.cor.feet}
+		
+	sets.precast.CorsairShot.Proc = {ammo=gear.RAbullet,
         head="Wh. Rarab Cap +1",neck="Loricate Torque +1",ear1="Genmei Earring",ear2="Sanare Earring",
-        body="Emet Harness +1",hands=gear.HerculeanGloves.PDT,ring1="Defending Ring",ring2="Ilabrat Ring",
+        body="Emet Harness +1",hands=gear.HerculeanGloves.PDT,ring1="Defending Ring",ring2="Dingir Ring",
         back="Moonbeam Cape",waist="Flume Belt +1",legs=gear.carmine.legs.D,feet=gear.jse.empyrean.cor.feet}
 
     sets.precast.CorsairShot['Light Shot'] = {ammo=gear.QDbullet,
         head=gear.CarmineMask.D,neck="Sanctity Necklace",ear1="Digni. Earring",ear2="Telos Earring",
-        body=gear.ambuscade.mummu.body,hands="Leyline Gloves",ring1="Stikini Ring",ring2="Stikini Ring",
-        back=gear.jsecapes.amb.cor.wsd,waist="Eschan Stone",legs=gear.ambuscade.mummu.legs,feet=gear.ambuscade.mummu.feet}
+        body=gear.ambuscade.mummu.body,hands="Leyline Gloves",ring1="Metamor. Ring +1",ring2="Stikini Ring +1",
+        back=gear.jsecapes.amb.cor.wsd,waist="Eschan Stone",legs="Malignance Tights",feet=gear.ambuscade.mummu.feet}
 
     sets.precast.CorsairShot['Dark Shot'] = set_combine(sets.precast.CorsairShot['Light Shot'], {feet=gear.jse.empyrean.cor.feet})
 
     -- Waltz set (chr and vit)
     sets.precast.Waltz = {
         head=gear.CarmineMask.D,neck="Loricate Torque +1",ear1="Etiolation Earring",ear2="Sanare Earring",
-        body=gear.herculean_waltz_body,hands=gear.herculean_waltz_hands,ring1="Defending Ring",ring2="Valseur's Ring",
-        back="Moonbeam Cape",waist="Flume Belt +1",legs="Dashing Subligar",feet=gear.herculean_waltz_feet}
+        body=gear.HerculeanBody.Crit,hands=gear.HerculeanGloves.Crit,ring1="Defending Ring",ring2="Valseur's Ring",
+        back="Moonbeam Cape",waist="Flume Belt +1",legs="Dashing Subligar",feet=gear.HerculeanBoots.MAB}
 		
 	sets.Self_Waltz = {head=gear.ambuscade.mummu.head,body="Passion Jacket",ring1="Asklepian Ring"}
         
@@ -178,22 +184,27 @@ function init_gear_sets()
     sets.precast.WS['Leaden Salute'] = {ammo=gear.MAbullet,
         head="Pixie Hairpin +1",neck="Baetyl Pendant",ear1="Moonshade Earring",ear2="Friomisi Earring",
         body=gear.jse.artifact.cor.body,hands=gear.carmine.hands.D,ring1="Dingir Ring",ring2="Archon Ring",
-        back=gear.jsecapes.amb.cor.mwsd,waist="Eschan Stone",legs=gear.jse.artifact.cor.legs,feet=gear.herculean_nuke_feet}
+        back=gear.jsecapes.amb.cor.mwsd,waist="Eschan Stone",legs=gear.jse.artifact.cor.legs,feet=gear.HerculeanBoots.MAB}
 
     sets.precast.WS['Leaden Salute'].Acc = {ammo=gear.MAbullet,
         head="Pixie Hairpin +1",neck="Sanctity Necklace",ear1="Moonshade Earring",ear2="Friomisi Earring",
         body=gear.jse.artifact.cor.body,hands="Leyline Gloves",ring1="Dingir Ring",ring2="Archon Ring",
-        back=gear.jsecapes.amb.cor.mwsd,waist="Eschan Stone",legs=gear.jse.artifact.cor.legs,feet=gear.herculean_nuke_feet}
+        back=gear.jsecapes.amb.cor.mwsd,waist="Eschan Stone",legs=gear.jse.artifact.cor.legs,feet=gear.HerculeanBoots.MAB}
+		
+	sets.precast.WS['Aeolian Edge'] = {ammo="Animikii Bullet",
+        head=gear.herculean_nuke_head,neck="Sanctity Necklace",ear1="Crematio Earring",ear2="Friomisi Earring",
+        body="Laksa. Frac +3",hands="Leyline Gloves",ring1="Metamor. Ring +1",ring2="Dingir Ring",
+        back=gear.magic_wsd_jse_back,waist="Eschan Stone",legs="Laksa. Trews +3",feet="Lanun Bottes +3"}
 
     sets.precast.WS['Wildfire'] = {ammo=gear.MAbullet,
         head=gear.herculean_nuke_head,neck="Baetyl Pendant",ear1="Crematio Earring",ear2="Friomisi Earring",
         body=gear.jse.artifact.cor.body,hands=gear.carmine.hands.D,ring1="Regal Ring",ring2="Dingir Ring",
-        back=gear.jsecapes.amb.cor.mwsd,waist="Eschan Stone",legs=gear.jse.artifact.cor.legs,feet=gear.herculean_nuke_feet}
+        back=gear.jsecapes.amb.cor.mwsd,waist="Eschan Stone",legs=gear.jse.artifact.cor.legs,feet=gear.HerculeanBoots.MAB}
 
     sets.precast.WS['Wildfire'].Acc = {ammo=gear.MAbullet,
         head=gear.herculean_nuke_head,neck="Sanctity Necklace",ear1="Crematio Earring",ear2="Friomisi Earring",
         body=gear.jse.artifact.cor.body,hands="Leyline Gloves",ring1="Regal Ring",ring2="Dingir Ring",
-        back=gear.jsecapes.amb.cor.mwsd,waist="Eschan Stone",legs=gear.jse.artifact.cor.legs,feet=gear.herculean_nuke_feet}
+        back=gear.jsecapes.amb.cor.mwsd,waist="Eschan Stone",legs=gear.jse.artifact.cor.legs,feet=gear.HerculeanBoots.MAB}
 		
     sets.precast.WS['Hot Shot'] = sets.precast.WS['Wildfire']
     sets.precast.WS['Hot Shot'].Acc = sets.precast.WS['Wildfire'].Acc
@@ -252,12 +263,12 @@ function init_gear_sets()
     
 
     -- Idle sets
-    sets.idle = {ammo=gear.RAbullet,range="Fomalhaut",
+    sets.idle = {ammo=gear.RAbullet,range="Death Penalty",
         head=gear.ambuscade.meghanada.head,neck="Regal Necklace",ear1="Genmei Earring",ear2="Sanare Earring",
         body=gear.ambuscade.meghanada.body,hands=gear.HerculeanGloves.PDT,ring1="Defending Ring",ring2="Ilabrat Ring",
         back="Moonbeam Cape",waist="Flume Belt +1",legs=gear.carmine.legs.D,feet=gear.jse.relic.cor.feet}
 		
-    sets.idle.Refresh = {ammo=gear.RAbullet,range="Fomalhaut",
+    sets.idle.Refresh = {ammo=gear.RAbullet,range="Death Penalty",
         head="Rawhide Mask",neck="Loricate Torque +1",ear1="Genmei Earring",ear2="Ethereal Earring",
         body="Mekosu. Harness",hands=gear.herculean_refresh_hands,ring1="Defending Ring",ring2="Ilabrat Ring",
         back="Moonbeam Cape",waist="Flume Belt +1",legs="Rawhide Trousers",feet=gear.jse.relic.cor.feet}
@@ -282,12 +293,13 @@ function init_gear_sets()
 	sets.TreasureHunter = set_combine(sets.TreasureHunter, {})
 	sets.DWMax = {ear1="Dudgeon Earring",ear2="Heartseeker Earring",body="Adhemar Jacket +1",hands="Floral Gauntlets",waist="Reiki Yotai"}
 
-	sets.weapons.Default = {main="Fettering Blade",sub="Nusku Shield",range="Fomalhaut"}
-	sets.weapons.DualWeapons = {main="Kaja Sword",sub="Blurred Knife +1",range="Fomalhaut"}
-	sets.weapons.DualSavageWeapons = {main="Kaja Sword",sub="Blurred Knife +1",range="Ataktos"}
-	sets.weapons.DualLeadenRanged = {main="Kaja Sword",sub="Kaja Knife",range="Fomalhaut"}
-	sets.weapons.DualLeadenMelee = {main="Kaja Sword",sub="Atoyac",range="Fomalhaut"}
-	sets.weapons.DualLeadenMeleeAcc = {main="Kaja Sword",sub="Blurred Knife +1",range="Fomalhaut"}
+	sets.weapons.Default = {main="Naegling",sub="Nusku Shield",range="Death Penalty"}
+	sets.weapons.DualWeapons = {main="Naegling",sub="Blurred Knife +1",range="Death Penalty"}
+	sets.weapons.DualSavageWeapons = {main="Naegling",sub="Blurred Knife +1",range="Death Penalty"}
+	sets.weapons.DualLeadenRanged = {main="Rostam",sub="Tauret",range="Death Penalty"}
+	sets.weapons.DualLeadenMelee = {main="Naegling",sub="Atoyac",range="Death Penalty"}
+	sets.weapons.DualAeolian = {main="Rostam",sub="Tauret",range="Death Penalty"}
+	sets.weapons.DualLeadenMeleeAcc = {main="Naegling",sub="Blurred Knife +1",range="Death Penalty"}
 	sets.weapons.DualKustawi = {main="Kustawi +1",sub="Kustawi",range="Fomalhaut"}
 	
 

@@ -1,8 +1,8 @@
 function user_setup()
 	-- Options: Override default values
-    state.OffenseMode:options('Fodder','Normal','MinAcc','SomeAcc','Acc','HighAcc','FullAcc')
-	state.HybridMode:options('Normal','DTLite','PDT','MDT')
-    state.WeaponskillMode:options('Match','Normal','SomeAcc','Acc','HighAcc','FullAcc','Fodder')
+    state.OffenseMode:options('Fodder','Normal','Acc','FullAcc')
+	state.HybridMode:options('Normal','DT')
+    state.WeaponskillMode:options('Match','Normal','Acc','FullAcc','Fodder')
     state.CastingMode:options('Normal','Resistant','Fodder','Proc')
     state.IdleMode:options('Normal','Sphere','PDT','DTHippo')
 	state.PhysicalDefenseMode:options('PDT')
@@ -31,7 +31,6 @@ function user_setup()
 	send_command('bind ^backspace input /ja "Unbridled Learning" <me>;wait 1;input /ja "Diffusion" <me>;wait 2;input /ma "Mighty Guard" <me>')
 	send_command('bind !backspace input /ja "Unbridled Learning" <me>;wait 1;input /ja "Diffusion" <me>;wait 2;input /ma "Carcharian Verve" <me>')
 	send_command('bind @backspace input /ja "Convergence" <me>')
-    send_command('bind !f11 gs c cycle ExtraMeleeMode')
 	send_command('bind @f10 gs c toggle LearningMode')
 	send_command('bind ^@!` gs c cycle MagicBurstMode')
 	send_command('bind @f8 gs c toggle AutoNukeMode')
@@ -59,7 +58,8 @@ function init_gear_sets()
 	sets.buff.Doom = set_combine(sets.buff.Doom, {})
 
 	sets.HPDown = {
-		head=gear.head.dark_magic,
+		head="Pixie Hairpin +1",
+		neck="Loricate Torque +1",
 		ear1="Mendicant's Earring",
 		ear2="Evans Earring",
 		body=gear.ambuscade.jhakri.body,
@@ -67,6 +67,7 @@ function init_gear_sets()
 		ring1="Mephitas's Ring +1",
 		ring2="Mephitas's Ring",
 		back="Swith Cape +1",
+		waist="Flume Belt +1",
 		legs=gear.ambuscade.jhakri.legs,
 		feet=gear.ambuscade.jhakri.feet}
 	
@@ -101,22 +102,22 @@ function init_gear_sets()
 	sets.precast.FC = {
 		main="Vampirism",
 		sub="Vampirism",
-		ammo=gear.ammo.fc,
+		ammo="Impatiens",
         head=gear.CarmineMask.D,
 		neck="Orunmila's Torque",
-		ear1=gear.ears.fc_left,
-        ear2=gear.ears.fc_right,
+		ear1="Enchntr. Earring +1",
+		ear2="Loquac. Earring",
         body="Vrikodara Jupon",
         hands=gear.hands.melee_fc,
-        ring1=gear.ring.fc_left,
-        ring2=gear.ring.fc_right,
-        back=gear.back.fc,
-        waist=gear.waist.fc,
+        ring1="Kishar Ring",
+		ring2="Lebeche Ring",
+        back="Perimede Cape",
+        waist="Witful Belt",
         legs=gear.LengoPants.FC,
         feet=gear.carmine.feet.D}
 		
 	sets.precast.FC.Utsusemi = set_combine(sets.precast.FC, {
---	body="Passion Jacket"
+	body="Passion Jacket"
 	})
 		
 	sets.precast.FC['Blue Magic'] = set_combine(sets.precast.FC, {body=gear.jse.empyrean.blu.body})
@@ -127,7 +128,7 @@ function init_gear_sets()
 	sets.precast.WS = {
 		ammo="Ginsen",
 		head=gear.AdhemarBonnet.B,
-		neck=gear.neck.ws,
+		neck="Fotia Gorget",
 		ear1="Cessance Earring",
 		ear2="Brutal Earring",
         body=gear.AdhemarJacket.Bplus,
@@ -203,7 +204,7 @@ function init_gear_sets()
 	
 	sets.precast.WS.DT = {ammo="Ginsen",
 				  head="Malignance Chapeau",neck="Loricate Torque +1",ear1="Cessance Earring",ear2="Brutal Earring",
-                  body="Malignance Tabard",hands="Assim. Bazu. +3",ring1="Defending Ring",ring2="Ilabrat Ring",
+                  body="Malignance Tabard",hands=gear.jse.artifact.blu.hands,ring1="Defending Ring",ring2="Ilabrat Ring",
 				  back=gear.da_jse_back,waist="Fotia Belt",legs="Ayanmo Cosciales +2",feet="Malignance Boots"}
 	
 	sets.precast.WS.Fodder = {
@@ -244,7 +245,7 @@ function init_gear_sets()
 		head=gear.ambuscade.jhakri.head,
 		ear1="Regal Earring",
 		ear2="Telos Earring",
-		body=gear.ambuscade.jhakri.body,
+		body="Shamash Robe",
 		ring2="Rufescent Ring",
 		legs=gear.ambuscade.jhakri.legs,
 		feet=gear.ambuscade.jhakri.feet})
@@ -365,9 +366,19 @@ function init_gear_sets()
 	sets.precast.WS['Expiacion'].Fodder = set_combine(sets.precast.WS['Expiacion'], {})
 
 
-	sets.precast.WS['Sanguine Blade'] = {}
+	sets.precast.WS['Sanguine Blade'] = {ammo="Pemphredo Tathlum",
+		head="Pixie Hairpin +1",neck="Baetyl Pendant",ear1="Regal Earring",ear2="Friomisi Earring",body="Shamash Robe",
+		hands="Jhakri Cuffs +2",ring1="Metamor. Ring +1",ring2="Archon Ring",
+		back=gear.jsecapes.amb.blu.nuke,waist="Yamabuki-no-Obi",legs="Jhakri Slops +2",feet="Jhakri Pigaches +2"}
+		
+	sets.precast.WS['Sanguine Blade'].DT = set_combine(sets.precast.WS.DT, {back=gear.jsecapes.amb.blu.nuke})
 					 
-	sets.precast.WS['Flash Nova'] = {}
+	sets.precast.WS['Flash Nova'] = {ammo="Pemphredo Tathlum",
+			         head="Jhakri Coronal +2",neck="Baetyl Pendant",ear1="Regal Earring",ear2="Friomisi Earring",
+		             body="Jhakri Robe +2",hands="Jhakri Cuffs +2",ring1="Metamor. Ring +1",ring2="Shiva Ring +1",
+			         back=gear.jsecapes.amb.blu.nuke,waist="Yamabuki-no-Obi",legs="Jhakri Slops +2",feet="Jhakri Pigaches +2"}
+					 
+	sets.precast.WS['Flash Nova'].DT = set_combine(sets.precast.WS.DT, {back=gear.jsecapes.amb.blu.nuke})
 
 	-- Swap to these on Moonshade using WS if at 3000 TP
 	sets.precast.MaxTP = {ear1="Cessance Earring",ear2="Brutal Earring"}
@@ -404,7 +415,7 @@ function init_gear_sets()
 		hands=gear.ambuscade.jhakri.hands,
 		ring1="Ifrit Ring +1",
 		ring2="Ilabrat Ring",
-        back=gear.jsecapes.amb.blu.ws,
+        back=gear.jsecapes.amb.blu.nuke,
 		waist="Grunfeld Rope", 
 		legs=gear.ambuscade.jhakri.legs,
 		feet=gear.HerculeanBoots.TA}
@@ -522,17 +533,17 @@ function init_gear_sets()
 		neck="Sanctity Necklace",
 		ear1="Regal Earring",
 		ear2="Friomisi Earring",
-		body=gear.ambuscade.jhakri.body,
+		body="Shamash Robe",
 		hands=gear.AmalricGages.D,
-		ring1=gear.ring.int1,
-		ring2=gear.ring.int2,
-		back=gear.jsecapes.blu,
+		ring1="Metamor. Ring +1",
+		ring2="Shiva Ring +1",
+		back=gear.jsecapes.amb.blu.nuke,
 		waist="Eschan Stone",
 		legs=gear.ambuscade.jhakri.legs,
 		feet=gear.ambuscade.jhakri.feet}
 					 
 	sets.midcast['Blue Magic'].Magical.Resistant = set_combine(sets.midcast['Blue Magic'].Magical,
-		{neck="Sanctity Necklace",hands=gear.ambuscade.jhakri.hands,ring1="Stikini Ring",ring2="Stikini Ring",legs=gear.ambuscade.jhakri.legs,waist="Eschan Stone"})
+		{neck="Sanctity Necklace",hands=gear.ambuscade.jhakri.hands,ring1="Stikini Ring +1",ring2="Stikini Ring +1",legs=gear.ambuscade.jhakri.legs,waist="Eschan Stone"})
 		
 	sets.midcast['Blue Magic'].Magical.Fodder = {
 		ammo="Pemphredo Tathlum",
@@ -542,8 +553,8 @@ function init_gear_sets()
 		ear2="Friomisi Earring",
 		body=gear.ambuscade.jhakri.body,
 		hands=gear.AmalricGages.D,
-		ring1=gear.ring.int1,
-		ring2=gear.ring.int2,
+		ring1="Metamor. Ring +1",
+		ring2="Shiva Ring +1",
 		back=gear.jsecapes.blu,
 		waist="Eschan Stone",
 		legs=gear.AmalricSlops.A,
@@ -552,8 +563,8 @@ function init_gear_sets()
 	sets.midcast['Blue Magic'].MagicalMnd = set_combine(sets.midcast['Blue Magic'].Magical, {
 		neck="Sanctity Necklace",
 		hands=gear.ambuscade.jhakri.hands,
-		ring1="Stikini Ring",
-		ring2="Stikini Ring",
+		ring1="Stikini Ring +1",
+		ring2="Stikini Ring +1",
 		legs=gear.ambuscade.jhakri.legs,
 		waist="Eschan Stone"})
 	sets.midcast['Blue Magic'].MagicalChr = set_combine(sets.midcast['Blue Magic'].Magical, {})
@@ -571,8 +582,8 @@ function init_gear_sets()
 		body=gear.ambuscade.jhakri.body,
 		hands=gear.ambuscade.jhakri.hands,
 --		hands="Regal Cuffs",
-		ring1="Stikini Ring",
-		ring1="Stikini Ring",
+		ring1="Metamor. Ring +1",
+		ring1="Stikini Ring +1",
 		back=gear.jsecapes.blu,
 		waist="Luminary Sash",
 		legs=gear.ambuscade.jhakri.legs,
@@ -589,9 +600,9 @@ function init_gear_sets()
 		body=gear.ambuscade.jhakri.body,
 		hands=gear.ambuscade.jhakri.hands,
 --		hands="Regal Cuffs",
-		ring1="Stikini Ring",
-		ring2="Stikini Ring",
-		back=gear.jsecapes.blu,
+		ring1="Metamor. Ring +1",
+		ring2="Stikini Ring +1",
+		back=gear.jsecapes.amb.blu.nuke,
 		waist="Luminary Sash",
 		legs=gear.psycloth.legs.D,
 		feet="Skaoi Boots"}
@@ -604,11 +615,11 @@ function init_gear_sets()
 		neck="Erra Pendant",
 		ear1="Regal Earring",
 		ear2="Digni. Earring",
-		body=gear.ambuscade.jhakri.body,
+		body="Shamash Robe",
 		hands=gear.ambuscade.jhakri.hands,
-		ring1="Stikini Ring",
-		ring2="Stikini Ring",
-		back=gear.jsecapes.blu,
+		ring1="Metamor. Ring +1",
+		ring2="Stikini Ring +1",
+		back=gear.jsecapes.amb.blu.nuke,
 		waist="Luminary Sash",
 		legs=gear.psycloth.legs.D,
 		feet="Skaoi Boots"}
@@ -623,8 +634,8 @@ function init_gear_sets()
 		ear2="Gifted Earring",
 		body=gear.TelchineChasuble.Enh,
 		hands=gear.TelchineGloves.Enh,
-		ring1="Stikini Ring",
-		ring2="Stikini Ring",
+		ring1="Stikini Ring +1",
+		ring2="Stikini Ring +1",
 		back="Perimede Cape",
 		waist="Olympus Sash",
 		legs=gear.TelchineBraconi.ES,
@@ -655,9 +666,9 @@ function init_gear_sets()
 		neck="Sanctity Necklace",
 		ear1="Regal Earring",
 		ear2="Digni. Earring",
-		ring1="Stikini Ring",
-		ring2="Stikini Ring",
-		back=gear.jsecapes.blu,
+		ring1="Metamor. Ring +1",
+		ring2="Stikini Ring +1",
+		back=gear.jsecapes.amb.blu.nuke,
 		waist="Luminary Sash"
 }
 					
@@ -675,7 +686,7 @@ function init_gear_sets()
 		ear2="Friomisi Earring",
 		ring1="Shiva Ring +1",
 		ring2="Shiva Ring +1",
-		back=gear.jsecapes.blu,
+		back=gear.jsecapes.amb.blu.nuke,
 		waist="Luminary Sash"}
 
 	sets.midcast['Elemental Magic'].Resistant = {
@@ -739,8 +750,8 @@ function init_gear_sets()
 		ear2="Digni. Earring",
         body=gear.ambuscade.jhakri.body,
 		hands=gear.ambuscade.jhakri.hands,
-		ring1="Stikini Ring",
-		ring2="Stikini Ring",
+		ring1="Metamor. Ring +1",
+		ring2="Stikini Ring +1",
 		back=gear.jsecapes.blu,
 		waist="Luminary Sash",
 		legs=gear.ambuscade.jhakri.legs,
@@ -757,8 +768,8 @@ function init_gear_sets()
 		ear2="Digni. Earring",
         body=gear.ambuscade.jhakri.body,
 		hands=gear.ambuscade.jhakri.hands,
-		ring1="Stikini Ring",
-		ring2="Stikini Ring",
+		ring1="Metamor. Ring +1",
+		ring2="Stikini Ring +1",
 		back=gear.jsecapes.blu,
 		waist="Olseni Belt",
 		legs=gear.ambuscade.jhakri.legs,
@@ -867,7 +878,7 @@ function init_gear_sets()
 		head="Rawhide Mask",
 		neck="Loricate Torque +1",
 		ear1="Relaxing Earring",
-		body=gear.ambuscade.jhakri.body,
+		body="Shamash Robe",
         feet="Chelona Boots +1",
 		ring1="Sheltered Ring",
 		ring2="Paguroidea Ring",
@@ -878,17 +889,15 @@ function init_gear_sets()
         ammo=gear.ammo.dt,
         head=gear.RawhideMask.A,
         neck="Loricate Torque +1",
-        ear2=gear.ears.regen,
+        ear2="Etiolation Earring",
         ear1="Telos Earring",
-        body="Mekosuchinae Harness",
+        body="Shamash Robe",
 		hands=gear.HerculeanGloves.Ref,
- --       hands="Serpentes Cuffs",
-        ring1=gear.ring.regen_left,
-        ring2=gear.ring.regen_right,
+        ring1="Stikini Ring +1",
+		ring2="Stikini Ring +1",
         back="Moonbeam Cape",
         waist=gear.waist.pdt,
         legs=gear.carmine.legs.D,
---		feet="Serpentes Sabots"}
         feet=gear.HerculeanBoots.Ref}
 	
 	sets.idle.Sphere = {body="Mekosu. Harness"}
@@ -952,7 +961,7 @@ function init_gear_sets()
 	sets.Assault = {ring1="Balrahn's Ring"}
 	
 	-- Weapons sets	
-	sets.weapons.Tizalmace = {main="Sequence",sub="Almace"}
+	sets.weapons.Tizalmace = {main="Tizona",sub="Almace"}
 	sets.weapons.MeleeClubs = {main="Nehushtan",sub="Nehushtan"}
 	sets.weapons.Almace = {main="Almace",sub="Sequence"}
 	sets.weapons.Sequence = {main="Sequence",sub="Almace"}

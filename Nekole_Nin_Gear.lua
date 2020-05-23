@@ -119,7 +119,7 @@ function init_gear_sets()
 	
     sets.precast.WS['Aeolian Edge'] = {ammo="Dosis Tathlum",
         head="Dampening Tam",neck="Baetyl Pendant",ear1="Friomisi Earring",ear2="Crematio Earring",
-        body=gear.AdhemarJacket.B,hands=gear.AdhemarHands.B,ring1="Shiva Ring +1",ring2="Shiva Ring +1",
+        body=gear.AdhemarJacket.B,hands=gear.AdhemarHands.B,ring1="Metamor. Ring +1",ring2="Shiva Ring +1",
         back="Toro Cape",waist="Chaac Belt",legs=gear.herculean_dt_legs,feet="Malignance Boots"}
 
 	-- Swap to these on Moonshade using WS if at 3000 TP
@@ -142,7 +142,7 @@ function init_gear_sets()
 
     sets.midcast.ElementalNinjutsu = {ammo="Pemphredo Tathlum",
         head=gear.herculean_nuke_head,neck="Baetyl Pendant",ear1="Crematio Earring",ear2="Friomisi Earring",
-        body="Samnuha Coat",hands="Hattori Tekko +1",ring1="Shiva Ring +1",ring2="Shiva Ring +1",
+        body="Samnuha Coat",hands="Hattori Tekko +1",ring1="Metamor. Ring +1",ring2="Shiva Ring +1",
         back="Toro Cape",waist="Eschan Stone",legs="Gyve Trousers",feet=gear.herculean_nuke_feet}
 		
 	sets.midcast.ElementalNinjutsu.Proc = sets.midcast.FastRecast
@@ -155,7 +155,7 @@ function init_gear_sets()
 
     sets.midcast.NinjutsuDebuff = {ammo="Dosis Tathlum",
         head="Dampening Tam",neck="Incanter's Torque",ear1="Gwati Earring",ear2="Digni. Earring",
-        body="Mekosu. Harness",hands="Mochizuki Tekko +1",ring1="Stikini Ring",ring2="Stikini Ring",
+        body="Mekosu. Harness",hands="Mochizuki Tekko +1",ring1="Metamor. Ring +1",ring2="Stikini Ring +1",
         back=gear.jsecapes.amb.nin.tp,waist="Chaac Belt",legs="Rawhide Trousers",feet="Mochi. Kyahan +1"}
 
     sets.midcast.NinjutsuBuff = set_combine(sets.midcast.FastRecast, {back="Mujin Mantle"})
@@ -256,7 +256,7 @@ function init_gear_sets()
 		ear2="Brutal Earring",
         body="Ken. Samue +1",
 		hands=gear.AdhemarHands.B,
-		ring1="Petrov Ring",
+		ring1="Gere Ring",
 		ring2="Epona's Ring",
         back=gear.jsecapes.amb.nin.tp,
 		waist="Windbuffet Belt +1",
@@ -276,11 +276,11 @@ function init_gear_sets()
         back=gear.jsecapes.amb.nin.tp,waist="Olseni Belt",legs="Mummu Kecks +1",feet="Malignance Boots"}
     sets.engaged.Fodder = {ammo="Togakushi Shuriken",
         head="Dampening Tam",neck="Moonbeam Nodowa",ear1="Dedition Earring",ear2="Brutal Earring",
-        body="Ken. Samue",hands=gear.AdhemarHands.B,ring1="Petrov Ring",ring2="Epona's Ring",
+        body="Ken. Samue",hands=gear.AdhemarHands.B,ring1="Gere Ring",ring2="Epona's Ring",
         back=gear.jsecapes.amb.nin.tp,waist="Windbuffet Belt +1",legs="Samnuha Tights",feet=gear.herculean_ta_feet}
     sets.engaged.Crit = {ammo="Togakushi Shuriken",
         head="Mummu Bonnet +2",neck="Moonbeam Nodowa",ear1="Cessance Earring",ear2="Brutal Earring",
-        body="Mummu Jacket +2",hands="Mummu Wrists +2",ring1="Petrov Ring",ring2="Epona's Ring",
+        body="Mummu Jacket +2",hands="Mummu Wrists +2",ring1="Gere Ring",ring2="Epona's Ring",
         back=gear.da_jse_back,waist="Windbuffet Belt +1",legs="Mummu Kecks +2",feet="Mummu Gamash. +2"}
 		
     sets.engaged.DT = {ammo="Togakushi Shuriken",

@@ -90,9 +90,8 @@ function init_gear_sets()
 		ammo="Knobkierrie",
         head=gear.ValorousMask.WSD,
 		neck="Fotia Gorget",
-		ear1="Lugra Earring +1",
+		ear1="Thrud Earring",
 		ear2="Moonshade Earring",
- --       body="Phorcys Korazin",
 		body=gear.ValorousMail.WSD,
 		hands=gear.ValorousMitts.WSD,
 		ring1="Niqmaddu Ring",
@@ -171,12 +170,12 @@ function init_gear_sets()
     sets.precast.WS['Apex Arrow'].Fodder = set_combine(sets.precast.WS['Apex Arrow'], {})
 
 	-- Swap to these on Moonshade using WS if at 3000 TP
-	sets.precast.MaxTP = {ear1="Cessance Earring",ear2="Lugra Earring +1",}
-	sets.precast.AccMaxTP = {ear1="Zennaroi Earring",ear2="Telos Earring"}
-	sets.AccDayMaxTPWSEars = {ear1="Zennaroi Earring",ear2="Telos Earring"}
-	sets.DayMaxTPWSEars = {ear1="Ishvara Earring",ear2="Cessance Earring",}
-	sets.AccDayWSEars = {ear1="Zennaroi Earring",ear2="Telos Earring"}
-	sets.DayWSEars = {ear1="Ishvara Earring",ear2="Moonshade Earring",}
+	sets.MaxTP = {ear1="Thrud Earring",ear2="Lugra Earring +1",}
+	sets.AccMaxTP = {ear1="Mache Earring +1",ear2="Telos Earring"}
+	sets.AccDayMaxTPWSEars = {ear1="Mache Earring +1",ear2="Telos Earring"}
+	sets.DayMaxTPWSEars = {ear1="Thrud Earring",ear2="Brutal Earring",}
+	sets.AccDayWSEars = {ear1="Mache Earring +1",ear2="Telos Earring"}
+	sets.DayWSEars = {ear1="Thrud Earring",ear2="Moonshade Earring",}
 	
     -- Midcast Sets
     sets.midcast.FastRecast = {
@@ -277,22 +276,17 @@ function init_gear_sets()
     -- Delay 450 GK, 25 Save TP => 65 Store TP for a 5-hit (25 Store TP in gear)
     sets.engaged = {
 		ammo="Ginsen",
- --       head=gear.ambuscade.flamma.head,
 		head="Ken. Jinpachi +1",
 		neck="Moonbeam Nodowa",
 		ear1="Cessance Earring",
 		ear2="Telos Earring",
         body="Ken. Samue +1",
---		hands=gear.ValorousMitts.WSD,
 		hands="Ken. Tekko +1",
 		ring1="Niqmaddu Ring",
---		ring2="Petrov Ring",
 		ring2="Ilabrat Ring",
         back=gear.jsecapes.amb.sam.tp,
 		waist="Ioskeha Belt",
---		legs="Acro Breeches",
 		legs="Ken. Hakama +1",
---		feet=gear.ambuscade.flamma.feet}
 		feet="Ken. Sune-Ate +1"}
     sets.engaged.SomeAcc = {ammo="Ginsen",
         head=gear.ambuscade.flamma.head,neck="Moonbeam Nodowa",ear1="Cessance Earring",ear2="Brutal Earring",

@@ -3,7 +3,7 @@
 sets.Sheltered = {ring2="Sheltered Ring"}
 sets.Capacity = {back="Mecisto. Mantle"}
 
-sets.buff.Doom = {neck="Nicander's Necklace",back="Moonbeam Cape",waist="Gishdubar Sash",ring1="Eshmun's Ring",ring2="Eshmun's Ring"}
+sets.buff.Doom = {neck="Nicander's Necklace",back="Moonbeam Cape",waist="Gishdubar Sash",ring1="Saida Ring",ring2="Saida Ring"}
 sets.TreasureHunter = {head="Wh. Rarab Cap +1",waist="Chaac Belt"}
 
 sets.precast.Item['Hallowed Water'] = {}
@@ -187,6 +187,7 @@ sets.precast.Item['Holy Water'] = {}
     gear.jsecapes.amb.blu.idle = { name="Rosmerta's Cape"}
     gear.jsecapes.amb.blu.tp = { name="Rosmerta's Cape", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dbl.Atk."+10'}}
     gear.jsecapes.amb.blu.ws = { name="Rosmerta's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Crit.hit rate+10'}}  
+	gear.jsecapes.amb.blu.nuke = { name="Rosmerta's Cape",augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','"Mag.Atk.Bns."+10'}}
     gear.jsecapes.amb.blm = { name="Taranus's Cape"}
     gear.jsecapes.amb.blm.mab = { name="Taranus's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Mag.Atk.Bns."+10'}}
     gear.jsecapes.amb.blm.fc = { name="Taranus's Cape", augments={'MP+60','Mag. Acc+20 /Mag. Dmg.+20','"Fast Cast"+10'}}
@@ -199,14 +200,12 @@ sets.precast.Item['Holy Water'] = {}
     gear.jsecapes.amb.war.tp = { name="Cichol's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10'}}
     gear.jsecapes.amb.war.ws = { name="Cichol's Mantle", augments={'STR+20','Accuracy+20 Attack+20','Crit.hit rate+10'}}
     gear.jsecapes.amb.drk = { name="Ankou's Mantle"}
-    gear.jsecapes.amb.drk.idle = { name="Ankou's Mantle", augments={'STR+20','Accuracy+20 Attack+20','DEX+10','"Dbl.Atk."+10'}} --need finish
-    gear.jsecapes.amb.drk.tp = { name="Ankou's Mantle", augments={'STR+20','Accuracy+20 Attack+20','DEX+10','"Dbl.Atk."+10'}}
-    gear.jsecapes.amb.drk.ws = { name="Ankou's Mantle", augments={'STR+20','Accuracy+20 Attack+20','DEX+10','"Dbl.Atk."+10'}}
-    gear.jsecapes.amb.drk.wsd = { name="Ankou's Mantle", augments={'STR+7','VIT+20', 'Accuracy+20 Attack+20', 'Weapon skill damage +10%'}} --need finish
+    gear.jsecapes.amb.drk.tp = { name="Ankou's Mantle", augments={'STR+20','Accuracy+20 Attack+20','"Dbl.Atk."+10'}}
+    gear.jsecapes.amb.drk.ws = { name="Ankou's Mantle", augments={'STR+20','Accuracy+20 Attack+20','Weapon skill damage +10%'}}
 	gear.jsecapes.amb.whm = { name="Alaunus's Cape"}
     gear.jsecapes.amb.whm.idle = { name="Alaunus's Cape"}
-    gear.jsecapes.amb.whm.fc = { name="Alaunus's Cape", augments={'"Fast Cast"+10'}} --need finish
-    gear.jsecapes.amb.whm.ws = { name="Alaunus's Cape"}
+    gear.jsecapes.amb.whm.fc = { name="Alaunus's Cape", augments={'MND+20','Eva.+20 /Mag. Eva.+20','MND+10','"Fast Cast"+10'}}
+    gear.jsecapes.amb.whm.ws = { name="Alaunus's Cape", augments={'MND+20','Mag. Acc+20 /Mag. Dmg.+20','MND+10','"Cure" potency +10%'}}
 	gear.jsecapes.amb.thf = { name="Toutatis's Cape"}
     gear.jsecapes.amb.thf.idle = { name="Toutatis's Cape"}
     gear.jsecapes.amb.thf.tp = { name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','"Store TP"+10'}}
@@ -229,11 +228,12 @@ sets.precast.Item['Holy Water'] = {}
     gear.jsecapes.amb.sch.fc = { name="Lugh's Cape", augments={'MND+20','Mag. Acc+20 /Mag. Dmg.+20','"Fast Cast"+10'}}  --need finish
 	gear.jsecapes.amb.cor = { name="Camulus's Mantle" }
 	gear.jsecapes.amb.cor.tp = { name="Camulus's Mantle",augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Store TP"+10'}}
+	gear.jsecapes.amb.cor.tprng = { name="Camulus's Mantle",augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','Rng.Acc.+10','"Store TP"+10'}}  --need
     gear.jsecapes.amb.cor.mwsd = { name="Camulus's Mantle",augments={'AGI+20','Mag. Acc+20 /Mag. Dmg.+20','AGI+10','Weapon skill damage +10%'}}
 	gear.jsecapes.amb.cor.wsd = { name="Camulus's Mantle",augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','AGI+10','Weapon skill damage +10%'}}
 	gear.jsecapes.amb.mnk = { name="Segomo's Mantle" }
-    gear.jsecapes.amb.mnk.tp = { name="Segomo's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Dbl.Atk."+10',}} 
-    gear.jsecapes.amb.mnk.ws = { name="Segomo's Mantle",augments={'STR+20','Accuracy+20 Attack+20','Weapon skill damage +10%'}}  --need finish
+    gear.jsecapes.amb.mnk.tp = { name="Segomo's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Dbl.Atk."+10',}}
+    gear.jsecapes.amb.mnk.ws = { name="Segomo's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10',}}
 	gear.jsecapes.amb.rdm = { name="Sucellos's Cape"}
 	gear.jsecapes.amb.bst = { name="Artio's Mantle"}
 	gear.jsecapes.amb.nin = { name="Andartia's Mantle"}
@@ -250,6 +250,9 @@ sets.precast.Item['Holy Water'] = {}
 	gear.jsecapes.amb.pup.tp = { name="Visucius's Mantle", augments={'Pet: Acc.+20 Pet: R.Acc.+20 Pet: Atk.+20 Pet: R.Atk.+20','Accuracy+20 Attack+20','"Dbl.Atk."+10','Pet: "Regen"+5'}}
 	gear.jsecapes.amb.pup.ws = { name="Visucius's Mantle", augments={'STR+20','Accuracy+20 Attack+20','Crit.hit rate+10'}}
 	gear.jsecapes.amb.run = { name="Ogma's cape"}
+	gear.jsecapes.amb.dnc = { name="Senuna's Mantle"}
+	gear.jsecapes.amb.dnc.tp = {name="Senuna's Mantle",augments={'DEX+20','Accuracy+20 Attack+20','"Store TP"+10'}}
+	gear.jsecapes.amb.dnc.ws = {name="Senuna's Mantle",augments={'DEX+20','Accuracy+20 Attack+20','Weapon skill damage +10%'}}
 
     -- Skirmish pieces
     gear.hagondes = {}
@@ -339,16 +342,16 @@ sets.precast.Item['Holy Water'] = {}
 
     gear.telchine = {}
     gear.TelchineCap = {}
-	gear.TelchineCap.ES = { name="Telchine Cap", augments={'Accuracy+19','"Elemental Siphon"+35','Enh. Mag. eff. dur. +7'}}
+	gear.TelchineCap.ES = { name="Telchine Cap", augments={'Accuracy+19','"Elemental Siphon"+35','Enh. Mag. eff. dur. +10'}}
 	gear.TelchineCap.PetRegen = { name="Telchine Cap", augments={'Pet: "Regen"+3','Pet: Damage taken -4%'}}
 	
 	gear.TelchineChasuble = {}
-	gear.TelchineChasuble.Enh = { name="Telchine Chas.", augments={'Enh. Mag. eff. dur. +9'}}
+	gear.TelchineChasuble.Enh = { name="Telchine Chas.", augments={'Enh. Mag. eff. dur. +10'}}
 	gear.TelchineChasuble.ES = {name="Telchine Chas.", augments={'Accuracy+19','"Elemental Siphon"+35','STR+6 VIT+6'}}
 	gear.TelchineChasuble.PetRegen = { name="Telchine Chas.", augments={'Pet: "Regen"+3','Pet: Damage taken -4%'}}
 	
 	gear.TelchineGloves = {}
-	gear.TelchineGloves.Enh = { name="Telchine Gloves", augments={'Accuracy+18','Song spellcasting time -7%','Enh. Mag. eff. dur. +8'}}
+	gear.TelchineGloves.Enh = { name="Telchine Gloves", augments={'Accuracy+18','Song spellcasting time -7%','Enh. Mag. eff. dur. +10'}}
 	gear.TelchineGloves.ES = {name="Telchine Gloves", augments={'"Elemental Siphon"+35'}}
 	gear.TelchineGloves.PetRegen = { name="Telchine Gloves", augments={'Pet: "Regen"+3','Pet: Damage taken -4%'}}
 	
@@ -673,6 +676,8 @@ sets.precast.Item['Holy Water'] = {}
     gear.weapons.SCH = {}
 	gear.weapons.smn = {}
 	gear.weapons.brd = {}
+	gear.weapons.whm = {}
+	gear.weapons.geo = {}
     gear.weapons.BLM.Nuke = { name="Keraunos", augments={'"Mag.Atk.Bns."+17','"Fast Cast"+3','INT+9 MND+9'}}
 	gear.weapons.BLM.magicstaff = { name="Grioavolr", augments={'Magic burst dmg.+4%','INT+13','Mag. Acc.+14','"Mag.Atk.Bns."+19',}}
 --	gear.grioavolr_nuke_staff = {name="Grioavolr",augments={'Magic burst dmg.+8%','MP+61','Mag. Acc.+16','"Mag.Atk.Bns."+30','Magic Damage +7',}}
@@ -685,6 +690,9 @@ sets.precast.Item['Holy Water'] = {}
 	gear.weapons.smn.attackstaff = { name="Gridarvor", augments={'Pet: Accuracy+70','Pet: Attack+70','Pet: "Dbl. Atk."+15'}}
 	gear.weapons.brd.magacc = { name="Kali", augments={'DMG:+15','CHR+15','Mag. Acc.+15'}}
 	gear.weapons.brd.skill = { name="Kali", augments={'Mag. Acc.+15','String instrument skill +10','Wind instrument skill +10'}}
+	gear.grioavolr_fc_staff = {name="Grioavolr", augments={'"Fast Cast"+7','Mag. Acc.+18','Magic Damage +5',}}
+	gear.weapons.whm.enh = {name="Gada", augments={'Enh. Mag. eff. dur. +5','STR+2','Mag. Acc.+5','"Mag.Atk.Bns."+24','DMG:+18'}}
+	gear.weapons.geo.club = {name="Gada", augments={'Indi. eff. dur. +6','Mag. Acc.+11','"Mag.Atk.Bns."+21','DMG:+5'}}
 	
     gear.weapons.BLU = {
         sword_right= { name="Colada", augments={'"Dbl.Atk."+2','Accuracy+12','Attack+18','DMG:+16'}},
@@ -735,7 +743,7 @@ sets.precast.Item['Holy Water'] = {}
         head="Luhlaza Keffiyeh +1",  
         body="Luhlaza Jubbah +1",  
         hands="Luhlaza Bazubands +1",
-        legs="Luhlaza Shalwar +1",  
+        legs="Luhlaza Shalwar +1",     --+3
         feet="Luhlaza Charuqs +1"
     }
     gear.jse.empyrean.blu = {
@@ -748,8 +756,8 @@ sets.precast.Item['Holy Water'] = {}
 	
      -- THF
     gear.jse.artifact.thf = {
-        head="Pillager's Bonnet +1",
-        body="Pillager's Vest +1",
+        head="Pillager's Bonnet +2", -- Upgrade +3  40
+        body="Pillager's Vest +2",  -- +3  50
         hands="Pillager's Armlets +1",
         legs="Pillager's Culottes +1",
         feet="Pillager's Poulaines +1"
@@ -757,9 +765,9 @@ sets.precast.Item['Holy Water'] = {}
     gear.jse.relic.thf = {
         head="Plunderer's Bonnet +1", 
         body="Plunderer's Vest +1",
-        hands="Plunderer's Armlets +1",
-        legs="Plunderer's Culottes +1", 
-        feet="Plunderer's Poulaines +1"
+        hands="Plunderer's Armlets +3", 
+        legs="Plunderer's Culottes +1",  --+2
+        feet="Plunderer's Poulaines +1"  --+3
     }
     gear.jse.empyrean.thf = {
         head="Skulker's Bonnet +1", 
@@ -778,11 +786,11 @@ sets.precast.Item['Holy Water'] = {}
         feet="Pummeler's Calligae +1" 
     }
     gear.jse.relic.war = {
-        head="Agoge Mask", -- Need Finish Rem's Tale Ch.6 x8	Voidwrought Plate	Gabbrath Horn
-        body="Agoge Lorica", -- Need Finish Rem's Tale Ch.7 x8	Voidwrought Plate	Yggdreant Bole
-        hands="Agoge Mufflers", -- Need Finish Rem's Tale Ch.8 x8	Voidwrought Plate	Bztavian Stinger
-        legs="Agoge Cuisses", -- Need Finish Rem's Tale Ch.9 x8	Voidwrought Plate	Waktza Rostrum
-        feet="Agoge Calligae" -- Need Finish Rem's Tale Ch.10 x8	Voidwrought Plate	Rockfin Tooth
+        head="Agoge Mask +1", 
+        body="Agoge Lorica +1", 
+        hands="Agoge Mufflers +1", 
+        legs="Agoge Cuisses +1", 
+        feet="Agoge Calligae +1" 
     }
     gear.jse.empyrean.war = {
         head="Boii Mask", -- Need Finish Rem's Tale Ch.6 x8	Etched Memory x15	Defiant Sweat
@@ -886,7 +894,7 @@ sets.precast.Item['Holy Water'] = {}
 	
 			    -- SMN
     gear.jse.artifact.smn = {
-        head="Convoker's Horn +1",
+        head="Convoker's Horn +2",  -- +3
         body="Convoker's Doublet +3",
         hands="Convoker's Bracers +1",
         legs="Convoker's Spats +1",
@@ -931,21 +939,21 @@ sets.precast.Item['Holy Water'] = {}
 					 -- WHM
     gear.jse.artifact.whm = {
 		head="Theophany Cap +1",
-		body="Theophany Cap +1",
-		hands="Theophany Mitts +1",
+		body="Theophany Briault +2",
+		hands="Theophany Mitts +3",
         legs="Theophany Pantaloons +1",
-        feet="Theophany Duckbills +1", 
+        feet="Theophany Duckbills +3", 
     }
 	gear.jse.relic.whm = {
-        head="Cleric's Cap", --Need Fnish Rem's Tale Ch.1 x10 M. Silverpiece x2 Sparkling Stone	Phoenix Feather /// Rem's Tale Ch.6 x8	Akvan's Pennon	Gabbrath Horn
-        body="Piety Briault +1",
-        hands="Cleric's Mitts", --Need Fnish Rem's Tale Ch.3 x10 M. Silverpiece x2 Sparkling Stone	Beetle Blood /// Rem's Tale Ch.8 x8	Akvan's Pennon	Bztavian Stinger
-        legs="Piety Pantaloons +1",
-        feet="Piety Duckbills" --Need Finish Rem's Tale Ch.10 x8	Akvan's Pennon	Rockfin Tooth
+        head="Piety Cap +1", 
+        body="Piety Briault +2",  --+3    Torsoshard: WHM x3	Voidtorso: WHM x3	Hades' Claw x3
+        hands="Piety Mitts +1", 
+        legs="Piety Pantaloons +2",  --+3   Legshard: WHM x3	Voidleg: WHM x3	Tartarian Soul x3
+        feet="Piety Duckbills +2"  --+3   Footshard: WHM x3	Voidfoot: WHM x3	Plovid Flesh x3
     }
     gear.jse.empyrean.whm = {  
-        head="Ebers Cap", --Need Finish Rem's Tale Ch.6 x8	Etched Memory x15	Defiant Sweat
-        body="Ebers Bliaud", --Need Finish Rem's Tale Ch.7 x8	Etched Memory x25	Dark Matter
+        head="Ebers Cap +1", 
+        body="Ebers Bliaud +1", 
         hands="Ebers Mitts +1", 
         legs="Ebers Pantaloons +1",
         feet="Ebers Duckbills +1"
@@ -956,7 +964,7 @@ sets.precast.Item['Holy Water'] = {}
 		body="Anchorite's Cyclas +1", 
 		hands="Anchorite's Gloves +1", 
         legs="Anchorite's Hose +1",
-        feet="Anchorite's Gaiters +1",
+        feet="Anchorite's Gaiters +1",  --+3
     }
 	gear.jse.relic.mnk = {
         head="Hesychast's Crown +1", 
@@ -966,19 +974,19 @@ sets.precast.Item['Holy Water'] = {}
         feet="Hesychast's Gaiters +1"
     }
     gear.jse.empyrean.mnk = {  
-        head="Tantra Crown +1", --Need Finish Rem's Tale Ch.1 x10 Itzpapalotl's Scale	Phoenix Feather
+        head="Tantra Crown +1", --Need Finish Rem's Tale Ch.1 x10 Itzpapalotl's Scale	Phoenix Feather  // Rem's Tale Ch.6 x8	Etched Memory x15	Defiant Sweat
         body="Bhikku Cyclas +1", 
-        hands="Tantra Gloves +1", --Need Finish Rem's Tale Ch.3 x10 Itzpapalotl's Scale	Beetle Blood
-        legs="Tantra Hose +1", --Need Finish Rem's Tale Ch.4 x10 Itzpapalotl's Scale	Damascene Cloth	
-        feet="Tantra Gaiters +1" --Need Finish Rem's Tale Ch.5 x10 Itzpapalotl's Scale	Oxblood
+        hands="Tantra Gloves +1", --Need Finish Rem's Tale Ch.3 x10 Itzpapalotl's Scale	Beetle Blood  // Rem's Tale Ch.8 x8	Etched Memory x15	Macuil Horn
+        legs="Tantra Hose +1", --Need Finish Rem's Tale Ch.4 x10 Itzpapalotl's Scale	Damascene Cloth	// Rem's Tale Ch.9 x8	Etched Memory x20	Tartarian Chain
+        feet="Tantra Gaiters +1" --Need Finish Rem's Tale Ch.5 x10 Itzpapalotl's Scale	Oxblood  // Rem's Tale Ch.10 x8	Etched Memory x15	Plovid Effluvium
 	}
 				-- DRK
     gear.jse.artifact.drk = {
-		head="Ignominy Burgeonet", --Need Finish Rem's Tale Ch.6 x8	Durium Sheet	Maliyakaleya Orb	
-		body="Ignominy Cuirass", --Need Finish Rem's Tale Ch.7 x8	Durium Sheet	Hepatizon Ingot
-		hands="Ignominy Gauntlets", --Need Finish Rem's Tale Ch.8 x8	Durium Sheet	Beryllium Ingot
-        legs="Ignominy Flanchard +1", --Need Finish Rem's Tale Ch.9 x8	Durium Sheet	Exalted Lumber
-        feet="Ignominy Sollerets", --Need Finish Rem's Tale Ch.10 x8	Durium Sheet	Sif's Macrame
+		head="Ignominy Burgeonet +1", 
+		body="Ignominy Cuirass +1",
+		hands="Ignominy Gauntlets +1", 
+        legs="Ignominy Flanchard +1", 
+        feet="Ignominy Sollerets +1", 
     }
 	gear.jse.relic.drk = {
         head="Abyss Burgeonet", --Need Finish Rem's Tale Ch.1 x10 100 Byne Bill x2 Wootz Ore	Phoenix Feather /// Rem's Tale Ch.6 x8	Pil's Tuille	Gabbrath Horn
@@ -1018,18 +1026,18 @@ sets.precast.Item['Holy Water'] = {}
 	}
 			-- BRD
     gear.jse.artifact.brd = {
-		head="Brioso Roundlet +1",
+		head="Brioso Roundlet +1",		--+2
 		body="Brioso Justaucorps +1",
 		hands="Brioso Cuffs +1",
         legs="Brioso Cannions +1",
-        feet="Brioso Slippers +1",
+        feet="Brioso Slippers +3",
     }
 	gear.jse.relic.brd = {
         head="Bihu Roundlet +1",
-        body="Bihu Justaucorps +1",
+        body="Bihu Justaucorps +1", -- need upgrade +3
         hands="Bihu Cuffs +1",
-        legs="Bihu Cannions +1",
-        feet="Bihu Slippers +1"
+        legs="Bihu Cannions +1", -- need upgrade +3
+        feet="Bihu Slippers +1"  --need upgrade +3
     }
     gear.jse.empyrean.brd = {  
         head="Fili Calot +1",
@@ -1040,17 +1048,17 @@ sets.precast.Item['Holy Water'] = {}
 	}
 			-- SAM
     gear.jse.artifact.sam = {
-		head="Wakido Kabuto +1",
+		head="Wakido Kabuto +1",  --+3
 		body="Wakido Domaru +1",
-		hands="Wakido Kote +1",		
-        legs="Wakido Haidate +2",
-        feet="Wakido Sune-Ate +1",
+		hands="Wakido Kote +1",		--+3
+        legs="Wakido Haidate +2",  --+3
+        feet="Wakido Sune-Ate +1",  --+3
     }
 	gear.jse.relic.sam = {
-        head="Saotome Kabuto",		--Need Finish Rem's Tale Ch.6 x8	Pil's Tuille	Gabbrath Horn
-        body="Saotome Domaru",		--Need Finish Rem's Tale Ch.7 x8	Pil's Tuille	Yggdreant Bole
+        head="Sakonji Kabuto +1",		
+        body="Sakonji Domaru +1",		--+3
         hands="Sakonji Kote +1",
-        legs="Saotome Haidate",		--Need Finish Rem's Tale Ch.9 x8	Pil's Tuille	Waktza Rostrum
+        legs="Sakonji Haidate +1",		
         feet="Sakonji Sune-Ate +1"
     }
     gear.jse.empyrean.sam = {  
@@ -1084,10 +1092,10 @@ sets.precast.Item['Holy Water'] = {}
 	}
 			-- COR
     gear.jse.artifact.cor = {
-		head="Laksamana's Hat",
-		body="Laksamana's Frac +2",
-		hands="Laksamana's Gants",
-        legs="Laksamana's Trews +2",
+		head="Laksamana's Hat +1",  
+		body="Laksamana's Frac +2",  --+3  50
+		hands="Laksamana's Gants +1", 
+        legs="Laksamana's Trews +2",  --+3  45
         feet="Laksamana's Bottes +1",
     }
 	gear.jse.relic.cor = {
@@ -1095,7 +1103,7 @@ sets.precast.Item['Holy Water'] = {}
         body="Lanun Frac +1",
         hands="Lanun Gants +1",
         legs="Lanun Culottes +1",
-        feet="Lanun Bottes +1"
+        feet="Lanun Bottes +1"   --+3
     }
     gear.jse.empyrean.cor = {  
         head="Chasseur's Tricorne +1",
@@ -1107,10 +1115,10 @@ sets.precast.Item['Holy Water'] = {}
 			-- DRG
     gear.jse.artifact.drg = {
 		head="Vishap Armet +1",
-		body="Vishap Mail",					--Need Finish Rem's Tale Ch.7 x8	Orichalcum Sheet	Hepatizon Ingot
-		hands="Vishap Finger Gauntlets",	--Need Finish Rem's Tale Ch.8 x8	Orichalcum Sheet	Beryllium Ingot
+		body="Vishap Mail +1",					
+		hands="Vishap Finger Gauntlets +1",	
         legs="Vishap Brais +1",
-        feet="Vishap Greaves",				--Need Finish Rem's Tale Ch.10 x8	Orichalcum Sheet	Sif's Macrame
+        feet="Vishap Greaves +1",			
     }
 	gear.jse.relic.drg = {
         head="Pteroslaver Armet +1",
@@ -1150,11 +1158,11 @@ sets.precast.Item['Holy Water'] = {}
 	}
 			-- DNC
     gear.jse.artifact.dnc = {
-		head="Maxixi Tiara",				--Need Finish Rem's Tale Ch.6 x8	Platinum Silk Thread	Maliyakaleya Orb
-		body="Maxixi Casaque",				--Need Finish Rem's Tale Ch.7 x8	Platinum Silk Thread	Hepatizon Ingot
-		hands="Maxixi Bangles",				--Need Finish Rem's Tale Ch.8 x8	Platinum Silk Thread	Beryllium Ingot
+		head="Maxixi Tiara +1",				
+		body="Maxixi Casaque +1",				
+		hands="Maxixi Bangles +1",				
         legs="Maxixi Tights +1",			
-        feet="Maxixi Toeshoes",				--Need Finish Rem's Tale Ch.10 x8	Platinum Silk Thread	Sif's Macrame
+        feet="Maxixi Toeshoes +1",				
     }
 	gear.jse.relic.dnc = {
         head="Horos Tiara",				    --Need Finish Rem's Tale Ch.6 x8	Celaeno's Cloth	Gabbrath Horn
@@ -1180,11 +1188,11 @@ sets.precast.Item['Holy Water'] = {}
         feet="Runeist Bottes +1",		
     }
 	gear.jse.relic.run = {
-        head="Futhark Bandeau",		--Need Finish Rem's Tale Ch.6 x	8	Celaeno's Cloth	Gabbrath Horn
-        body="Futhark Coat",		--Need Finish Rem's Tale Ch.7 x	8	Celaeno's Cloth	Yggdreant Bole
-        hands="Futhark Mitons",		--Need Finish Rem's Tale Ch.8 x	8	Celaeno's Cloth	Bztavian Stinger
-        legs="Futhark Trousers",	--Need Finish Rem's Tale Ch.9 x	8	Celaeno's Cloth	Waktza Rostrum
-        feet="Futhark Boots"		--Need Finish Rem's Tale Ch.10 x8	Celaeno's Cloth	Rockfin Tooth
+        head="Futhark Bandeau +1",		
+        body="Futhark Coat +1",		
+        hands="Futhark Mitons +1",		
+        legs="Futhark Trousers +1",	
+        feet="Futhark Boots +1"		
     }
     gear.jse.empyrean.run = {  
         head="Erilaz Galea",		--Need Finish Rem's Tale Ch.6 x8	Etched Memory x15	Defiant Sweat

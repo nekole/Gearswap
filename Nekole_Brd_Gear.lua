@@ -1,14 +1,14 @@
 -- Setup vars that are user-dependent.  Can override this function in a sidecar file.
 function user_setup()
     state.OffenseMode:options('Normal','Acc')
-    state.CastingMode:options('Normal','Resistant')
-    state.IdleMode:options('Normal','PDT')
-	state.Weapons:options('None','Aeneas','DualWeapons','DualSwords','DualNukeWeapons')
+    state.CastingMode:options('Normal','Resistant','AoE')
+    state.IdleMode:options('Normal','NoRefresh','DT')
+	state.Weapons:options('None','Aeneas','Carnwenhan','DualWeapons','DualNaegling','DualTauret','DualNukeWeapons')
 
 	-- Adjust this if using the Terpander (new +song instrument)
     info.ExtraSongInstrument = 'Daurdabla'
 	-- How many extra songs we can keep from Daurdabla/Terpander
-    info.ExtraSongs = 4
+    info.ExtraSongs = 2
 	
 	-- Set this to false if you don't want to use custom timers.
     state.UseCustomTimers = M(false, 'Use Custom Timers')
@@ -35,17 +35,23 @@ function init_gear_sets()
 	
 	-- Weapons sets
 	sets.weapons.Aeneas = {main="Aeneas",sub="Genmei Shield"}
-	sets.weapons.DualWeapons = {main="Aeneas",sub="Twashtar"}
+	sets.weapons.Carnwenhan = {main="Carnwenhan",sub="Genmei Shield"}
+	sets.weapons.DualWeapons = {main="Carnwenhan",sub="Twashtar"}
 	sets.weapons.DualSwords = {main="Vampirism",sub="Vampirism"}
+	sets.weapons.DualNaegling = {main="Naegling",sub="Blurred Knife +1"}
+	sets.weapons.DualTauret = {main="Tauret",sub="Blurred Knife +1"}
 	sets.weapons.DualNukeWeapons = {main="Malevolence",sub="Malevolence"}
+	
+	sets.buff.Sublimation = {waist="Embla Sash"}
+    sets.buff.DTSublimation = {waist="Embla Sash"}
 
 	-- Precast Sets
 
 	-- Fast cast sets for spells
 	sets.precast.FC = {main="Marin Staff +1",sub="Clerisy Strap +1",ammo="Impatiens",
-		head="Nahtirah Hat",neck="Orunmila's Torque",ear1="Enchntr. Earring +1",ear2="Loquacious Earring",
+		head=gear.jse.empyrean.brd.head,neck="Orunmila's Torque",ear1="Enchntr. Earring +1",ear2="Loquacious Earring",
 		body=gear.ambuscade.inyanga.body,hands=gear.gendewitha.hands.pdt,ring1="Kishar Ring",ring2="Lebeche Ring",
-		back=gear.jsecapes.amb.brd.fc,waist="Witful Belt",legs=gear.ambuscade.ayanmo.legs,feet="Gende. Galosh. +1"}
+		back=gear.jsecapes.amb.brd.fc,waist="Witful Belt",legs=gear.ambuscade.ayanmo.legs,feet=gear.TelchinePigaches.Song}
 
 	sets.precast.FC.Cure = set_combine(sets.precast.FC, {feet=gear.vanya.feet.B})
 
@@ -133,7 +139,7 @@ function init_gear_sets()
 	
 
 	-- For song buffs (duration and AF3 set bonus)
-	sets.midcast.SongEffect = {main=gear.weapons.brd.skill,sub="Ammurapi Shield",range="Gjallarhorn",ammo=empty,
+	sets.midcast.SongEffect = {main="Carnwenhan",sub="Ammurapi Shield",range="Gjallarhorn",ammo=empty,
 		head=gear.jse.empyrean.brd.head,neck="Moonbow Whistle +1",ear1="Etiolation Earring",ear2="Aoidos' Earring",
 		body=gear.jse.empyrean.brd.body,hands=gear.jse.empyrean.brd.hands,ring1=gear.ring.ms_left,ring2=gear.ring.ms_right,
 		back=gear.jsecapes.amb.brd.fc,waist="Flume Belt +1",legs=gear.ambuscade.inyanga.legs,feet=gear.jse.artifact.brd.feet}
@@ -167,7 +173,7 @@ function init_gear_sets()
 	-- Other general spells and classes.
 	sets.midcast.Cure = {main="Serenity",sub="Curatio Grip",ammo="Pemphredo Tathlum",
         head="Gende. Caubeen +1",neck="Incanter's Torque",ear1="Gifted Earring",ear2="Mendi. Earring",
-        body="Kaykaus Bliaut",hands="Kaykaus Cuffs",ring1="Weather. Ring",ring2="Sirona's Ring",
+        body="Kaykaus Bliaut",hands="Kaykaus Cuffs",ring1="Lebeche Ring",ring2="Sirona's Ring",
         back=gear.jsecapes.amb.brd.fc,waist="Luminary Sash",legs="Gyve Trousers",feet="Kaykaus Boots"}
 		
 	sets.Self_Healing = {neck="Phalaina Locket",hands="Buremte Gloves",ring2="Kunaji Ring",waist="Gishdubar Sash"}
@@ -204,6 +210,16 @@ function init_gear_sets()
 		head=gear.ambuscade.inyanga.head,neck="Loricate Torque +1",ear1="Etiolation Earring",ear2="Ethereal Earring",
 		body=gear.ambuscade.inyanga.body,hands=gear.ambuscade.inyanga.hands,ring1="Defending Ring",ring2="Inyanga Ring",
 		back="Moonbeam Cape",waist="Flume Belt +1",legs=gear.jse.relic.brd.legs,feet=gear.jse.empyrean.brd.feet}
+		
+	sets.idle.NoRefresh = {main="Daybreak",sub="Genmei Shield",ammo="Staunch Tathlum",
+		head="Aya. Zucchetto +2",neck="Loricate Torque +1",ear1="Etiolation Earring",ear2="Sanare Earring",
+		body="Ayanmo Corazza +2",hands=gear.ambuscade.inyanga.hands,ring1="Defending Ring",ring2="Inyanga Ring",
+		back="Moonbeam Cape",waist="Flume Belt +1",legs="Aya. Cosciales +2",feet="Fili Cothurnes +1"}
+
+	sets.idle.DT = {main="Daybreak",sub="Genmei Shield",ammo="Staunch Tathlum +1",
+		head="Aya. Zucchetto +2",neck="Loricate Torque +1",ear1="Etiolation Earring",ear2="Ethereal Earring",
+		body="Ayanmo Corazza +2",hands="Volte Gloves",ring1="Defending Ring",ring2="Shadow Ring",
+		back="Moonbeam Cape",waist="Flume Belt +1",legs="Aya. Cosciales +2",feet="Inyan. Crackows +2"}
 
 	sets.idle.PDT = {main="Terra's Staff",sub="Oneiros Grip",ammo="Staunch Tathlum",
 		head=empty,neck="Loricate Torque +1",ear1="Etiolation Earring",ear2="Ethereal Earring",
@@ -232,7 +248,7 @@ function init_gear_sets()
 	-- If you create a set with both offense and defense modes, the offense mode should be first.
 	-- EG: sets.engaged.Dagger.Accuracy.Evasion
 	
-	sets.engaged = {main="Aeneas",sub="Genmei Shield",range=gear.range.ws,ammo=empty,
+	sets.engaged = {main="Carnwenhan",sub="Genmei Shield",range=gear.range.ws,ammo=empty,
 		head=gear.ambuscade.ayanmo.head,neck="Bard's Charm +1",ear1="Cessance Earring",ear2="Telos Earring",
 		body=gear.ambuscade.ayanmo.body,hands=gear.ambuscade.ayanmo.hands,ring1="Hetairoi Ring",ring2="Ilabrat Ring",
 		back=gear.jsecapes.amb.brd.ws,waist="Windbuffet Belt +1",legs=gear.ambuscade.ayanmo.legs,feet="Battlecast Gaiters"}

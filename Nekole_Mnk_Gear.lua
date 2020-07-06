@@ -76,7 +76,7 @@ function init_gear_sets()
 	-- Weaponskill sets
 	-- Default set for any weaponskill that isn't any more specifically defined
 	sets.precast.WS = {
-		ammo="Knobkierrie",
+		ammo="Voluspa Tathlum",
 		head=gear.AdhemarBonnet.B,
 		neck="Fotia Gorget",
 		ear1="Brutal Earring",

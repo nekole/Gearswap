@@ -35,7 +35,7 @@ function user_setup()
 	send_command('bind ^@!` gs c cycle MagicBurstMode')
 	send_command('bind @f8 gs c toggle AutoNukeMode')
 	send_command('bind !@^f7 gs c toggle AutoWSMode')
-	send_command('bind !r gs c weapons MagicWeapons;gs c update')
+	send_command('bind !r gs c weapons None;gs c update')
 	send_command('bind @q gs c weapons MaccWeapons;gs c update')
 	send_command('bind ^q gs c weapons Almace;gs c update')
 	send_command('bind !q gs c weapons HybridWeapons;gs c update')
@@ -54,7 +54,7 @@ function init_gear_sets()
 	sets.buff.Convergence = {head=gear.jse.relic.blu.head}
 	sets.buff.Diffusion = {feet=gear.jse.relic.blu.feet}
 	sets.buff.Enchainment = {body=gear.jse.relic.blu.body}
-	sets.buff.Efflux = {back=gear.da_jse_back,legs=gear.jse.relic.blu.legs}
+	sets.buff.Efflux = {back=gear.da_jse_back,legs=gear.jse.empyrean.blu.legs}
 	sets.buff.Doom = set_combine(sets.buff.Doom, {})
 
 	sets.HPDown = {

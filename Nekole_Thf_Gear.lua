@@ -9,7 +9,7 @@ function user_setup()
     state.PhysicalDefenseMode:options('PDT')
 	state.MagicalDefenseMode:options('MDT')
 	state.ResistDefenseMode:options('MEVA')
-	state.Weapons:options('Aeneas','AccAeneas','Twashtar','TH','Savage','AccSavage','MagicWeapons','Evisceration','Throwing','SwordThrowing','Bow')
+	state.Weapons:options('Aeneas','AccAeneas','Twashtar','TH','Savage','AccSavage','MagicWeapons','Evisceration','Throwing','SwordThrowing','Bow','ProcDagger','ProcSword','ProcGreatSword','ProcScythe','ProcPolearm','ProcClub','ProcStaff')
 
     state.ExtraMeleeMode = M{['description']='Extra Melee Mode','None','Suppa','DWEarrings','DWMax'}
 	state.AmbushMode = M(false, 'Ambush Mode')
@@ -66,6 +66,13 @@ function init_gear_sets()
 	sets.weapons.Throwing = {main="Aeneas",sub="Blurred Knife +1",range="Comet Tail",ammo=empty}
 	sets.weapons.SwordThrowing = {main="Naegling",sub="Blurred Knife +1",range="Comet Tail",ammo=empty}
 	sets.weapons.Bow = {main="Aeneas",sub="Twashtar",range="Ullr"}
+	sets.weapons.ProcDagger = {main="Chicken Knife II",sub=empty}
+	sets.weapons.ProcSword = {main="Firetongue",sub=empty}
+	sets.weapons.ProcGreatSword = {main="Lament",sub=empty}
+	sets.weapons.ProcScythe = {main="Ark Scythe",sub=empty}
+	sets.weapons.ProcPolearm = {main="Pitchfork +1",sub=empty}
+	sets.weapons.ProcClub = {main="Seika Uchiwa",sub=empty}
+	sets.weapons.ProcStaff = {main="Cobra Staff",sub=empty}
 	
     -- Actions we want to use to tag TH.
 	sets.precast.Step = {ammo="C. Palug Stone",
@@ -141,7 +148,7 @@ function init_gear_sets()
 
     -- Default set for any weaponskill that isn't any more specifically defined
     sets.precast.WS = {
-		ammo="Seeth. Bomblet +1",
+		ammo="C. Palug Stone",
 		head=gear.jse.artifact.thf.head,
 		body=gear.AdhemarJacket.Bplus,
 		hands=gear.ambuscade.meghanada.hands,
@@ -155,14 +162,14 @@ function init_gear_sets()
 		back=gear.jsecapes.amb.thf.ws,
 		waist="Sailfi Belt +1"}
     sets.precast.WS.SomeAcc = set_combine(sets.precast.WS, {neck="Combatant's Torque"})
-    sets.precast.WS.Acc = set_combine(sets.precast.WS, {ammo="C. Palug Stone",neck="Combatant's Torque",ear1="Mache Earring +1",ear2="Odr Earring",
+    sets.precast.WS.Acc = set_combine(sets.precast.WS, {neck="Combatant's Torque",ear1="Mache Earring +1",ear2="Odr Earring",
 	body=gear.ambuscade.meghanada.body,hands=gear.ambuscade.meghanada.hands,waist="Olseni Belt",legs=gear.ambuscade.meghanada.legs,feet="Malignance Boots"})
-	sets.precast.WS.FullAcc = set_combine(sets.precast.WS, {ammo="C. Palug Stone",neck="Combatant's Torque",ear1="Mache Earring +1",ear2="Odr Earring",body=gear.ambuscade.meghanada.body,hands=gear.ambuscade.meghanada.hands,waist="Olseni Belt",legs=gear.ambuscade.meghanada.legs,feet="Malignance Boots"})
+	sets.precast.WS.FullAcc = set_combine(sets.precast.WS, {neck="Combatant's Torque",ear1="Mache Earring +1",ear2="Odr Earring",body=gear.ambuscade.meghanada.body,hands=gear.ambuscade.meghanada.hands,waist="Olseni Belt",legs=gear.ambuscade.meghanada.legs,feet="Malignance Boots"})
 
     -- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
     sets.precast.WS["Rudra's Storm"] = set_combine(sets.precast.WS, {
 		ammo="C. Palug Stone",
-        head=gear.AdhemarBonnet.Aplus,
+        head=gear.jse.artifact.thf.head,
         neck="Asn. Gorget +1",
         ear1="Moonshade Earring",
 		ear2="Ishvara Earring",
@@ -283,8 +290,6 @@ function init_gear_sets()
     -- Idle sets (default idle set not needed since the other three are defined, but leaving for testing purposes)
 
     sets.idle = {
-		main="Mandau",
-		sub="Taming Sari",
 		ammo="Aurgelmir Orb +1",
 		head="Malignance Chapeau",
 		body="Malignance Tabard",
@@ -335,20 +340,20 @@ function init_gear_sets()
 		body=gear.jse.artifact.thf.body, -- 5
 		hands=gear.AdhemarHands.B,
 		legs=gear.SamnuhaTights.TP,
-		feet=gear.HerculeanBoots.TA, --9
+		feet=gear.jse.relic.thf.feet, --9
 		neck="Asn. Gorget +1",
 		ear1="Dedition Earring", --4
 		ear2="Sherida Earring", --5
 		ring1="Gere Ring",
 		ring2="Epona's Ring",
 		back=gear.jsecapes.amb.thf.tp, --4
-		waist="Windbuffet Belt +1", --5
+		waist="Reiki Yotai", --5
 		}
     
 	sets.engaged.SomeAcc = {ammo="Yamarang",
         head="Dampening Tam",neck="Combatant's Torque",ear1="Brutal Earring",ear2="Sherida Earring",
         body=gear.AdhemarJacket.Bplus,hands="Adhemar Wrist. +1",ring1="Gere Ring",ring2="Epona's Ring",
-        back=gear.jsecapes.amb.thf.tp,waist="Reiki Yotai",legs="Samnuha Tights",feet=gear.HerculeanBoots.TA}
+        back=gear.jsecapes.amb.thf.tp,waist="Reiki Yotai",legs="Samnuha Tights",feet=gear.jse.relic.thf.feet}
     
 	sets.engaged.Acc = {ammo="Yamarang",
         head="Dampening Tam",neck="Combatant's Torque",ear1="Suppanomimi",ear2="Telos Earring",
@@ -363,7 +368,7 @@ function init_gear_sets()
     sets.engaged.Fodder = {ammo="Yamarang",
         head="Dampening Tam",neck="Combatant's Torque",ear1="Brutal Earring",ear2="Sherida Earring",
         body=gear.AdhemarJacket.Bplus,hands="Adhemar Wrist. +1",ring1="Gere Ring",ring2="Epona's Ring",
-        back=gear.jsecapes.amb.thf.tp,waist="Reiki Yotai",legs="Samnuha Tights",feet=gear.HerculeanBoots.TA}
+        back=gear.jsecapes.amb.thf.tp,waist="Reiki Yotai",legs="Samnuha Tights",feet=gear.jse.relic.thf.feet}
 
    sets.engaged.DT = {ammo="Yamarang",
         head="Malignance Chapeau",neck="Loricate Torque +1",ear1="Brutal Earring",ear2="Sherida Earring",

@@ -80,7 +80,7 @@ function init_gear_sets()
     sets.precast.RA = {legs="Nahtirah Trousers"}
     -- Weaponskill sets
     -- Default set for any weaponskill that isn't any more specifically defined
-    sets.precast.WS = {ammo="Seeth. Bomblet +1",
+    sets.precast.WS = {ammo="Voluspa Tathlum",
         head="Ken. Jinpachi +1",neck="Fotia Gorget",ear1="Cessance Earring",ear2="Brutal Earring",
         body=gear.AdhemarJacket.B,hands="Ken. Tekko +1",ring1="Ilabrat Ring",ring2="Regal Ring",
         back=gear.jsecapes.amb.nin.ws,waist="Fotia Belt",legs="Jokushu Haidate",feet="Ken. Sune-Ate +1"}

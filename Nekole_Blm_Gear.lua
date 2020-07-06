@@ -63,7 +63,7 @@ function init_gear_sets()
     -- Fast cast sets for spells
 
     sets.precast.FC = {
-		main="Marin Staff +1",
+		main=gear.grioavolr_fc_staff,
 		sub="Clerisy Strap +1",
 		ammo="Impatiens",                                                 
         head=gear.AmalricCoif.DPlus,

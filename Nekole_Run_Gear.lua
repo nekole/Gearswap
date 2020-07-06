@@ -3,16 +3,16 @@ function user_setup()
 	state.OffenseMode:options('Normal','SomeAcc','Acc','HighAcc','FullAcc')
 	state.HybridMode:options('Normal','DTLite','Tank')
 	state.WeaponskillMode:options('Match','Normal','SomeAcc','Acc','HighAcc','FullAcc')
-	state.CastingMode:options('Normal', 'Resistant')
-	state.PhysicalDefenseMode:options('PDT', 'PDT_HP')
-	state.MagicalDefenseMode:options('MDT','MDT_HP','BDT','BDT_HP')
-	state.ResistDefenseMode:options('MEVA','MEVA_HP','Death','Charm','DTCharm')
+	state.CastingMode:options('Normal','SIRD')
+	state.PhysicalDefenseMode:options('PDT_HP','PDT')
+	state.MagicalDefenseMode:options('MDT_HP','BDT_HP','MDT','BDT')
+	state.ResistDefenseMode:options('MEVA_HP','MEVA','Death','Charm','DTCharm')
 	state.IdleMode:options('Normal','Tank','KiteTank','Sphere')
-	state.Weapons:options('Aettir','Lionheart','DualWeapons')
+	state.Weapons:options('None','Aettir','Lionheart','DualWeapons')
 	
 	state.ExtraDefenseMode = M{['description']='Extra Defense Mode','None','MP'}
 
-	gear.enmity_jse_back = {name="Ogma's cape",augments={'INT+20','Eva.+20 /Mag. Eva.+20','Enmity+10',}}
+	gear.enmity_jse_back = {name="Ogma's cape",augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Enmity+10','Damage taken-5%',}}
 	gear.stp_jse_back = {name="Ogma's cape",augments={'DEX+20','Accuracy+20 Attack+20','"Store TP"+10',}}
 	gear.da_jse_back = {name="Ogma's cape",augments={'STR+20','Accuracy+20 Attack+20','"Dbl.Atk."+10',}}
 
@@ -24,7 +24,6 @@ function user_setup()
 	send_command('bind ^delete input /ja "Provoke" <stnpc>')
 	send_command('bind !delete input /ma "Cure IV" <stal>')
 	send_command('bind @delete input /ma "Flash" <stnpc>')
-    send_command('bind !f11 gs c cycle ExtraDefenseMode')
 	send_command('bind ^\\\\ input /ma "Protect IV" <t>')
 	send_command('bind @\\\\ input /ma "Shell V" <t>')
 	send_command('bind !\\\\ input /ma "Crusade" <me>')
@@ -32,6 +31,7 @@ function user_setup()
 	send_command('bind @backspace input /ja "Gambit" <t>')
 	send_command('bind !backspace input /ja "Rayke" <t>')
 	send_command('bind @f8 gs c toggle AutoTankMode')
+	send_command('bind @f10 gs c toggle TankAutoDefense')
 	send_command('bind ^@!` gs c cycle SkillchainMode')
 	send_command('bind !r gs c weapons Lionheart;gs c update')
 	

@@ -48,7 +48,7 @@ function init_gear_sets()
 	-- Precast Sets
 
 	-- Fast cast sets for spells
-	sets.precast.FC = {main="Marin Staff +1",sub="Clerisy Strap +1",ammo="Impatiens",
+	sets.precast.FC = {main=gear.grioavolr_fc_staff,sub="Clerisy Strap +1",ammo="Impatiens",
 		head=gear.jse.empyrean.brd.head,neck="Orunmila's Torque",ear1="Enchntr. Earring +1",ear2="Loquacious Earring",
 		body=gear.ambuscade.inyanga.body,hands=gear.gendewitha.hands.pdt,ring1="Kishar Ring",ring2="Lebeche Ring",
 		back=gear.jsecapes.amb.brd.fc,waist="Witful Belt",legs=gear.ambuscade.ayanmo.legs,feet=gear.TelchinePigaches.Song}
@@ -112,7 +112,7 @@ function init_gear_sets()
 	-- Midcast Sets
 
 	-- General set for recast times.
-	sets.midcast.FastRecast = {main="Marin Staff +1",sub="Clerisy Strap +1",ammo="Hasty Pinion +1",
+	sets.midcast.FastRecast = {main=gear.grioavolr_fc_staff,sub="Clerisy Strap +1",ammo="Hasty Pinion +1",
 		head="Nahtirah Hat",neck="Orunmila's Torque",ear1="Enchntr. Earring +1",ear2="Loquacious Earring",
 		body=gear.ambuscade.inyanga.body,hands=gear.gendewitha.hands.pdt,ring1="Kishar Ring",ring2="Lebeche Ring",
 		back=gear.jsecapes.amb.brd.fc,waist="Witful Belt",legs=gear.ambuscade.ayanmo.legs,feet="Gende. Galosh. +1"}
@@ -208,7 +208,7 @@ function init_gear_sets()
 	-- Idle sets (default idle set not needed since the other three are defined, but leaving for testing purposes)
 	sets.idle = {main="Daybreak",sub="Ammurapi Shield",range=gear.range.idle,
 		head=gear.ambuscade.inyanga.head,neck="Loricate Torque +1",ear1="Etiolation Earring",ear2="Ethereal Earring",
-		body=gear.ambuscade.inyanga.body,hands=gear.ambuscade.inyanga.hands,ring1="Defending Ring",ring2="Inyanga Ring",
+		body=gear.ambuscade.inyanga.body,hands=gear.ambuscade.inyanga.hands,ring1="Defending Ring",ring2="Stikini Ring +1",
 		back="Moonbeam Cape",waist="Flume Belt +1",legs=gear.jse.relic.brd.legs,feet=gear.jse.empyrean.brd.feet}
 		
 	sets.idle.NoRefresh = {main="Daybreak",sub="Genmei Shield",ammo="Staunch Tathlum",

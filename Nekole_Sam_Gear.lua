@@ -8,7 +8,7 @@ function user_setup()
 	state.MagicalDefenseMode:options('MDT','MDTReraise')
 	state.ResistDefenseMode:options('MEVA')
     state.IdleMode:options('Normal', 'Reraise')
-	state.Weapons:options('Dojikiri','ProcWeapon','Bow')
+	state.Weapons:options('Masamune','Dojikiri','ProcWeapon','Bow')
 --	state.Weapons:options('Amanomurakumo','ProcWeapon','Bow')
 	
 	set_lockstyle()	
@@ -218,7 +218,7 @@ function init_gear_sets()
 	sets.Skillchain = {}
 	
     sets.idle = {
-		ammo="Staunch Tathlum",
+		ammo="Aurgelmir Orb +1",
 		sub="Utu Grip",
         head="Ken. Jinpachi +1",
 		neck="Loricate Torque +1",
@@ -275,7 +275,7 @@ function init_gear_sets()
     -- Normal melee group
     -- Delay 450 GK, 25 Save TP => 65 Store TP for a 5-hit (25 Store TP in gear)
     sets.engaged = {
-		ammo="Ginsen",
+		ammo="Aurgelmir Orb +1",
 		head="Ken. Jinpachi +1",
 		neck="Moonbeam Nodowa",
 		ear1="Cessance Earring",
@@ -407,7 +407,7 @@ function init_gear_sets()
     sets.engaged.Adoulin.Fodder.Reraise = set_combine(sets.engaged.Adoulin.Fodder, sets.Reraise)
 ]]--Right now Adoulin sets are the same as non-Adoulin.
 
---	sets.weapons.Dojikiri = {main="Amanomurakumo",sub="Utu Grip"}
+	sets.weapons.Masamune = {main="Masamune",sub="Utu Grip"}
 	sets.weapons.Dojikiri = {main="Dojikiri Yasutsuna",sub="Utu Grip"}
 	sets.weapons.ProcWeapon = {main="Norifusa +1",sub="Bloodrain Strap"}
 	sets.weapons.Bow = {main="Norifusa +1",sub="Utu Grip",range="Cibitshavore",ammo="Eminent Arrow"}
